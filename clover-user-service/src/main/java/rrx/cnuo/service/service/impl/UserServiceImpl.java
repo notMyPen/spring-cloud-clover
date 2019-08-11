@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSONObject;
 
 import lombok.extern.slf4j.Slf4j;
-import rrx.cnuo.cncommon.util.RedisTool;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.accessory.config.AliOssConfigBean;
 import rrx.cnuo.service.service.UserService;

@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.rrx</groupId>
-			<artifactId>clover-spring-common</artifactId>
+			<artifactId>clover-spring-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		

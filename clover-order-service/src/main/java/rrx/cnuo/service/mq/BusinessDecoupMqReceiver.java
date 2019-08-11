@@ -13,7 +13,7 @@ import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.config.MqConfig;
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.service.dao.TradeMapper;
 import rrx.cnuo.service.po.Trade;

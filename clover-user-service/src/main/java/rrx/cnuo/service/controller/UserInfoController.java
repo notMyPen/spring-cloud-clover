@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSONObject;
 
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.service.MsgService;
 import rrx.cnuo.service.service.UserService;
@@ -67,7 +67,7 @@ public class UserInfoController {
 	 */
 	@RequestMapping(value = "/getVerifiCode", method = RequestMethod.GET)
     public JsonResult<ReturnSmsMassegeVo> getVerifiCode(HttpServletRequest request,@RequestParam String telephone,@RequestParam Byte type) throws Exception {
-		String ip = ToolUtil.getRemoteIP(request);
+		String ip = StarterToolUtil.getRemoteIP(request);
 		return msgService.updateSendSmsMessage(ip,telephone, type, "");
     }
 	

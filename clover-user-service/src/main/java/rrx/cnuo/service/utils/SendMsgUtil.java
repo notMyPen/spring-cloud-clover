@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.util.DateUtil;
-import rrx.cnuo.cncommon.util.RedisTool;
 import rrx.cnuo.cncommon.util.http.HttpsClient;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 
 @Component

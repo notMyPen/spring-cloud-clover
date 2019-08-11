@@ -8,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.util.EncryptUtil;
 import rrx.cnuo.cncommon.util.RandomGenerator;
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.UserInitOauthVo;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
@@ -116,7 +116,7 @@ public class PassportServiceImpl implements PassportService {
 	 */
 	private Long register(WeiXinUserinfo weiXinUserinfo,Byte platform) {
 		UserPassport userPassport = new UserPassport();
-		userPassport.setUid(ToolUtil.generatorLongId(redis));
+		userPassport.setUid(StarterToolUtil.generatorLongId(redis));
 		if(platform == Const.Platform.WECHAT.getCode()){//微信公众号
 			userPassport.setOpenId(weiXinUserinfo.getOpenid());
 			userPassport.setAvatarUrl(weiXinUserinfo.getHeadimgurl());

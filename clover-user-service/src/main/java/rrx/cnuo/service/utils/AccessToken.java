@@ -12,9 +12,9 @@ import com.alibaba.fastjson.JSONObject;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.util.http.HttpsClient;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.config.WeChatAppConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 import rrx.cnuo.service.weixin.model.AccessTokenBean;

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.service.accessory.consts.StatisConst;
 import rrx.cnuo.service.dao.StatisBusinessMapper;
 import rrx.cnuo.service.dao.StatisUserMapper;

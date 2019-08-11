@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.util.ClientToolUtil;
 import rrx.cnuo.cncommon.util.Validation;
 import rrx.cnuo.cncommon.util.http.HttpClient;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
@@ -84,7 +85,7 @@ public class MsgServiceImpl implements MsgService {
         MsgWechat.setUid(uid);
         MsgWechat.setMsgType(msgType);
         MsgWechat.setMsgValue(msgValue);
-        MsgWechat.setId(ToolUtil.generatorLongId(instance));
+        MsgWechat.setId(StarterToolUtil.generatorLongId(instance));
         msgWechatMapper.insertSelective(MsgWechat);
     }
 
@@ -130,7 +131,7 @@ public class MsgServiceImpl implements MsgService {
         }
 
         // 将验证码发送次数和验证码信息放入redis
-        String mobileCodeToken = ToolUtil.generateToken(Const.REDIS_PREFIX.REDIS_TEL, telephone);
+        String mobileCodeToken = ClientToolUtil.generateToken(Const.REDIS_PREFIX.REDIS_TEL, telephone);
         instance.set(mobileCodeToken, code + "", Const.REDIS_PREFIX.SMS_EXPIRE_TIME_SECONDS);
 
         instance.increase(Const.REDIS_PREFIX.REDIS_TEL_NUM + telephone);

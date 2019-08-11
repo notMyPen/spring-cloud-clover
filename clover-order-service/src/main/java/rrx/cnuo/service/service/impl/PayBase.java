@@ -13,9 +13,9 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.util.DateUtil;
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.PayBusinessVo;
 import rrx.cnuo.cncommon.vo.ReturnPayBusinessVo;
@@ -293,7 +293,7 @@ public class PayBase{
 		if(payVo.isMakeTempAccount()){
 			userAccountListMapper.insertTemp(userAccountList);
 		}else{
-			userAccountList.setId(ToolUtil.generatorLongId(redis));
+			userAccountList.setId(StarterToolUtil.generatorLongId(redis));
 			userAccountListMapper.insertSelective(userAccountList);
 		}
 
@@ -309,7 +309,7 @@ public class PayBase{
 		if(payVo.isMakeTempAccount()){
 			userAccountListMapper.insertTemp(userAccountList);
 		}else{
-			userAccountList.setId(ToolUtil.generatorLongId(redis));
+			userAccountList.setId(StarterToolUtil.generatorLongId(redis));
 			userAccountListMapper.insertSelective(userAccountList);
 		}
 	}
@@ -330,7 +330,7 @@ public class PayBase{
 		trade.setWithdrawType(payVo.getCashFlowType() == Const.CashFlowType.PAYMENT.getCode());
 		trade.setUid(payVo.getUserId());
 		trade.setReserveData(payVo.getReserveData());
-		trade.setId(ToolUtil.generatorLongId(redis));
+		trade.setId(StarterToolUtil.generatorLongId(redis));
 		tradeMapper.insertSelective(trade);
 		return trade.getId();
 	}

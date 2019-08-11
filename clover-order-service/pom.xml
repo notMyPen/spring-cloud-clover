@@ -17,7 +17,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.rrx</groupId>
-			<artifactId>clover-common</artifactId>
+			<artifactId>clover-business-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.rrx</groupId>
+			<artifactId>clover-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

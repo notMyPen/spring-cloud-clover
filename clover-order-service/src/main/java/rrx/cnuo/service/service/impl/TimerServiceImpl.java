@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.MqSendTool;
+import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.service.dao.SystemTaskMapper;
 import rrx.cnuo.service.po.SystemTask;
 import rrx.cnuo.service.service.TimerService;

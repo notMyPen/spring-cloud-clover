@@ -28,27 +28,16 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.rrx</groupId>
-			<artifactId>clover-common</artifactId>
+			<artifactId>clover-business-starter</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
-		<!-- 解析xml -->
-	    <dependency>
-	        <groupId>dom4j</groupId>
-	        <artifactId>dom4j</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>com.thoughtworks.xstream</groupId>
-	        <artifactId>xstream</artifactId>
-	    </dependency>
-	    
-	    <!-- 微信加解密需要用到 -->
-	    <dependency>
-	        <groupId>org.bouncycastle</groupId>
-	        <artifactId>bcprov-jdk15on</artifactId>
-	        <version>1.56</version>
-	    </dependency>
-	    
+		<dependency>
+			<groupId>com.rrx</groupId>
+			<artifactId>clover-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.aliyun.oss</groupId>
 			<artifactId>aliyun-sdk-oss</artifactId>

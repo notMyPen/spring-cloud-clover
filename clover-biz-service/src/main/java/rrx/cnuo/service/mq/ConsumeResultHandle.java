@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.rabbitmq.client.Channel;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.dao.SystemMqConsumeFailMapper;
 import rrx.cnuo.service.po.SystemMqConsumeFail;

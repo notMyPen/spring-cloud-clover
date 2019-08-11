@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.dao.MsgFormIdMapper;
 import rrx.cnuo.service.po.MsgFormId;
@@ -41,7 +41,7 @@ public class MsgFormIdServiceImpl implements MsgFormIdService {
             return result;
         }
         MsgFormId formid = new MsgFormId();
-        formid.setId(ToolUtil.generatorLongId(redis));
+        formid.setId(StarterToolUtil.generatorLongId(redis));
         formid.setUid(reqVo.getUid());
         formid.setFormId(reqVo.getFormId());
         formid.setExpireTime(System.currentTimeMillis() + Const.REDIS_PREFIX.FORMID_EXPIRE);

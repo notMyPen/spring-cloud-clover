@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.util.RedisTool;
 import rrx.cnuo.cncommon.util.SimplifyObjJsonUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.service.dao.UserAccountMapper;
 import rrx.cnuo.service.po.UserAccount;
 import rrx.cnuo.service.service.data.UserAccountDataService;

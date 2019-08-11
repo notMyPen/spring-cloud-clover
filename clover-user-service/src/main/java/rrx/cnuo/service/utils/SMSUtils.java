@@ -1,5 +1,10 @@
 package rrx.cnuo.service.utils;
 
+import rrx.cnuo.cncommon.accessory.consts.Const;
+import rrx.cnuo.cncommon.util.ClientToolUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.vo.JsonResult;
+
 public class SMSUtils {
 	
 	public static final String sysSign = "今找到";
@@ -90,4 +95,48 @@ public class SMSUtils {
 			return (int)((Math.random() * 9 + 1) * num);
 		}
 	}
+	
+	/**
+     * 检查验证码是否正确
+     */
+    public static JsonResult<String> checkIdentifyCode(RedisTool instance, String telephone, int mobileCode) throws Exception {
+        JsonResult<String> result = new JsonResult<String>();
+        String cntStr = instance.getString(Const.REDIS_PREFIX.REDIS_CODE_INPUT_NUM + telephone);
+        int redisCount = 0;
+        if (cntStr != null) {
+            redisCount = Integer.parseInt(cntStr);
+        }
+
+        // 判断交易密码输错过5次，提示锁定密码
+        if (redisCount >= Const.REDIS_PREFIX.REDIS_TEL_INPUT_NUM) {
+            result.setStatus(JsonResult.FAIL);
+            result.setMsg("验证码已被锁定，10分钟后自动解锁");
+            return result;
+        }
+
+        String mobileCodeToken = ClientToolUtil.generateToken(Const.REDIS_PREFIX.REDIS_TEL, telephone);
+        String str = instance.getString(mobileCodeToken);
+        if (str == null) {
+            result.setMsg("验证码已过期");
+            result.setStatus(JsonResult.FAIL);
+            return result;
+        }
+        int value = Integer.valueOf(str).intValue();
+        if (mobileCode == value) {
+        	//验证成功后将key返回，申请成功后清除redis中对应的key
+        	result.setData(mobileCodeToken);
+            result.setStatus(JsonResult.SUCCESS);
+            instance.delete(Const.REDIS_PREFIX.REDIS_CODE_INPUT_NUM + telephone);
+            return result;
+        }
+        redisCount++;
+        instance.increase(Const.REDIS_PREFIX.REDIS_CODE_INPUT_NUM + telephone);
+        if (cntStr == null) {
+            instance.expire(Const.REDIS_PREFIX.REDIS_CODE_INPUT_NUM + telephone,
+                    Const.REDIS_PREFIX.SMS_CONTINUITY_SECONDS);
+        }
+        result.setStatus(JsonResult.FAIL);
+        result.setMsg("验证码不正确");
+        return result;
+    }
 }

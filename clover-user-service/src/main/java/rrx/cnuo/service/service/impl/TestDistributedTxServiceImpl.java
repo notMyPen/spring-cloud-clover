@@ -3,8 +3,8 @@ package rrx.cnuo.service.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.order.TradeVo;
 import rrx.cnuo.service.dao.UserAccountMapper;
 import rrx.cnuo.service.feignclient.BizFeignService;
@@ -33,7 +33,7 @@ public class TestDistributedTxServiceImpl implements TestDistributedTxService {
 		
 		//本地事务
 		UserAccount record = new UserAccount();
-		record.setUid(ToolUtil.generatorLongId(instance));
+		record.setUid(StarterToolUtil.generatorLongId(instance));
 		userAccountMapper.insertSelective(record);
 		
 		if(rollBack != null && rollBack){

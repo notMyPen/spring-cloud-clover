@@ -13,8 +13,8 @@ import com.aliyun.oss.OSSClient;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.util.ImageCompressUtils;
-import rrx.cnuo.cncommon.util.RedisTool;
-import rrx.cnuo.cncommon.util.ToolUtil;
+import rrx.cnuo.cncommon.utils.RedisTool;
+import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.service.accessory.config.AliOssConfigBean;
 
@@ -36,7 +36,7 @@ public class AliUtil {
         
 		//取得当前上传文件的文件名称
 //        String fileKey = UUID.randomUUID().toString().replaceAll("-","") + RandomGenerator.generateRandomString(8);
-        String fileKey = ToolUtil.generatorStringId(redis);
+        String fileKey = StarterToolUtil.generatorStringId(redis);
 
         OSSClient ossClient = new OSSClient("http://"+aliOssConfigBean.getOssBucketUrl(), aliOssConfigBean.getAliyunAccesskeyId(), aliOssConfigBean.getAliyunAccesskeySecret());
         /*FileModel fileModel = new FileModel();
