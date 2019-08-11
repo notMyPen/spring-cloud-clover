@@ -1,0 +1,57 @@
+#配置中心参考：https://www.jianshu.com/p/41c2cd7c498a
+server:
+  port: 8866
+
+eureka:
+   client:
+      #securePortEnabled: true
+      #ssl:
+         #key-store: client.p12
+         #key-store-password: client
+      serviceUrl:
+         defaultZone: http://root:123456@localhost:8861/eureka/
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          #这是其他项目配置文件的git仓库地址
+          uri: https://github.com/notMyPen/clover-config.git
+          #配置文件目录
+          #searchPaths: clover
+          label: master
+          #github账号
+          username: notMyPen
+          #github密码
+          password: 9cqb8nyc
+          basedir:  E:/WorkFile/config/local/clover
+  #连接到spring cloud bus消息总线
+  #rabbitmq:
+      #host: localhost
+      #port: 5672
+      #username: guest
+      #password: guest
+      #host: 192.168.30.218
+      #username: admin
+      #password: adg123456
+#management:
+   #endpoints:
+      #web:
+         #exposure:
+            #表示包含所有端点的信息(默认只打开info、Heath的端点)
+            #include: /*
+   #endpoint:
+      #health:
+         #总是表示详细信息显示
+         #show-details: always
+
+#security:
+  #basic:
+    #enabled: true
+  #user:
+    #这是config-server的用户名和密码
+    #name: config
+    #password: 123456

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.UserAccountListMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.UserAccountList">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="trade_id" jdbcType="BIGINT" property="tradeId" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="fuid" jdbcType="BIGINT" property="fuid" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="acount_type" jdbcType="TINYINT" property="acountType" />
+    <result column="business_type" jdbcType="TINYINT" property="businessType" />
+    <result column="trade_type" jdbcType="TINYINT" property="tradeType" />
+    <result column="valid_status" jdbcType="BIT" property="validStatus" />
+    <result column="receive_bank_status" jdbcType="BIT" property="receiveBankStatus" />
+    <result column="reconciliation_status" jdbcType="BIT" property="reconciliationStatus" />
+    <result column="receive_time" jdbcType="INTEGER" property="receiveTime" />
+    <result column="reconciliation_time" jdbcType="INTEGER" property="reconciliationTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, trade_id, uid, fuid, amount, acount_type, business_type, trade_type, valid_status, 
+    receive_bank_status, reconciliation_status, receive_time, reconciliation_time, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_account_list
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_account_list
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserAccountList">
+    insert into user_account_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tradeId != null">
+        trade_id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="fuid != null">
+        fuid,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="acountType != null">
+        acount_type,
+      </if>
+      <if test="businessType != null">
+        business_type,
+      </if>
+      <if test="tradeType != null">
+        trade_type,
+      </if>
+      <if test="validStatus != null">
+        valid_status,
+      </if>
+      <if test="receiveBankStatus != null">
+        receive_bank_status,
+      </if>
+      <if test="reconciliationStatus != null">
+        reconciliation_status,
+      </if>
+      <if test="receiveTime != null">
+        receive_time,
+      </if>
+      <if test="reconciliationTime != null">
+        reconciliation_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="tradeId != null">
+        #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="fuid != null">
+        #{fuid,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="acountType != null">
+        #{acountType,jdbcType=TINYINT},
+      </if>
+      <if test="businessType != null">
+        #{businessType,jdbcType=TINYINT},
+      </if>
+      <if test="tradeType != null">
+        #{tradeType,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveBankStatus != null">
+        #{receiveBankStatus,jdbcType=BIT},
+      </if>
+      <if test="reconciliationStatus != null">
+        #{reconciliationStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveTime != null">
+        #{receiveTime,jdbcType=INTEGER},
+      </if>
+      <if test="reconciliationTime != null">
+        #{reconciliationTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserAccountList">
+    update user_account_list
+    <set>
+      <if test="tradeId != null">
+        trade_id = #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="fuid != null">
+        fuid = #{fuid,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="acountType != null">
+        acount_type = #{acountType,jdbcType=TINYINT},
+      </if>
+      <if test="businessType != null">
+        business_type = #{businessType,jdbcType=TINYINT},
+      </if>
+      <if test="tradeType != null">
+        trade_type = #{tradeType,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        valid_status = #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveBankStatus != null">
+        receive_bank_status = #{receiveBankStatus,jdbcType=BIT},
+      </if>
+      <if test="reconciliationStatus != null">
+        reconciliation_status = #{reconciliationStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveTime != null">
+        receive_time = #{receiveTime,jdbcType=INTEGER},
+      </if>
+      <if test="reconciliationTime != null">
+        reconciliation_time = #{reconciliationTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="getUserAccountListByParam" parameterType="rrx.cnuo.service.po.UserAccountList" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_account_list
+    <where>
+    	<if test="id != null">
+    		and id = #{id,jdbcType=BIGINT}
+    	</if>
+    	<if test="tradeId != null">
+    		and trade_id = #{tradeId,jdbcType=BIGINT}
+    	</if>
+    	<if test="uid != null">
+    		and uid = #{uid,jdbcType=BIGINT}
+    	</if>
+    	<if test="validStatus != null">
+    		and valid_status = #{validStatus,jdbcType=BIT}
+    	</if>
+    	<if test="id == null and tradeId == null and uid == null">
+    		and 1 != 1
+    	</if>
+    	and amount != 0
+    </where>
+    order by create_time desc
+  </select>
+  
+  <select id="getAccountListCntByParam" parameterType="rrx.cnuo.service.po.UserAccountList" resultType="Long">
+    select count(1)
+    from user_account_list
+    <where>
+    	<if test="id != null">
+    		and id = #{id,jdbcType=BIGINT}
+    	</if>
+    	<if test="tradeId != null">
+    		and trade_id = #{tradeId,jdbcType=BIGINT}
+    	</if>
+    	<if test="uid != null">
+    		and uid = #{uid,,jdbcType=BIGINT}
+    	</if>
+    	<if test="validStatus != null">
+    		and valid_status = #{validStatus,jdbcType="BIT"}
+    	</if>
+    	<if test="id == null and tradeId == null and uid == null">
+    		and 1 != 1
+    	</if>
+    	and amount != 0
+    </where>
+  </select>
+  
+  <select id="getAccountListAmtByTradeIdAndUid" parameterType="rrx.cnuo.service.po.UserAccountList" resultType="com.alibaba.fastjson.JSONObject">
+	select ifnull(sum(t.amount),0) amount,t.uid 
+	from user_account_list t 
+	where t.uid = #{uid}
+	and t.trade_id = #{tradeId}
+	group by t.uid
+  </select>
+  
+  	<select id="assembleAccountZoneByTradeId" parameterType="Long" resultType="com.alibaba.fastjson.JSONObject">
+		select ifnull(sum(t.amount),0) amount,t.uid 
+		from user_account_list t 
+		where t.trade_id = #{tradeId}
+		group by t.uid
+	</select>
+	
+	<select id="assembleTempAccountZoneByTradeId" parameterType="Long" resultType="com.alibaba.fastjson.JSONObject">
+		select ifnull(sum(t.amount),0) amount,t.uid 
+		from user_account_list_temp t 
+		where t.trade_id = #{tradeId}
+		group by t.uid
+	</select>
+	 
+	 	<select id="getReceivedAmt" parameterType="java.lang.Long" resultType="Integer">
+	 	SELECT ifnull(SUM(li.amount), 0)
+		FROM user_account_list li
+		WHERE li.uid = #{userId}
+		AND li.valid_status = 1
+		AND li.receive_bank_status = 1
+	 	</select>
+	 	
+	 	<select id="getUnReceivedToSysAmt" parameterType="java.lang.Long" resultType="Integer">
+	 	SELECT ifnull(SUM(li.amount), 0)
+		FROM user_account_list li
+		WHERE li.uid = #{userId}
+		AND li.acount_type IN (2, 12, 14)
+		AND li.valid_status = 1
+		AND li.receive_bank_status = 0
+	 	</select>
+	 	
+	 	<select id="getReconciledAmt" parameterType="java.lang.Long" resultType="Integer">
+	  	SELECT ifnull(SUM(li.amount), 0)
+		FROM user_account_list li
+		WHERE li.uid = #{userId}
+		AND li.valid_status = 1
+		AND li.receive_bank_status = 1
+		AND li.reconciliation_status = 1
+	 	</select>
+	 	
+	 	<select id="getUnReconciledToSysAmt" parameterType="java.lang.Long" resultType="Integer">
+	  	SELECT ifnull(SUM(li.amount), 0)
+		FROM user_account_list li
+		WHERE li.uid = #{userId}
+		AND li.acount_type IN (2, 12, 14)
+		AND li.valid_status = 1
+		AND li.reconciliation_status = 0
+	 	</select>
+	 	
+	 	<select id="getAccountListAmtNotSysAndBankByTradeId" parameterType="Long" resultType="com.alibaba.fastjson.JSONObject">
+		select ifnull(sum(t.amount),0) amount,t.uid 
+		from user_account_list t 
+		where t.uid not in(1,2)
+		and t.trade_id = #{tradeId}
+		group by t.uid
+	</select>
+	
+	<select id="getAccountListAmtNotSysBankAndUidByTradeId" parameterType="rrx.cnuo.service.po.UserAccountList" resultType="com.alibaba.fastjson.JSONObject">
+		select ifnull(sum(t.amount),0) amount,t.uid 
+		from user_account_list t 
+		where t.uid != #{uid}
+		and t.uid not in(1,2)
+		and t.trade_id = #{tradeId}
+		group by t.uid
+	</select>
+	
+  <insert id="insertTemp" parameterType="rrx.cnuo.service.po.UserAccountList">
+   	insert into user_account_list_temp (
+   		uid, fuid, trade_type, acount_type, 
+      	business_type, trade_id, amount)
+   	values (
+   		#{uid,jdbcType=BIGINT}, #{fuid,jdbcType=BIGINT}, #{tradeType,jdbcType=TINYINT}, 
+      	#{acountType,jdbcType=TINYINT},#{businessType,jdbcType=TINYINT},
+      	#{tradeId,jdbcType=BIGINT}, #{amount,jdbcType=INTEGER})
+  </insert>
+  
+	<delete id="deleteTempUserAccountList" parameterType="Long">
+		delete from user_account_list_temp
+	   	where trade_id = #{tradeId,jdbcType=BIGINT}
+	</delete>
+</mapper>

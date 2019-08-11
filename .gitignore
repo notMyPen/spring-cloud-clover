@@ -1,0 +1,5 @@
+/clover-biz-service/.settings/*.prefs
+/clover-config-service/.mvn/wrapper/*.jar
+/clover-springboot-parent/.settings/*.prefs
+/clover-biz-service/.txlcn/*.db
+*.db

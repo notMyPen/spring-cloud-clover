@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<artifactId>clover-user-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>clover-user-service</name>
+	<description>clover user</description>
+
+	<parent>
+		<groupId>com.rrx</groupId>
+		<artifactId>clover-springboot-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<!-- <repositories>
+	    <repository>
+	      <id>releases</id>
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/releases/</url>
+	    </repository>
+	    <repository>
+	      <id>snapshots</id>
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/snapshots/</url>
+	    </repository>
+  	</repositories> -->
+  	
+	<dependencies>
+		<dependency>
+			<groupId>com.rrx</groupId>
+			<artifactId>clover-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- 解析xml -->
+	    <dependency>
+	        <groupId>dom4j</groupId>
+	        <artifactId>dom4j</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.thoughtworks.xstream</groupId>
+	        <artifactId>xstream</artifactId>
+	    </dependency>
+	    
+	    <!-- 微信加解密需要用到 -->
+	    <dependency>
+	        <groupId>org.bouncycastle</groupId>
+	        <artifactId>bcprov-jdk15on</artifactId>
+	        <version>1.56</version>
+	    </dependency>
+	    
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>userService</finalName>
+		<plugins>
+			
+		</plugins>
+	</build>
+
+</project>

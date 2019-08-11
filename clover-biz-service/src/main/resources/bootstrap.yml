@@ -1,0 +1,103 @@
+server:
+  port: 8863
+
+spring:
+  application:
+    name: biz-service
+  main:
+     #当遇到同样名字的时候，是否允许覆盖注册
+     allow-bean-definition-overriding: true
+  #连接到配置中心
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      #username: config
+      #password: 123456
+      label: master
+      name: biz-service
+      profile: dev
+  #bus:
+     #trace:
+        #enabled: true
+
+#注册到eureka
+eureka:
+  #instance:
+    #prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://root:123456@localhost:8861/eureka/
+
+#management:
+   #endpoints:
+      #web:
+         #exposure:
+            #表示包含所有端点的信息(默认只打开info、Heath的端点)
+            #include: /*
+   #endpoint:
+      #health:
+         #总是表示详细信息显示
+         #show-details: always
+
+#微服务之间的网络连接
+feign:
+  #开启OKhttp为feign默认的http请求方式
+  httpclient:
+    enable: false
+  okhttp:
+    enable: true
+  #client:
+    #config:
+      #default:
+        #增加超时时间的设置(feign默认1秒钟超时)
+        #connectTimeout: 5000
+        #readTimeout: 5000
+  hystrix:
+    #打开feign-hystrix（默认是关）
+    enabled: true
+#ribbon的请求时间也要设置，因为feign用的是ribbon
+ribbon:
+   #调试的时候调大一点20000 15000
+   ReadTimeout:  30000
+   ConnectTimeout:  30000
+   # 如需使用Feign的重试，只需使用Ribbon的重试配置即可
+   # 关闭Ribbon的重试机制（如果已写代码保证业务幂等，可以开启）
+   MaxAutoRetries: 0
+   MaxAutoRetriesNextServer: 0
+   OkToRetryOnAllOperations: false
+   #ribbon在进行客服端负载均衡的时候并不是在启动时就加载上下文，而是在实际请求时采取创建，因此这个特性往往会让我们的第一次调用颇为疲软乏力，严重时会因为超时。所以我们可以指定ribbon具体的客户端来开启饥饿加载，即在启动的时候就加载所配置项应用的上下文
+   eager-load:
+      enabled: true
+      clients: user-service, order-service
+#熔断器
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制
+          enabled: true
+        isolation:
+          thread:
+            #一般可以将hystrix的超时时间设置的比Ribbon的超时时间长一些，否则Ribbon的重试(如果配置了)将会失效
+            timeoutInMilliseconds: 60000
+
+#txlcn配置
+tx-lcn:
+  client:
+    # tx-manager 的配置地址，可以指定TM集群中的任何一个或多个地址（默认值127.0.0.1:8070）
+    # tx-manager 下集群策略，每个TC都会从始至终<断线重连>与TM集群保持集群大小个连接。
+    # TM方，每有TM进入集群，会找到所有TC并通知其与新TM建立连接。
+    # TC方，启动时按配置与集群建立连接，成功后，会再与集群协商，查询集群大小并保持与所有TM的连接
+    manager-address: 127.0.0.1:8070
+    ## 该参数为事务方法注解切面的orderNumber，默认值为0.
+    dtx-aspect-order: 0
+    ## 该参数为事务连接资源方法切面的orderNumber，默认值为0.
+    resource-order: 0
+  ribbon:
+    loadbalancer:
+      dtx:
+        # 是否启动LCN负载均衡策略(优化选项，开启与否，功能不受影响)
+        enabled: true

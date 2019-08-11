@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: hystrix-turbine-dashboard
+server:
+  port: 8868
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://root:123456@localhost:8861/eureka/
+turbine:
+  aggregator:
+    clusterConfig: default
+  #要检测的注册在eureka上的服务名
+  appConfig: user-service,statis-service,order-service,msg-service,config-server,gateway-server
+  clusterNameExpression: "'default'"

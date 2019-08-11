@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.TradeReconciliationMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.TradeReconciliation">
+    <id column="trade_id" jdbcType="BIGINT" property="tradeId" />
+    <result column="trade_type" jdbcType="TINYINT" property="tradeType" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="recon_date" jdbcType="INTEGER" property="reconDate" />
+    <result column="bill_date" jdbcType="INTEGER" property="billDate" />
+    <result column="result" jdbcType="BIT" property="result" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="commision" jdbcType="INTEGER" property="commision" />
+    <result column="bill_status" jdbcType="BIT" property="billStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    trade_id, trade_type, type, recon_date, bill_date, result, amount, commision, bill_status, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from trade_reconciliation
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from trade_reconciliation
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.TradeReconciliation">
+    insert into trade_reconciliation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        trade_id,
+      </if>
+      <if test="tradeType != null">
+        trade_type,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="reconDate != null">
+        recon_date,
+      </if>
+      <if test="billDate != null">
+        bill_date,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="commision != null">
+        commision,
+      </if>
+      <if test="billStatus != null">
+        bill_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="tradeType != null">
+        #{tradeType,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="reconDate != null">
+        #{reconDate,jdbcType=INTEGER},
+      </if>
+      <if test="billDate != null">
+        #{billDate,jdbcType=INTEGER},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=BIT},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="commision != null">
+        #{commision,jdbcType=INTEGER},
+      </if>
+      <if test="billStatus != null">
+        #{billStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.TradeReconciliation">
+    update trade_reconciliation
+    <set>
+      <if test="tradeType != null">
+        trade_type = #{tradeType,jdbcType=TINYINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="reconDate != null">
+        recon_date = #{reconDate,jdbcType=INTEGER},
+      </if>
+      <if test="billDate != null">
+        bill_date = #{billDate,jdbcType=INTEGER},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=BIT},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="commision != null">
+        commision = #{commision,jdbcType=INTEGER},
+      </if>
+      <if test="billStatus != null">
+        bill_status = #{billStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </update>
+  
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into trade_reconciliation(
+    id, 
+    recon_date, 
+    bill_date, 
+    type, 
+    result, 
+    amount, 
+    trade_type)
+    values
+    <foreach collection="list" item="record" index="index" separator=",">
+    	(
+        #{record.orderNo,jdbcType=BIGINT},
+        #{record.reconciliationDateDay,jdbcType=INTEGER},
+        #{record.billDateDay,jdbcType=INTEGER},
+        #{record.cashFlowType,jdbcType=TINYINT},
+        #{record.result,jdbcType=BIT},
+        #{record.amount,jdbcType=INTEGER},
+        #{record.payChannelType,jdbcType=TINYINT}
+        )
+    </foreach>
+    ON DUPLICATE KEY UPDATE
+    trade_type = VALUES(trade_type)
+  </insert>
+  
+  <select id="getByParam" parameterType="rrx.cnuo.service.po.TradeReconciliation" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"></include>
+    from trade_reconciliation
+    <where>
+    	<if test="billStatus != null">
+    		and bill_status = #{billStatus,jdbcType=BIT}
+    	</if>
+    	<if test="billDate != null">
+    		and bill_date = #{billDate,jdbcType=INTEGER}
+    	</if>
+    </where>
+  </select>
+</mapper>

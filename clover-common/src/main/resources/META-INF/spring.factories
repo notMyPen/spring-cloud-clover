@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+rrx.cnuo.cncommon.accessory.config.FeignOkHttpConfig,\
+rrx.cnuo.cncommon.accessory.interceptor.FeignRequestInterceptor,\
+rrx.cnuo.cncommon.accessory.interceptor.FeignTokenInterceptor,\
+rrx.cnuo.cncommon.accessory.config.MFeignConfig

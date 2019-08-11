@@ -1,0 +1,46 @@
+server:
+   port: 8861
+   #ssl:
+      #enabled: true
+      #key-store: classpath:server.p12
+      #key-store-password: springcloud
+      #key-store-type: PKCS12
+      #key-alias: server
+
+spring:
+   security:
+      basic:
+         enabled: true
+      user:
+         name: root
+         password: 123456
+
+eureka:
+   instance:
+      hostname: localhost
+      #securePort: ${server.port}
+      #securePortEnabled: true
+      #nonSecurePortEnabled: false
+      #homePageUrl: https://${eureka.instance.hostname}:${server.port}/
+      #statusPageUrl: https://${eureka.instance.hostname}:${server.port}/
+   client:
+      #healthcheck:
+         #enabled: true
+      #是否将自身注册到eureka（生产环境注释掉）
+      registerWithEureka: false
+      #是否抓取注册信息（生产环境注释掉）
+      fetchRegistry: false
+      serviceUrl:
+         #${security.user.name}:${security.user.password}@
+         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+   server:
+      #在Eureka服务器获取不到集群里对等服务器上的实例时，需要等待的时间，单位为毫秒，默认为1000 * 60 * 5（生产环境注释掉）
+      waitTimeInMsWhenSyncEmpty: 0
+      #自我保护模式，当出现出现网络分区、eureka在短时间内丢失过多客户端时，会进入自我保护模式，即一个服务长时间没有发送心跳，eureka也不会将其删除，默认为true（生产环境注释掉）
+      enableSelfPreservation: false
+      #指定每分钟需要收到的续约次数阈值，默认0.85
+      #renewal-percent-threshold: 0.85
+      #指定EvictionTask定时任务的调度频率，用于剔除过期实例,默认60000
+      #evictionIntervalTimeInMs: 10000
+      #设置readWriteCacheMap多久过期(默认180s)，假如关闭自我保护功能，某eureka client挂了EvictionTask定时任务也不会立即清除失效信息，因为缓存中还有，只有缓存过期后才清除
+      #responseCacheAutoExpirationInSeconds: 20
