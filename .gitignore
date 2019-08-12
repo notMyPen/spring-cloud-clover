@@ -3,3 +3,4 @@
 /clover-springboot-parent/.settings/*.prefs
 /clover-biz-service/.txlcn/*.db
 *.db
+*.prefs

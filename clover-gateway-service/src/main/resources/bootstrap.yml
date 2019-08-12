@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: gateway-server
-  #连接到配置中心
   cloud:
+    #连接到配置中心
     config:
       discovery:
         enabled: true
@@ -31,16 +31,26 @@ eureka:
       serviceUrl:
          defaultZone: http://root:123456@localhost:8861/eureka/
 
-#management:
-   #endpoints:
-      #web:
-         #exposure:
+logging: ## Spring Cloud Gateway的日志配置
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+
+#spring gateway提供了一个gateway actuator，该EndPoint提供了关于Filter和Routes的信息查询及指定route信息更新的rest api接口(http://localhost:8867/actuator/gateway/routes)，这里开启
+management:
+   endpoints:
+      web:
+         exposure:
             #表示包含所有端点的信息(默认只打开info、Heath的端点)
-            #include: /*
+            include: '*'
    #endpoint:
       #health:
          #总是表示详细信息显示
          #show-details: always
+   security:
+      enabled: falsee
 
 zuul:
   # 开启/关闭Zuul的重试,若为true 对Zuul全局开启了重试，事实上，也可对指定路由开启/关闭重试：zuul.routes.<routename>.retryable=true

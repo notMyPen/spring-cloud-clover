@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+rrx.cnuo.cncommon.accessory.config.DataSourceConfig,\
+rrx.cnuo.cncommon.accessory.config.GlobalBeanConfig,\
+rrx.cnuo.cncommon.accessory.config.MqConfig,\
+rrx.cnuo.cncommon.accessory.config.RedisConfig,\
+rrx.cnuo.cncommon.accessory.config.SpringBeanAutoConfig,\
+rrx.cnuo.cncommon.accessory.config.Swagger2Config,\
+rrx.cnuo.cncommon.accessory.config.PermissionConfiguration,\
+rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration

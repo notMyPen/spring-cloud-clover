@@ -21,10 +21,21 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
-		<!-- 网关 -->
+		<!-- 网关2.0 -->
         <dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		
+		<!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency> -->
+        
+		<dependency>
+		   <groupId>io.jsonwebtoken</groupId>
+		   <artifactId>jjwt</artifactId>
+		   <version>0.9.1</version>
 		</dependency>
 	</dependencies>
 	

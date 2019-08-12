@@ -41,7 +41,7 @@ eureka:
       #web:
          #exposure:
             #表示包含所有端点的信息(默认只打开info、Heath的端点)
-            #include: /*
+            #include: '*'
    #endpoint:
       #health:
          #总是表示详细信息显示
