@@ -7,6 +7,7 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.Route;
 import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
+import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ import rrx.cnuo.service.vo.PermissionException;
  * @date 2019年8月12日
  */
 @Component
-public class AuthFilter implements GlobalFilter {
+public class AuthFilter implements GlobalFilter,Ordered{
 
     @SuppressWarnings("deprecation")
 	@Override
@@ -45,4 +46,9 @@ public class AuthFilter implements GlobalFilter {
     	ServerHttpRequest buildReuqest =  mutate.build();
         return chain.filter(exchange.mutate().request(buildReuqest).build());
     }
+
+	@Override
+	public int getOrder() {
+		return -400;
+	}
 }
