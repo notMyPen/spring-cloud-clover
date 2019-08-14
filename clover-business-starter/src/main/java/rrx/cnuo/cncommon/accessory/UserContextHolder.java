@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.accessory.intercepter;
+package rrx.cnuo.cncommon.accessory;
 import rrx.cnuo.cncommon.vo.User;
 
 /**

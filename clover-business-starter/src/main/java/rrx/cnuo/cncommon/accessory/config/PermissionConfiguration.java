@@ -21,7 +21,7 @@ import rrx.cnuo.cncommon.accessory.intercepter.UserContextInterceptor;
 public class PermissionConfiguration implements WebMvcConfigurer{
 	
 	/**
-	 * 请求拦截器
+	 * 将拦截器注入ioc容器的另一种方法
 	 */
 	@Override
     public void addInterceptors(InterceptorRegistry registry) {

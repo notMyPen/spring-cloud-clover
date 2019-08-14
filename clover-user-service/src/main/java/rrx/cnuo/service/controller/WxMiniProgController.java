@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import rrx.cnuo.cncommon.vo.AccountHelper;
+import rrx.cnuo.cncommon.accessory.UserContextHolder;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.UserWxInfoVo;
 import rrx.cnuo.service.po.MsgFormId;
@@ -57,7 +57,7 @@ public class WxMiniProgController {
     @SuppressWarnings("rawtypes")
 	@RequestMapping(value = "/saveFormId", method = RequestMethod.POST)
     public JsonResult saveFormId(@RequestBody MsgFormId reqVo) throws Exception {
-    	reqVo.setUid(AccountHelper.getUserId());
+    	reqVo.setUid(UserContextHolder.currentUser().getUserId());
         return msgFormIdService.saveFormId(reqVo);
     }
     

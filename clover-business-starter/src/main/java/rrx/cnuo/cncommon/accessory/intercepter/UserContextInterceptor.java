@@ -8,6 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.alibaba.fastjson.JSON;
 
+import rrx.cnuo.cncommon.accessory.UserContextHolder;
 import rrx.cnuo.cncommon.utils.UserPermissionUtil;
 import rrx.cnuo.cncommon.vo.User;
 
@@ -54,7 +55,7 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 		String userid = request.getHeader("x-user-id");
 		String username = request.getHeader("x-user-name");
 		User user = new User();
-		user.setUserId(userid);
+		user.setUserId(Long.parseLong(userid));
 		user.setUserName(username);
 		return user;
 	}

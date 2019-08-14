@@ -24,8 +24,8 @@ spring:
 
 #注册到eureka
 eureka:
-   #instance:
-      #prefer-ip-address: true
+   instance:
+      prefer-ip-address: true
       #指定eureka-client间隔多久需要向eureka-server发送心跳来告知eureka-server自己还活着，默认90s
       #lease-expiration-duration-in-seconds: 30
       #eureka-client向eureka-server发送心跳的时间间隔，默认30s

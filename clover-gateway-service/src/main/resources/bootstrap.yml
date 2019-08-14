@@ -1,14 +1,14 @@
 server:
   port: 8867
   #让gateway支持https请求(此外还要将生成的https证书放进gateway项目的类路径下且自定义GlobalFilter将https转成http后再转发到各个微服务中)
-  ssl:
-    key-alias: spring
-    enabled: true
-    key-password: spring
-    key-store: classpath:selfsigned.jks
-    key-store-type: JKS
-    key-store-provider: SUN
-    key-store-password: spring
+  #ssl:
+    #key-alias: spring
+    #enabled: true
+    #key-password: spring
+    #key-store: classpath:selfsigned.jks
+    #key-store-type: JKS
+    #key-store-provider: SUN
+    #key-store-password: spring
 
 spring:
   application:
@@ -27,27 +27,27 @@ spring:
   #bus:
      #trace:
         #enabled: true
-  #网关路由配置
-  gateway:
-      discovery:
-        locator:
-          #是否与服务发现组件进行结合，从而可以通过serverId转发到具体实例（默认false）
-          enabled: true
-          #当注册中心是eureka时设置为true表示开启用小写的serverId进行基于服务的路由转发
-          lowerCaseServiceId: true
-  routes: #routes的信息不用配置也行，直接访问各个微服务的小写serverId即可
-      - id: order-service
-        uri: http://localhost:8763
-        predicates:
-        - Path=/order/**
-      - id: user-service
-        uri: http://localhost:8764
-        predicates:
-        - Path=/user/**
-      - id: biz-service
-        uri: http://localhost:8765
-        predicates:
-        - Path=/biz/**
+    #网关路由配置
+    gateway:
+       discovery:
+          locator:
+            #是否与服务发现组件进行结合，从而可以通过serverId转发到具体实例（默认false）
+            enabled: true
+            #当注册中心是eureka时设置为true表示开启用小写的serverId进行基于服务的路由转发
+            lowerCaseServiceId: true
+  #routes: #routes的信息不用配置也行，直接访问各个微服务的小写serverId即可
+      #- id: order-service
+        #uri: http://localhost:8764
+        #predicates:
+        #- Path=/order/**
+      #- id: user-service
+        #uri: http://localhost:8762
+        #predicates:
+        #- Path=/user/**
+      #- id: biz-service
+        #uri: http://localhost:8763
+        #predicates:
+        #- Path=/biz/**
 
 #注册到eureka
 eureka:
@@ -61,6 +61,10 @@ eureka:
       serviceUrl:
          defaultZone: http://root:123456@localhost:8861/eureka/
 
+security:
+  basic:
+    enabled: false
+    
 logging: ## Spring Cloud Gateway的日志配置
   level:
     org.springframework.cloud.gateway: TRACE
@@ -81,38 +85,3 @@ management:
          #show-details: always
    security:
       enabled: falsee
-
-zuul:
-  # 开启/关闭Zuul的重试,若为true 对Zuul全局开启了重试，事实上，也可对指定路由开启/关闭重试：zuul.routes.<routename>.retryable=true
-  retryable: false
-  #zuul路由配置为url时生效
-  host:
-    connect-timeout-millis: 30000
-    socket-timeout-millis: 30000
-
-#zuul路由配置为serviceid时生效(如果ribbon:上层标签没有具体服务serverid即对所有服务配置生效)
-ribbon:
-   ConnectTimeout: 30000
-   ReadTimeout: 30000
-   # 关闭Ribbon的重试机制（如果已写代码保证业务幂等，可以开启）
-   MaxAutoRetries: 0
-   MaxAutoRetriesNextServer: 0
-   #一般来说，不建议将OkToRetryOnAllOperations设为true。因为一旦启用该配置，则表示重试任何操作，包括POST请求，而由于缓存了请求体，此时可能会影响服务器的资源。
-   OkToRetryOnAllOperations: false
-   #ribbon在进行客服端负载均衡的时候并不是在启动时就加载上下文，而是在实际请求时采取创建，因此这个特性往往会让我们的第一次调用颇为疲软乏力，严重时会因为超时。所以我们可以指定ribbon具体的客户端来开启饥饿加载，即在启动的时候就加载所配置项应用的上下文
-   eager-load:
-      enabled: true
-      clients: user-service, biz-service, order-service
-
-#熔断器
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          #如果enabled设置为false，则请求超时交给ribbon控制
-          enabled: true
-        isolation:
-          thread:
-            #一般可以将hystrix的超时时间设置的比ribbon的超时时间长一些，否则ribbon的重试(如果配置了)将会失效
-            timeoutInMilliseconds: 70000

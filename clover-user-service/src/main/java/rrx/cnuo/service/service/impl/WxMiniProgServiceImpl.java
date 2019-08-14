@@ -33,8 +33,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import rrx.cnuo.cncommon.accessory.UserContextHolder;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.AccountHelper;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.UserWxInfoVo;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
@@ -92,7 +92,7 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
 		JsonResult<UserWxInfoVo> result = new JsonResult<>();
         result.setStatus(JsonResult.SUCCESS);
         
-        Long uid = AccountHelper.getUserId();
+        Long uid = UserContextHolder.currentUser().getUserId();
         UserPassport userPassport = userPassportDataService.selectByPrimaryKey(uid);
         if(StringUtils.isNotBlank(userPassport.getNickName()) && StringUtils.isNotBlank(userPassport.getAvatarUrl())){
         	return result;

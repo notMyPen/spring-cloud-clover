@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.accessory.interceptor;
+package rrx.cnuo.cncommon.accessory.intercepter;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

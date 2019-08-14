@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import rrx.cnuo.cncommon.accessory.UserContextHolder;
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.vo.AccountHelper;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.PayBusinessVo;
 import rrx.cnuo.cncommon.vo.ReturnPayBusinessVo;
@@ -44,7 +44,7 @@ public class PayController {
 	public JsonResult<ReturnPayBusinessVo> recharge(@RequestBody RechargeVo payVo) throws Exception {
 		JsonResult<ReturnPayBusinessVo> result = new JsonResult<ReturnPayBusinessVo>();
 		
-		payVo.setUserId(AccountHelper.getUserId());
+		payVo.setUserId(UserContextHolder.currentUser().getUserId());
 		payVo.setPayBusinessType(Const.PayBusinessType.RECHARGE.getCode());
 		payVo.setCashFlowType(Const.CashFlowType.COLLECTION.getCode());
 		payVo.setPayMethod(Const.PayMethod.WECHAT.getCode());
@@ -71,7 +71,7 @@ public class PayController {
 	public JsonResult<ReturnPayBusinessVo> withdraw(@RequestBody PayBusinessVo payVo) throws Exception {
 		JsonResult<ReturnPayBusinessVo> result = new JsonResult<ReturnPayBusinessVo>();
 		
-		payVo.setUserId(AccountHelper.getUserId());
+		payVo.setUserId(UserContextHolder.currentUser().getUserId());
 		payVo.setPayBusinessType(Const.PayBusinessType.WITHDRAW.getCode());
 		payVo.setCashFlowType(Const.CashFlowType.PAYMENT.getCode());
 		payVo.setPayMethod(Const.PayMethod.WECHAT.getCode());

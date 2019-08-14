@@ -42,12 +42,13 @@ public class UserPermissionUtil {
 	public static void permission(User user){
 		if(user.getUserName().equals("admin")) {
 			List<String> allowPermissionService = new ArrayList<String>();
-			allowPermissionService.add("client-service");
-			allowPermissionService.add("provider-service");
+			allowPermissionService.add("user-service");
+			allowPermissionService.add("order-service");
+			allowPermissionService.add("biz-service");
 			user.setAllowPermissionService(allowPermissionService);
 		}else if(user.getUserName().equals("spring")) {
 			List<String> allowPermissionService = new ArrayList<String>();
-			allowPermissionService.add("client-service");
+			allowPermissionService.add("user-service");
 			user.setAllowPermissionService(allowPermissionService);
 		} else {
 			List<String> allowPermissionService = new ArrayList<String>();

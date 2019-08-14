@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 
+import rrx.cnuo.cncommon.accessory.UserContextHolder;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
-import rrx.cnuo.cncommon.vo.AccountHelper;
 import rrx.cnuo.cncommon.vo.DataGridResult;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.PageVo;
@@ -50,7 +50,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         PageHelper.startPage(pageVo.getPageNum(), pageVo.getPageSize());
         
 		UserAccountList userAccountListParam = new UserAccountList();
-		userAccountListParam.setUid(AccountHelper.getUserId());
+		userAccountListParam.setUid(UserContextHolder.currentUser().getUserId());
 		userAccountListParam.setValidStatus(true);
 		List<UserAccountList> list = userAccountListMapper.getUserAccountListByParam(userAccountListParam);
 		
@@ -80,7 +80,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         
         WalletInfoVo walletInfoVo = new WalletInfoVo(rowsList);
         walletInfoVo.setTotal(total);
-        JSONObject userAccountJson = userFeignService.getUserAccountByUid(AccountHelper.getUserId());
+        JSONObject userAccountJson = userFeignService.getUserAccountByUid(UserContextHolder.currentUser().getUserId());
         walletInfoVo.setBalance(userAccountJson.getInteger("balance"));
         
         result.setData(walletInfoVo);
