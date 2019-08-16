@@ -32,9 +32,10 @@ eureka:
       #lease-renewal-interval-in-seconds: 10
    client:
       #针对新服务(新的eureka client)上线，其它服务(eureka client)获取不及时的问题，可以适当提高client拉去server信息的频率(默认30s)（生产环境注释掉）
-      #register-fetch-interval-seconds: 5
+      register-fetch-interval-seconds: 5
       serviceUrl:
-         defaultZone: http://root:123456@localhost:8861/eureka/
+         #defaultZone: http://root:123456@localhost:8861/eureka/
+         defaultZone: http://root:123456@192.168.100.224:8861/eureka/
 
 #management:
    #endpoints:
@@ -103,6 +104,7 @@ hystrix:
                #如果enabled设置为false，则请求超时交给ribbon控制
                enabled: true
             isolation:
+               strategy: SEMAPHORE
                thread:
                   #一般可以将hystrix的超时时间设置的比ribbon的超时时间长一些，否则ribbon的重试(如果配置了)将会失效
                   timeoutInMilliseconds: 600000
@@ -114,7 +116,8 @@ tx-lcn:
     # tx-manager 下集群策略，每个TC都会从始至终<断线重连>与TM集群保持集群大小个连接。
     # TM方，每有TM进入集群，会找到所有TC并通知其与新TM建立连接。
     # TC方，启动时按配置与集群建立连接，成功后，会再与集群协商，查询集群大小并保持与所有TM的连接
-    manager-address: 127.0.0.1:8070
+    manager-address: 192.168.100.224:8070
+    #manager-address: 127.0.0.1:8070
     ## 该参数为事务方法注解切面的orderNumber，默认值为0.
     dtx-aspect-order: 0
     ## 该参数为事务连接资源方法切面的orderNumber，默认值为0.

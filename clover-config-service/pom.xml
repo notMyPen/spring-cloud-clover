@@ -13,6 +13,17 @@
 		<artifactId>clover-springboot-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
+	
+	<!-- <repositories>
+	    <repository>
+	      <id>releases</id>
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/releases/</url>
+	    </repository>
+	    <repository>
+	      <id>snapshots</id>
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/snapshots/</url>
+	    </repository>
+  	</repositories> -->
 
 	<dependencies>
 		<!-- <dependency>

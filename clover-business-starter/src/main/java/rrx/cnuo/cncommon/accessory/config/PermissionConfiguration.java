@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import rrx.cnuo.cncommon.accessory.intercepter.FeignTokenInterceptor;
 import rrx.cnuo.cncommon.accessory.intercepter.RestTemplateUserContextInterceptor;
 import rrx.cnuo.cncommon.accessory.intercepter.UserContextInterceptor;
 
@@ -39,4 +40,14 @@ public class PermissionConfiguration implements WebMvcConfigurer{
         return restTemplate;
     }
    
+	@Bean
+    public FeignTokenInterceptor feignTokenInterceptor() {
+        return new FeignTokenInterceptor();
+    }
+	
+//	@Bean
+//	public FeignHystrixConcurrencyStrategy feignHystrixConcurrencyStrategy() {
+//		return new FeignHystrixConcurrencyStrategy();
+//	}
+
 }

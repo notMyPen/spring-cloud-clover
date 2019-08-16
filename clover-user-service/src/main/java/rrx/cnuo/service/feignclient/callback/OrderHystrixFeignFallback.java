@@ -28,6 +28,7 @@ public class OrderHystrixFeignFallback implements OrderFeignService{
 	@Override
 	public void insertTrade(TradeVo tradeVo) {
 		log.info("增删改操作的服务降级必须抛异常，不然分布式事务不会滚！");
+//		DTXUserControls.rollbackGroup(UserContextHolder.currentUser().getUserId()+"");
 		throw new CnException("insertTrade失败");
 	}
 

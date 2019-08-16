@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.fastjson.JSONObject;
 
-import rrx.cnuo.cncommon.accessory.config.MFeignConfig;
 import rrx.cnuo.service.feignclient.callback.UserHystrixFeignFallback;
 
 /**
@@ -20,7 +19,7 @@ import rrx.cnuo.service.feignclient.callback.UserHystrixFeignFallback;
  * @author xuhongyu
  * @date 2019年6月27日
  */
-@FeignClient(name = "user-service",decode404 = true,fallback = UserHystrixFeignFallback.class,configuration = MFeignConfig.class/*,path = "/api"*/)
+@FeignClient(name = "user-service",decode404 = true,fallback = UserHystrixFeignFallback.class/*,path = "/api"*/)
 public interface UserFeignService {
 
 	@GetMapping("/userAccount/{uid}")

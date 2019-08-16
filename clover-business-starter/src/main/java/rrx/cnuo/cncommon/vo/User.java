@@ -15,6 +15,8 @@ public class User implements Serializable {
 	
 	private String userName;
 	
+	private String currentServiceId;
+	
 	private List<String> allowPermissionService;
 
 
@@ -41,8 +43,13 @@ public class User implements Serializable {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	
-	public User() {
+
+	public String getCurrentServiceId() {
+		return currentServiceId;
 	}
 
+	public void setCurrentServiceId(String currentServiceId) {
+		this.currentServiceId = currentServiceId;
+	}
+	
 }

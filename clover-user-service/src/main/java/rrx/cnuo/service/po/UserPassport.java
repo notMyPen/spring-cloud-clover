@@ -5,20 +5,24 @@ import java.util.Date;
 public class UserPassport {
     private Long uid;
 
-    private String password;
-
-    private String salt;
-
     private String registTel;
+
+    private String miniOpenId;
 
     private String openId;
 
-    private String miniOpenId;
-    
     private String nickName;
-    
+
     private String avatarUrl;
-    
+
+    private Integer cardNum;
+
+    private Boolean creditPass;
+
+    private Byte boardStatus;
+
+    private Boolean highQuality;
+
     private Boolean subscribe;
 
     private Date createTime;
@@ -33,28 +37,20 @@ public class UserPassport {
         this.uid = uid;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
-    }
-
     public String getRegistTel() {
         return registTel;
     }
 
     public void setRegistTel(String registTel) {
         this.registTel = registTel == null ? null : registTel.trim();
+    }
+
+    public String getMiniOpenId() {
+        return miniOpenId;
+    }
+
+    public void setMiniOpenId(String miniOpenId) {
+        this.miniOpenId = miniOpenId == null ? null : miniOpenId.trim();
     }
 
     public String getOpenId() {
@@ -65,39 +61,63 @@ public class UserPassport {
         this.openId = openId == null ? null : openId.trim();
     }
 
-    public String getMiniOpenId() {
-        return miniOpenId;
-    }
-
-    public void setMiniOpenId(String miniOpenId) {
-        this.miniOpenId = miniOpenId == null ? null : miniOpenId.trim();
-    }
-    
     public String getNickName() {
-		return nickName;
-	}
+        return nickName;
+    }
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
+    }
 
-	public String getAvatarUrl() {
-		return avatarUrl;
-	}
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
 
-	public void setAvatarUrl(String avatarUrl) {
-		this.avatarUrl = avatarUrl;
-	}
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl == null ? null : avatarUrl.trim();
+    }
 
-	public Boolean getSubscribe() {
-		return subscribe;
-	}
+    public Integer getCardNum() {
+        return cardNum;
+    }
 
-	public void setSubscribe(Boolean subscribe) {
-		this.subscribe = subscribe;
-	}
+    public void setCardNum(Integer cardNum) {
+        this.cardNum = cardNum;
+    }
 
-	public Date getCreateTime() {
+    public Boolean getCreditPass() {
+        return creditPass;
+    }
+
+    public void setCreditPass(Boolean creditPass) {
+        this.creditPass = creditPass;
+    }
+
+    public Byte getBoardStatus() {
+        return boardStatus;
+    }
+
+    public void setBoardStatus(Byte boardStatus) {
+        this.boardStatus = boardStatus;
+    }
+
+    public Boolean getHighQuality() {
+        return highQuality;
+    }
+
+    public void setHighQuality(Boolean highQuality) {
+        this.highQuality = highQuality;
+    }
+
+    public Boolean getSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(Boolean subscribe) {
+        this.subscribe = subscribe;
+    }
+
+    public Date getCreateTime() {
         return createTime;
     }
 

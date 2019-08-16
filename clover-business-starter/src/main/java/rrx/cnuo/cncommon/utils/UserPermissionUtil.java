@@ -21,22 +21,25 @@ public class UserPermissionUtil {
 	 * @param user
 	 */
 	public static boolean verify(User user,HttpServletRequest request){
-		String url = request.getHeader("x-user-serviceName");
 		if(StringUtils.isEmpty(user)) {
 			return false;
 		}else {
-			List<String> str = user.getAllowPermissionService();
-			for (String permissionService : str) {
-				if(url.equalsIgnoreCase(permissionService)) {
-					return true;
+			if(!StringUtils.isEmpty(user.getCurrentServiceId())) {
+				List<String> str = user.getAllowPermissionService();
+				for (String permissionService : str) {
+					if(user.getCurrentServiceId().equalsIgnoreCase(permissionService)) {
+						return true;
+					}
 				}
+				return false;
+			}else {
+				return true;
 			}
-			return false;
 		}
 	}
 	
 	/**
-	 * 模拟权限赋值, 可以根据自己项目需要定制不同的策略,如查询数据库获取具体的菜单url或者角色等等.<br>
+	 * 模拟权限赋值(为每个用户赋权限路径), 可以根据自己项目需要定制不同的策略,如查询数据库获取具体的菜单url或者角色等等.<br>
 	 * @param user
 	 */
 	public static void permission(User user){

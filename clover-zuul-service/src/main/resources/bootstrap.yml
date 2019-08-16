@@ -21,8 +21,8 @@ spring:
 
 #注册到eureka
 eureka:
-   #instance:
-      #prefer-ip-address: true
+   instance:
+      prefer-ip-address: true
    client:
       #securePortEnabled: true
       #ssl:

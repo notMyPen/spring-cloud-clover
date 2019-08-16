@@ -3,6 +3,8 @@ server:
   port: 8866
 
 eureka:
+   instance:
+      prefer-ip-address: true
    client:
       #securePortEnabled: true
       #ssl:

@@ -3,19 +3,23 @@
 <mapper namespace="rrx.cnuo.service.dao.UserPassportMapper">
   <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.UserPassport">
     <id column="uid" jdbcType="BIGINT" property="uid" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="salt" jdbcType="VARCHAR" property="salt" />
     <result column="regist_tel" jdbcType="VARCHAR" property="registTel" />
-    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="mini_open_id" jdbcType="VARCHAR" property="miniOpenId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
     <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="card_num" jdbcType="INTEGER" property="cardNum" />
+    <result column="credit_pass" jdbcType="BIT" property="creditPass" />
+    <result column="board_status" jdbcType="TINYINT" property="boardStatus" />
+    <result column="high_quality" jdbcType="BIT" property="highQuality" />
     <result column="subscribe" jdbcType="BIT" property="subscribe" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+  
   <sql id="Base_Column_List">
-    uid, password, salt, regist_tel, open_id, mini_open_id,nick_name,avatar_url,subscribe, create_time, update_time
+    uid, regist_tel, mini_open_id, open_id, nick_name, avatar_url, card_num, credit_pass, 
+    board_status, high_quality, subscribe, create_time, update_time
   </sql>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -25,18 +29,20 @@
     where uid = #{uid,jdbcType=BIGINT}
   </select>
   
-  <select id="selectByWxOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  <select id="selectByParam" parameterType="rrx.cnuo.service.po.UserPassport" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
     from user_passport
-    where open_id = #{openId,jdbcType=VARCHAR}
-  </select>
-  
-  <select id="selectByWxMiniOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user_passport
-    where mini_open_id = #{miniOpenId,jdbcType=VARCHAR}
+    <where>
+    	<if test="openId != null">
+    		and open_id = #{openId}
+    	</if>
+    	<if test="miniOpenId != null">
+    		and mini_open_id = #{miniOpenId}
+    	</if>
+    	<if test="registTel != null">
+    		and regist_tel = #{registTel}
+    	</if>
+    </where>
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
@@ -50,20 +56,14 @@
       <if test="uid != null">
         uid,
       </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="salt != null">
-        salt,
-      </if>
       <if test="registTel != null">
         regist_tel,
       </if>
-      <if test="openId != null">
-        open_id,
-      </if>
       <if test="miniOpenId != null">
         mini_open_id,
+      </if>
+      <if test="openId != null">
+        open_id,
       </if>
       <if test="nickName != null">
         nick_name,
@@ -71,28 +71,40 @@
       <if test="avatarUrl != null">
         avatar_url,
       </if>
+      <if test="cardNum != null">
+        card_num,
+      </if>
+      <if test="creditPass != null">
+        credit_pass,
+      </if>
+      <if test="boardStatus != null">
+        board_status,
+      </if>
+      <if test="highQuality != null">
+        high_quality,
+      </if>
       <if test="subscribe != null">
         subscribe,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="uid != null">
         #{uid,jdbcType=BIGINT},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="salt != null">
-        #{salt,jdbcType=VARCHAR},
-      </if>
       <if test="registTel != null">
         #{registTel,jdbcType=VARCHAR},
       </if>
-      <if test="openId != null">
-        #{openId,jdbcType=VARCHAR},
-      </if>
       <if test="miniOpenId != null">
         #{miniOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="nickName != null">
         #{nickName,jdbcType=VARCHAR},
@@ -100,8 +112,26 @@
       <if test="avatarUrl != null">
         #{avatarUrl,jdbcType=VARCHAR},
       </if>
+      <if test="cardNum != null">
+        #{cardNum,jdbcType=INTEGER},
+      </if>
+      <if test="creditPass != null">
+        #{creditPass,jdbcType=BIT},
+      </if>
+      <if test="boardStatus != null">
+        #{boardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="highQuality != null">
+        #{highQuality,jdbcType=BIT},
+      </if>
       <if test="subscribe != null">
         #{subscribe,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -109,20 +139,14 @@
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserPassport">
     update user_passport
     <set>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="salt != null">
-        salt = #{salt,jdbcType=VARCHAR},
-      </if>
       <if test="registTel != null">
         regist_tel = #{registTel,jdbcType=VARCHAR},
       </if>
-      <if test="openId != null">
-        open_id = #{openId,jdbcType=VARCHAR},
-      </if>
       <if test="miniOpenId != null">
         mini_open_id = #{miniOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="nickName != null">
         nick_name = #{nickName,jdbcType=VARCHAR},
@@ -130,10 +154,29 @@
       <if test="avatarUrl != null">
         avatar_url = #{avatarUrl,jdbcType=VARCHAR},
       </if>
+      <if test="cardNum != null">
+        card_num = #{cardNum,jdbcType=INTEGER},
+      </if>
+      <if test="creditPass != null">
+        credit_pass = #{creditPass,jdbcType=BIT},
+      </if>
+      <if test="boardStatus != null">
+        board_status = #{boardStatus,jdbcType=TINYINT},
+      </if>
+      <if test="highQuality != null">
+        high_quality = #{highQuality,jdbcType=BIT},
+      </if>
       <if test="subscribe != null">
         subscribe = #{subscribe,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where uid = #{uid,jdbcType=BIGINT}
   </update>
+
 </mapper>

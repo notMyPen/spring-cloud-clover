@@ -52,16 +52,16 @@
 		</dependencies>
 	</dependencyManagement>
 	
-	<!-- <distributionManagement>
+	<distributionManagement>
 	  	<repository>
 	      <id>releases</id>
-	      <url>http://maven.renrenxin.com/nexus/content/repositories/releases/</url>私服releases对应url
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/releases/</url><!-- 私服releases对应url -->
 	    </repository>
 	    <snapshotRepository>
 	      <id>snapshots</id>
-	      <url>http://maven.renrenxin.com/nexus/content/repositories/snapshots/</url>私服snapshots对应url
+	      <url>http://maven.renrenxin.com/nexus/content/repositories/snapshots/</url><!-- 私服snapshots对应url -->
 	    </snapshotRepository>
-  	</distributionManagement> -->
+  	</distributionManagement>
 	
     <build>
         <plugins>

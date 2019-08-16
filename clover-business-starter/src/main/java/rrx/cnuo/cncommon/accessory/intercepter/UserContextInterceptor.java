@@ -46,17 +46,18 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 	}
 
 	@Override
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse respone, Object arg2, Exception arg3)
-			throws Exception {
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse respone, Object arg2, Exception arg3) throws Exception {
 		UserContextHolder.shutdown();
 	}
 	
 	private User getUser(HttpServletRequest request){
 		String userid = request.getHeader("x-user-id");
 		String username = request.getHeader("x-user-name");
+		String currentServiceId = request.getHeader("x-user-serviceName");
 		User user = new User();
 		user.setUserId(Long.parseLong(userid));
 		user.setUserName(username);
+		user.setCurrentServiceId(currentServiceId);
 		return user;
 	}
 	

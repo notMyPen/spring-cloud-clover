@@ -35,29 +35,18 @@ spring:
             enabled: true
             #当注册中心是eureka时设置为true表示开启用小写的serverId进行基于服务的路由转发
             lowerCaseServiceId: true
-  #routes: #routes的信息不用配置也行，直接访问各个微服务的小写serverId即可
-      #- id: order-service
-        #uri: http://localhost:8764
-        #predicates:
-        #- Path=/order/**
-      #- id: user-service
-        #uri: http://localhost:8762
-        #predicates:
-        #- Path=/user/**
-      #- id: biz-service
-        #uri: http://localhost:8763
-        #predicates:
-        #- Path=/biz/**
 
 #注册到eureka
 eureka:
-   #instance:
-      #prefer-ip-address: true
+   instance:
+      prefer-ip-address: true
    client:
       #securePortEnabled: true
       #ssl:
          #key-store: client.p12
          #key-store-password: client
+      #针对新服务(新的eureka client)上线，其它服务(eureka client)获取不及时的问题，可以适当提高client拉去server信息的频率(默认30s)（生产环境注释掉）
+      registerFetchIntervalSeconds: 5
       serviceUrl:
          defaultZone: http://root:123456@localhost:8861/eureka/
 
@@ -85,3 +74,4 @@ management:
          #show-details: always
    security:
       enabled: falsee
+

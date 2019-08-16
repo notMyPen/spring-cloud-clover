@@ -17,6 +17,7 @@ spring:
 
 eureka:
    instance:
+      prefer-ip-address: true
       hostname: localhost
       #securePort: ${server.port}
       #securePortEnabled: true

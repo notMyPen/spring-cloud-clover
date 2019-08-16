@@ -26,7 +26,6 @@ public class TestDistributedTxServiceImpl implements TestDistributedTxService {
 		if(rollBack == null){
 			rollBack = false;
 		}
-		
 		orderFeignService.insertTrade(tradeVo);
 		
 		bizFeignService.insertStatisUser();

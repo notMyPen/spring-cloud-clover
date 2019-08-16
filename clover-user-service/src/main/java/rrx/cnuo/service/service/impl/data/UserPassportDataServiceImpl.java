@@ -1,5 +1,7 @@
 package rrx.cnuo.service.service.impl.data;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,12 +51,19 @@ public class UserPassportDataServiceImpl implements UserPassportDataService {
 		String str = redis.getString(redisKey);
 		UserPassport userPassport = null;
         if (StringUtils.isBlank(str)) {
-        	if(keyType == Const.Platform.WECHAT.getCode()){
-        		userPassport = userPassportMapper.selectByWxOpenId(key);
-        	}else if(keyType == Const.Platform.WX_MINI.getCode()){
-        		userPassport = userPassportMapper.selectByWxMiniOpenId(key);
-        	}else{
+        	if(keyType == 3) {
         		userPassport = userPassportMapper.selectByPrimaryKey(Long.parseLong(key));
+        	}else {
+        		UserPassport param = new UserPassport();
+        		if(keyType == Const.Platform.WX_MINI.getCode()){
+            		param.setMiniOpenId(key);
+            	}else{
+            		param.setOpenId(key);
+            	}
+        		List<UserPassport> userPassports = userPassportMapper.selectByParam(param);
+        		if(userPassports != null && userPassports.size() > 0) {
+        			userPassport = userPassports.get(0);
+        		}
         	}
             if (userPassport != null) {
             	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(userPassport, SimplifyObjJsonUtil.userPassportSimplifyTemplate);

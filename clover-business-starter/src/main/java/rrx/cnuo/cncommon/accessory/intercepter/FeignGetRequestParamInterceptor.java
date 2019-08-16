@@ -30,7 +30,7 @@ import feign.RequestTemplate;
  * @date 2019年8月9日
  */
 @Component
-public class FeignRequestInterceptor implements RequestInterceptor {
+public class FeignGetRequestParamInterceptor implements RequestInterceptor {
 
 	@Autowired private ObjectMapper objectMapper;
 	

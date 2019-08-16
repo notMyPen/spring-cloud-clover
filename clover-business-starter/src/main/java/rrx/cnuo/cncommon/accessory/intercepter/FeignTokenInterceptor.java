@@ -1,14 +1,6 @@
 package rrx.cnuo.cncommon.accessory.intercepter;
 
-import java.util.Enumeration;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -31,12 +23,14 @@ public class FeignTokenInterceptor implements RequestInterceptor {
 //            //此处省略日志记录
 //            return;
 //        }
-        //将获取Token对应的值往下面传（假如我们存到请求头里的key为oauthToken）
-//        requestTemplate.header("oauthToken", getHeaders(getHttpServletRequest()).get("oauthToken"));
-        
+//        requestTemplate.header("x-user-id", getHeaders(getHttpServletRequest()).get("x-user-id"));
+//        requestTemplate.header("x-user-name", getHeaders(getHttpServletRequest()).get("x-user-name"));
+//        requestTemplate.header("x-user-serviceName", getHeaders(getHttpServletRequest()).get("x-user-serviceName"));
+    	
         User user = UserContextHolder.currentUser();
-        requestTemplate.header("x-user-id",user.getUserId() + "");
-        requestTemplate.header("x-user-name",user.getUserName());
+        requestTemplate.header("x-user-id", user.getUserId() + "");
+        requestTemplate.header("x-user-name", user.getUserName());
+        requestTemplate.header("x-user-serviceName", user.getCurrentServiceId());
     }
 
 //    private HttpServletRequest getHttpServletRequest() {
@@ -48,7 +42,7 @@ public class FeignTokenInterceptor implements RequestInterceptor {
 //    }
 
     /**
-     * Feign拦截器拦截请求获取Token对应的值
+     * Feign拦截器拦截请求获取header中所有的值
      * @param request
      * @return
      */

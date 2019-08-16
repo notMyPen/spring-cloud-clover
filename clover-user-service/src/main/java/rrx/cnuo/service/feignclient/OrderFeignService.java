@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import rrx.cnuo.cncommon.accessory.config.MFeignConfig;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.order.TradeVo;
 import rrx.cnuo.service.feignclient.callback.OrderHystrixFeignFallback;
@@ -21,7 +20,7 @@ import rrx.cnuo.service.feignclient.callback.OrderHystrixFeignFallback;
  * @author xuhongyu
  * @date 2019年6月27日
  */
-@FeignClient(name = "order-service",decode404 = true,fallback = OrderHystrixFeignFallback.class,configuration = MFeignConfig.class/*,path = "/api"*/)
+@FeignClient(name = "order-service",decode404 = true,fallback = OrderHystrixFeignFallback.class/*,path = "/api"*/)
 public interface OrderFeignService {
 
 	/**
