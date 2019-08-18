@@ -1,0 +1,2183 @@
+2019-08-17 22:21:23.492 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e13c53c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:23.661 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:21:23.722 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:21:24.022 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:21:24.022 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:21:24.116 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:21:24.116 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:21:24.251 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:21:24.344 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:21:24.569 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:21:24.572 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:21:24.573 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566051684573 with initial instances count: 2
+2019-08-17 22:21:24.780 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:21:30.055 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:21:30.055 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:21:30.113 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:21:30.602 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:21:30.775 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:21:30.789 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:21:30.845 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:21:31.091 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=61add6cd-f73f-3d26-a7da-02ad3fff6324
+2019-08-17 22:21:31.108 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:21:31.113 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:21:31.117 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:21:31.430 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:31.467 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$30140bf3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:31.482 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$ba61713] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:31.491 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$448dbfe0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:31.491 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:31.522 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e13c53c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:21:32.083 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:21:32.109 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:21:32.122 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:21:32.122 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:21:32.294 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:21:32.294 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2164 ms
+2019-08-17 22:21:32.420 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:21:32.420 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:21:32.430 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@25d0b918
+2019-08-17 22:21:33.798 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:21:34.351 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:21:34.405 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:21:34.405 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:21:34.616 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:21:35.438 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:21:35.443 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:21:35.524 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:21:35.586 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:21:35.681 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:21:35.776 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:21:35.805 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:21:35.840 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:21:35.848 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:21:35.858 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:21:35.869 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@7369208e
+2019-08-17 22:21:35.931 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:21:35.931 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:21:35.931 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:21:36.069 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:21:40.600 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:21:40.609 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:21:40.703 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:21:40.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:21:40.708 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:21:40.708 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:21:40.708 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:21:40.708 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:21:40.749 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:21:40.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:21:40.809 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:21:40.809 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 22:21:40.809 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 22:21:40.809 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566051700809 with initial instances count: 2
+2019-08-17 22:21:40.933 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:21:40.961 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:21:40.961 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:21:40.965 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:21:40.968 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2db82155
+2019-08-17 22:21:40.993 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:21:40.993 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:21:40.993 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:21:40.993 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:21:40.993 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@26a004ed
+2019-08-17 22:21:41.024 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:21:41.024 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:21:41.024 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:21:41.024 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:21:41.024 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2d398cfb
+2019-08-17 22:21:41.102 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 22:21:41.133 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#588d630d:0/SimpleConnection@c950fd [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61868]
+2019-08-17 22:21:41.165 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 22:21:41.165 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 22:21:41.165 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566051701165, current=UP, previous=STARTING]
+2019-08-17 22:21:41.165 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:21:41.204 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.GOdCM-_mSV2zEYN3LBxBPQ, bound to: springCloudBus
+2019-08-17 22:21:41.205 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:21:41.223 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.GOdCM-_mSV2zEYN3LBxBPQ.errors
+2019-08-17 22:21:41.266 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.GOdCM-_mSV2zEYN3LBxBPQ.errors' has 1 subscriber(s).
+2019-08-17 22:21:41.266 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.GOdCM-_mSV2zEYN3LBxBPQ.errors' has 2 subscriber(s).
+2019-08-17 22:21:41.282 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.GOdCM-_mSV2zEYN3LBxBPQ
+2019-08-17 22:21:41.313 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:21:41.344 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 22:21:41.345 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 22:21:41.346 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 18.614 seconds (JVM running for 19.127)
+2019-08-17 22:22:54.852 [http-nio-8867-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 22:22:54.853 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 22:22:54.883 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 30 ms
+2019-08-17 22:23:19.433 [http-nio-8867-exec-6] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:23:19.436 [http-nio-8867-exec-6] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-demo-service
+2019-08-17 22:23:19.437 [http-nio-8867-exec-6] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: demo-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:23:19.438 [http-nio-8867-exec-6] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:23:19.452 [http-nio-8867-exec-6] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:23:19.453 [http-nio-8867-exec-6] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client demo-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[192.168.56.1:8869],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8869;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@14aa5519
+2019-08-17 22:23:20.439 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:24:15.053 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1894122] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:15.237 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:24:15.281 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:24:15.585 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:24:15.585 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:24:15.663 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:24:15.663 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:24:15.789 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:24:15.894 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:24:16.116 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:24:16.126 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:24:16.127 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566051856127 with initial instances count: 4
+2019-08-17 22:24:16.313 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:24:23.663 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:24:23.663 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:24:23.693 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:24:24.133 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:24:24.297 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:24:24.337 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:24:24.387 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:24:24.618 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=0b368347-719f-379e-aa9c-f0f69483d7ed
+2019-08-17 22:24:24.649 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:24:24.649 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:24:24.649 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:24:24.872 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:24.912 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$5060f954] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:24.926 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$2bf30474] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:24.937 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$64daad41] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:24.943 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:24.971 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1894122] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:24:25.313 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:24:25.339 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:24:25.346 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:24:25.347 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:24:25.490 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:24:25.490 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 1788 ms
+2019-08-17 22:24:25.616 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:24:25.616 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:24:25.616 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7079f8f0
+2019-08-17 22:24:26.899 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:24:27.370 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:24:27.428 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:24:27.428 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:24:27.632 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:24:28.426 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:24:28.431 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:24:28.507 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:24:28.569 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:24:28.663 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:24:28.785 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:24:28.818 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:24:28.818 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:24:28.850 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:24:28.862 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@641c8ba4
+2019-08-17 22:24:28.896 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:24:28.928 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:24:28.928 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:24:28.929 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:24:29.069 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:24:33.926 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:24:33.926 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:24:34.006 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:24:34.006 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:24:34.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:24:34.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:24:34.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:24:34.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:24:34.053 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:24:34.053 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:24:34.116 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:24:34.116 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 22:24:34.116 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 22:24:34.116 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566051874116 with initial instances count: 4
+2019-08-17 22:24:34.239 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:24:34.252 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:24:34.252 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:24:34.267 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:24:34.267 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3dcf6026
+2019-08-17 22:24:34.299 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:24:34.299 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:24:34.299 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:24:34.299 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:24:34.314 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@91c11b6
+2019-08-17 22:24:34.342 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:24:34.343 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:24:34.343 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:24:34.343 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:24:34.344 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@363d29dd
+2019-08-17 22:24:34.430 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 22:24:34.480 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#528f5b7f:0/SimpleConnection@230dd372 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61909]
+2019-08-17 22:24:34.507 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 22:24:34.507 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 22:24:34.507 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566051874507, current=UP, previous=STARTING]
+2019-08-17 22:24:34.507 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:24:34.522 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.zAIuCf_wTwyedfOuX3Dcrg, bound to: springCloudBus
+2019-08-17 22:24:34.538 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:24:34.554 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.zAIuCf_wTwyedfOuX3Dcrg.errors
+2019-08-17 22:24:34.600 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.zAIuCf_wTwyedfOuX3Dcrg.errors' has 1 subscriber(s).
+2019-08-17 22:24:34.600 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.zAIuCf_wTwyedfOuX3Dcrg.errors' has 2 subscriber(s).
+2019-08-17 22:24:34.632 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.zAIuCf_wTwyedfOuX3Dcrg
+2019-08-17 22:24:34.663 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:24:34.691 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 22:24:34.691 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 22:24:34.692 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 20.394 seconds (JVM running for 20.847)
+2019-08-17 22:24:45.362 [http-nio-8867-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 22:24:45.363 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 22:24:45.379 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 16 ms
+2019-08-17 22:29:01.086 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8128658c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:01.250 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:29:01.297 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:29:01.601 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:29:01.601 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:29:01.693 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:29:01.694 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:29:01.821 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:29:01.924 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:29:02.147 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:29:02.163 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:29:02.164 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566052142164 with initial instances count: 4
+2019-08-17 22:29:02.377 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:29:07.282 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:29:07.290 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:29:07.311 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:29:07.788 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:29:07.952 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:29:07.991 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:29:08.038 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:29:08.282 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=0b368347-719f-379e-aa9c-f0f69483d7ed
+2019-08-17 22:29:08.298 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:29:08.309 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:29:08.309 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:29:08.522 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.554 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$d0001dbe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.569 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$ab9228de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.585 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$e479d1ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.585 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.616 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8128658c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:29:08.969 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:29:08.981 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:29:08.996 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:29:08.996 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:29:09.136 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:29:09.136 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 1801 ms
+2019-08-17 22:29:09.266 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:29:09.266 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:29:09.282 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6fd7aba8
+2019-08-17 22:29:10.616 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:29:11.102 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:29:11.164 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:29:11.164 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:29:11.394 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:29:12.201 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:29:12.207 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:29:12.297 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:29:12.368 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:29:12.456 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:29:12.538 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:29:12.569 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:29:12.585 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:29:12.601 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:29:12.616 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:29:12.632 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@39a09c0
+2019-08-17 22:29:12.697 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:29:12.698 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:29:12.698 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:29:12.860 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:29:18.838 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:29:18.838 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:29:18.924 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:29:18.926 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:29:18.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:29:18.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:29:18.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:29:18.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:29:18.966 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:29:18.966 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:29:18.966 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:29:18.967 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:29:18.967 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:29:18.967 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:29:18.967 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:29:18.967 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:29:19.023 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:29:19.023 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 22:29:19.023 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 22:29:19.023 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566052159023 with initial instances count: 4
+2019-08-17 22:29:19.148 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:29:19.164 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:29:19.164 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:29:19.183 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:29:19.185 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@42d96745
+2019-08-17 22:29:19.218 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:29:19.219 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:29:19.219 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:29:19.221 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:29:19.221 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@57859e2c
+2019-08-17 22:29:19.243 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:29:19.244 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:29:19.244 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:29:19.245 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:29:19.245 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4138af7
+2019-08-17 22:29:19.313 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 22:29:19.366 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#e5c5e6:0/SimpleConnection@164cad52 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61956]
+2019-08-17 22:29:19.393 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 22:29:19.394 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 22:29:19.395 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566052159395, current=UP, previous=STARTING]
+2019-08-17 22:29:19.396 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:29:19.421 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:29:19.428 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.J903yuKER2m9AwIZuljIVA, bound to: springCloudBus
+2019-08-17 22:29:19.449 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.J903yuKER2m9AwIZuljIVA.errors
+2019-08-17 22:29:19.492 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.J903yuKER2m9AwIZuljIVA.errors' has 1 subscriber(s).
+2019-08-17 22:29:19.492 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.J903yuKER2m9AwIZuljIVA.errors' has 2 subscriber(s).
+2019-08-17 22:29:19.523 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.J903yuKER2m9AwIZuljIVA
+2019-08-17 22:29:19.554 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:29:19.570 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 22:29:19.570 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 22:29:19.570 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 19.241 seconds (JVM running for 19.716)
+2019-08-17 22:29:31.625 [http-nio-8867-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 22:29:31.625 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 22:29:31.641 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 16 ms
+2019-08-17 22:30:19.384 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6153242a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:19.616 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:30:19.687 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:30:20.023 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:30:20.023 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:30:20.148 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:30:20.148 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:30:20.395 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:30:20.491 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:30:20.819 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:30:20.819 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:30:20.819 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566052220819 with initial instances count: 4
+2019-08-17 22:30:21.055 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:30:28.347 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:30:28.347 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:30:28.384 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:30:28.970 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:30:29.163 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:30:29.194 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:30:29.250 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:30:29.554 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=0b368347-719f-379e-aa9c-f0f69483d7ed
+2019-08-17 22:30:29.566 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:30:29.581 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:30:29.581 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:30:29.869 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:29.908 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$b02adc5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:29.927 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$8bbce77c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:29.940 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$c4a49049] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:29.949 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:29.977 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6153242a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:30:30.413 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:30:30.428 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:30:30.435 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:30:30.435 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:30:30.586 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:30:30.590 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2195 ms
+2019-08-17 22:30:30.778 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:30:30.778 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:30:30.788 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@17ea3bc0
+2019-08-17 22:30:32.313 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:30:32.750 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:30:32.851 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:30:32.852 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:30:33.147 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:30:34.085 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:30:34.095 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:30:34.177 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:30:34.250 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:30:34.359 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:30:34.481 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:30:34.491 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:30:34.553 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:30:34.585 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:30:34.585 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:30:34.616 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@123fd460
+2019-08-17 22:30:34.702 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:30:34.703 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:30:34.703 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:30:34.865 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:30:40.991 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:30:40.997 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:30:41.086 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:30:41.086 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:30:41.086 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:30:41.086 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:30:41.086 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:30:41.086 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:30:41.187 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:30:41.188 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:30:41.252 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:30:41.252 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 22:30:41.252 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 22:30:41.252 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566052241252 with initial instances count: 4
+2019-08-17 22:30:41.409 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:30:41.443 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:30:41.443 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:30:41.448 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:30:41.451 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3343997b
+2019-08-17 22:30:41.491 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:30:41.491 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:30:41.491 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:30:41.491 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:30:41.491 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7734695d
+2019-08-17 22:30:41.523 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:30:41.523 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:30:41.523 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:30:41.523 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:30:41.523 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@76737130
+2019-08-17 22:30:41.632 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 22:30:41.724 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#4419cd6e:0/SimpleConnection@a59324f [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61977]
+2019-08-17 22:30:41.750 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 22:30:41.750 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 22:30:41.750 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566052241750, current=UP, previous=STARTING]
+2019-08-17 22:30:41.750 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:30:41.794 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:30:41.802 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.nId2mFXOR8SRMXsP8RKIfg, bound to: springCloudBus
+2019-08-17 22:30:41.869 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.nId2mFXOR8SRMXsP8RKIfg.errors
+2019-08-17 22:30:41.977 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.nId2mFXOR8SRMXsP8RKIfg.errors' has 1 subscriber(s).
+2019-08-17 22:30:41.978 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.nId2mFXOR8SRMXsP8RKIfg.errors' has 2 subscriber(s).
+2019-08-17 22:30:42.009 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.nId2mFXOR8SRMXsP8RKIfg
+2019-08-17 22:30:42.052 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:30:42.092 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 22:30:42.094 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 22:30:42.096 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 23.992 seconds (JVM running for 24.865)
+2019-08-17 22:30:42.153 [http-nio-8867-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 22:30:42.154 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 22:30:42.172 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 18 ms
+2019-08-17 22:32:05.505 [http-nio-8867-exec-7] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:32:05.509 [http-nio-8867-exec-7] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-demo-service
+2019-08-17 22:32:05.509 [http-nio-8867-exec-7] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: demo-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:32:05.510 [http-nio-8867-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:32:05.530 [http-nio-8867-exec-7] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:32:05.533 [http-nio-8867-exec-7] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client demo-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[192.168.56.1:8869],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8869;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@77266300
+2019-08-17 22:32:06.512 [PollingServerListUpdater-1] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:35:41.190 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:58:29.508 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$db92f8af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:29.702 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:58:29.758 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:58:30.082 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:58:30.083 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:58:30.200 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:58:30.201 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:58:30.345 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:58:30.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:58:30.742 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:58:30.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:58:30.747 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566053910746 with initial instances count: 2
+2019-08-17 22:58:31.044 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:58:37.819 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:58:37.820 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:58:37.855 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:58:38.464 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:58:38.672 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:58:38.720 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:58:38.782 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:58:39.205 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=d9872fb8-918f-3571-b857-46caf073d8fd
+2019-08-17 22:58:39.228 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:58:39.232 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:58:39.236 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:58:39.539 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:39.595 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$2a6ab0e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:39.618 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$5fcbc01] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:39.630 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$3ee464ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:39.637 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:39.673 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$db92f8af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:58:40.132 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:58:40.149 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:58:40.162 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:58:40.162 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:58:40.372 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:58:40.372 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2508 ms
+2019-08-17 22:58:40.535 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:58:40.535 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:58:40.728 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@63d3c9dc
+2019-08-17 22:58:42.351 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:58:42.827 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:58:42.916 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:58:42.916 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:58:43.203 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:58:43.848 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: 03812ec2-8031-4f5d-8d8a-44340ec3f6a7
+
+2019-08-17 22:58:43.983 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@390978, org.springframework.security.web.context.SecurityContextPersistenceFilter@5cb32140, org.springframework.security.web.header.HeaderWriterFilter@7827cdfc, org.springframework.security.web.csrf.CsrfFilter@54cce500, org.springframework.security.web.authentication.logout.LogoutFilter@2dc319cf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@438a65a7, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1735e1c4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@561c031, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6f12fca0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55a07f97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50d6af87, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7343d843, org.springframework.security.web.session.SessionManagementFilter@3398ed12, org.springframework.security.web.access.ExceptionTranslationFilter@da5b46f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6892d403]
+2019-08-17 22:58:44.008 [main] WARN  o.s.b.a.g.t.GroovyTemplateAutoConfiguration
+				-Cannot find template location: classpath:/templates/ (please add some templates, check your Groovy configuration, or set spring.groovy.template.check-template-location=false)
+2019-08-17 22:58:44.422 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:58:44.861 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:58:44.875 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:58:44.984 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:58:45.171 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:58:45.286 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:58:45.336 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:58:45.349 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:58:45.355 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:58:45.394 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:58:45.418 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6b8683b8
+2019-08-17 22:58:45.492 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:58:45.493 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:58:45.494 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:58:45.749 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:58:51.479 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:58:51.482 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:58:51.740 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:58:51.746 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:58:51.748 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:58:51.749 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:58:51.749 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:58:51.749 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:58:51.860 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:58:51.864 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:58:51.865 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:58:51.866 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:58:51.867 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:58:51.867 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:58:51.867 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:58:51.867 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:58:52.003 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:58:52.004 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 22:58:52.006 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 22:58:52.007 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566053932007 with initial instances count: 2
+2019-08-17 22:58:52.197 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:58:52.256 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:58:52.256 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:58:52.261 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:58:52.266 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@23973547
+2019-08-17 22:58:52.464 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:58:52.466 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:58:52.466 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:58:52.467 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:58:52.467 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3fe1b278
+2019-08-17 22:58:52.515 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 22:58:52.518 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:58:52.518 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 22:58:52.520 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 22:58:52.521 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@209baf91
+2019-08-17 22:58:52.708 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 22:58:52.826 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#6ab1f85b:0/SimpleConnection@258ff54a [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62379]
+2019-08-17 22:58:52.982 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 22:58:52.986 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 22:58:52.987 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566053932987, current=UP, previous=STARTING]
+2019-08-17 22:58:52.990 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:58:53.040 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:58:53.085 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA, bound to: springCloudBus
+2019-08-17 22:58:53.123 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors
+2019-08-17 22:58:53.221 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors' has 1 subscriber(s).
+2019-08-17 22:58:53.222 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors' has 2 subscriber(s).
+2019-08-17 22:58:53.280 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA
+2019-08-17 22:58:53.366 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:58:53.489 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 22:58:53.491 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 22:58:53.492 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 25.115 seconds (JVM running for 25.695)
+2019-08-17 22:58:53.500 [main] ERROR com.netflix.zuul.FilterFileManager
+				-Error accessing directory in classloader. path=E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy
+java.lang.NullPointerException: null
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:130)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+2019-08-17 22:58:53.503 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener
+				-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-17 22:58:53.504 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Unregistering application ZUUL-SERVER with eureka with status DOWN
+2019-08-17 22:58:53.504 [main] WARN  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566053933504, current=DOWN, previous=UP]
+2019-08-17 22:58:53.505 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 22:58:53.510 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 22:58:53.524 [main] INFO  o.s.a.r.l.SimpleMessageListenerContainer
+				-Waiting for workers to finish.
+2019-08-17 22:58:54.285 [main] INFO  o.s.a.r.l.SimpleMessageListenerContainer
+				-Successfully waited for workers to finish.
+2019-08-17 22:58:54.285 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-stopped inbound.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA
+2019-08-17 22:58:54.286 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors' has 1 subscriber(s).
+2019-08-17 22:58:54.286 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors' has 0 subscriber(s).
+2019-08-17 22:58:54.289 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:58:54.289 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 0 subscriber(s).
+2019-08-17 22:58:54.289 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-stopped _org.springframework.integration.errorLogger
+2019-08-17 22:58:54.289 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Stopping filter initializer
+2019-08-17 22:58:54.294 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 22:58:54.294 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 22:58:54.295 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 22:58:54.300 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:58:54.318 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Shutting down ExecutorService 'taskScheduler'
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBusInput
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBus.anonymous.MQf-bvJhSGOFcevQOIuVlA.errors
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: nullChannel
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBusOutput
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: errorChannel
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-08-17 22:58:55.076 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6b8683b8
+2019-08-17 22:58:55.076 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:58:58.077 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Unregistering ...
+2019-08-17 22:58:58.081 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - deregister  status: 200
+2019-08-17 22:58:58.085 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:58:58.173 [main] ERROR o.s.boot.SpringApplication
+				-Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:783)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	... 5 common frames omitted
+Caused by: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:135)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	... 6 common frames omitted
+2019-08-17 22:58:58.175 [Thread-10] INFO  c.n.l.PollingServerListUpdater
+				-Shutting down the Executor Pool for PollingServerListUpdater
+2019-08-17 22:59:37.815 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc388fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:38.000 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 22:59:38.050 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 22:59:38.369 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 22:59:38.369 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 22:59:38.488 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 22:59:38.488 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 22:59:38.610 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 22:59:38.706 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 22:59:38.916 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 22:59:38.918 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 22:59:38.921 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566053978920 with initial instances count: 3
+2019-08-17 22:59:39.171 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 22:59:44.741 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 22:59:44.742 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 22:59:44.777 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 22:59:45.388 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:59:45.603 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:59:45.632 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:59:45.693 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 22:59:46.038 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=d9872fb8-918f-3571-b857-46caf073d8fd
+2019-08-17 22:59:46.058 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 22:59:46.062 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 22:59:46.067 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 22:59:46.365 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.420 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$5b9b412c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.436 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$372d4c4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.448 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$7014f519] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.456 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.503 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc388fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 22:59:46.980 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 22:59:47.000 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 22:59:47.016 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 22:59:47.017 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 22:59:47.216 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 22:59:47.217 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2431 ms
+2019-08-17 22:59:47.369 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:59:47.370 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:59:47.381 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1ab9c735
+2019-08-17 22:59:49.401 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 22:59:49.869 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 22:59:49.945 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 22:59:49.945 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 22:59:50.236 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 22:59:50.850 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: d7790269-6fa5-460c-b026-e7515a39e69c
+
+2019-08-17 22:59:50.969 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f12fca0, org.springframework.security.web.context.SecurityContextPersistenceFilter@43cf97a8, org.springframework.security.web.header.HeaderWriterFilter@470866d1, org.springframework.security.web.csrf.CsrfFilter@5e085259, org.springframework.security.web.authentication.logout.LogoutFilter@1ec09a68, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18d09283, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@38f3dbbf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@12c30824, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27e656e6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66df362c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78e59b04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d0e43d6, org.springframework.security.web.session.SessionManagementFilter@5aefdb9e, org.springframework.security.web.access.ExceptionTranslationFilter@7077ae9c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4779df3d]
+2019-08-17 22:59:50.991 [main] WARN  o.s.b.a.g.t.GroovyTemplateAutoConfiguration
+				-Cannot find template location: classpath:/templates/ (please add some templates, check your Groovy configuration, or set spring.groovy.template.check-template-location=false)
+2019-08-17 22:59:51.376 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 22:59:51.789 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 22:59:51.800 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 22:59:51.894 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 22:59:52.036 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 22:59:52.150 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 22:59:52.214 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 22:59:52.238 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 22:59:52.245 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 22:59:52.260 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 22:59:52.281 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@25639668
+2019-08-17 22:59:52.376 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 22:59:52.376 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 22:59:52.376 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 22:59:52.547 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 23:00:00.687 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 23:00:00.688 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 23:00:00.790 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 23:00:00.799 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 23:00:00.802 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 23:00:00.802 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 23:00:00.802 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 23:00:00.802 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 23:00:00.846 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:00:00.847 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 23:00:00.847 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 23:00:00.847 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 23:00:00.847 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 23:00:00.848 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 23:00:00.848 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 23:00:00.848 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 23:00:00.919 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 23:00:00.919 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 23:00:00.921 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 23:00:00.922 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566054000922 with initial instances count: 3
+2019-08-17 23:00:01.050 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:00:01.080 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 23:00:01.081 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:00:01.086 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:00:01.090 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2125086c
+2019-08-17 23:00:01.131 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:00:01.132 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 23:00:01.132 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:00:01.133 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:00:01.133 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@49e8548d
+2019-08-17 23:00:01.159 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:00:01.160 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 23:00:01.160 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:00:01.160 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:00:01.161 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6d0fe80c
+2019-08-17 23:00:01.265 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 23:00:01.309 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#3d8bd881:0/SimpleConnection@63bb52ea [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62403]
+2019-08-17 23:00:01.335 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 23:00:01.337 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 23:00:01.337 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566054001337, current=UP, previous=STARTING]
+2019-08-17 23:00:01.338 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 23:00:01.361 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 23:00:01.369 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q, bound to: springCloudBus
+2019-08-17 23:00:01.405 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors
+2019-08-17 23:00:01.474 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors' has 1 subscriber(s).
+2019-08-17 23:00:01.475 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors' has 2 subscriber(s).
+2019-08-17 23:00:01.502 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q
+2019-08-17 23:00:01.535 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 23:00:01.557 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 23:00:01.558 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 23:00:01.559 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 24.828 seconds (JVM running for 25.408)
+2019-08-17 23:00:01.566 [main] ERROR com.netflix.zuul.FilterFileManager
+				-Error accessing directory in classloader. path=/WorkFile/spring-cloud-clover/clover-zuul-service/src/main/java/rrx/cnuo/service/groovy/GroovyFilter.groovy
+java.lang.NullPointerException: null
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:130)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+2019-08-17 23:00:01.569 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener
+				-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-17 23:00:01.570 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Unregistering application ZUUL-SERVER with eureka with status DOWN
+2019-08-17 23:00:01.570 [main] WARN  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566054001570, current=DOWN, previous=UP]
+2019-08-17 23:00:01.570 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 23:00:01.574 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 23:00:01.584 [main] INFO  o.s.a.r.l.SimpleMessageListenerContainer
+				-Waiting for workers to finish.
+2019-08-17 23:00:02.505 [main] INFO  o.s.a.r.l.SimpleMessageListenerContainer
+				-Successfully waited for workers to finish.
+2019-08-17 23:00:02.505 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-stopped inbound.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q
+2019-08-17 23:00:02.506 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors' has 1 subscriber(s).
+2019-08-17 23:00:02.506 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors' has 0 subscriber(s).
+2019-08-17 23:00:02.508 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 23:00:02.508 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 0 subscriber(s).
+2019-08-17 23:00:02.508 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-stopped _org.springframework.integration.errorLogger
+2019-08-17 23:00:02.508 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Stopping filter initializer
+2019-08-17 23:00:02.510 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 23:00:02.511 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 23:00:02.512 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook removed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 23:00:02.514 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-17 23:00:02.522 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Shutting down ExecutorService 'taskScheduler'
+2019-08-17 23:00:02.832 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBus.anonymous.04UoWQXWT3S8yqbI01RE_Q.errors
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBusInput
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: errorChannel
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: springCloudBusOutput
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: nullChannel
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2019-08-17 23:00:02.833 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@25639668
+2019-08-17 23:00:02.833 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 23:00:05.834 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Unregistering ...
+2019-08-17 23:00:05.838 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - deregister  status: 200
+2019-08-17 23:00:05.842 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 23:00:05.929 [main] ERROR o.s.boot.SpringApplication
+				-Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:783)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	... 5 common frames omitted
+Caused by: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:135)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	... 6 common frames omitted
+2019-08-17 23:00:05.931 [Thread-10] INFO  c.n.l.PollingServerListUpdater
+				-Shutting down the Executor Pool for PollingServerListUpdater
+2019-08-17 23:01:22.276 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$13251f53] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:22.471 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 23:01:22.528 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 23:01:22.867 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 23:01:22.867 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 23:01:23.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 23:01:23.006 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 23:01:23.127 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:01:23.224 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 23:01:23.224 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 23:01:23.224 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 23:01:23.224 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 23:01:23.225 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 23:01:23.225 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 23:01:23.225 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 23:01:23.439 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 23:01:23.442 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 23:01:23.446 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566054083445 with initial instances count: 3
+2019-08-17 23:01:23.688 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 23:01:28.124 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 23:01:28.124 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 23:01:28.156 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 23:01:28.724 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:01:28.923 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:01:28.954 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:01:29.023 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:01:29.362 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=d9872fb8-918f-3571-b857-46caf073d8fd
+2019-08-17 23:01:29.387 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 23:01:29.394 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 23:01:29.398 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 23:01:29.673 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:29.719 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$61fcd785] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:29.734 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$3d8ee2a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:29.747 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$76768b72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:29.758 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:29.804 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$13251f53] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:01:30.226 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 23:01:30.244 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 23:01:30.259 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 23:01:30.259 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 23:01:30.451 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 23:01:30.452 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2287 ms
+2019-08-17 23:01:30.622 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 23:01:30.622 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 23:01:30.761 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2ebf524
+2019-08-17 23:01:32.316 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 23:01:32.786 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 23:01:32.867 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 23:01:32.867 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 23:01:33.142 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 23:01:33.779 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: 778ef5fe-2987-472c-a038-433401e3f115
+
+2019-08-17 23:01:33.912 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a906078, org.springframework.security.web.context.SecurityContextPersistenceFilter@47ab3688, org.springframework.security.web.header.HeaderWriterFilter@21539796, org.springframework.security.web.csrf.CsrfFilter@5af1b221, org.springframework.security.web.authentication.logout.LogoutFilter@6de4071b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6d40a2b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@755033c5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@fd5c7f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@d863bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6413eeb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11fa11b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3724ab90, org.springframework.security.web.session.SessionManagementFilter@6c68f29c, org.springframework.security.web.access.ExceptionTranslationFilter@dc3eda6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1690929]
+2019-08-17 23:01:33.930 [main] WARN  o.s.b.a.g.t.GroovyTemplateAutoConfiguration
+				-Cannot find template location: classpath:/templates/ (please add some templates, check your Groovy configuration, or set spring.groovy.template.check-template-location=false)
+2019-08-17 23:01:34.331 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 23:01:34.742 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 23:01:34.748 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 23:01:34.847 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 23:01:35.031 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 23:01:35.160 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 23:01:35.235 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 23:01:35.247 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 23:01:35.253 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 23:01:35.328 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 23:01:35.343 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@b21cbbf
+2019-08-17 23:01:35.461 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 23:01:35.461 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 23:01:35.461 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 23:01:35.684 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 23:01:42.566 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 23:01:42.567 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 23:01:42.682 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 23:01:42.687 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 23:01:42.694 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 23:01:42.694 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 23:01:42.695 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 23:01:42.696 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 23:01:42.742 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:01:42.743 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 23:01:42.743 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 23:01:42.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 23:01:42.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 23:01:42.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 23:01:42.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 23:01:42.744 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 23:01:42.812 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 23:01:42.813 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 23:01:42.815 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 23:01:42.816 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566054102815 with initial instances count: 3
+2019-08-17 23:01:42.955 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:01:42.990 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 23:01:42.992 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:01:42.998 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:01:43.003 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@d640fe6
+2019-08-17 23:01:43.045 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:01:43.046 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 23:01:43.046 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:01:43.046 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:01:43.047 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7640a191
+2019-08-17 23:01:43.086 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:01:43.088 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 23:01:43.088 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:01:43.089 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:01:43.090 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@62a78446
+2019-08-17 23:01:43.192 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 23:01:43.239 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#1c8e2850:0/SimpleConnection@163b8acc [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62426]
+2019-08-17 23:01:43.270 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 23:01:43.271 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 23:01:43.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566054103272, current=UP, previous=STARTING]
+2019-08-17 23:01:43.273 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 23:01:43.310 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.4h_FG-hXSpO8K8vcxFVAcg, bound to: springCloudBus
+2019-08-17 23:01:43.311 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 23:01:43.334 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.4h_FG-hXSpO8K8vcxFVAcg.errors
+2019-08-17 23:01:43.410 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.4h_FG-hXSpO8K8vcxFVAcg.errors' has 1 subscriber(s).
+2019-08-17 23:01:43.410 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.4h_FG-hXSpO8K8vcxFVAcg.errors' has 2 subscriber(s).
+2019-08-17 23:01:43.432 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.4h_FG-hXSpO8K8vcxFVAcg
+2019-08-17 23:01:43.472 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 23:01:43.493 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 23:01:43.494 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 23:01:43.496 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 22.347 seconds (JVM running for 22.912)
+2019-08-17 23:02:02.872 [http-nio-8867-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 23:02:02.872 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 23:02:02.889 [http-nio-8867-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 17 ms
+2019-08-17 23:03:37.120 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc4e73c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:37.311 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 23:03:37.365 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 23:03:37.689 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 23:03:37.690 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 23:03:37.811 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 23:03:37.812 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 23:03:37.980 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:03:38.114 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 23:03:38.114 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 23:03:38.114 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 23:03:38.114 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 23:03:38.114 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 23:03:38.115 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 23:03:38.115 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 23:03:38.331 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 23:03:38.333 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Not registering with Eureka server per configuration
+2019-08-17 23:03:38.336 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566054218335 with initial instances count: 4
+2019-08-17 23:03:38.593 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 23:03:42.726 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 23:03:42.727 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 23:03:42.759 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-17 23:03:43.246 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:03:43.416 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:03:43.445 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:03:43.505 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-08-17 23:03:43.815 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=4586b805-2002-3275-8ad3-e5e5c43b09e5
+2019-08-17 23:03:43.830 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-17 23:03:43.835 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-17 23:03:43.839 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor
+				-No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-17 23:03:44.103 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.155 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$1b262bfb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.188 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$f6b8371b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.202 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$2f9fdfe8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.212 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.250 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc4e73c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-17 23:03:44.716 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 8867 (http)
+2019-08-17 23:03:44.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-8867"]
+2019-08-17 23:03:44.744 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-17 23:03:44.744 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-17 23:03:44.929 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-17 23:03:44.929 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 2161 ms
+2019-08-17 23:03:45.085 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 23:03:45.085 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 23:03:45.096 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@35524549
+2019-08-17 23:03:46.786 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler
+				-Initializing ExecutorService 'taskScheduler'
+2019-08-17 23:03:47.237 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar
+				-Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2019-08-17 23:03:47.324 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-17 23:03:47.324 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-17 23:03:47.601 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-17 23:03:48.116 [main] WARN  o.s.b.a.g.t.GroovyTemplateAutoConfiguration
+				-Cannot find template location: classpath:/templates/ (please add some templates, check your Groovy configuration, or set spring.groovy.template.check-template-location=false)
+2019-08-17 23:03:48.873 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Shutting down DiscoveryClient ...
+2019-08-17 23:03:48.882 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Completed shut down of DiscoveryClient
+2019-08-17 23:03:48.969 [main] INFO  o.s.c.n.zuul.ZuulFilterInitializer
+				-Starting filter initializer
+2019-08-17 23:03:49.049 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 27 endpoint(s) beneath base path '/actuator'
+2019-08-17 23:03:49.152 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusInput' has 1 subscriber(s).
+2019-08-17 23:03:49.267 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusInput
+2019-08-17 23:03:49.321 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel nullChannel
+2019-08-17 23:03:49.331 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBusOutput
+2019-08-17 23:03:49.336 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel errorChannel
+2019-08-17 23:03:49.367 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2f408960
+2019-08-17 23:03:49.423 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageHandler errorLogger
+2019-08-17 23:03:49.463 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-17 23:03:49.464 [main] INFO  o.s.i.c.PublishSubscribeChannel
+				-Channel 'zuul-server-1.errorChannel' has 1 subscriber(s).
+2019-08-17 23:03:49.464 [main] INFO  o.s.i.endpoint.EventDrivenConsumer
+				-started _org.springframework.integration.errorLogger
+2019-08-17 23:03:49.657 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Fetching config from server at : http://192.168.56.1:8866/
+2019-08-17 23:03:53.115 [main] INFO  o.s.c.c.c.ConfigServicePropertySourceLocator
+				-Located environment: name=cn-zuul, profiles=[dev], label=dev, version=16f77cc582e38b014390445c31af6f823666798d, state=null
+2019-08-17 23:03:53.115 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration
+				-Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/cn-zuul-dev.yml'}]}
+2019-08-17 23:03:53.220 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-17 23:03:53.223 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-17 23:03:53.225 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-17 23:03:53.226 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-17 23:03:53.226 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-17 23:03:53.226 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-17 23:03:53.266 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:03:53.267 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-17 23:03:53.268 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-17 23:03:53.337 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-17 23:03:53.338 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-17 23:03:53.340 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-17 23:03:53.341 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566054233341 with initial instances count: 4
+2019-08-17 23:03:53.487 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:03:53.526 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2019-08-17 23:03:53.526 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:03:53.530 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:03:53.533 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@568e2d65
+2019-08-17 23:03:53.586 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:03:53.587 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+2019-08-17 23:03:53.587 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:03:53.601 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:03:53.602 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@109f95b1
+2019-08-17 23:03:53.634 [main] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:03:53.635 [main] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-order-service
+2019-08-17 23:03:53.635 [main] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:03:53.637 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:03:53.637 [main] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3f523dae
+2019-08-17 23:03:53.748 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Attempting to connect to: [localhost:5672]
+2019-08-17 23:03:53.790 [main] INFO  o.s.a.r.c.CachingConnectionFactory
+				-Created new connection: rabbitConnectionFactory#79273a4f:0/SimpleConnection@5220e6ff [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62496]
+2019-08-17 23:03:53.825 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel
+				-Channel 'zuul-server-1.springCloudBusOutput' has 1 subscriber(s).
+2019-08-17 23:03:53.827 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application ZUUL-SERVER with eureka with status UP
+2019-08-17 23:03:53.827 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566054233827, current=UP, previous=STARTING]
+2019-08-17 23:03:53.829 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867: registering service...
+2019-08-17 23:03:53.857 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_ZUUL-SERVER/192.168.56.1:zuul-server:8867 - registration status: 204
+2019-08-17 23:03:53.863 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner
+				-declaring queue for inbound: springCloudBus.anonymous.Fv_S_OPKTr6IuviNSfD7Xw, bound to: springCloudBus
+2019-08-17 23:03:53.887 [main] INFO  o.s.i.m.IntegrationMBeanExporter
+				-Registering MessageChannel springCloudBus.anonymous.Fv_S_OPKTr6IuviNSfD7Xw.errors
+2019-08-17 23:03:53.966 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.Fv_S_OPKTr6IuviNSfD7Xw.errors' has 1 subscriber(s).
+2019-08-17 23:03:53.966 [main] INFO  o.s.c.s.binder.BinderErrorChannel
+				-Channel 'zuul-server-1.springCloudBus.anonymous.Fv_S_OPKTr6IuviNSfD7Xw.errors' has 2 subscriber(s).
+2019-08-17 23:03:53.992 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter
+				-started inbound.springCloudBus.anonymous.Fv_S_OPKTr6IuviNSfD7Xw
+2019-08-17 23:03:54.030 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-8867"]
+2019-08-17 23:03:54.053 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 8867 (http) with context path ''
+2019-08-17 23:03:54.053 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 8867
+2019-08-17 23:03:54.055 [main] INFO  r.c.s.CnZuulGatewayServiceApplication
+				-Started CnZuulGatewayServiceApplication in 18.065 seconds (JVM running for 18.619)
+2019-08-17 23:04:06.280 [http-nio-8867-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-17 23:04:06.280 [http-nio-8867-exec-2] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-17 23:04:06.297 [http-nio-8867-exec-2] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 17 ms
+2019-08-17 23:04:27.950 [http-nio-8867-exec-4] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:04:27.956 [http-nio-8867-exec-4] INFO  c.n.u.c.ShutdownEnabledTimer
+				-Shutdown hook installed for: NFLoadBalancer-PingTimer-demo-service
+2019-08-17 23:04:27.956 [http-nio-8867-exec-4] INFO  c.n.loadbalancer.BaseLoadBalancer
+				-Client: demo-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2019-08-17 23:04:27.957 [http-nio-8867-exec-4] INFO  c.n.l.DynamicServerListLoadBalancer
+				-Using serverListUpdater PollingServerListUpdater
+2019-08-17 23:04:27.983 [http-nio-8867-exec-4] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:04:27.985 [http-nio-8867-exec-4] INFO  c.n.l.DynamicServerListLoadBalancer
+				-DynamicServerListLoadBalancer for client demo-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=demo-service,current list of Servers=[192.168.56.1:8869],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8869;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7ae4dab8
+2019-08-17 23:04:28.960 [PollingServerListUpdater-0] INFO  c.n.config.ChainedDynamicProperty
+				-Flipping property: demo-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2019-08-17 23:08:53.270 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:13:53.271 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:18:53.273 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:23:53.274 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:28:53.275 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:33:53.277 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:38:53.281 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-17 23:43:53.283 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration

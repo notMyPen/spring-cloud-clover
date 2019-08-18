@@ -5,18 +5,37 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rrx</groupId>
-    <artifactId>clover-springboot-parent</artifactId>
+    <artifactId>spring-cloud-clover</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>clover-springboot-parent</name>
     <description>clover-springboot-parent</description>
 
+	<modules>
+        <module>clover-business-starter</module>
+		<module>clover-client</module>
+		<module>clover-config-service</module>
+		<module>clover-eureka-service</module>
+		<module>clover-gateway-service</module>
+		<module>clover-hystrix-turbine-dashboard</module>
+		<module>clover-txlcn-tm</module>
+		<module>clover-biz-service</module>
+		<module>clover-order-service</module>
+		<module>clover-user-service</module>
+		<module>clover-zuul-service</module>
+		<module>clover-auth-service</module>
+		<module>demo</module>
+		<module>oauth2-JWT-client-demo</module>
+    </modules>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
+        <clover-client.version>0.0.1-SNAPSHOT</clover-client.version>
+        <clover-business-starter.version>0.0.1-SNAPSHOT</clover-business-starter.version>
     </properties>
 
 	<parent>
@@ -38,6 +57,11 @@
 	        <scope>test</scope>
 	    </dependency>
 	
+		<!-- 健康检查、审计、统计和监控/HTTP追踪 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
     </dependencies>
 
 	<dependencyManagement>
@@ -51,6 +75,18 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<!--注意： 这里必须要添加，否则各种依赖有问题 -->
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	
 	<distributionManagement>
 	  	<repository>

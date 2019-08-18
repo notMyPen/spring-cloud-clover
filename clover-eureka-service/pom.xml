@@ -10,7 +10,7 @@
 
 	<parent>
 		<groupId>com.rrx</groupId>
-		<artifactId>clover-springboot-parent</artifactId>
+		<artifactId>spring-cloud-clover</artifactId>
 		<version>1.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>

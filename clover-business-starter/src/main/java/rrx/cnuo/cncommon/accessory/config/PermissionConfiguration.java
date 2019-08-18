@@ -1,5 +1,6 @@
 package rrx.cnuo.cncommon.accessory.config;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import feign.Feign;
 import rrx.cnuo.cncommon.accessory.intercepter.FeignTokenInterceptor;
 import rrx.cnuo.cncommon.accessory.intercepter.RestTemplateUserContextInterceptor;
 import rrx.cnuo.cncommon.accessory.intercepter.UserContextInterceptor;
@@ -41,6 +43,7 @@ public class PermissionConfiguration implements WebMvcConfigurer{
     }
    
 	@Bean
+	@ConditionalOnClass(Feign.class)
     public FeignTokenInterceptor feignTokenInterceptor() {
         return new FeignTokenInterceptor();
     }

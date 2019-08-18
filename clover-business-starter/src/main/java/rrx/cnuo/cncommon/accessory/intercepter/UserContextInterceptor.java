@@ -8,7 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.alibaba.fastjson.JSON;
 
-import rrx.cnuo.cncommon.accessory.UserContextHolder;
+import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.utils.UserPermissionUtil;
 import rrx.cnuo.cncommon.vo.User;
 

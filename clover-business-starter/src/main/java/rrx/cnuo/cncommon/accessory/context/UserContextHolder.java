@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.accessory;
+package rrx.cnuo.cncommon.accessory.context;
 import rrx.cnuo.cncommon.vo.User;
 
 /**

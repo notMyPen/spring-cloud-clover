@@ -1,0 +1,20 @@
+server:
+  port: 8869
+
+spring:
+  application:
+     name: demo-service
+
+#注册到eureka
+eureka:
+   instance:
+      prefer-ip-address: true
+      #指定eureka-client间隔多久需要向eureka-server发送心跳来告知eureka-server自己还活着，默认90s
+      #lease-expiration-duration-in-seconds: 30
+      #eureka-client向eureka-server发送心跳的时间间隔，默认30s
+      #lease-renewal-interval-in-seconds: 10
+   client:
+      #针对新服务(新的eureka client)上线，其它服务(eureka client)获取不及时的问题，可以适当提高client拉去server信息的频率(默认30s)（生产环境注释掉）
+      register-fetch-interval-seconds: 5
+      serviceUrl:
+         defaultZone: http://root:123456@localhost:8861/eureka/

@@ -33,7 +33,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
-import rrx.cnuo.cncommon.accessory.UserContextHolder;
+import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.UserWxInfoVo;

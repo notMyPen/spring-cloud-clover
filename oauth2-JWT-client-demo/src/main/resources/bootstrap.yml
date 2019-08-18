@@ -1,0 +1,11 @@
+server:
+  port: 7070
+spring:
+  application:
+    name: oauth2-AWT-client-demo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:123456@localhost:8861/eureka/
+  instance:
+    prefer-ip-address: true

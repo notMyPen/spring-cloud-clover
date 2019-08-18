@@ -1,0 +1,351 @@
+2019-08-18 08:37:48.590 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e2a7dc47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 08:37:48.821 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-18 08:37:49.430 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-18 08:37:49.602 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=df735f7c-ff51-348f-8b97-9362959a56ee
+2019-08-18 08:37:49.680 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e2a7dc47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 08:37:50.040 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 7070 (http)
+2019-08-18 08:37:50.056 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-7070"]
+2019-08-18 08:37:50.056 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-18 08:37:50.056 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-18 08:37:50.181 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-18 08:37:50.181 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 1344 ms
+2019-08-18 08:37:50.274 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 08:37:50.274 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 08:37:50.274 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@737d100a
+2019-08-18 08:37:50.785 [main] WARN  o.s.s.o.p.t.s.JwtAccessTokenConverter
+				-Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2019-08-18 08:37:50.801 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 08:37:50.801 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 08:37:50.910 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-18 08:37:51.145 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: 5ee4fe8e-89b5-4a4a-a23d-e29f740069f1
+
+2019-08-18 08:37:51.317 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2506e949, org.springframework.security.web.context.SecurityContextPersistenceFilter@499ee966, org.springframework.security.web.header.HeaderWriterFilter@4cc01c7f, org.springframework.security.web.authentication.logout.LogoutFilter@7fe07361, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@4c731956, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@171dc7c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63fd4dda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f1c3f18, org.springframework.security.web.session.SessionManagementFilter@43245559, org.springframework.security.web.access.ExceptionTranslationFilter@7bbcf6f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a0bf272]
+2019-08-18 08:37:51.364 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-18 08:37:51.660 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-18 08:37:51.692 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-18 08:37:51.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-18 08:37:51.928 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-18 08:37:52.038 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-18 08:37:52.038 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-18 08:37:52.163 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-18 08:37:52.272 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-18 08:37:52.475 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-18 08:37:52.475 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-18 08:37:52.475 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-18 08:37:52.475 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566088672475 with initial instances count: 3
+2019-08-18 08:37:52.475 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application OAUTH2-AWT-CLIENT-DEMO with eureka with status UP
+2019-08-18 08:37:52.475 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566088672475, current=UP, previous=STARTING]
+2019-08-18 08:37:52.491 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070: registering service...
+2019-08-18 08:37:52.491 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-7070"]
+2019-08-18 08:37:52.506 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 7070 (http) with context path ''
+2019-08-18 08:37:52.522 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 7070
+2019-08-18 08:37:52.522 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-Started Oauth2JwtClientDemoApplication in 4.635 seconds (JVM running for 5.056)
+2019-08-18 08:37:52.522 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070 - registration status: 204
+2019-08-18 08:42:52.284 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 08:47:52.285 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 08:52:52.286 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 08:57:52.297 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:00:41.542 [http-nio-7070-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-18 09:00:41.543 [http-nio-7070-exec-3] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-18 09:00:41.549 [http-nio-7070-exec-3] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 6 ms
+2019-08-18 09:02:52.297 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:07:52.300 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:10:27.771 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc70313b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 09:10:28.001 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-18 09:10:28.548 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-18 09:10:28.704 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=df735f7c-ff51-348f-8b97-9362959a56ee
+2019-08-18 09:10:28.767 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cc70313b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 09:10:29.168 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 7070 (http)
+2019-08-18 09:10:29.187 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-7070"]
+2019-08-18 09:10:29.196 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-18 09:10:29.197 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-18 09:10:29.338 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-18 09:10:29.338 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 1321 ms
+2019-08-18 09:10:29.455 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 09:10:29.456 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 09:10:29.469 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3791f50e
+2019-08-18 09:10:30.087 [main] WARN  o.s.s.o.p.t.s.JwtAccessTokenConverter
+				-Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2019-08-18 09:10:30.113 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 09:10:30.113 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 09:10:30.221 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-18 09:10:30.481 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: d8ad5d75-84af-4dbd-bf1e-42c29947087e
+
+2019-08-18 09:10:30.741 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@230a73f2, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f025000, org.springframework.security.web.header.HeaderWriterFilter@d54d0f5, org.springframework.security.web.authentication.logout.LogoutFilter@4c07d1fc, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@1e1237ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@739e8b96, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@549ac12c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b97b3d2, org.springframework.security.web.session.SessionManagementFilter@f2d890c, org.springframework.security.web.access.ExceptionTranslationFilter@7459a21e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@353f472a]
+2019-08-18 09:10:30.817 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-18 09:10:31.177 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-18 09:10:31.208 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-18 09:10:31.458 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-18 09:10:31.458 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-18 09:10:31.560 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-18 09:10:31.560 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-18 09:10:31.685 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-18 09:10:31.794 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-18 09:10:31.997 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-18 09:10:31.997 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-18 09:10:31.997 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-18 09:10:31.997 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566090631997 with initial instances count: 4
+2019-08-18 09:10:31.997 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application OAUTH2-AWT-CLIENT-DEMO with eureka with status UP
+2019-08-18 09:10:31.997 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566090631997, current=UP, previous=STARTING]
+2019-08-18 09:10:32.013 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070: registering service...
+2019-08-18 09:10:32.013 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-7070"]
+2019-08-18 09:10:32.044 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 7070 (http) with context path ''
+2019-08-18 09:10:32.044 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 7070
+2019-08-18 09:10:32.044 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-Started Oauth2JwtClientDemoApplication in 4.929 seconds (JVM running for 5.349)
+2019-08-18 09:10:32.044 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070 - registration status: 204
+2019-08-18 09:12:29.113 [http-nio-7070-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-18 09:12:29.113 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-18 09:12:29.119 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 6 ms
+2019-08-18 09:15:31.815 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:20:31.822 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:25:31.825 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:30:31.827 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:35:31.830 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:40:31.833 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:43:44.349 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6dc166] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 09:43:44.579 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-No active profile set, falling back to default profiles: default
+2019-08-18 09:43:45.138 [main] WARN  o.s.boot.actuate.endpoint.EndpointId
+				-Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-08-18 09:43:45.279 [main] INFO  o.s.cloud.context.scope.GenericScope
+				-BeanFactory id=df735f7c-ff51-348f-8b97-9362959a56ee
+2019-08-18 09:43:45.341 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker
+				-Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6dc166] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-18 09:43:45.710 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat initialized with port(s): 7070 (http)
+2019-08-18 09:43:45.727 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Initializing ProtocolHandler ["http-nio-7070"]
+2019-08-18 09:43:45.808 [main] INFO  o.a.catalina.core.StandardService
+				-Starting service [Tomcat]
+2019-08-18 09:43:45.808 [main] INFO  o.a.catalina.core.StandardEngine
+				-Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-18 09:43:45.971 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring embedded WebApplicationContext
+2019-08-18 09:43:45.972 [main] INFO  o.s.web.context.ContextLoader
+				-Root WebApplicationContext: initialization completed in 1378 ms
+2019-08-18 09:43:46.085 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 09:43:46.085 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 09:43:46.096 [main] INFO  c.n.config.DynamicPropertyFactory
+				-DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6732726
+2019-08-18 09:43:46.786 [main] WARN  o.s.s.o.p.t.s.JwtAccessTokenConverter
+				-Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2019-08-18 09:43:46.810 [main] WARN  c.n.c.sources.URLConfigurationSource
+				-No URLs will be polled as dynamic configuration sources.
+2019-08-18 09:43:46.810 [main] INFO  c.n.c.sources.URLConfigurationSource
+				-To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-18 09:43:46.925 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor
+				-Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-18 09:43:47.179 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration
+				-
+
+Using generated security password: 0f091b43-08ab-4e08-bd3e-ccbc75596ea0
+
+2019-08-18 09:43:47.373 [main] INFO  o.s.s.web.DefaultSecurityFilterChain
+				-Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79627d27, org.springframework.security.web.context.SecurityContextPersistenceFilter@69c532af, org.springframework.security.web.header.HeaderWriterFilter@6a950a3b, org.springframework.security.web.authentication.logout.LogoutFilter@23e3f5cd, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@6e243175, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51a16adf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76437e9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6371cf2f, org.springframework.security.web.session.SessionManagementFilter@1320e68a, org.springframework.security.web.access.ExceptionTranslationFilter@10177794, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@37c5284a]
+2019-08-18 09:43:47.435 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+				-Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-08-18 09:43:47.831 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory
+				-Setting initial instance status as: STARTING
+2019-08-18 09:43:47.858 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Initializing Eureka in region us-east-1
+2019-08-18 09:43:48.160 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON encoding codec LegacyJacksonJson
+2019-08-18 09:43:48.161 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using JSON decoding codec LegacyJacksonJson
+2019-08-18 09:43:48.335 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML encoding codec XStreamXml
+2019-08-18 09:43:48.335 [main] INFO  c.n.d.p.DiscoveryJerseyProvider
+				-Using XML decoding codec XStreamXml
+2019-08-18 09:43:48.497 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:43:48.615 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Disable delta property : false
+2019-08-18 09:43:48.615 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Single vip registry refresh property : null
+2019-08-18 09:43:48.615 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Force full registry fetch : false
+2019-08-18 09:43:48.615 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application is null : false
+2019-08-18 09:43:48.615 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Registered Applications size is zero : true
+2019-08-18 09:43:48.616 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Application version is -1: true
+2019-08-18 09:43:48.616 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Getting all instance registry info from the eureka server
+2019-08-18 09:43:48.821 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-The response status is 200
+2019-08-18 09:43:48.821 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Starting heartbeat executor: renew interval is: 30
+2019-08-18 09:43:48.821 [main] INFO  c.n.discovery.InstanceInfoReplicator
+				-InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-08-18 09:43:48.821 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Discovery Client initialized at timestamp 1566092628821 with initial instances count: 4
+2019-08-18 09:43:48.821 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry
+				-Registering application OAUTH2-AWT-CLIENT-DEMO with eureka with status UP
+2019-08-18 09:43:48.821 [main] INFO  c.netflix.discovery.DiscoveryClient
+				-Saw local status change event StatusChangeEvent [timestamp=1566092628821, current=UP, previous=STARTING]
+2019-08-18 09:43:48.821 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070: registering service...
+2019-08-18 09:43:48.837 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+				-Starting ProtocolHandler ["http-nio-7070"]
+2019-08-18 09:43:48.865 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient
+				-DiscoveryClient_OAUTH2-AWT-CLIENT-DEMO/192.168.56.1:oauth2-AWT-client-demo:7070 - registration status: 204
+2019-08-18 09:43:48.865 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+				-Tomcat started on port(s): 7070 (http) with context path ''
+2019-08-18 09:43:48.865 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration
+				-Updating port to 7070
+2019-08-18 09:43:48.865 [main] INFO  c.r.o.Oauth2JwtClientDemoApplication
+				-Started Oauth2JwtClientDemoApplication in 5.347 seconds (JVM running for 5.844)
+2019-08-18 09:44:49.021 [http-nio-7070-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+				-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-18 09:44:49.021 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Initializing Servlet 'dispatcherServlet'
+2019-08-18 09:44:49.027 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet
+				-Completed initialization in 6 ms
+2019-08-18 09:48:48.627 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:53:48.641 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 09:58:53.678 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:03:53.679 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:08:53.694 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:13:53.705 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:18:53.710 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:23:53.711 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration
+2019-08-18 10:28:53.726 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver
+				-Resolving eureka endpoints via configuration

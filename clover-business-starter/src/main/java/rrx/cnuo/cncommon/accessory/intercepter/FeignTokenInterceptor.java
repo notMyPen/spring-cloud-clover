@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import rrx.cnuo.cncommon.accessory.UserContextHolder;
+import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.vo.User;
 
 /**
@@ -19,13 +19,16 @@ public class FeignTokenInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-//        if(null==getHttpServletRequest()){
-//            //此处省略日志记录
-//            return;
+//    	ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//		HttpServletRequest request = attributes.getRequest();
+//        Enumeration<String> headerNames = request.getHeaderNames();
+//        if (headerNames != null) {
+//            while (headerNames.hasMoreElements()) {
+//                String name = headerNames.nextElement();
+//                String values = request.getHeader(name);
+//                requestTemplate.header(name, values);
+//            }
 //        }
-//        requestTemplate.header("x-user-id", getHeaders(getHttpServletRequest()).get("x-user-id"));
-//        requestTemplate.header("x-user-name", getHeaders(getHttpServletRequest()).get("x-user-name"));
-//        requestTemplate.header("x-user-serviceName", getHeaders(getHttpServletRequest()).get("x-user-serviceName"));
     	
         User user = UserContextHolder.currentUser();
         requestTemplate.header("x-user-id", user.getUserId() + "");
@@ -33,27 +36,4 @@ public class FeignTokenInterceptor implements RequestInterceptor {
         requestTemplate.header("x-user-serviceName", user.getCurrentServiceId());
     }
 
-//    private HttpServletRequest getHttpServletRequest() {
-//        try {
-//            return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-//        } catch (Exception e) {
-//            return null;
-//        }
-//    }
-
-    /**
-     * Feign拦截器拦截请求获取header中所有的值
-     * @param request
-     * @return
-     */
-//    private Map<String, String> getHeaders(HttpServletRequest request) {
-//        Map<String, String> map = new LinkedHashMap<>();
-//        Enumeration<String> enumeration = request.getHeaderNames();
-//        while (enumeration.hasMoreElements()) {
-//            String key = enumeration.nextElement();
-//            String value = request.getHeader(key);
-//            map.put(key, value);
-//        }
-//        return map;
-//    }
 }

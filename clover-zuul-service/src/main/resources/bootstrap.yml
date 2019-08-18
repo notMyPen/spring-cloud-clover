@@ -12,7 +12,7 @@ spring:
         service-id: config-server
       #username: config
       #password: 123456
-      label: master
+      label: dev
       name: cn-zuul
       profile: dev
   #bus:
@@ -31,32 +31,60 @@ eureka:
       serviceUrl:
          defaultZone: http://root:123456@localhost:8861/eureka/
 
-#management:
-   #endpoints:
-      #web:
-         #exposure:
+management:
+   endpoints:
+      web:
+         exposure:
             #表示包含所有端点的信息(默认只打开info、Heath的端点)
-            #include: '*'
-   #endpoint:
-      #health:
+            include: '*'
+   endpoint:
+      health:
          #总是表示详细信息显示
-         #show-details: always
+         show-details: always
+security:
+  basic:
+    enabled: false
+  #oauth2:
+    #client:
+      #access-token-uri: http://localhost:7777/uaa/oauth/token #jwt token令牌发布端点
+      #user-authorization-uri: http://localhost:7777/uaa/oauth/authorize #授权端点
+      #client-id: zuul_server #OAuth2客户端ID
+      #client-secret: secret #OAuth2客户端密钥
+    #resource:
+      #jwt:
+        #key-value: springcloud123 #jwt头部签名算法秘钥，使用对称加密方式，默认算法为HS256（如果安全要求更高可使用非对称加密，生成公钥和私钥）
 
 zuul:
+  #add-host-header: true         #重定向header暴露重定向后的服务地址问题
+  routes:
+    order-service: /order/**
+    user-service: /user/**
+    biz-service: /biz/**
+    demo-service: /demo/**
+    oauth2-AWT-client-demo: /client/**
   # 开启/关闭Zuul的重试,若为true 对Zuul全局开启了重试，事实上，也可对指定路由开启/关闭重试：zuul.routes.<routename>.retryable=true
   retryable: false
-  #zuul路由配置为url时生效
+  ribbonIsolationStrategy: THREAD
+  threadPool:
+    useSeparateThreadPools: true
+    threadPoolKeyPrefix: zuulgateway
   host:
+    #每个路由可用的最大连接数，默认20
+    max-per-route-connections: 50
+    #目标主机的最大连接数，默认200
+    max-total-connections: 200
+    #zuul路由配置为url时生效(默认5s，生产环境改回来)
     connect-timeout-millis: 30000
     socket-timeout-millis: 30000
 
 #zuul路由配置为serviceid时生效(如果ribbon:上层标签没有具体服务serverid即对所有服务配置生效)
 ribbon:
+   #全局请求超时时间(默认5s，生产环境改回来)
    ConnectTimeout: 30000
    ReadTimeout: 30000
    # 关闭Ribbon的重试机制（如果已写代码保证业务幂等，可以开启）
-   MaxAutoRetries: 0
-   MaxAutoRetriesNextServer: 0
+   MaxAutoRetries: 0 #同一个服务重试的次数(除去首次)
+   MaxAutoRetriesNextServer: 0 #切换下一个实例重试次数
    #一般来说，不建议将OkToRetryOnAllOperations设为true。因为一旦启用该配置，则表示重试任何操作，包括POST请求，而由于缓存了请求体，此时可能会影响服务器的资源。
    OkToRetryOnAllOperations: false
    #ribbon在进行客服端负载均衡的时候并不是在启动时就加载上下文，而是在实际请求时采取创建，因此这个特性往往会让我们的第一次调用颇为疲软乏力，严重时会因为超时。所以我们可以指定ribbon具体的客户端来开启饥饿加载，即在启动的时候就加载所配置项应用的上下文
@@ -66,6 +94,15 @@ ribbon:
 
 #熔断器
 hystrix:
+  threadpool:
+    default:
+      #全局默认核心线程池大小(默认10)
+      coreSize: 20
+      #全局默认最大线程池大小(默认10)
+      maximumSize: 50
+      #该属性允许上面两个配置生效，默认false
+      allowMaximumSizeToDivergeFromCoreSize: true
+      #maxQueueSize: -1
   command:
     default:
       execution:
@@ -74,5 +111,6 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            #一般可以将hystrix的超时时间设置的比ribbon的超时时间长一些，否则ribbon的重试(如果配置了)将会失效
+            interruptOnTimeout: false
+            #一般可以将hystrix的超时时间设置的比ribbon的超时时间长一些，否则ribbon的重试(如果配置了)将会失效（生产环境改为10s）
             timeoutInMilliseconds: 70000

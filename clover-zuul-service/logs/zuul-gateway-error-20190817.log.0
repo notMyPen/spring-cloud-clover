@@ -1,0 +1,68 @@
+2019-08-17 22:58:53.500 [main] ERROR com.netflix.zuul.FilterFileManager
+				-Error accessing directory in classloader. path=E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy
+java.lang.NullPointerException: null
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:130)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+2019-08-17 22:58:58.173 [main] ERROR o.s.boot.SpringApplication
+				-Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:783)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	... 5 common frames omitted
+Caused by: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:135)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	... 6 common frames omitted
+2019-08-17 23:00:01.566 [main] ERROR com.netflix.zuul.FilterFileManager
+				-Error accessing directory in classloader. path=/WorkFile/spring-cloud-clover/clover-zuul-service/src/main/java/rrx/cnuo/service/groovy/GroovyFilter.groovy
+java.lang.NullPointerException: null
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:130)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+2019-08-17 23:00:05.929 [main] ERROR o.s.boot.SpringApplication
+				-Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:783)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:764)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication.main(CnZuulGatewayServiceApplication.java:22)
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:40)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
+	... 5 common frames omitted
+Caused by: java.lang.RuntimeException: E:\WorkFile\spring-cloud-clover\clover-zuul-service\src\main\java\rrx\cnuo\service\groovy\GroovyFilter.groovy is not a valid directory
+	at com.netflix.zuul.FilterFileManager.getDirectory(FilterFileManager.java:135)
+	at com.netflix.zuul.FilterFileManager.getFiles(FilterFileManager.java:150)
+	at com.netflix.zuul.FilterFileManager.manageFiles(FilterFileManager.java:176)
+	at com.netflix.zuul.FilterFileManager.init(FilterFileManager.java:81)
+	at rrx.cnuo.service.CnZuulGatewayServiceApplication$GroovyRunner.run(CnZuulGatewayServiceApplication.java:38)
+	... 6 common frames omitted

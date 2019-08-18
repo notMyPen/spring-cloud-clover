@@ -8,6 +8,8 @@ server:
       #key-alias: server
 
 spring:
+   application:
+      name: clover-eureka-server
    security:
       basic:
          enabled: true
@@ -42,6 +44,6 @@ eureka:
       #指定每分钟需要收到的续约次数阈值，默认0.85
       #renewal-percent-threshold: 0.85
       #指定EvictionTask定时任务的调度频率，用于剔除过期实例,默认60000
-      #evictionIntervalTimeInMs: 10000
+      evictionIntervalTimeInMs: 30000
       #设置readWriteCacheMap多久过期(默认180s)，假如关闭自我保护功能，某eureka client挂了EvictionTask定时任务也不会立即清除失效信息，因为缓存中还有，只有缓存过期后才清除
       #responseCacheAutoExpirationInSeconds: 20
