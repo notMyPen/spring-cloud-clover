@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import rrx.cnuo.cncommon.accessory.consts.Const;
@@ -79,6 +81,16 @@ public class HealthController {
 		System.out.println("id是："+id);
 		return "这是basicInfo";
 	}
+    
+    @ApiOperation(value = "计算+", notes = "加法")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "a",  value = "数字a", required = true, dataType = "Long"),
+            @ApiImplicitParam(name = "b",  value = "数字b", required = true, dataType = "Long")
+    })
+    @GetMapping("/{a}/{b}")
+    public Integer get(@PathVariable Integer a, @PathVariable Integer b) {
+        return a + b;
+    }
     
     /**
      * 测试分布式事务

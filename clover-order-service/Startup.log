@@ -1425,3 +1425,351 @@ Caused by: rrx.cnuo.cncommon.accessory.intercepter.UserContextInterceptor$Permis
 19:41:53.589 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 19:46:53.591 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 19:51:53.593 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+21:52:31.450 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$eafa8a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:31.748 INFO  [main] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+21:52:31.832 INFO  [main] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+21:52:32.345 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+21:52:32.346 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+21:52:32.553 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+21:52:32.554 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+21:52:32.909 INFO  [main] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+21:52:33.052 INFO  [main] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Application is null : false
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+21:52:33.053 INFO  [main] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+21:52:33.406 INFO  [main] com.netflix.discovery.DiscoveryClient - The response status is 200
+21:52:33.408 INFO  [main] com.netflix.discovery.DiscoveryClient - Not registering with Eureka server per configuration
+21:52:33.412 INFO  [main] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566136353410 with initial instances count: 4
+21:52:33.738 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Fetching config from server at : http://192.168.56.1:8866/
+21:52:34.035 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Located environment: name=order-service, profiles=[dev], label=dev, version=8f43d61d14be3d609195b7487eb16bdebb467760, state=null
+21:52:34.036 INFO  [main] o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/order-service-dev.yml'}]}
+21:52:34.079 INFO  [main] rrx.cnuo.service.CnOrderServiceApplication - No active profile set, falling back to default profiles: default
+21:52:36.420 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+21:52:36.728 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+21:52:36.731 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+21:52:36.763 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+21:52:36.846 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+21:52:36.896 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+21:52:37.029 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+21:52:37.299 WARN  [main] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[rrx.cnuo.service]' package. Please check your configuration.
+21:52:37.832 INFO  [main] o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5fc59525-9fa8-3cc2-95db-60f0be36bd4a
+21:52:37.858 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+21:52:37.866 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+21:52:37.875 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+21:52:37.955 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration' of type [rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration$$EnhancerBySpringCGLIB$$dbba416a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.184 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f295a5a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.245 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.305 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$5d8760d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.348 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$39196bf7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.364 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$720114c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.375 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:38.460 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$eafa8a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+21:52:39.181 INFO  [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8864 (http)
+21:52:39.214 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8864"]
+21:52:39.225 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+21:52:39.226 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+21:52:39.620 INFO  [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+21:52:39.620 INFO  [main] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5523 ms
+21:52:39.819 WARN  [main] com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+21:52:39.820 INFO  [main] com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+21:52:39.832 INFO  [main] com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4fc2933e
+21:52:42.031 INFO  [main] o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+21:52:42.615 INFO  [main] o.s.b.a.endpoint.web.ServletEndpointRegistrar - Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+21:52:43.530 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+21:52:43.746 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+21:52:43.747 INFO  [main] com.codingapi.txlcn.tc.corelog.H2DbHelper - Init H2 DATABASE at E:\WorkFile\spring-cloud-clover\clover-order-service\.txlcn\order-service-8864
+21:52:44.580 INFO  [main] o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 25 endpoint(s) beneath base path '/actuator'
+21:52:44.780 WARN  [main] com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+21:52:44.780 INFO  [main] com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+21:52:45.021 INFO  [main] o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+21:52:46.924 INFO  [main] com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+21:52:46.930 INFO  [main] com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+21:52:47.109 INFO  [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+21:52:47.254 INFO  [main] o.s.c.stream.messaging.DirectWithAttributesChannel - Channel 'order-service-1.springCloudBusInput' has 1 subscriber(s).
+21:52:47.396 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBusInput
+21:52:47.486 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel nullChannel
+21:52:47.499 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBusOutput
+21:52:47.504 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel errorChannel
+21:52:47.542 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@62765e11
+21:52:47.600 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageHandler errorLogger
+21:52:47.651 INFO  [main] o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+21:52:47.651 INFO  [main] o.s.integration.channel.PublishSubscribeChannel - Channel 'order-service-1.errorChannel' has 1 subscriber(s).
+21:52:47.651 INFO  [main] o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+21:52:47.865 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Fetching config from server at : http://192.168.56.1:8866/
+21:52:48.086 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Located environment: name=order-service, profiles=[dev], label=dev, version=8f43d61d14be3d609195b7487eb16bdebb467760, state=null
+21:52:48.086 INFO  [main] o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/order-service-dev.yml'}]}
+21:52:48.385 INFO  [main] com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+21:52:48.385 INFO  [main] com.netflix.loadbalancer.BaseLoadBalancer - Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+21:52:48.392 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+21:52:48.404 INFO  [main] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+21:52:48.406 INFO  [main] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+21:52:48.408 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+21:52:48.409 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+21:52:48.409 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+21:52:48.409 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+21:52:48.459 INFO  [main] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Application is null : false
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+21:52:48.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+21:52:48.461 INFO  [main] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+21:52:48.528 INFO  [main] com.netflix.discovery.DiscoveryClient - The response status is 200
+21:52:48.528 INFO  [main] com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+21:52:48.531 INFO  [main] com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+21:52:48.532 INFO  [main] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566136368532 with initial instances count: 4
+21:52:48.555 INFO  [main] com.netflix.config.ChainedDynamicProperty - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+21:52:48.556 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[192.168.56.1:8862],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8862;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6895b608
+21:52:48.607 INFO  [main] com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+21:52:48.607 INFO  [main] com.netflix.loadbalancer.BaseLoadBalancer - Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+21:52:48.608 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+21:52:48.609 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5415ed48
+21:52:48.703 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+21:52:48.754 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3a9040f0:0/SimpleConnection@61f9cab2 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61600]
+21:52:48.809 INFO  [main] o.s.c.stream.messaging.DirectWithAttributesChannel - Channel 'order-service-1.springCloudBusOutput' has 1 subscriber(s).
+21:52:48.818 INFO  [main] o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application ORDER-SERVICE with eureka with status UP
+21:52:48.819 INFO  [main] com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1566136368818, current=UP, previous=STARTING]
+21:52:48.820 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/PC-201811181231:order-service:8864: registering service...
+21:52:48.850 INFO  [main] o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner - declaring queue for inbound: springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg, bound to: springCloudBus
+21:52:48.850 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/PC-201811181231:order-service:8864 - registration status: 204
+21:52:48.869 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg.errors
+21:52:48.953 INFO  [main] o.s.cloud.stream.binder.BinderErrorChannel - Channel 'order-service-1.springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg.errors' has 1 subscriber(s).
+21:52:48.953 INFO  [main] o.s.cloud.stream.binder.BinderErrorChannel - Channel 'order-service-1.springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg.errors' has 2 subscriber(s).
+21:52:48.979 INFO  [main] o.s.i.amqp.inbound.AmqpInboundChannelAdapter - started inbound.springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg
+21:52:48.981 INFO  [main] s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+21:52:48.998 INFO  [main] s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+21:52:49.040 INFO  [main] s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+21:52:49.109 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+21:52:49.114 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: connectionFactory#835718b:0/SimpleConnection@7a680b69 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61601]
+21:52:49.188 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8864"]
+21:52:49.210 INFO  [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8864 (http) with context path ''
+21:52:49.211 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8864
+21:52:49.212 INFO  [main] rrx.cnuo.service.CnOrderServiceApplication - Started CnOrderServiceApplication in 19.08 seconds (JVM running for 19.828)
+21:52:49.234 INFO  [main] c.c.t.txmsg.netty.impl.NettyRpcClientInitializer - Try connect socket(/127.0.0.1:8070) - count 1
+21:52:49.398 INFO  [PollingServerListUpdater-0] com.netflix.config.ChainedDynamicProperty - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+21:52:49.505 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TCSideRpcInitCallBack - Send init message to TM[/127.0.0.1:8070]
+21:52:49.522 INFO  [main] com.codingapi.txlcn.tc.corelog.txc.TxcLogHelper - Txc log table finish (H2 DATABASE)
+21:52:49.523 INFO  [main] c.c.txlcn.tc.corelog.aspect.AspectLogHelper - Aspect log table finished (H2 DATABASE)
+21:52:49.636 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TCSideRpcInitCallBack - Finally, determined dtx time is 30000ms, tm rpc timeout is 1000 ms, machineId is 82
+21:52:49.636 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - Searching for more TM...
+21:52:49.652 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - TC[order-service:8864] established TM cluster successfully!
+21:52:49.652 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - TM cluster's size: 1
+21:53:19.613 INFO  [PollingServerListUpdater-1] com.netflix.config.ChainedDynamicProperty - Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+21:57:48.463 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:02:48.464 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:07:48.465 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:12:48.467 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:17:48.469 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:19:42.233 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$eafa8a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+22:19:42.955 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+22:19:42.961 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+22:19:42.998 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+22:19:42.998 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+22:19:42.999 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+22:19:42.999 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+22:19:44.610 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Application is null : false
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+22:19:44.612 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+22:19:44.613 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+22:19:44.755 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - The response status is 200
+22:19:44.755 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Not registering with Eureka server per configuration
+22:19:44.756 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566137984756 with initial instances count: 6
+22:19:45.207 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.c.client.ConfigServicePropertySourceLocator - Fetching config from server at : http://192.168.56.1:8866/
+22:19:57.577 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.c.client.ConfigServicePropertySourceLocator - Located environment: name=order-service, profiles=[dev], label=dev, version=2636b9e0f44f1c6057fc1874d5b014c8031c0b0d, state=null
+22:19:57.577 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/order-service-dev.yml'}]}
+22:19:57.590 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] org.springframework.boot.SpringApplication - No active profile set, falling back to default profiles: default
+22:19:57.600 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] org.springframework.boot.SpringApplication - Started application in 16.749 seconds (JVM running for 1648.216)
+22:19:57.602 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+22:19:57.605 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+22:19:57.790 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+22:20:00.791 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Unregistering ...
+22:20:00.795 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/PC-201811181231:order-service:8864 - deregister  status: 200
+22:20:00.801 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+22:20:00.810 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+22:20:00.811 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+22:20:00.812 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+22:20:00.812 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+22:20:00.812 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+22:20:00.812 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+22:20:00.850 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:20:00.850 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Application is null : false
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+22:20:00.851 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+22:20:00.915 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - The response status is 200
+22:20:00.915 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+22:20:00.916 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+22:20:00.916 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566138000916 with initial instances count: 6
+22:20:00.920 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application ORDER-SERVICE with eureka with status DOWN
+22:20:00.920 WARN  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1566138000920, current=DOWN, previous=STARTING]
+22:20:00.920 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application ORDER-SERVICE with eureka with status UP
+22:20:00.920 WARN  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1566138000920, current=UP, previous=DOWN]
+22:20:00.920 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/PC-201811181231:order-service:8864: registering service...
+22:20:00.921 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.springframework.cloud.bus.event.RefreshListener - Received remote refresh request. Keys refreshed [config.client.version, spring.cloud.client.hostname]
+22:20:00.926 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/PC-201811181231:order-service:8864 - registration status: 204
+22:20:00.932 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+22:20:00.936 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory.publisher#341d0c41:0/SimpleConnection@76a61909 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62578]
+22:20:00.937 INFO  [springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg-1] org.springframework.amqp.rabbit.core.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (springCloudBus.anonymous.kYdxaexhTR2sMstrrQBvBg) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+22:25:00.852 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:30:00.853 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:35:00.855 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:40:00.856 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:45:00.857 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:50:00.859 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+22:55:00.859 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+23:00:00.861 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+23:05:00.862 INFO  [AsyncResolver-bootstrap-executor-0] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+23:17:14.081 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bb70d5b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:14.310 INFO  [main] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+23:17:14.359 INFO  [main] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+23:17:14.747 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+23:17:14.748 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+23:17:14.872 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+23:17:14.872 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+23:17:15.073 INFO  [main] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Application is null : false
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+23:17:15.194 INFO  [main] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+23:17:15.459 INFO  [main] com.netflix.discovery.DiscoveryClient - The response status is 200
+23:17:15.460 INFO  [main] com.netflix.discovery.DiscoveryClient - Not registering with Eureka server per configuration
+23:17:15.463 INFO  [main] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566141435463 with initial instances count: 4
+23:17:15.720 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Fetching config from server at : http://192.168.56.1:8866/
+23:17:21.949 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Located environment: name=order-service, profiles=[dev], label=dev, version=dab7a1c66797d2a4fb57cf6e549f4c0ad3c1d6c8, state=null
+23:17:21.949 INFO  [main] o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/order-service-dev.yml'}]}
+23:17:21.982 INFO  [main] rrx.cnuo.service.CnOrderServiceApplication - No active profile set, falling back to default profiles: default
+23:17:23.296 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+23:17:23.468 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:17:23.471 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+23:17:23.500 INFO  [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+23:17:23.563 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+23:17:23.603 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+23:17:23.691 WARN  [main] o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+23:17:23.875 WARN  [main] org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[rrx.cnuo.service]' package. Please check your configuration.
+23:17:24.103 INFO  [main] o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5fc59525-9fa8-3cc2-95db-60f0be36bd4a
+23:17:24.123 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+23:17:24.127 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+23:17:24.133 INFO  [main] o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+23:17:24.219 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration' of type [rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration$$EnhancerBySpringCGLIB$$887b6e7d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.392 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9f56d2bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.430 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.490 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$a488dea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.517 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$e5da990a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.537 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$1ec241d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.548 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:24.634 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bb70d5b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+23:17:25.230 INFO  [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8864 (http)
+23:17:25.251 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8864"]
+23:17:25.272 INFO  [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+23:17:25.274 INFO  [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+23:17:25.640 INFO  [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:17:25.641 INFO  [main] org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3640 ms
+23:17:25.986 WARN  [main] com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+23:17:25.987 INFO  [main] com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+23:17:26.005 INFO  [main] com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1a390b8c
+23:17:28.629 INFO  [main] o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+23:17:29.306 INFO  [main] o.s.b.a.endpoint.web.ServletEndpointRegistrar - Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+23:17:30.206 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:17:30.432 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:17:30.433 INFO  [main] com.codingapi.txlcn.tc.corelog.H2DbHelper - Init H2 DATABASE at E:\WorkFile\spring-cloud-clover\clover-order-service\.txlcn\order-service-8864
+23:17:31.209 INFO  [main] o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 25 endpoint(s) beneath base path '/actuator'
+23:17:31.384 WARN  [main] com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+23:17:31.384 INFO  [main] com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+23:17:31.602 INFO  [main] o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+23:17:33.410 INFO  [main] com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+23:17:33.416 INFO  [main] com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+23:17:33.575 INFO  [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+23:17:33.708 INFO  [main] o.s.c.stream.messaging.DirectWithAttributesChannel - Channel 'order-service-1.springCloudBusInput' has 1 subscriber(s).
+23:17:33.878 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel errorChannel
+23:17:33.938 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBusInput
+23:17:33.968 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel nullChannel
+23:17:33.980 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBusOutput
+23:17:33.991 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@65ff1e6d
+23:17:34.044 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageHandler errorLogger
+23:17:34.088 INFO  [main] o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+23:17:34.088 INFO  [main] o.s.integration.channel.PublishSubscribeChannel - Channel 'order-service-1.errorChannel' has 1 subscriber(s).
+23:17:34.088 INFO  [main] o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+23:17:34.296 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Fetching config from server at : http://192.168.56.1:8866/
+23:17:40.350 INFO  [main] o.s.c.c.client.ConfigServicePropertySourceLocator - Located environment: name=order-service, profiles=[dev], label=dev, version=dab7a1c66797d2a4fb57cf6e549f4c0ad3c1d6c8, state=null
+23:17:40.350 INFO  [main] o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, MapPropertySource {name='https://github.com/notMyPen/clover-config.git/order-service-dev.yml'}]}
+23:17:40.917 INFO  [main] com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+23:17:40.917 INFO  [main] com.netflix.loadbalancer.BaseLoadBalancer - Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+23:17:40.925 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+23:17:40.942 INFO  [main] o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+23:17:40.947 INFO  [main] com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+23:17:40.952 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+23:17:40.952 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+23:17:40.952 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+23:17:40.952 INFO  [main] c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+23:17:41.043 INFO  [main] c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Disable delta property : false
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Application is null : false
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+23:17:41.044 INFO  [main] com.netflix.discovery.DiscoveryClient - Application version is -1: true
+23:17:41.045 INFO  [main] com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+23:17:41.118 INFO  [main] com.netflix.discovery.DiscoveryClient - The response status is 200
+23:17:41.119 INFO  [main] com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+23:17:41.121 INFO  [main] com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+23:17:41.122 INFO  [main] com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1566141461122 with initial instances count: 4
+23:17:41.161 INFO  [main] com.netflix.config.ChainedDynamicProperty - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+23:17:41.164 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[192.168.56.1:8862],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8862;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@8c68f7f
+23:17:41.295 INFO  [main] com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-biz-service
+23:17:41.296 INFO  [main] com.netflix.loadbalancer.BaseLoadBalancer - Client: biz-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+23:17:41.299 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+23:17:41.299 INFO  [main] c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client biz-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=biz-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1ed28f57
+23:17:41.505 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+23:17:41.636 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#38c1b1a7:0/SimpleConnection@19b8bcb5 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64080]
+23:17:41.687 INFO  [main] o.s.c.stream.messaging.DirectWithAttributesChannel - Channel 'order-service-1.springCloudBusOutput' has 1 subscriber(s).
+23:17:41.703 INFO  [main] o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application ORDER-SERVICE with eureka with status UP
+23:17:41.705 INFO  [main] com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1566141461705, current=UP, previous=STARTING]
+23:17:41.711 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/192.168.56.1:order-service:8864: registering service...
+23:17:41.777 INFO  [main] o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner - declaring queue for inbound: springCloudBus.anonymous.dPVivuDgSFeP6mi0A5S6og, bound to: springCloudBus
+23:17:41.799 INFO  [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient - DiscoveryClient_ORDER-SERVICE/192.168.56.1:order-service:8864 - registration status: 204
+23:17:41.931 INFO  [PollingServerListUpdater-0] com.netflix.config.ChainedDynamicProperty - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+23:17:42.328 INFO  [main] o.s.integration.monitor.IntegrationMBeanExporter - Registering MessageChannel springCloudBus.anonymous.dPVivuDgSFeP6mi0A5S6og.errors
+23:17:42.641 INFO  [main] o.s.cloud.stream.binder.BinderErrorChannel - Channel 'order-service-1.springCloudBus.anonymous.dPVivuDgSFeP6mi0A5S6og.errors' has 1 subscriber(s).
+23:17:42.642 INFO  [main] o.s.cloud.stream.binder.BinderErrorChannel - Channel 'order-service-1.springCloudBus.anonymous.dPVivuDgSFeP6mi0A5S6og.errors' has 2 subscriber(s).
+23:17:42.691 INFO  [main] o.s.i.amqp.inbound.AmqpInboundChannelAdapter - started inbound.springCloudBus.anonymous.dPVivuDgSFeP6mi0A5S6og
+23:17:42.694 INFO  [main] s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+23:17:42.716 INFO  [main] s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+23:17:42.783 INFO  [main] s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+23:17:42.884 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+23:17:42.890 INFO  [main] o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: connectionFactory#3c251258:0/SimpleConnection@441eae0b [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64081]
+23:17:43.220 INFO  [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8864"]
+23:17:43.280 INFO  [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8864 (http) with context path ''
+23:17:43.281 INFO  [main] o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8864
+23:17:43.284 INFO  [main] rrx.cnuo.service.CnOrderServiceApplication - Started CnOrderServiceApplication in 30.098 seconds (JVM running for 30.728)
+23:17:43.332 INFO  [main] c.c.t.txmsg.netty.impl.NettyRpcClientInitializer - Try connect socket(/127.0.0.1:8070) - count 1
+23:17:43.631 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TCSideRpcInitCallBack - Send init message to TM[/127.0.0.1:8070]
+23:17:43.707 INFO  [main] com.codingapi.txlcn.tc.corelog.txc.TxcLogHelper - Txc log table finish (H2 DATABASE)
+23:17:43.718 INFO  [main] c.c.txlcn.tc.corelog.aspect.AspectLogHelper - Aspect log table finished (H2 DATABASE)
+23:17:43.783 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TCSideRpcInitCallBack - Finally, determined dtx time is 30000ms, tm rpc timeout is 1000 ms, machineId is 83
+23:17:43.784 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - Searching for more TM...
+23:17:43.801 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - TC[order-service:8864] established TM cluster successfully!
+23:17:43.802 INFO  [Thread-18] com.codingapi.txlcn.tc.txmsg.TMSearcher - TM cluster's size: 1
+23:18:12.304 INFO  [PollingServerListUpdater-1] com.netflix.config.ChainedDynamicProperty - Flipping property: biz-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+23:19:49.189 INFO  [http-nio-8864-exec-4] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:19:49.190 INFO  [http-nio-8864-exec-4] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:19:49.413 INFO  [http-nio-8864-exec-4] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 223 ms
+23:19:49.537 WARN  [http-nio-8864-exec-4] com.alibaba.druid.pool.DruidDataSource - removeAbandoned is true, not use in productiion.
+23:19:49.706 INFO  [http-nio-8864-exec-4] com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited

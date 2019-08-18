@@ -77,7 +77,7 @@
 	</dependencyManagement>
 	
 	<!--注意： 这里必须要添加，否则各种依赖有问题 -->
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -86,7 +86,20 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-	</repositories>
+	</repositories> -->
+	<!-- 使用aliyun镜像 -->
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+        </repository>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 	
 	<distributionManagement>
 	  	<repository>
