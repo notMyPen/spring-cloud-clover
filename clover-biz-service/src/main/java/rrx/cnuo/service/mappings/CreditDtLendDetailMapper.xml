@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.CreditDtLendDetailMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.CreditDtLendDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="borrow_type" jdbcType="TINYINT" property="borrowType" />
+    <result column="borrow_state" jdbcType="TINYINT" property="borrowState" />
+    <result column="borrow_amount" jdbcType="INTEGER" property="borrowAmount" />
+    <result column="contract_date" jdbcType="INTEGER" property="contractDate" />
+    <result column="loan_period" jdbcType="INTEGER" property="loanPeriod" />
+    <result column="repay_state" jdbcType="INTEGER" property="repayState" />
+    <result column="arrears_amount" jdbcType="INTEGER" property="arrearsAmount" />
+    <result column="company_code" jdbcType="VARCHAR" property="companyCode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, borrow_type, borrow_state, borrow_amount, contract_date, loan_period, repay_state, 
+    arrears_amount, company_code
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from credit_dt_lend_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from credit_dt_lend_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.CreditDtLendDetail">
+    insert into credit_dt_lend_detail (id, uid, borrow_type, 
+      borrow_state, borrow_amount, contract_date, 
+      loan_period, repay_state, arrears_amount, 
+      company_code)
+    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{borrowType,jdbcType=TINYINT}, 
+      #{borrowState,jdbcType=TINYINT}, #{borrowAmount,jdbcType=INTEGER}, #{contractDate,jdbcType=INTEGER}, 
+      #{loanPeriod,jdbcType=INTEGER}, #{repayState,jdbcType=INTEGER}, #{arrearsAmount,jdbcType=INTEGER}, 
+      #{companyCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.CreditDtLendDetail">
+    insert into credit_dt_lend_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="borrowType != null">
+        borrow_type,
+      </if>
+      <if test="borrowState != null">
+        borrow_state,
+      </if>
+      <if test="borrowAmount != null">
+        borrow_amount,
+      </if>
+      <if test="contractDate != null">
+        contract_date,
+      </if>
+      <if test="loanPeriod != null">
+        loan_period,
+      </if>
+      <if test="repayState != null">
+        repay_state,
+      </if>
+      <if test="arrearsAmount != null">
+        arrears_amount,
+      </if>
+      <if test="companyCode != null">
+        company_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="borrowType != null">
+        #{borrowType,jdbcType=TINYINT},
+      </if>
+      <if test="borrowState != null">
+        #{borrowState,jdbcType=TINYINT},
+      </if>
+      <if test="borrowAmount != null">
+        #{borrowAmount,jdbcType=INTEGER},
+      </if>
+      <if test="contractDate != null">
+        #{contractDate,jdbcType=INTEGER},
+      </if>
+      <if test="loanPeriod != null">
+        #{loanPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="repayState != null">
+        #{repayState,jdbcType=INTEGER},
+      </if>
+      <if test="arrearsAmount != null">
+        #{arrearsAmount,jdbcType=INTEGER},
+      </if>
+      <if test="companyCode != null">
+        #{companyCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.CreditDtLendDetail">
+    update credit_dt_lend_detail
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="borrowType != null">
+        borrow_type = #{borrowType,jdbcType=TINYINT},
+      </if>
+      <if test="borrowState != null">
+        borrow_state = #{borrowState,jdbcType=TINYINT},
+      </if>
+      <if test="borrowAmount != null">
+        borrow_amount = #{borrowAmount,jdbcType=INTEGER},
+      </if>
+      <if test="contractDate != null">
+        contract_date = #{contractDate,jdbcType=INTEGER},
+      </if>
+      <if test="loanPeriod != null">
+        loan_period = #{loanPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="repayState != null">
+        repay_state = #{repayState,jdbcType=INTEGER},
+      </if>
+      <if test="arrearsAmount != null">
+        arrears_amount = #{arrearsAmount,jdbcType=INTEGER},
+      </if>
+      <if test="companyCode != null">
+        company_code = #{companyCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.CreditDtLendDetail">
+    update credit_dt_lend_detail
+    set uid = #{uid,jdbcType=BIGINT},
+      borrow_type = #{borrowType,jdbcType=TINYINT},
+      borrow_state = #{borrowState,jdbcType=TINYINT},
+      borrow_amount = #{borrowAmount,jdbcType=INTEGER},
+      contract_date = #{contractDate,jdbcType=INTEGER},
+      loan_period = #{loanPeriod,jdbcType=INTEGER},
+      repay_state = #{repayState,jdbcType=INTEGER},
+      arrears_amount = #{arrearsAmount,jdbcType=INTEGER},
+      company_code = #{companyCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

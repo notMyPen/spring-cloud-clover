@@ -23,28 +23,10 @@ spring:
       #password: 123456
       label: dev
       name: cn-gateway
-      profile: dev
+      profile: comdev
     bus:
        trace:
           enabled: true
-    #网关路由配置
-    gateway:
-       #discovery:
-       locator:
-         #是否与服务发现组件进行结合，从而可以通过serverId转发到具体实例（默认false）
-         enabled: true
-         #当注册中心是eureka时设置为true表示开启用小写的serverId进行基于服务的路由转发
-         lowerCaseServiceId: true
-       routes:
-        - id: user-service
-          #uri以lb://开头（lb代表从注册中心获取服务），后面接的就是你需要转发到的服务名称
-          uri: lb://user-service
-          predicates:
-          - Path=/user/**
-          filters:
-          - GwSwaggerHeaderFilter
-          #去除掉前面1个前缀
-          - StripPrefix=1
 
 #注册到eureka
 eureka:

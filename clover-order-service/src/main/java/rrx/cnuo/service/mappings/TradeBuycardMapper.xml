@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.TradeBuycardMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.TradeBuycard">
+    <id column="trade_id" jdbcType="BIGINT" property="tradeId" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="buy_num" jdbcType="TINYINT" property="buyNum" />
+    <result column="award_board_num" jdbcType="TINYINT" property="awardBoardNum" />
+    <result column="valid_status" jdbcType="BIT" property="validStatus" />
+    <result column="receive_status" jdbcType="BIT" property="receiveStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    trade_id, uid, amount, buy_num, award_board_num, valid_status, receive_status, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from trade_buycard
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from trade_buycard
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.TradeBuycard">
+    insert into trade_buycard (trade_id, uid, amount, 
+      buy_num, award_board_num, valid_status, 
+      receive_status, create_time, update_time
+      )
+    values (#{tradeId,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{amount,jdbcType=INTEGER}, 
+      #{buyNum,jdbcType=TINYINT}, #{awardBoardNum,jdbcType=TINYINT}, #{validStatus,jdbcType=BIT}, 
+      #{receiveStatus,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.TradeBuycard">
+    insert into trade_buycard
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        trade_id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="buyNum != null">
+        buy_num,
+      </if>
+      <if test="awardBoardNum != null">
+        award_board_num,
+      </if>
+      <if test="validStatus != null">
+        valid_status,
+      </if>
+      <if test="receiveStatus != null">
+        receive_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        #{buyNum,jdbcType=TINYINT},
+      </if>
+      <if test="awardBoardNum != null">
+        #{awardBoardNum,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveStatus != null">
+        #{receiveStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.TradeBuycard">
+    update trade_buycard
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        buy_num = #{buyNum,jdbcType=TINYINT},
+      </if>
+      <if test="awardBoardNum != null">
+        award_board_num = #{awardBoardNum,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        valid_status = #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveStatus != null">
+        receive_status = #{receiveStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.TradeBuycard">
+    update trade_buycard
+    set uid = #{uid,jdbcType=BIGINT},
+      amount = #{amount,jdbcType=INTEGER},
+      buy_num = #{buyNum,jdbcType=TINYINT},
+      award_board_num = #{awardBoardNum,jdbcType=TINYINT},
+      valid_status = #{validStatus,jdbcType=BIT},
+      receive_status = #{receiveStatus,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </update>
+</mapper>

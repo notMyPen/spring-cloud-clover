@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.CreditDishonestCasesMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.CreditDishonestCases">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="case_id" jdbcType="VARCHAR" property="caseId" />
+    <result column="case_create_time" jdbcType="VARCHAR" property="caseCreateTime" />
+    <result column="court_name" jdbcType="VARCHAR" property="courtName" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="case_document_id" jdbcType="VARCHAR" property="caseDocumentId" />
+    <result column="discredit_publish_time" jdbcType="VARCHAR" property="discreditPublishTime" />
+    <result column="execution_target" jdbcType="VARCHAR" property="executionTarget" />
+    <result column="left_target" jdbcType="VARCHAR" property="leftTarget" />
+    <result column="execution_description" jdbcType="VARCHAR" property="executionDescription" />
+    <result column="case_end_time" jdbcType="VARCHAR" property="caseEndTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, type, case_id, case_create_time, court_name, province, case_document_id, 
+    discredit_publish_time, execution_target, left_target, execution_description, case_end_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from credit_dishonest_cases
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from credit_dishonest_cases
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.CreditDishonestCases">
+    insert into credit_dishonest_cases (id, uid, type, 
+      case_id, case_create_time, court_name, 
+      province, case_document_id, discredit_publish_time, 
+      execution_target, left_target, execution_description, 
+      case_end_time)
+    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{type,jdbcType=TINYINT}, 
+      #{caseId,jdbcType=VARCHAR}, #{caseCreateTime,jdbcType=VARCHAR}, #{courtName,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{caseDocumentId,jdbcType=VARCHAR}, #{discreditPublishTime,jdbcType=VARCHAR}, 
+      #{executionTarget,jdbcType=VARCHAR}, #{leftTarget,jdbcType=VARCHAR}, #{executionDescription,jdbcType=VARCHAR}, 
+      #{caseEndTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.CreditDishonestCases">
+    insert into credit_dishonest_cases
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="caseId != null">
+        case_id,
+      </if>
+      <if test="caseCreateTime != null">
+        case_create_time,
+      </if>
+      <if test="courtName != null">
+        court_name,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="caseDocumentId != null">
+        case_document_id,
+      </if>
+      <if test="discreditPublishTime != null">
+        discredit_publish_time,
+      </if>
+      <if test="executionTarget != null">
+        execution_target,
+      </if>
+      <if test="leftTarget != null">
+        left_target,
+      </if>
+      <if test="executionDescription != null">
+        execution_description,
+      </if>
+      <if test="caseEndTime != null">
+        case_end_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="caseId != null">
+        #{caseId,jdbcType=VARCHAR},
+      </if>
+      <if test="caseCreateTime != null">
+        #{caseCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="courtName != null">
+        #{courtName,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="caseDocumentId != null">
+        #{caseDocumentId,jdbcType=VARCHAR},
+      </if>
+      <if test="discreditPublishTime != null">
+        #{discreditPublishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTarget != null">
+        #{executionTarget,jdbcType=VARCHAR},
+      </if>
+      <if test="leftTarget != null">
+        #{leftTarget,jdbcType=VARCHAR},
+      </if>
+      <if test="executionDescription != null">
+        #{executionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="caseEndTime != null">
+        #{caseEndTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.CreditDishonestCases">
+    update credit_dishonest_cases
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="caseId != null">
+        case_id = #{caseId,jdbcType=VARCHAR},
+      </if>
+      <if test="caseCreateTime != null">
+        case_create_time = #{caseCreateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="courtName != null">
+        court_name = #{courtName,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="caseDocumentId != null">
+        case_document_id = #{caseDocumentId,jdbcType=VARCHAR},
+      </if>
+      <if test="discreditPublishTime != null">
+        discredit_publish_time = #{discreditPublishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTarget != null">
+        execution_target = #{executionTarget,jdbcType=VARCHAR},
+      </if>
+      <if test="leftTarget != null">
+        left_target = #{leftTarget,jdbcType=VARCHAR},
+      </if>
+      <if test="executionDescription != null">
+        execution_description = #{executionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="caseEndTime != null">
+        case_end_time = #{caseEndTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.CreditDishonestCases">
+    update credit_dishonest_cases
+    set uid = #{uid,jdbcType=BIGINT},
+      type = #{type,jdbcType=TINYINT},
+      case_id = #{caseId,jdbcType=VARCHAR},
+      case_create_time = #{caseCreateTime,jdbcType=VARCHAR},
+      court_name = #{courtName,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      case_document_id = #{caseDocumentId,jdbcType=VARCHAR},
+      discredit_publish_time = #{discreditPublishTime,jdbcType=VARCHAR},
+      execution_target = #{executionTarget,jdbcType=VARCHAR},
+      left_target = #{leftTarget,jdbcType=VARCHAR},
+      execution_description = #{executionDescription,jdbcType=VARCHAR},
+      case_end_time = #{caseEndTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

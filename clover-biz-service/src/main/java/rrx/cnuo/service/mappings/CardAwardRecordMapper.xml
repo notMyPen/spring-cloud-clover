@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.CardAwardRecordMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.CardAwardRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="award_num" jdbcType="INTEGER" property="awardNum" />
+    <result column="award_type" jdbcType="INTEGER" property="awardType" />
+    <result column="relation_id" jdbcType="BIGINT" property="relationId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, award_num, award_type, relation_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from card_award_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from card_award_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.CardAwardRecord">
+    insert into card_award_record (id, uid, award_num, 
+      award_type, relation_id, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{awardNum,jdbcType=INTEGER}, 
+      #{awardType,jdbcType=INTEGER}, #{relationId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.CardAwardRecord">
+    insert into card_award_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="awardNum != null">
+        award_num,
+      </if>
+      <if test="awardType != null">
+        award_type,
+      </if>
+      <if test="relationId != null">
+        relation_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="awardNum != null">
+        #{awardNum,jdbcType=INTEGER},
+      </if>
+      <if test="awardType != null">
+        #{awardType,jdbcType=INTEGER},
+      </if>
+      <if test="relationId != null">
+        #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.CardAwardRecord">
+    update card_award_record
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="awardNum != null">
+        award_num = #{awardNum,jdbcType=INTEGER},
+      </if>
+      <if test="awardType != null">
+        award_type = #{awardType,jdbcType=INTEGER},
+      </if>
+      <if test="relationId != null">
+        relation_id = #{relationId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.CardAwardRecord">
+    update card_award_record
+    set uid = #{uid,jdbcType=BIGINT},
+      award_num = #{awardNum,jdbcType=INTEGER},
+      award_type = #{awardType,jdbcType=INTEGER},
+      relation_id = #{relationId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

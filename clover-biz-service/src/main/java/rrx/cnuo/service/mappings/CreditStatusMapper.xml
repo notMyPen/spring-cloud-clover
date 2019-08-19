@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.CreditStatusMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.CreditStatus">
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="idcard_verify_status" jdbcType="TINYINT" property="idcardVerifyStatus" />
+    <result column="face_verify_status" jdbcType="TINYINT" property="faceVerifyStatus" />
+    <result column="xuexin_credit_status" jdbcType="TINYINT" property="xuexinCreditStatus" />
+    <result column="shebao_credit_status" jdbcType="TINYINT" property="shebaoCreditStatus" />
+    <result column="gjj_credit_status" jdbcType="TINYINT" property="gjjCreditStatus" />
+    <result column="duotou_lend_status" jdbcType="TINYINT" property="duotouLendStatus" />
+    <result column="dishonest_credit_status" jdbcType="TINYINT" property="dishonestCreditStatus" />
+    <result column="marry_status" jdbcType="TINYINT" property="marryStatus" />
+    <result column="taobao_credit_status" jdbcType="TINYINT" property="taobaoCreditStatus" />
+    <result column="alipay_credit_status" jdbcType="TINYINT" property="alipayCreditStatus" />
+    <result column="jingdong_credit_status" jdbcType="TINYINT" property="jingdongCreditStatus" />
+    <result column="zhengxin_credit_status" jdbcType="TINYINT" property="zhengxinCreditStatus" />
+    <result column="zhima_status" jdbcType="TINYINT" property="zhimaStatus" />
+    <result column="zhima_month" jdbcType="INTEGER" property="zhimaMonth" />
+    <result column="house_credit_status" jdbcType="TINYINT" property="houseCreditStatus" />
+    <result column="car_credit_status" jdbcType="TINYINT" property="carCreditStatus" />
+    <result column="income_credit_status" jdbcType="TINYINT" property="incomeCreditStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uid, idcard_verify_status, face_verify_status, xuexin_credit_status, shebao_credit_status, 
+    gjj_credit_status, duotou_lend_status, dishonest_credit_status, marry_status, taobao_credit_status, 
+    alipay_credit_status, jingdong_credit_status, zhengxin_credit_status, zhima_status, 
+    zhima_month, house_credit_status, car_credit_status, income_credit_status, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from credit_status
+    where uid = #{uid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from credit_status
+    where uid = #{uid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.CreditStatus">
+    insert into credit_status (uid, idcard_verify_status, face_verify_status, 
+      xuexin_credit_status, shebao_credit_status, 
+      gjj_credit_status, duotou_lend_status, dishonest_credit_status, 
+      marry_status, taobao_credit_status, alipay_credit_status, 
+      jingdong_credit_status, zhengxin_credit_status, 
+      zhima_status, zhima_month, house_credit_status, 
+      car_credit_status, income_credit_status, create_time, 
+      update_time)
+    values (#{uid,jdbcType=BIGINT}, #{idcardVerifyStatus,jdbcType=TINYINT}, #{faceVerifyStatus,jdbcType=TINYINT}, 
+      #{xuexinCreditStatus,jdbcType=TINYINT}, #{shebaoCreditStatus,jdbcType=TINYINT}, 
+      #{gjjCreditStatus,jdbcType=TINYINT}, #{duotouLendStatus,jdbcType=TINYINT}, #{dishonestCreditStatus,jdbcType=TINYINT}, 
+      #{marryStatus,jdbcType=TINYINT}, #{taobaoCreditStatus,jdbcType=TINYINT}, #{alipayCreditStatus,jdbcType=TINYINT}, 
+      #{jingdongCreditStatus,jdbcType=TINYINT}, #{zhengxinCreditStatus,jdbcType=TINYINT}, 
+      #{zhimaStatus,jdbcType=TINYINT}, #{zhimaMonth,jdbcType=INTEGER}, #{houseCreditStatus,jdbcType=TINYINT}, 
+      #{carCreditStatus,jdbcType=TINYINT}, #{incomeCreditStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.CreditStatus">
+    insert into credit_status
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="idcardVerifyStatus != null">
+        idcard_verify_status,
+      </if>
+      <if test="faceVerifyStatus != null">
+        face_verify_status,
+      </if>
+      <if test="xuexinCreditStatus != null">
+        xuexin_credit_status,
+      </if>
+      <if test="shebaoCreditStatus != null">
+        shebao_credit_status,
+      </if>
+      <if test="gjjCreditStatus != null">
+        gjj_credit_status,
+      </if>
+      <if test="duotouLendStatus != null">
+        duotou_lend_status,
+      </if>
+      <if test="dishonestCreditStatus != null">
+        dishonest_credit_status,
+      </if>
+      <if test="marryStatus != null">
+        marry_status,
+      </if>
+      <if test="taobaoCreditStatus != null">
+        taobao_credit_status,
+      </if>
+      <if test="alipayCreditStatus != null">
+        alipay_credit_status,
+      </if>
+      <if test="jingdongCreditStatus != null">
+        jingdong_credit_status,
+      </if>
+      <if test="zhengxinCreditStatus != null">
+        zhengxin_credit_status,
+      </if>
+      <if test="zhimaStatus != null">
+        zhima_status,
+      </if>
+      <if test="zhimaMonth != null">
+        zhima_month,
+      </if>
+      <if test="houseCreditStatus != null">
+        house_credit_status,
+      </if>
+      <if test="carCreditStatus != null">
+        car_credit_status,
+      </if>
+      <if test="incomeCreditStatus != null">
+        income_credit_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="idcardVerifyStatus != null">
+        #{idcardVerifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="faceVerifyStatus != null">
+        #{faceVerifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xuexinCreditStatus != null">
+        #{xuexinCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="shebaoCreditStatus != null">
+        #{shebaoCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="gjjCreditStatus != null">
+        #{gjjCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="duotouLendStatus != null">
+        #{duotouLendStatus,jdbcType=TINYINT},
+      </if>
+      <if test="dishonestCreditStatus != null">
+        #{dishonestCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="marryStatus != null">
+        #{marryStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taobaoCreditStatus != null">
+        #{taobaoCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="alipayCreditStatus != null">
+        #{alipayCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="jingdongCreditStatus != null">
+        #{jingdongCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhengxinCreditStatus != null">
+        #{zhengxinCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhimaStatus != null">
+        #{zhimaStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhimaMonth != null">
+        #{zhimaMonth,jdbcType=INTEGER},
+      </if>
+      <if test="houseCreditStatus != null">
+        #{houseCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="carCreditStatus != null">
+        #{carCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="incomeCreditStatus != null">
+        #{incomeCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.CreditStatus">
+    update credit_status
+    <set>
+      <if test="idcardVerifyStatus != null">
+        idcard_verify_status = #{idcardVerifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="faceVerifyStatus != null">
+        face_verify_status = #{faceVerifyStatus,jdbcType=TINYINT},
+      </if>
+      <if test="xuexinCreditStatus != null">
+        xuexin_credit_status = #{xuexinCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="shebaoCreditStatus != null">
+        shebao_credit_status = #{shebaoCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="gjjCreditStatus != null">
+        gjj_credit_status = #{gjjCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="duotouLendStatus != null">
+        duotou_lend_status = #{duotouLendStatus,jdbcType=TINYINT},
+      </if>
+      <if test="dishonestCreditStatus != null">
+        dishonest_credit_status = #{dishonestCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="marryStatus != null">
+        marry_status = #{marryStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taobaoCreditStatus != null">
+        taobao_credit_status = #{taobaoCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="alipayCreditStatus != null">
+        alipay_credit_status = #{alipayCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="jingdongCreditStatus != null">
+        jingdong_credit_status = #{jingdongCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhengxinCreditStatus != null">
+        zhengxin_credit_status = #{zhengxinCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhimaStatus != null">
+        zhima_status = #{zhimaStatus,jdbcType=TINYINT},
+      </if>
+      <if test="zhimaMonth != null">
+        zhima_month = #{zhimaMonth,jdbcType=INTEGER},
+      </if>
+      <if test="houseCreditStatus != null">
+        house_credit_status = #{houseCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="carCreditStatus != null">
+        car_credit_status = #{carCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="incomeCreditStatus != null">
+        income_credit_status = #{incomeCreditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.CreditStatus">
+    update credit_status
+    set idcard_verify_status = #{idcardVerifyStatus,jdbcType=TINYINT},
+      face_verify_status = #{faceVerifyStatus,jdbcType=TINYINT},
+      xuexin_credit_status = #{xuexinCreditStatus,jdbcType=TINYINT},
+      shebao_credit_status = #{shebaoCreditStatus,jdbcType=TINYINT},
+      gjj_credit_status = #{gjjCreditStatus,jdbcType=TINYINT},
+      duotou_lend_status = #{duotouLendStatus,jdbcType=TINYINT},
+      dishonest_credit_status = #{dishonestCreditStatus,jdbcType=TINYINT},
+      marry_status = #{marryStatus,jdbcType=TINYINT},
+      taobao_credit_status = #{taobaoCreditStatus,jdbcType=TINYINT},
+      alipay_credit_status = #{alipayCreditStatus,jdbcType=TINYINT},
+      jingdong_credit_status = #{jingdongCreditStatus,jdbcType=TINYINT},
+      zhengxin_credit_status = #{zhengxinCreditStatus,jdbcType=TINYINT},
+      zhima_status = #{zhimaStatus,jdbcType=TINYINT},
+      zhima_month = #{zhimaMonth,jdbcType=INTEGER},
+      house_credit_status = #{houseCreditStatus,jdbcType=TINYINT},
+      car_credit_status = #{carCreditStatus,jdbcType=TINYINT},
+      income_credit_status = #{incomeCreditStatus,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+</mapper>
