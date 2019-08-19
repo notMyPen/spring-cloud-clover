@@ -12,6 +12,7 @@
 		<groupId>com.rrx</groupId>
 		<artifactId>spring-cloud-clover</artifactId>
 		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
   	
 	<dependencies>
