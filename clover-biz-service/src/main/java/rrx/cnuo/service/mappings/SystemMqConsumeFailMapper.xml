@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.SystemMqConsumeFailMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.SystemMqConsumeFail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="correlation_id" jdbcType="VARCHAR" property="correlationId" />
+    <result column="msg_body" jdbcType="VARCHAR" property="msgBody" />
+    <result column="fail_info" jdbcType="VARCHAR" property="failInfo" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, correlation_id, msg_body, fail_info, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from system_mq_consume_fail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from system_mq_consume_fail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <delete id="deleteByCorrelationId" parameterType="java.lang.String">
+    delete from system_mq_consume_fail
+    where correlation_id = #{correlationId,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.SystemMqConsumeFail">
+    insert into system_mq_consume_fail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="correlationId != null">
+        correlation_id,
+      </if>
+      <if test="msgBody != null">
+        msg_body,
+      </if>
+      <if test="failInfo != null">
+        fail_info,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="correlationId != null">
+        #{correlationId,jdbcType=VARCHAR},
+      </if>
+      <if test="msgBody != null">
+        #{msgBody,jdbcType=VARCHAR},
+      </if>
+      <if test="failInfo != null">
+        #{failInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.SystemMqConsumeFail">
+    update system_mq_consume_fail
+    <set>
+      <if test="correlationId != null">
+        correlation_id = #{correlationId,jdbcType=VARCHAR},
+      </if>
+      <if test="msgBody != null">
+        msg_body = #{msgBody,jdbcType=VARCHAR},
+      </if>
+      <if test="failInfo != null">
+        fail_info = #{failInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

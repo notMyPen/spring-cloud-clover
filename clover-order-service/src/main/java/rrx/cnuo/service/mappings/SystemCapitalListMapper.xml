@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.SystemCapitalListMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.SystemCapitalList">
+    <id column="trade_id" jdbcType="BIGINT" property="tradeId" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="trade_type" jdbcType="INTEGER" property="tradeType" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="valid_status" jdbcType="BIT" property="validStatus" />
+    <result column="receive_bank_status" jdbcType="BIT" property="receiveBankStatus" />
+    <result column="reconciliation_status" jdbcType="BIT" property="reconciliationStatus" />
+    <result column="receive_time" jdbcType="INTEGER" property="receiveTime" />
+    <result column="reconciliation_time" jdbcType="INTEGER" property="reconciliationTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    trade_id, uid, trade_type, amount, valid_status, receive_bank_status, reconciliation_status, 
+    receive_time, reconciliation_time, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from system_capital_list
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from system_capital_list
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.SystemCapitalList">
+    insert into system_capital_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        trade_id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="tradeType != null">
+        trade_type,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="validStatus != null">
+        valid_status,
+      </if>
+      <if test="receiveBankStatus != null">
+        receive_bank_status,
+      </if>
+      <if test="reconciliationStatus != null">
+        reconciliation_status,
+      </if>
+      <if test="receiveTime != null">
+        receive_time,
+      </if>
+      <if test="reconciliationTime != null">
+        reconciliation_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tradeId != null">
+        #{tradeId,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="tradeType != null">
+        #{tradeType,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="validStatus != null">
+        #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveBankStatus != null">
+        #{receiveBankStatus,jdbcType=BIT},
+      </if>
+      <if test="reconciliationStatus != null">
+        #{reconciliationStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveTime != null">
+        #{receiveTime,jdbcType=INTEGER},
+      </if>
+      <if test="reconciliationTime != null">
+        #{reconciliationTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.SystemCapitalList">
+    update system_capital_list
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="tradeType != null">
+        trade_type = #{tradeType,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="validStatus != null">
+        valid_status = #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveBankStatus != null">
+        receive_bank_status = #{receiveBankStatus,jdbcType=BIT},
+      </if>
+      <if test="reconciliationStatus != null">
+        reconciliation_status = #{reconciliationStatus,jdbcType=BIT},
+      </if>
+      <if test="receiveTime != null">
+        receive_time = #{receiveTime,jdbcType=INTEGER},
+      </if>
+      <if test="reconciliationTime != null">
+        reconciliation_time = #{reconciliationTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where trade_id = #{tradeId,jdbcType=BIGINT}
+  </update>
+  
+</mapper>
