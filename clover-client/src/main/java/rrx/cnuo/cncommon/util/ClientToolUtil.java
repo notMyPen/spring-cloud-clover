@@ -51,13 +51,13 @@ public class ClientToolUtil {
     public static long getDistributedId(int node){
     	Snowflake snowflake = new Snowflake(node);
     	Long s = snowflake.next();
-    	
-    	Long result = Long.parseLong(s.toString().substring(3));
-    	if(result >= 9007199254740992L){
-            return Long.parseLong(result.toString().substring(1));//在从头截取调一位
-    	}else{
-    		return result;
-    	}
+		/*
+		 * Long result = Long.parseLong(s.toString().substring(3)); if(result >=
+		 * 9007199254740992L){ return
+		 * Long.parseLong(result.toString().substring(1));//在从头截取调一位 }else{ return
+		 * result; }
+		 */
+    	return s;
     }
 
     /**

@@ -7,8 +7,6 @@ import rrx.cnuo.service.po.UserPassport;
 public interface UserPassportMapper {
     int deleteByPrimaryKey(Long uid);
 
-    int insert(UserPassport record);
-
     int insertSelective(UserPassport record);
 
     UserPassport selectByPrimaryKey(Long uid);
@@ -17,5 +15,4 @@ public interface UserPassportMapper {
 
     int updateByPrimaryKeySelective(UserPassport record);
 
-    int updateByPrimaryKey(UserPassport record);
 }

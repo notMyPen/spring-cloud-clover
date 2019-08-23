@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.UserBasicInfoMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.UserBasicInfo">
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="wx_account" jdbcType="VARCHAR" property="wxAccount" />
+    <result column="birthday" jdbcType="INTEGER" property="birthday" />
+    <result column="zodiac" jdbcType="TINYINT" property="zodiac" />
+    <result column="constellation" jdbcType="TINYINT" property="constellation" />
+    <result column="height" jdbcType="SMALLINT" property="height" />
+    <result column="figure_list" jdbcType="VARCHAR" property="figureList" />
+    <result column="home_province_id" jdbcType="INTEGER" property="homeProvinceId" />
+    <result column="home_city_id" jdbcType="INTEGER" property="homeCityId" />
+    <result column="home_province_city" jdbcType="VARCHAR" property="homeProvinceCity" />
+    <result column="now_province_id" jdbcType="INTEGER" property="nowProvinceId" />
+    <result column="now_city_id" jdbcType="INTEGER" property="nowCityId" />
+    <result column="now_province_city" jdbcType="VARCHAR" property="nowProvinceCity" />
+    <result column="marital_status" jdbcType="TINYINT" property="maritalStatus" />
+    <result column="have_children" jdbcType="TINYINT" property="haveChildren" />
+    <result column="character_list" jdbcType="VARCHAR" property="characterList" />
+    <result column="academic" jdbcType="TINYINT" property="academic" />
+    <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="college" jdbcType="VARCHAR" property="college" />
+    <result column="school_type" jdbcType="TINYINT" property="schoolType" />
+    <result column="year_income" jdbcType="TINYINT" property="yearIncome" />
+    <result column="house_status" jdbcType="TINYINT" property="houseStatus" />
+    <result column="car_status" jdbcType="TINYINT" property="carStatus" />
+    <result column="asset_level" jdbcType="TINYINT" property="assetLevel" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uid, id_card_no, gender, wx_account, birthday, zodiac, constellation, height, figure_list, 
+    home_province_id, home_city_id, home_province_city, now_province_id, now_city_id, 
+    now_province_city, marital_status, have_children, character_list, academic, college_id, 
+    college, school_type, year_income, house_status, car_status, asset_level, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_basic_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_basic_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserBasicInfo">
+    insert into user_basic_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="idCardNo != null">
+        id_card_no,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="wxAccount != null">
+        wx_account,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="zodiac != null">
+        zodiac,
+      </if>
+      <if test="constellation != null">
+        constellation,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="figureList != null">
+        figure_list,
+      </if>
+      <if test="homeProvinceId != null">
+        home_province_id,
+      </if>
+      <if test="homeCityId != null">
+        home_city_id,
+      </if>
+      <if test="homeProvinceCity != null">
+        home_province_city,
+      </if>
+      <if test="nowProvinceId != null">
+        now_province_id,
+      </if>
+      <if test="nowCityId != null">
+        now_city_id,
+      </if>
+      <if test="nowProvinceCity != null">
+        now_province_city,
+      </if>
+      <if test="maritalStatus != null">
+        marital_status,
+      </if>
+      <if test="haveChildren != null">
+        have_children,
+      </if>
+      <if test="characterList != null">
+        character_list,
+      </if>
+      <if test="academic != null">
+        academic,
+      </if>
+      <if test="collegeId != null">
+        college_id,
+      </if>
+      <if test="college != null">
+        college,
+      </if>
+      <if test="schoolType != null">
+        school_type,
+      </if>
+      <if test="yearIncome != null">
+        year_income,
+      </if>
+      <if test="houseStatus != null">
+        house_status,
+      </if>
+      <if test="carStatus != null">
+        car_status,
+      </if>
+      <if test="assetLevel != null">
+        asset_level,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="idCardNo != null">
+        #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="wxAccount != null">
+        #{wxAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=INTEGER},
+      </if>
+      <if test="zodiac != null">
+        #{zodiac,jdbcType=TINYINT},
+      </if>
+      <if test="constellation != null">
+        #{constellation,jdbcType=TINYINT},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=SMALLINT},
+      </if>
+      <if test="figureList != null">
+        #{figureList,jdbcType=VARCHAR},
+      </if>
+      <if test="homeProvinceId != null">
+        #{homeProvinceId,jdbcType=INTEGER},
+      </if>
+      <if test="homeCityId != null">
+        #{homeCityId,jdbcType=INTEGER},
+      </if>
+      <if test="homeProvinceCity != null">
+        #{homeProvinceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="nowProvinceId != null">
+        #{nowProvinceId,jdbcType=INTEGER},
+      </if>
+      <if test="nowCityId != null">
+        #{nowCityId,jdbcType=INTEGER},
+      </if>
+      <if test="nowProvinceCity != null">
+        #{nowProvinceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        #{maritalStatus,jdbcType=TINYINT},
+      </if>
+      <if test="haveChildren != null">
+        #{haveChildren,jdbcType=TINYINT},
+      </if>
+      <if test="characterList != null">
+        #{characterList,jdbcType=VARCHAR},
+      </if>
+      <if test="academic != null">
+        #{academic,jdbcType=TINYINT},
+      </if>
+      <if test="collegeId != null">
+        #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="college != null">
+        #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolType != null">
+        #{schoolType,jdbcType=TINYINT},
+      </if>
+      <if test="yearIncome != null">
+        #{yearIncome,jdbcType=TINYINT},
+      </if>
+      <if test="houseStatus != null">
+        #{houseStatus,jdbcType=TINYINT},
+      </if>
+      <if test="carStatus != null">
+        #{carStatus,jdbcType=TINYINT},
+      </if>
+      <if test="assetLevel != null">
+        #{assetLevel,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserBasicInfo">
+    update user_basic_info
+    <set>
+      <if test="idCardNo != null">
+        id_card_no = #{idCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="wxAccount != null">
+        wx_account = #{wxAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=INTEGER},
+      </if>
+      <if test="zodiac != null">
+        zodiac = #{zodiac,jdbcType=TINYINT},
+      </if>
+      <if test="constellation != null">
+        constellation = #{constellation,jdbcType=TINYINT},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=SMALLINT},
+      </if>
+      <if test="figureList != null">
+        figure_list = #{figureList,jdbcType=VARCHAR},
+      </if>
+      <if test="homeProvinceId != null">
+        home_province_id = #{homeProvinceId,jdbcType=INTEGER},
+      </if>
+      <if test="homeCityId != null">
+        home_city_id = #{homeCityId,jdbcType=INTEGER},
+      </if>
+      <if test="homeProvinceCity != null">
+        home_province_city = #{homeProvinceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="nowProvinceId != null">
+        now_province_id = #{nowProvinceId,jdbcType=INTEGER},
+      </if>
+      <if test="nowCityId != null">
+        now_city_id = #{nowCityId,jdbcType=INTEGER},
+      </if>
+      <if test="nowProvinceCity != null">
+        now_province_city = #{nowProvinceCity,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null">
+        marital_status = #{maritalStatus,jdbcType=TINYINT},
+      </if>
+      <if test="haveChildren != null">
+        have_children = #{haveChildren,jdbcType=TINYINT},
+      </if>
+      <if test="characterList != null">
+        character_list = #{characterList,jdbcType=VARCHAR},
+      </if>
+      <if test="academic != null">
+        academic = #{academic,jdbcType=TINYINT},
+      </if>
+      <if test="collegeId != null">
+        college_id = #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="college != null">
+        college = #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolType != null">
+        school_type = #{schoolType,jdbcType=TINYINT},
+      </if>
+      <if test="yearIncome != null">
+        year_income = #{yearIncome,jdbcType=TINYINT},
+      </if>
+      <if test="houseStatus != null">
+        house_status = #{houseStatus,jdbcType=TINYINT},
+      </if>
+      <if test="carStatus != null">
+        car_status = #{carStatus,jdbcType=TINYINT},
+      </if>
+      <if test="assetLevel != null">
+        asset_level = #{assetLevel,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+  
+</mapper>

@@ -1,30 +1,35 @@
 package rrx.cnuo.service.service.impl;
 
+import java.util.Base64;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
+import rrx.cnuo.cncommon.util.ClientToolUtil;
 import rrx.cnuo.cncommon.util.EncryptUtil;
 import rrx.cnuo.cncommon.util.RandomGenerator;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.cncommon.vo.UserInitOauthVo;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
-import rrx.cnuo.cncommon.vo.config.WeChatAppConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
-import rrx.cnuo.service.dao.UserAccountMapper;
-import rrx.cnuo.service.dao.UserPassportMapper;
 import rrx.cnuo.service.feignclient.OrderFeignService;
 import rrx.cnuo.service.po.UserAccount;
+import rrx.cnuo.service.po.UserBasicInfo;
 import rrx.cnuo.service.po.UserPassport;
 import rrx.cnuo.service.service.PassportService;
 import rrx.cnuo.service.service.data.UserAccountDataService;
+import rrx.cnuo.service.service.data.UserBasicInfoService;
 import rrx.cnuo.service.service.data.UserPassportDataService;
 import rrx.cnuo.service.utils.AccessToken;
-import rrx.cnuo.service.weixin.model.WeiXinUserinfo;
+import rrx.cnuo.service.vo.passport.external.WxMiniUserInfoModel;
+import rrx.cnuo.service.vo.passport.request.OauthParam;
+import rrx.cnuo.service.vo.passport.response.UserInitOauthVo;
 
 /**
  * 处理用户登录相关操作
@@ -33,80 +38,16 @@ import rrx.cnuo.service.weixin.model.WeiXinUserinfo;
  */
 @Slf4j
 @Service
+@SuppressWarnings("unchecked")
 public class PassportServiceImpl implements PassportService {
 
 	@Autowired private RedisTool redis;
-	@Autowired private WeChatAppConfig weChatAppConfig;
+	@Autowired private UserBasicInfoService userBasicInfoService;
 	@Autowired private WeChatMiniConfig weChatMiniConfig;
-	@Autowired private UserPassportMapper userPassportMapper;
-	@Autowired private UserAccountMapper userAccountMapper;
 	@Autowired private UserAccountDataService userAccountDataService;
 	@Autowired private UserPassportDataService userPassportDataService;
 	@Autowired private OrderFeignService orderFeignService;
 	@Autowired private BasicConfig basicConfig;
-	
-	@Override
-	public JsonResult<UserInitOauthVo> updateInit(String code,Byte platform) throws Exception{
-		JsonResult<UserInitOauthVo> result = new JsonResult<>();
-        result.setStatus(JsonResult.SUCCESS);
-        
-        if (StringUtils.isBlank(code)) {
-        	result.setStatus(JsonResult.FAIL);
-            result.setMsg("微信code不能为空");
-            return result;
-        }
-        if (platform != Const.Platform.WECHAT.getCode() && platform != Const.Platform.WX_MINI.getCode()) {
-        	result.setStatus(JsonResult.FAIL);
-        	result.setMsg("参数platform传递错误，请在微信公众号或微信小程序中使用该init方法");
-        	return result;
-        }
-        WeiXinUserinfo weiXinUserinfo = null;
-        UserPassport userPassport = null;
-        // 查询微信信息
-        if(platform == Const.Platform.WECHAT.getCode()){
-        	weiXinUserinfo = AccessToken.getWechatUserInfo(redis, code,weChatAppConfig);
-     		if (weiXinUserinfo == null || weiXinUserinfo.getOpenid() == null) {
-     			result.setStatus(JsonResult.FAIL);
-     			result.setMsg("微信出了一些小故障，请退出页面，重新进入");
-     			return result;
-     		}
-     		userPassport = userPassportDataService.selectByOpenid(weiXinUserinfo.getOpenid());
-        }else{
-        	String openId = AccessToken.getMiniOpenidByCode(code,weChatMiniConfig);
-        	if (StringUtils.isBlank(openId)) {
-        		result.setStatus(JsonResult.FAIL);
-        		result.setMsg("获取微信openid失败，请稍后重试!");
-        		return result;
-        	}
-        	weiXinUserinfo = new WeiXinUserinfo();
-        	weiXinUserinfo.setOpenid(openId);
-            userPassport = userPassportDataService.selectByMiniOpenid(openId);
-        }
-        Long uid = null;
-        if(userPassport == null){//未注册
-        	uid = register(weiXinUserinfo,platform);
-        	//支付中心开户
-        	if(orderFeignService.openAccountBalance(uid).getData()){
-        		UserAccount userBasicParam = new UserAccount();
-        		userBasicParam.setUid(uid);
-        		userBasicParam.setOpenAccount(true);
-        		userAccountDataService.updateByPrimaryKeySelective(userBasicParam);
-        	}
-        }else{//已注册(暂不支持用户用手机号登录更换微信公众号登录)
-        	uid = userPassport.getUid();
-        	if(platform == Const.Platform.WECHAT.getCode()){
-        		Boolean subscribe = weiXinUserinfo.getSubscribe() == 0 ? false : true;//值为0时，代表此用户没有关注该公众号。 
-        		if(!userPassport.getSubscribe().equals(subscribe)){//如果关注状态变了，更新
-        			UserPassport param = new UserPassport();
-        			param.setUid(uid);
-        			param.setSubscribe(subscribe);
-        			userPassportDataService.updateByPrimaryKeySelective(param);
-        		}
-        	}
-        }
-        result = getUserInitOauthVo(weiXinUserinfo.getOpenid(), uid);
-		return result;
-	}
 	
 	/**
 	 * 注册新用户
@@ -114,25 +55,24 @@ public class PassportServiceImpl implements PassportService {
 	 * @param openId
 	 * @return
 	 */
-	private Long register(WeiXinUserinfo weiXinUserinfo,Byte platform) {
+	private Long register(WxMiniUserInfoModel wxUserInfoModel) throws Exception{
 		UserPassport userPassport = new UserPassport();
-		userPassport.setUid(StarterToolUtil.generatorLongId(redis));
-		if(platform == Const.Platform.WECHAT.getCode()){//微信公众号
-			userPassport.setOpenId(weiXinUserinfo.getOpenid());
-			userPassport.setAvatarUrl(weiXinUserinfo.getHeadimgurl());
-			userPassport.setNickName(weiXinUserinfo.getNickname());
-			userPassport.setSubscribe(weiXinUserinfo.getSubscribe() == 0 ? false : true);
-		}else{//微信小程序
-			userPassport.setMiniOpenId(weiXinUserinfo.getOpenid());
-		}
-    	userPassportMapper.insertSelective(userPassport);
+		userPassport.setUid(ClientToolUtil.getDistributedId(basicConfig.getSnowflakeNode()));
+		//TODO 存到阿里云
+		userPassport.setAvatarUrl(wxUserInfoModel.getAvatarUrl());
+		userPassport.setNickName(wxUserInfoModel.getNickName());
+		userPassport.setMiniOpenId(wxUserInfoModel.getOpenId());
+		userPassportDataService.insertSelective(userPassport);
     	
     	UserAccount userAccount = new UserAccount();
     	userAccount.setUid(userPassport.getUid());
-    	userAccountMapper.insertSelective(userAccount);
+    	userAccountDataService.insertSelective(userAccount);
     	
-		// user_basic_info表字段不确定，确认后再加入
+    	UserBasicInfo userBasicInfo = new UserBasicInfo();
+    	userBasicInfo.setUid(userPassport.getUid());
+    	userBasicInfoService.insertSelective(userBasicInfo);
     	
+    	//TODO user_detail_info
 		return userPassport.getUid();
 	}
 	
@@ -140,6 +80,7 @@ public class PassportServiceImpl implements PassportService {
 		JsonResult<UserInitOauthVo> result = new JsonResult<>();
         result.setStatus(JsonResult.SUCCESS);
         
+        //TODO 用gateway中的
 		String ticket = getTicketFromUserId(uid + "");
         if (StringUtils.isBlank(ticket)) {
             log.error("getTicketFromUserId fail, null ticket, userId:{}", uid);
@@ -148,7 +89,7 @@ public class PassportServiceImpl implements PassportService {
             return result;
         }
         UserInitOauthVo userWxInfo = new UserInitOauthVo();
-        userWxInfo.setOpenId(openId);
+        userWxInfo.setMiniOpenId(openId);
         userWxInfo.setUid(uid);
         userWxInfo.setTicket(ticket);
         userWxInfo.setExpireTime(Const.TICKET_EXPIRE);
@@ -163,4 +104,67 @@ public class PassportServiceImpl implements PassportService {
         redis.set(Const.REDIS_PREFIX.TICKET_FILE + ticket, userId, Const.TICKET_EXPIRE);
         return ticket;
     }
+
+	@Override
+	public JsonResult<UserInitOauthVo> updateOauth(OauthParam oauthParam) throws Exception{
+        if (StringUtils.isBlank(oauthParam.getCode())) {
+            return JsonResult.fail(JsonResult.FAIL, "微信code不能为空");
+        }
+        
+        JsonResult<WxMiniUserInfoModel> oauthResult = wxOauth(oauthParam);
+        if(!oauthResult.isOk()) {
+        	return JsonResult.fail(oauthResult.getStatus(), oauthResult.getMsg());
+        }
+        WxMiniUserInfoModel wxUserInfoModel = oauthResult.getData();
+        
+        UserPassport userPassport = userPassportDataService.selectByMiniOpenid(wxUserInfoModel.getOpenId());
+        Long uid = null;
+        if(userPassport == null){//未注册
+        	uid = register(wxUserInfoModel);
+        	//支付中心开户
+        	if(orderFeignService.openAccountBalance(uid).getData()){
+        		UserAccount userBasicParam = new UserAccount();
+        		userBasicParam.setUid(uid);
+        		userBasicParam.setOpenAccount(true);
+        		userAccountDataService.updateByPrimaryKeySelective(userBasicParam);
+        	}
+        }else{//已注册(暂不支持用户用手机号登录更换微信公众号登录)
+        	uid = userPassport.getUid();
+        }
+        return getUserInitOauthVo(wxUserInfoModel.getOpenId(), uid);
+	}
+	
+	/**
+	 * 微信授权验证
+	 * @author xuhongyu
+	 * @param code
+	 * @return
+	 */
+	private JsonResult<WxMiniUserInfoModel> wxOauth(OauthParam oauthParam) throws Exception{
+		// 根据mySign和Signature进行第一次校验
+        JSONObject tokenJson = AccessToken.getWxSessionJsonByCode(oauthParam.getCode(),weChatMiniConfig);
+        String wx_session_key = tokenJson.getString("session_key");
+        String mySign = EncryptUtil.sha1(oauthParam.getRawData() + wx_session_key);
+        if (!oauthParam.getSignature().equals(mySign)) {
+            return JsonResult.fail(JsonResult.AUTHORIZE_ERROR, "微信授权错误");
+        }
+        
+        //根据appid是否一致进行第二次校验
+        byte[] sessionKeyCla = Base64.getDecoder().decode(wx_session_key);
+        byte[] encryptedDataCla = Base64.getDecoder().decode(oauthParam.getEncryptedData());
+        byte[] ivCla = Base64.getDecoder().decode(oauthParam.getIv());
+        String userInfo = EncryptUtil.aes_decrypt(sessionKeyCla,ivCla, encryptedDataCla);
+        JSONObject jsonObject = JSON.parseObject(userInfo);
+        if (jsonObject == null || !jsonObject.containsKey("watermark")
+                || null==jsonObject.getJSONObject("watermark")
+                || !jsonObject.getJSONObject("watermark").containsKey("appid")
+                || !weChatMiniConfig.getMiniAppId().equals(jsonObject.getJSONObject("watermark").getString("appid"))) {
+        	return JsonResult.fail(JsonResult.AUTHORIZE_ERROR, "微信授权错误");
+        }
+        WxMiniUserInfoModel wxUserInfo = JSON.parseObject(userInfo, WxMiniUserInfoModel.class);
+        if (StringUtils.isBlank(wxUserInfo.getOpenId())) {
+        	return JsonResult.fail(JsonResult.FAIL, "获取微信openid失败，请稍后重试!");
+        }
+        return JsonResult.ok(wxUserInfo);
+	}
 }

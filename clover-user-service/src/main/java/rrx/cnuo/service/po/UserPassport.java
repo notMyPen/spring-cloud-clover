@@ -9,8 +9,6 @@ public class UserPassport {
 
     private String miniOpenId;
 
-    private String openId;
-
     private String nickName;
 
     private String avatarUrl;
@@ -22,8 +20,6 @@ public class UserPassport {
     private Byte boardStatus;
 
     private Boolean highQuality;
-
-    private Boolean subscribe;
 
     private Date createTime;
 
@@ -51,14 +47,6 @@ public class UserPassport {
 
     public void setMiniOpenId(String miniOpenId) {
         this.miniOpenId = miniOpenId == null ? null : miniOpenId.trim();
-    }
-
-    public String getOpenId() {
-        return openId;
-    }
-
-    public void setOpenId(String openId) {
-        this.openId = openId == null ? null : openId.trim();
     }
 
     public String getNickName() {
@@ -107,14 +95,6 @@ public class UserPassport {
 
     public void setHighQuality(Boolean highQuality) {
         this.highQuality = highQuality;
-    }
-
-    public Boolean getSubscribe() {
-        return subscribe;
-    }
-
-    public void setSubscribe(Boolean subscribe) {
-        this.subscribe = subscribe;
     }
 
     public Date getCreateTime() {

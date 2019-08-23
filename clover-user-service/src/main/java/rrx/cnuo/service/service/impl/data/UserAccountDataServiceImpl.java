@@ -86,4 +86,9 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
 		}
 	}
 
+	@Override
+	public void insertSelective(UserAccount userAccount) {
+		userAccountMapper.insertSelective(userAccount);
+	}
+
 }

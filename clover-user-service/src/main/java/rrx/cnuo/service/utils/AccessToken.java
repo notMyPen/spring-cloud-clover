@@ -90,7 +90,15 @@ public class AccessToken {
     	return null;
     }
     
-    public static String getMiniOpenidByCode(String code,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    /**
+     * 根据code获取微信Session信息
+     * @author xuhongyu
+     * @param code
+     * @param weChatMiniConfig
+     * @return
+     * @throws Exception
+     */
+    public static JSONObject getWxSessionJsonByCode(String code,WeChatMiniConfig weChatMiniConfig) throws Exception {
         //通过code获取用户在应用appid下唯一标识openid
         String url = miniOpenIdUrl + weChatMiniConfig.getMiniAppId() + "&secret=" + weChatMiniConfig.getMiniAppSecret()
                 + "&js_code=" + code + "&grant_type=authorization_code";
@@ -106,7 +114,7 @@ public class AccessToken {
         	if (respJson == null || StringUtils.isBlank(respJson.getString("openid"))) {
         		continue;
         	}
-        	return respJson.getString("openid");
+        	return respJson;
         }
         return null;
     }

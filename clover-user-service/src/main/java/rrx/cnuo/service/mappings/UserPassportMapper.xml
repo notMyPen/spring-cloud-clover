@@ -5,21 +5,19 @@
     <id column="uid" jdbcType="BIGINT" property="uid" />
     <result column="regist_tel" jdbcType="VARCHAR" property="registTel" />
     <result column="mini_open_id" jdbcType="VARCHAR" property="miniOpenId" />
-    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
     <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
     <result column="card_num" jdbcType="INTEGER" property="cardNum" />
     <result column="credit_pass" jdbcType="BIT" property="creditPass" />
     <result column="board_status" jdbcType="TINYINT" property="boardStatus" />
     <result column="high_quality" jdbcType="BIT" property="highQuality" />
-    <result column="subscribe" jdbcType="BIT" property="subscribe" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   
   <sql id="Base_Column_List">
-    uid, regist_tel, mini_open_id, open_id, nick_name, avatar_url, card_num, credit_pass, 
-    board_status, high_quality, subscribe, create_time, update_time
+    uid, regist_tel, mini_open_id, nick_name, avatar_url, card_num, credit_pass, 
+    board_status, high_quality, create_time, update_time
   </sql>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -33,9 +31,6 @@
     select <include refid="Base_Column_List" />
     from user_passport
     <where>
-    	<if test="openId != null">
-    		and open_id = #{openId}
-    	</if>
     	<if test="miniOpenId != null">
     		and mini_open_id = #{miniOpenId}
     	</if>
@@ -62,9 +57,6 @@
       <if test="miniOpenId != null">
         mini_open_id,
       </if>
-      <if test="openId != null">
-        open_id,
-      </if>
       <if test="nickName != null">
         nick_name,
       </if>
@@ -83,9 +75,6 @@
       <if test="highQuality != null">
         high_quality,
       </if>
-      <if test="subscribe != null">
-        subscribe,
-      </if>
       <if test="createTime != null">
         create_time,
       </if>
@@ -102,9 +91,6 @@
       </if>
       <if test="miniOpenId != null">
         #{miniOpenId,jdbcType=VARCHAR},
-      </if>
-      <if test="openId != null">
-        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="nickName != null">
         #{nickName,jdbcType=VARCHAR},
@@ -124,9 +110,6 @@
       <if test="highQuality != null">
         #{highQuality,jdbcType=BIT},
       </if>
-      <if test="subscribe != null">
-        #{subscribe,jdbcType=BIT},
-      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -145,9 +128,6 @@
       <if test="miniOpenId != null">
         mini_open_id = #{miniOpenId,jdbcType=VARCHAR},
       </if>
-      <if test="openId != null">
-        open_id = #{openId,jdbcType=VARCHAR},
-      </if>
       <if test="nickName != null">
         nick_name = #{nickName,jdbcType=VARCHAR},
       </if>
@@ -165,9 +145,6 @@
       </if>
       <if test="highQuality != null">
         high_quality = #{highQuality,jdbcType=BIT},
-      </if>
-      <if test="subscribe != null">
-        subscribe = #{subscribe,jdbcType=BIT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},

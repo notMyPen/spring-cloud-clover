@@ -25,7 +25,6 @@ import javax.imageio.ImageWriter;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -33,10 +32,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
-import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.cncommon.vo.UserWxInfoVo;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 import rrx.cnuo.service.po.UserPassport;
 import rrx.cnuo.service.service.WxMiniProgService;
@@ -87,30 +83,6 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
         log.info("/user/getMiniProgramCode, response: success");
     }
 
-	@Override
-	public JsonResult<UserWxInfoVo> saveMiniBaseInfo(UserWxInfoVo infoVo) throws Exception{
-		JsonResult<UserWxInfoVo> result = new JsonResult<>();
-        result.setStatus(JsonResult.SUCCESS);
-        
-        Long uid = UserContextHolder.currentUser().getUserId();
-        UserPassport userPassport = userPassportDataService.selectByPrimaryKey(uid);
-        if(StringUtils.isNotBlank(userPassport.getNickName()) && StringUtils.isNotBlank(userPassport.getAvatarUrl())){
-        	return result;
-        }
-        
-		if(StringUtils.isBlank(infoVo.getNickName()) || StringUtils.isBlank(infoVo.getAvatarUrl())){
-			result.setStatus(JsonResult.FAIL);
-            result.setMsg("参数有误：nickName、avatarUrl均不能为空");
-            return result;
-		}
-		UserPassport param = new UserPassport();
-		param.setUid(uid);
-		param.setAvatarUrl(infoVo.getAvatarUrl());
-		param.setNickName(infoVo.getNickName());
-		userPassportDataService.updateByPrimaryKeySelective(param);
-		return result;
-	}
-	
 	@Override
 	public byte[] genDynamicGraph(Long prodId) throws Exception {
 		// 大小

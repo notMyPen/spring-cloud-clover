@@ -3,7 +3,7 @@ package rrx.cnuo.service.weixin.model;
 import java.io.Serializable;
 
 /**
- * 获取用户基本信息（包括UnionID机制）
+ * 获取用户微信公众号基本信息（包括UnionID机制）
  * Title: SnsapiUserinfo.java
  * Description
  * @author 

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.UserDetailInfoMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.UserDetailInfo">
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_type" jdbcType="TINYINT" property="companyType" />
+    <result column="industry_type" jdbcType="TINYINT" property="industryType" />
+    <result column="rank_type" jdbcType="TINYINT" property="rankType" />
+    <result column="dishonest_credit_result" jdbcType="TINYINT" property="dishonestCreditResult" />
+    <result column="duotou_lend_result" jdbcType="TINYINT" property="duotouLendResult" />
+    <result column="parental_situation" jdbcType="TINYINT" property="parentalSituation" />
+    <result column="relation_with_parents_list" jdbcType="VARCHAR" property="relationWithParentsList" />
+    <result column="only_child" jdbcType="TINYINT" property="onlyChild" />
+    <result column="have_brother" jdbcType="BIT" property="haveBrother" />
+    <result column="have_younger_brother" jdbcType="BIT" property="haveYoungerBrother" />
+    <result column="have_sister" jdbcType="BIT" property="haveSister" />
+    <result column="have_younger_sister" jdbcType="BIT" property="haveYoungerSister" />
+    <result column="interest_list" jdbcType="VARCHAR" property="interestList" />
+    <result column="like_eat_list" jdbcType="VARCHAR" property="likeEatList" />
+    <result column="marry_plan" jdbcType="TINYINT" property="marryPlan" />
+    <result column="child_plan" jdbcType="TINYINT" property="childPlan" />
+    <result column="ideal_partner_type_list" jdbcType="VARCHAR" property="idealPartnerTypeList" />
+    <result column="consume_attitude" jdbcType="TINYINT" property="consumeAttitude" />
+    <result column="active_pursuit" jdbcType="TINYINT" property="activePursuit" />
+    <result column="mind_emotion_experiences" jdbcType="TINYINT" property="mindEmotionExperiences" />
+    <result column="single_reason_list" jdbcType="VARCHAR" property="singleReasonList" />
+    <result column="faith" jdbcType="TINYINT" property="faith" />
+    <result column="smok_drink" jdbcType="TINYINT" property="smokDrink" />
+    <result column="housework" jdbcType="TINYINT" property="housework" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uid, company_name, company_type, industry_type, rank_type, dishonest_credit_result, 
+    duotou_lend_result, parental_situation, relation_with_parents_list, only_child, have_brother, 
+    have_younger_brother, have_sister, have_younger_sister, interest_list, like_eat_list, 
+    marry_plan, child_plan, ideal_partner_type_list, consume_attitude, active_pursuit, 
+    mind_emotion_experiences, single_reason_list, faith, smok_drink, housework, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_detail_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_detail_info
+    where uid = #{uid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.UserDetailInfo">
+    insert into user_detail_info (uid, company_name, company_type, 
+      industry_type, rank_type, dishonest_credit_result, 
+      duotou_lend_result, parental_situation, relation_with_parents_list, 
+      only_child, have_brother, have_younger_brother, 
+      have_sister, have_younger_sister, interest_list, 
+      like_eat_list, marry_plan, child_plan, 
+      ideal_partner_type_list, consume_attitude, 
+      active_pursuit, mind_emotion_experiences, 
+      single_reason_list, faith, smok_drink, 
+      housework, create_time, update_time
+      )
+    values (#{uid,jdbcType=BIGINT}, #{companyName,jdbcType=VARCHAR}, #{companyType,jdbcType=TINYINT}, 
+      #{industryType,jdbcType=TINYINT}, #{rankType,jdbcType=TINYINT}, #{dishonestCreditResult,jdbcType=TINYINT}, 
+      #{duotouLendResult,jdbcType=TINYINT}, #{parentalSituation,jdbcType=TINYINT}, #{relationWithParentsList,jdbcType=VARCHAR}, 
+      #{onlyChild,jdbcType=TINYINT}, #{haveBrother,jdbcType=BIT}, #{haveYoungerBrother,jdbcType=BIT}, 
+      #{haveSister,jdbcType=BIT}, #{haveYoungerSister,jdbcType=BIT}, #{interestList,jdbcType=VARCHAR}, 
+      #{likeEatList,jdbcType=VARCHAR}, #{marryPlan,jdbcType=TINYINT}, #{childPlan,jdbcType=TINYINT}, 
+      #{idealPartnerTypeList,jdbcType=VARCHAR}, #{consumeAttitude,jdbcType=TINYINT}, 
+      #{activePursuit,jdbcType=TINYINT}, #{mindEmotionExperiences,jdbcType=TINYINT}, 
+      #{singleReasonList,jdbcType=VARCHAR}, #{faith,jdbcType=TINYINT}, #{smokDrink,jdbcType=TINYINT}, 
+      #{housework,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserDetailInfo">
+    insert into user_detail_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="companyName != null">
+        company_name,
+      </if>
+      <if test="companyType != null">
+        company_type,
+      </if>
+      <if test="industryType != null">
+        industry_type,
+      </if>
+      <if test="rankType != null">
+        rank_type,
+      </if>
+      <if test="dishonestCreditResult != null">
+        dishonest_credit_result,
+      </if>
+      <if test="duotouLendResult != null">
+        duotou_lend_result,
+      </if>
+      <if test="parentalSituation != null">
+        parental_situation,
+      </if>
+      <if test="relationWithParentsList != null">
+        relation_with_parents_list,
+      </if>
+      <if test="onlyChild != null">
+        only_child,
+      </if>
+      <if test="haveBrother != null">
+        have_brother,
+      </if>
+      <if test="haveYoungerBrother != null">
+        have_younger_brother,
+      </if>
+      <if test="haveSister != null">
+        have_sister,
+      </if>
+      <if test="haveYoungerSister != null">
+        have_younger_sister,
+      </if>
+      <if test="interestList != null">
+        interest_list,
+      </if>
+      <if test="likeEatList != null">
+        like_eat_list,
+      </if>
+      <if test="marryPlan != null">
+        marry_plan,
+      </if>
+      <if test="childPlan != null">
+        child_plan,
+      </if>
+      <if test="idealPartnerTypeList != null">
+        ideal_partner_type_list,
+      </if>
+      <if test="consumeAttitude != null">
+        consume_attitude,
+      </if>
+      <if test="activePursuit != null">
+        active_pursuit,
+      </if>
+      <if test="mindEmotionExperiences != null">
+        mind_emotion_experiences,
+      </if>
+      <if test="singleReasonList != null">
+        single_reason_list,
+      </if>
+      <if test="faith != null">
+        faith,
+      </if>
+      <if test="smokDrink != null">
+        smok_drink,
+      </if>
+      <if test="housework != null">
+        housework,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null">
+        #{companyType,jdbcType=TINYINT},
+      </if>
+      <if test="industryType != null">
+        #{industryType,jdbcType=TINYINT},
+      </if>
+      <if test="rankType != null">
+        #{rankType,jdbcType=TINYINT},
+      </if>
+      <if test="dishonestCreditResult != null">
+        #{dishonestCreditResult,jdbcType=TINYINT},
+      </if>
+      <if test="duotouLendResult != null">
+        #{duotouLendResult,jdbcType=TINYINT},
+      </if>
+      <if test="parentalSituation != null">
+        #{parentalSituation,jdbcType=TINYINT},
+      </if>
+      <if test="relationWithParentsList != null">
+        #{relationWithParentsList,jdbcType=VARCHAR},
+      </if>
+      <if test="onlyChild != null">
+        #{onlyChild,jdbcType=TINYINT},
+      </if>
+      <if test="haveBrother != null">
+        #{haveBrother,jdbcType=BIT},
+      </if>
+      <if test="haveYoungerBrother != null">
+        #{haveYoungerBrother,jdbcType=BIT},
+      </if>
+      <if test="haveSister != null">
+        #{haveSister,jdbcType=BIT},
+      </if>
+      <if test="haveYoungerSister != null">
+        #{haveYoungerSister,jdbcType=BIT},
+      </if>
+      <if test="interestList != null">
+        #{interestList,jdbcType=VARCHAR},
+      </if>
+      <if test="likeEatList != null">
+        #{likeEatList,jdbcType=VARCHAR},
+      </if>
+      <if test="marryPlan != null">
+        #{marryPlan,jdbcType=TINYINT},
+      </if>
+      <if test="childPlan != null">
+        #{childPlan,jdbcType=TINYINT},
+      </if>
+      <if test="idealPartnerTypeList != null">
+        #{idealPartnerTypeList,jdbcType=VARCHAR},
+      </if>
+      <if test="consumeAttitude != null">
+        #{consumeAttitude,jdbcType=TINYINT},
+      </if>
+      <if test="activePursuit != null">
+        #{activePursuit,jdbcType=TINYINT},
+      </if>
+      <if test="mindEmotionExperiences != null">
+        #{mindEmotionExperiences,jdbcType=TINYINT},
+      </if>
+      <if test="singleReasonList != null">
+        #{singleReasonList,jdbcType=VARCHAR},
+      </if>
+      <if test="faith != null">
+        #{faith,jdbcType=TINYINT},
+      </if>
+      <if test="smokDrink != null">
+        #{smokDrink,jdbcType=TINYINT},
+      </if>
+      <if test="housework != null">
+        #{housework,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserDetailInfo">
+    update user_detail_info
+    <set>
+      <if test="companyName != null">
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyType != null">
+        company_type = #{companyType,jdbcType=TINYINT},
+      </if>
+      <if test="industryType != null">
+        industry_type = #{industryType,jdbcType=TINYINT},
+      </if>
+      <if test="rankType != null">
+        rank_type = #{rankType,jdbcType=TINYINT},
+      </if>
+      <if test="dishonestCreditResult != null">
+        dishonest_credit_result = #{dishonestCreditResult,jdbcType=TINYINT},
+      </if>
+      <if test="duotouLendResult != null">
+        duotou_lend_result = #{duotouLendResult,jdbcType=TINYINT},
+      </if>
+      <if test="parentalSituation != null">
+        parental_situation = #{parentalSituation,jdbcType=TINYINT},
+      </if>
+      <if test="relationWithParentsList != null">
+        relation_with_parents_list = #{relationWithParentsList,jdbcType=VARCHAR},
+      </if>
+      <if test="onlyChild != null">
+        only_child = #{onlyChild,jdbcType=TINYINT},
+      </if>
+      <if test="haveBrother != null">
+        have_brother = #{haveBrother,jdbcType=BIT},
+      </if>
+      <if test="haveYoungerBrother != null">
+        have_younger_brother = #{haveYoungerBrother,jdbcType=BIT},
+      </if>
+      <if test="haveSister != null">
+        have_sister = #{haveSister,jdbcType=BIT},
+      </if>
+      <if test="haveYoungerSister != null">
+        have_younger_sister = #{haveYoungerSister,jdbcType=BIT},
+      </if>
+      <if test="interestList != null">
+        interest_list = #{interestList,jdbcType=VARCHAR},
+      </if>
+      <if test="likeEatList != null">
+        like_eat_list = #{likeEatList,jdbcType=VARCHAR},
+      </if>
+      <if test="marryPlan != null">
+        marry_plan = #{marryPlan,jdbcType=TINYINT},
+      </if>
+      <if test="childPlan != null">
+        child_plan = #{childPlan,jdbcType=TINYINT},
+      </if>
+      <if test="idealPartnerTypeList != null">
+        ideal_partner_type_list = #{idealPartnerTypeList,jdbcType=VARCHAR},
+      </if>
+      <if test="consumeAttitude != null">
+        consume_attitude = #{consumeAttitude,jdbcType=TINYINT},
+      </if>
+      <if test="activePursuit != null">
+        active_pursuit = #{activePursuit,jdbcType=TINYINT},
+      </if>
+      <if test="mindEmotionExperiences != null">
+        mind_emotion_experiences = #{mindEmotionExperiences,jdbcType=TINYINT},
+      </if>
+      <if test="singleReasonList != null">
+        single_reason_list = #{singleReasonList,jdbcType=VARCHAR},
+      </if>
+      <if test="faith != null">
+        faith = #{faith,jdbcType=TINYINT},
+      </if>
+      <if test="smokDrink != null">
+        smok_drink = #{smokDrink,jdbcType=TINYINT},
+      </if>
+      <if test="housework != null">
+        housework = #{housework,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.UserDetailInfo">
+    update user_detail_info
+    set company_name = #{companyName,jdbcType=VARCHAR},
+      company_type = #{companyType,jdbcType=TINYINT},
+      industry_type = #{industryType,jdbcType=TINYINT},
+      rank_type = #{rankType,jdbcType=TINYINT},
+      dishonest_credit_result = #{dishonestCreditResult,jdbcType=TINYINT},
+      duotou_lend_result = #{duotouLendResult,jdbcType=TINYINT},
+      parental_situation = #{parentalSituation,jdbcType=TINYINT},
+      relation_with_parents_list = #{relationWithParentsList,jdbcType=VARCHAR},
+      only_child = #{onlyChild,jdbcType=TINYINT},
+      have_brother = #{haveBrother,jdbcType=BIT},
+      have_younger_brother = #{haveYoungerBrother,jdbcType=BIT},
+      have_sister = #{haveSister,jdbcType=BIT},
+      have_younger_sister = #{haveYoungerSister,jdbcType=BIT},
+      interest_list = #{interestList,jdbcType=VARCHAR},
+      like_eat_list = #{likeEatList,jdbcType=VARCHAR},
+      marry_plan = #{marryPlan,jdbcType=TINYINT},
+      child_plan = #{childPlan,jdbcType=TINYINT},
+      ideal_partner_type_list = #{idealPartnerTypeList,jdbcType=VARCHAR},
+      consume_attitude = #{consumeAttitude,jdbcType=TINYINT},
+      active_pursuit = #{activePursuit,jdbcType=TINYINT},
+      mind_emotion_experiences = #{mindEmotionExperiences,jdbcType=TINYINT},
+      single_reason_list = #{singleReasonList,jdbcType=VARCHAR},
+      faith = #{faith,jdbcType=TINYINT},
+      smok_drink = #{smokDrink,jdbcType=TINYINT},
+      housework = #{housework,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+</mapper>

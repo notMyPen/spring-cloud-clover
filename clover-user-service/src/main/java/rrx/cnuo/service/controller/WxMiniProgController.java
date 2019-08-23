@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.cncommon.vo.UserWxInfoVo;
 import rrx.cnuo.service.po.MsgFormId;
 import rrx.cnuo.service.service.MsgFormIdService;
 import rrx.cnuo.service.service.WxMiniProgService;
@@ -59,22 +58,6 @@ public class WxMiniProgController {
     public JsonResult saveFormId(@RequestBody MsgFormId reqVo) throws Exception {
     	reqVo.setUid(UserContextHolder.currentUser().getUserId());
         return msgFormIdService.saveFormId(reqVo);
-    }
-    
-    /**
-     * 微信小程序端，保存用户微信基本信息
-     * @param{
-     *      "nickName",    // 昵称|String|必填
-     *      "avatarUrl"    // 头像|String|必填
-     * 	}
-     * @return {
-     * 		"status":,  // 状态码|Integer, 200:成功; 201:异常
-     * 		"msg":,     // 描述|String
-     * 	}
-     */
-    @RequestMapping(value = "/saveMiniBaseInfo", method = RequestMethod.POST)
-    public JsonResult<UserWxInfoVo> saveMiniBaseInfo(@RequestBody UserWxInfoVo infoVo) throws Exception {
-    	return wxMiniProgService.saveMiniBaseInfo(infoVo);
     }
     
     /**

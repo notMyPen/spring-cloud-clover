@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.UserPicMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.UserPic">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="pic_url_thumb" jdbcType="VARCHAR" property="picUrlThumb" />
+    <result column="pic_url_origin" jdbcType="VARCHAR" property="picUrlOrigin" />
+    <result column="pic_order" jdbcType="TINYINT" property="picOrder" />
+    <result column="valid_status" jdbcType="BIT" property="validStatus" />
+    <result column="audit_status" jdbcType="TINYINT" property="auditStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, pic_url, pic_url_thumb, pic_url_origin, pic_order, valid_status, audit_status, 
+    create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_pic
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_pic
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="rrx.cnuo.service.po.UserPic">
+    insert into user_pic (id, uid, pic_url, 
+      pic_url_thumb, pic_url_origin, pic_order, 
+      valid_status, audit_status, create_time, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{picUrl,jdbcType=VARCHAR}, 
+      #{picUrlThumb,jdbcType=VARCHAR}, #{picUrlOrigin,jdbcType=VARCHAR}, #{picOrder,jdbcType=TINYINT}, 
+      #{validStatus,jdbcType=BIT}, #{auditStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserPic">
+    insert into user_pic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+      <if test="picUrlThumb != null">
+        pic_url_thumb,
+      </if>
+      <if test="picUrlOrigin != null">
+        pic_url_origin,
+      </if>
+      <if test="picOrder != null">
+        pic_order,
+      </if>
+      <if test="validStatus != null">
+        valid_status,
+      </if>
+      <if test="auditStatus != null">
+        audit_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrlThumb != null">
+        #{picUrlThumb,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrlOrigin != null">
+        #{picUrlOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="picOrder != null">
+        #{picOrder,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="auditStatus != null">
+        #{auditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserPic">
+    update user_pic
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrlThumb != null">
+        pic_url_thumb = #{picUrlThumb,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrlOrigin != null">
+        pic_url_origin = #{picUrlOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="picOrder != null">
+        pic_order = #{picOrder,jdbcType=TINYINT},
+      </if>
+      <if test="validStatus != null">
+        valid_status = #{validStatus,jdbcType=BIT},
+      </if>
+      <if test="auditStatus != null">
+        audit_status = #{auditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.UserPic">
+    update user_pic
+    set uid = #{uid,jdbcType=BIGINT},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      pic_url_thumb = #{picUrlThumb,jdbcType=VARCHAR},
+      pic_url_origin = #{picUrlOrigin,jdbcType=VARCHAR},
+      pic_order = #{picOrder,jdbcType=TINYINT},
+      valid_status = #{validStatus,jdbcType=BIT},
+      audit_status = #{auditStatus,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

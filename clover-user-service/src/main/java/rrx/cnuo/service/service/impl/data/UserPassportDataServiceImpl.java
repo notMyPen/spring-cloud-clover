@@ -26,24 +26,19 @@ public class UserPassportDataServiceImpl implements UserPassportDataService {
 
 	@Override
 	public UserPassport selectByPrimaryKey(long userId) throws Exception {
-		return getUserPassportByKey(userId + "", (byte) 3);
+		return getUserPassportByKey(userId + "", (byte) 2);
 	}
 	
 	@Override
-	public UserPassport selectByOpenid(String openId) throws Exception{
-		return getUserPassportByKey(openId, Const.Platform.WECHAT.getCode());
-	}
-
-	@Override
 	public UserPassport selectByMiniOpenid(String miniOpenId) throws Exception{
-		return getUserPassportByKey(miniOpenId, Const.Platform.WX_MINI.getCode());
+		return getUserPassportByKey(miniOpenId, (byte) 1);
 	}
 	
 	/**
 	 * 根据key获取UserPassport
 	 * @author xuhongyu
 	 * @param key
-	 * @param keyType key类型：1-微信公众号openId；2-微信小程序openId；3-uid
+	 * @param keyType key类型：1-微信小程序openId；2--uid
 	 * @return
 	 */
 	private UserPassport getUserPassportByKey(String key,byte keyType) throws Exception{
@@ -51,19 +46,15 @@ public class UserPassportDataServiceImpl implements UserPassportDataService {
 		String str = redis.getString(redisKey);
 		UserPassport userPassport = null;
         if (StringUtils.isBlank(str)) {
-        	if(keyType == 3) {
-        		userPassport = userPassportMapper.selectByPrimaryKey(Long.parseLong(key));
-        	}else {
+        	if(keyType == 1) {
         		UserPassport param = new UserPassport();
-        		if(keyType == Const.Platform.WX_MINI.getCode()){
-            		param.setMiniOpenId(key);
-            	}else{
-            		param.setOpenId(key);
-            	}
+        		param.setMiniOpenId(key);
         		List<UserPassport> userPassports = userPassportMapper.selectByParam(param);
         		if(userPassports != null && userPassports.size() > 0) {
         			userPassport = userPassports.get(0);
         		}
+        	}else {
+        		userPassport = userPassportMapper.selectByPrimaryKey(Long.parseLong(key));
         	}
             if (userPassport != null) {
             	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(userPassport, SimplifyObjJsonUtil.userPassportSimplifyTemplate);
@@ -89,6 +80,11 @@ public class UserPassportDataServiceImpl implements UserPassportDataService {
 	public void updateByPrimaryKeySelective(UserPassport param) throws Exception {
 		userPassportMapper.updateByPrimaryKeySelective(param);
 		delUserAccountFromRedis(param.getUid());
+	}
+
+	@Override
+	public void insertSelective(UserPassport userPassport) {
+		userPassportMapper.insertSelective(userPassport);
 	}
 
 }

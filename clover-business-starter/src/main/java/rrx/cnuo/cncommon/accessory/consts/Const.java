@@ -35,8 +35,9 @@ public class Const {
         public static final int USER_INFO_SECONDS = 3600*24*3;// 用户个人信息失效时间，单位(秒)
         public static final int BID_AUTO_DEAL_LEFT_TIME = 3600*24*3;// 用标的申请自动完成交易剩余时间(72小时)，单位(秒)
         
-        public static final String REDIS_USER_PASSPORT = "data:user_passport:"; //用户user_basic表信息
-        public static final String REDIS_USER_ACCOUNT = "data:user_account:"; //用户user_basic表信息
+        public static final String REDIS_USER_PASSPORT = "data:user_passport:"; //用户user_passport表信息
+        public static final String REDIS_USER_ACCOUNT = "data:user_account:"; //用户user_account表信息
+        public static final String REDIS_USER_BASIC_INFO = "data:user_basic_info:"; //用户user_basic_info表信息
         public static final String REDIS_USER_STATIS = "data:user_statis:"; //用户user_statis表信息
         public static final String REDIS_SYSTEM_STATIS_ITEM = "data:system_statis_item:"; //system_statis_item表信息
         public static final String TICKET_FILE = "ticket:";
@@ -314,24 +315,6 @@ public class Const {
 			}
 			return null;
 		}
-    }
-    
-    /**
-     * 用户登录平台：1-微信公众号；2-微信小程序
-     * @author xuhongyu
-     * @date 2019年4月29日
-     */
-    public enum Platform {
-    	WECHAT(1),//微信公众号
-    	WX_MINI(2);//微信小程序
-    	private byte code;// 定义私有变量
-    	// 构造函数，枚举类型只能为私有
-    	private Platform( int code) {
-    		this.code = (byte)code;
-    	}
-    	public byte getCode(){
-    		return this.code;  
-    	}
     }
     
     /**

@@ -83,7 +83,7 @@ public class BusinessDecoupMqReceiver {
 				if(notifyOpenIds != null && notifyOpenIds.length > 0 && StringUtils.isNotBlank(notifyOpenIds[0])){
 					UserPassport userPassport = null;
 					for(String openId : notifyOpenIds){
-						userPassport = userPassportDataService.selectByOpenid(openId);
+						userPassport = userPassportDataService.selectByMiniOpenid(openId);
 						if(userPassport != null){
 							uid = userPassport.getUid();
 							msgService.updateSendMiniWxMsg(uid, WeChatMsgEnum.getTypeByCode(msgType), msgVariableVal);

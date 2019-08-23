@@ -30,16 +30,6 @@ public interface UserPassportDataService {
 	void updateByPrimaryKeySelective(UserPassport param) throws Exception;
 
 	/**
-	 * 根据微信公众号openId获取user_passport表信息<br>
-	 * 从redis中获取，若无则从mysql中获取且set到redis中
-	 * @author xuhongyu
-	 * @param uid
-	 * @return
-	 * @throws Exception
-	 */
-	UserPassport selectByOpenid(String openId) throws Exception;
-
-	/**
 	 * 根据微信小程序openId获取user_passport表信息<br>
 	 * 从redis中获取，若无则从mysql中获取且set到redis中
 	 * @author xuhongyu
@@ -48,4 +38,6 @@ public interface UserPassportDataService {
 	 * @throws Exception
 	 */
 	UserPassport selectByMiniOpenid(String miniOpenId) throws Exception;
+
+	void insertSelective(UserPassport userPassport);
 }

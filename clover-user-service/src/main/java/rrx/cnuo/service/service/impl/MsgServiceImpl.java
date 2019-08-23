@@ -62,13 +62,13 @@ public class MsgServiceImpl implements MsgService {
 			}
 			switch (noticeLenderReview) {
 			case CREDIT_NOTIFY:
-				SendMsgUtil.sendAuditNotify(instance,userPassport.getOpenId(),msgContent,noticeLenderReview.getPage(),formId.getFormId(),weChatMiniConfig);
+				SendMsgUtil.sendAuditNotify(instance,userPassport.getMiniOpenId(),msgContent,noticeLenderReview.getPage(),formId.getFormId(),weChatMiniConfig);
 				break;
 			case RECEIVE_MONEY_NOTIFY:
-				SendMsgUtil.sendIncomeToAccountNotify(instance,userPassport.getOpenId(), msgVariableVal, noticeLenderReview.getPage(),msgContent,formId.getFormId(),weChatMiniConfig);
+				SendMsgUtil.sendIncomeToAccountNotify(instance,userPassport.getMiniOpenId(), msgVariableVal, noticeLenderReview.getPage(),msgContent,formId.getFormId(),weChatMiniConfig);
 				break;
 			case BUSSINESS_PROGRESS:
-				SendMsgUtil.taskHandleNotify(instance,userPassport.getOpenId(), noticeLenderReview.getTitle(),"成功", msgContent, noticeLenderReview.getPage(), formId.getFormId(),weChatMiniConfig);
+				SendMsgUtil.taskHandleNotify(instance,userPassport.getMiniOpenId(), noticeLenderReview.getTitle(),"成功", msgContent, noticeLenderReview.getPage(), formId.getFormId(),weChatMiniConfig);
 				break;
 			default:
 				break;

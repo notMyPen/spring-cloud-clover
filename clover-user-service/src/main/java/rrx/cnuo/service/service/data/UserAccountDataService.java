@@ -49,4 +49,6 @@ public interface UserAccountDataService {
 	 */
 	void updateUserAccountAccumulateAboutOrder(List<JSONObject> list,Byte updateType,Boolean rollBack) throws Exception;
 
+	void insertSelective(UserAccount userAccount);
+
 }

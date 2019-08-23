@@ -25,6 +25,7 @@ public class JsonResult<T> {
     public static final int GET_FAIL_305 = 305;//unavailable:通道不可用
 
     public static final int EXPIRED = 401;    // 失效
+    public static final int AUTHORIZE_ERROR = 9000; //授权错误
     public static final int TOKEN_EXPIRED = 9001; //TOKEN失效
     public static final int LOGIN_BAN = 9002; //用户被封
     public static final int LEASE = 9999; //信用借还
