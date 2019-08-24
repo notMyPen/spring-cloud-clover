@@ -13,4 +13,11 @@ public interface PassportService {
 	 * @return
 	 */
 	JsonResult<UserInitOauthVo> updateOauth(OauthParam oauthParam) throws Exception;
+
+	/**
+	 * 将用户的微信头像上传到alioss中并存储key
+	 * @author xuhongyu
+	 * @param rawData
+	 */
+	void updateAvatarUrlToAliOss(String rawData,Long uid) throws Exception;
 }

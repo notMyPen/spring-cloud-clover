@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.utils.StarterToolUtil;
+import rrx.cnuo.cncommon.util.ClientToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
+import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.service.dao.MsgFormIdMapper;
 import rrx.cnuo.service.po.MsgFormId;
 import rrx.cnuo.service.service.MsgFormIdService;
@@ -16,10 +16,8 @@ import rrx.cnuo.service.service.MsgFormIdService;
 @SuppressWarnings("rawtypes")
 public class MsgFormIdServiceImpl implements MsgFormIdService {
 
-	@Autowired
-	private MsgFormIdMapper msgformIdMapper;
-	
-	@Autowired private RedisTool redis;
+	@Autowired private MsgFormIdMapper msgformIdMapper;
+	@Autowired private BasicConfig basicConfig;
 	
 	@Override
     public void removeExpiredFormid() throws Exception {
@@ -41,7 +39,7 @@ public class MsgFormIdServiceImpl implements MsgFormIdService {
             return result;
         }
         MsgFormId formid = new MsgFormId();
-        formid.setId(StarterToolUtil.generatorLongId(redis));
+        formid.setId(ClientToolUtil.getDistributedId(basicConfig.getSnowflakeNode()));
         formid.setUid(reqVo.getUid());
         formid.setFormId(reqVo.getFormId());
         formid.setExpireTime(System.currentTimeMillis() + Const.REDIS_PREFIX.FORMID_EXPIRE);

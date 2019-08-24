@@ -96,27 +96,6 @@ public class StarterToolUtil {
         return tm + str;
     }
     
-    public static Long generatorLongId(RedisTool instance) {
-        final String order_id_prefix = "CLOVER_PIC";
-        Date dt = new Date();
-        DateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//SSS
-        String tm = df.format(dt);
-        long temp = instance.increase(order_id_prefix);
-        
-        int random = (int) (Math.random() * 9 + 1);
-        int tail = (int) (temp % 1000);
-
-        int tail_000 = tail / 100;
-        int tail_00 = (tail % 100) / 10;
-        int tail_0 = tail % 10;
-        String str = "" + tail_000 + random + tail_00 + tail_0;
-        String result = tm + str;
-        if(result.length() > 16){
-        	result = result.substring(result.length() - 16);
-        }
-        return Long.parseLong(result);
-    }
-
     /**
      * 获取远端ip
      * @param request

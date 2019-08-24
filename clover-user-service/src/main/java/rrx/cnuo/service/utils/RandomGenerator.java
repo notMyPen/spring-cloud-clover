@@ -1,11 +1,11 @@
-package rrx.cnuo.cncommon.util;
+package rrx.cnuo.service.utils;
 
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * 随机字符串工具类
+ * 随机字符串工具类（废弃可删除）
  * @author xuhongyu
  * @date 2019年6月18日
  */
@@ -13,6 +13,12 @@ public class RandomGenerator {
     private static String charCollection = "6g1rYKSs4hg6a83er4gs6rYUWEh5r7e28hk6pg9UQkd0PNs";
 //    private static Random random = new Random();
 
+    /**
+     * 获指定长度的随机字符串
+     * @author xuhongyu
+     * @param len
+     * @return
+     */
     public static String generateRandomString( int len ) {
         if ( len <= 0 ) return "";
         StringBuilder sb = new StringBuilder(len);

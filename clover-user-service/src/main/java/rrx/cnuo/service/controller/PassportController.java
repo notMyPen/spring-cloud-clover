@@ -23,6 +23,10 @@ public class PassportController {
 	@ApiOperation("小程序授权后登录")
 	@PostMapping(value = "/oauth")
 	public JsonResult<UserInitOauthVo> oauth(@RequestBody @ApiParam(value = "登录授权参数vo", required = true) OauthParam oauthParam) throws Exception {
-		return passportService.updateOauth(oauthParam);
+		JsonResult<UserInitOauthVo> result = passportService.updateOauth(oauthParam);
+		if(result.isOk()) {
+			passportService.updateAvatarUrlToAliOss(oauthParam.getRawData(),result.getData().getUid());
+		}
+		return result;
 	}
 }

@@ -40,6 +40,26 @@ public class SimplifyObjJsonUtil {
 	 */
 	public static final Map<Integer,String> userPassportRestoreTemplate = new HashMap<>();
 	
+	/**
+	 * 用户类(user_basic_info)简化模板Map<原字段名,简化字段名>
+	 */
+	public static final Map<String,Integer> userBasicInfoSimplifyTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_basic_info)还原模板Map<简化字段名,原字段名>
+	 */
+	public static final Map<Integer,String> userBasicInfoRestoreTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_detail_info)简化模板Map<原字段名,简化字段名>
+	 */
+	public static final Map<String,Integer> userDetailInfoSimplifyTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_detail_info)还原模板Map<简化字段名,原字段名>
+	 */
+	public static final Map<Integer,String> userDetailInfoRestoreTemplate = new HashMap<>();
+	
 	static{
 		userAccountSimplifyTemplate.put("uid",0);
 		userAccountSimplifyTemplate.put("paySalt",1);
@@ -70,6 +90,115 @@ public class SimplifyObjJsonUtil {
 		userPassportRestoreTemplate.put(4,"nickName");
 		userPassportRestoreTemplate.put(5,"avatarUrl");
 		userPassportRestoreTemplate.put(6,"subscribe");
+		
+		
+		userBasicInfoSimplifyTemplate.put("uid",0);
+		userBasicInfoSimplifyTemplate.put("idCardNo",1);
+		userBasicInfoSimplifyTemplate.put("gender",2);
+		userBasicInfoSimplifyTemplate.put("wxAccount",3);
+		userBasicInfoSimplifyTemplate.put("birthday",4);
+		userBasicInfoSimplifyTemplate.put("zodiac",5);
+		userBasicInfoSimplifyTemplate.put("constellation",6);
+		userBasicInfoSimplifyTemplate.put("height",7);
+		userBasicInfoSimplifyTemplate.put("figureList",8);
+		userBasicInfoSimplifyTemplate.put("homeProvinceId",9);
+		userBasicInfoSimplifyTemplate.put("homeCityId",10);
+		userBasicInfoSimplifyTemplate.put("homeProvinceCity",11);
+		userBasicInfoSimplifyTemplate.put("nowProvinceId",12);
+		userBasicInfoSimplifyTemplate.put("nowCityId",13);
+		userBasicInfoSimplifyTemplate.put("nowProvinceCity",14);
+		userBasicInfoSimplifyTemplate.put("maritalStatus",15);
+		userBasicInfoSimplifyTemplate.put("haveChildren",16);
+		userBasicInfoSimplifyTemplate.put("characterList",17);
+		userBasicInfoSimplifyTemplate.put("academic",18);
+		userBasicInfoSimplifyTemplate.put("collegeId",19);
+		userBasicInfoSimplifyTemplate.put("college",20);
+		userBasicInfoSimplifyTemplate.put("schoolType",21);
+		userBasicInfoSimplifyTemplate.put("yearIncome",22);
+		userBasicInfoSimplifyTemplate.put("houseStatus",23);
+		userBasicInfoSimplifyTemplate.put("carStatus",24);
+		userBasicInfoSimplifyTemplate.put("assetLevel",25);
+		
+		userBasicInfoRestoreTemplate.put(0,"uid");
+		userBasicInfoRestoreTemplate.put(1,"idCardNo");
+		userBasicInfoRestoreTemplate.put(2,"gender");
+		userBasicInfoRestoreTemplate.put(3,"wxAccount");
+		userBasicInfoRestoreTemplate.put(4,"birthday");
+		userBasicInfoRestoreTemplate.put(5,"zodiac");
+		userBasicInfoRestoreTemplate.put(6,"constellation");
+		userBasicInfoRestoreTemplate.put(7,"height");
+		userBasicInfoRestoreTemplate.put(8,"figureList");
+		userBasicInfoRestoreTemplate.put(9,"homeProvinceId");
+		userBasicInfoRestoreTemplate.put(10,"homeCityId");
+		userBasicInfoRestoreTemplate.put(11,"homeProvinceCity");
+		userBasicInfoRestoreTemplate.put(12,"nowProvinceId");
+		userBasicInfoRestoreTemplate.put(13,"nowCityId");
+		userBasicInfoRestoreTemplate.put(14,"nowProvinceCity");
+		userBasicInfoRestoreTemplate.put(15,"maritalStatus");
+		userBasicInfoRestoreTemplate.put(16,"haveChildren");
+		userBasicInfoRestoreTemplate.put(17,"characterList");
+		userBasicInfoRestoreTemplate.put(18,"academic");
+		userBasicInfoRestoreTemplate.put(19,"collegeId");
+		userBasicInfoRestoreTemplate.put(20,"college");
+		userBasicInfoRestoreTemplate.put(21,"schoolType");
+		userBasicInfoRestoreTemplate.put(22,"yearIncome");
+		userBasicInfoRestoreTemplate.put(23,"houseStatus");
+		userBasicInfoRestoreTemplate.put(24,"carStatus");
+		userBasicInfoRestoreTemplate.put(25,"assetLevel");
+		
+		userDetailInfoSimplifyTemplate.put("uid",0);
+		userDetailInfoSimplifyTemplate.put("companyName",1);
+		userDetailInfoSimplifyTemplate.put("companyType",2);
+		userDetailInfoSimplifyTemplate.put("industryType",3);
+		userDetailInfoSimplifyTemplate.put("rankType",4);
+		userDetailInfoSimplifyTemplate.put("dishonestCreditResult",5);
+		userDetailInfoSimplifyTemplate.put("duotouLendResult",6);
+		userDetailInfoSimplifyTemplate.put("parentalSituation",7);
+		userDetailInfoSimplifyTemplate.put("relationWithParentsList",8);
+		userDetailInfoSimplifyTemplate.put("onlyChild",9);
+		userDetailInfoSimplifyTemplate.put("haveBrother",10);
+		userDetailInfoSimplifyTemplate.put("haveYoungerBrother",11);
+		userDetailInfoSimplifyTemplate.put("haveSister",12);
+		userDetailInfoSimplifyTemplate.put("haveYoungerSister",13);
+		userDetailInfoSimplifyTemplate.put("interestList",14);
+		userDetailInfoSimplifyTemplate.put("likeEatList",15);
+		userDetailInfoSimplifyTemplate.put("marryPlan",16);
+		userDetailInfoSimplifyTemplate.put("childPlan",17);
+		userDetailInfoSimplifyTemplate.put("idealPartnerTypeList",18);
+		userDetailInfoSimplifyTemplate.put("consumeAttitude",19);
+		userDetailInfoSimplifyTemplate.put("activePursuit",20);
+		userDetailInfoSimplifyTemplate.put("mindEmotionExperiences",21);
+		userDetailInfoSimplifyTemplate.put("singleReasonList",22);
+		userDetailInfoSimplifyTemplate.put("faith",23);
+		userDetailInfoSimplifyTemplate.put("smokDrink",24);
+		userDetailInfoSimplifyTemplate.put("housework",25);
+		
+		userDetailInfoRestoreTemplate.put(0,"uid");
+		userDetailInfoRestoreTemplate.put(1,"companyName");
+		userDetailInfoRestoreTemplate.put(2,"companyType");
+		userDetailInfoRestoreTemplate.put(3,"industryType");
+		userDetailInfoRestoreTemplate.put(4,"rankType");
+		userDetailInfoRestoreTemplate.put(5,"dishonestCreditResult");
+		userDetailInfoRestoreTemplate.put(6,"duotouLendResult");
+		userDetailInfoRestoreTemplate.put(7,"parentalSituation");
+		userDetailInfoRestoreTemplate.put(8,"relationWithParentsList");
+		userDetailInfoRestoreTemplate.put(9,"onlyChild");
+		userDetailInfoRestoreTemplate.put(10,"haveBrother");
+		userDetailInfoRestoreTemplate.put(11,"haveYoungerBrother");
+		userDetailInfoRestoreTemplate.put(12,"haveSister");
+		userDetailInfoRestoreTemplate.put(13,"haveYoungerSister");
+		userDetailInfoRestoreTemplate.put(14,"interestList");
+		userDetailInfoRestoreTemplate.put(15,"likeEatList");
+		userDetailInfoRestoreTemplate.put(16,"marryPlan");
+		userDetailInfoRestoreTemplate.put(17,"childPlan");
+		userDetailInfoRestoreTemplate.put(18,"idealPartnerTypeList");
+		userDetailInfoRestoreTemplate.put(19,"consumeAttitude");
+		userDetailInfoRestoreTemplate.put(20,"activePursuit");
+		userDetailInfoRestoreTemplate.put(21,"mindEmotionExperiences");
+		userDetailInfoRestoreTemplate.put(22,"singleReasonList");
+		userDetailInfoRestoreTemplate.put(23,"faith");
+		userDetailInfoRestoreTemplate.put(24,"smokDrink");
+		userDetailInfoRestoreTemplate.put(25,"housework");
 	}
 
 	/**

@@ -26,15 +26,15 @@ public class GlobalBeanConfig {
 	private boolean realReconciliations;
 	@Value("${app.basic.prodEnvironment}")
 	private boolean prodEnvironment;
-	@Value("${app.basic.aesEncryptKey}")
-	private String aesEncryptKey;
+//	@Value("${app.basic.aesEncryptKey}")
+//	private String aesEncryptKey;
 	@Value("${app.basic.snowflakeNode}")
 	private Integer snowflakeNode;
 	
 	@Bean
 	public BasicConfig basicConfig(){
 		BasicConfig basicConfig = new BasicConfig();
-		basicConfig.setAesEncryptKey(aesEncryptKey);
+//		basicConfig.setAesEncryptKey(aesEncryptKey);
 		basicConfig.setPayByService(payByService);
 		basicConfig.setProdEnvironment(prodEnvironment);
 		basicConfig.setRealReconciliations(realReconciliations);

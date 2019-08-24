@@ -13,8 +13,8 @@ public class Const {
     public static final long ALIPAY = 102; // 支付中心的支付宝账户
     public static final String CHARACTER = "UTF-8";
     public static final int USER_MAX_FORMID_CNT = 30;//用户最大存储formid个数
-    public static final String TICKET_KEY = "xdd-ticket";		//nginx会忽略掉 带有下划线的 header
-    public static final int IVPARAMETER_LENGTH = 16;//加密算法秘钥长度
+//    public static final String TICKET_KEY = "xdd-ticket";		//nginx会忽略掉 带有下划线的 header
+//    public static final int IVPARAMETER_LENGTH = 16;//加密算法秘钥长度
     public static final int TICKET_EXPIRE = 60*60*10; //10个小时
 
     public static class PAY_INFO { // 支付费信息    	
@@ -38,6 +38,7 @@ public class Const {
         public static final String REDIS_USER_PASSPORT = "data:user_passport:"; //用户user_passport表信息
         public static final String REDIS_USER_ACCOUNT = "data:user_account:"; //用户user_account表信息
         public static final String REDIS_USER_BASIC_INFO = "data:user_basic_info:"; //用户user_basic_info表信息
+        public static final String REDIS_USER_DETAIL_INFO = "data:user_detail_info:"; //用户user_detail_info表信息
         public static final String REDIS_USER_STATIS = "data:user_statis:"; //用户user_statis表信息
         public static final String REDIS_SYSTEM_STATIS_ITEM = "data:system_statis_item:"; //system_statis_item表信息
         public static final String TICKET_FILE = "ticket:";

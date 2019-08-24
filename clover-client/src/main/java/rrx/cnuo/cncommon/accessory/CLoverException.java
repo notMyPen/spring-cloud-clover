@@ -5,11 +5,11 @@ package rrx.cnuo.cncommon.accessory;
  *
  * @version 1.0
  */
-public class CnException extends RuntimeException {
+public class CLoverException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public CnException(String msg) {
+    public CLoverException(String msg) {
         super(msg);
     }
 

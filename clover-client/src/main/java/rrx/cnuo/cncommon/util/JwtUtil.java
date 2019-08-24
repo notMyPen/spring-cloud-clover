@@ -1,14 +1,14 @@
-package rrx.cnuo.service.utils;
+package rrx.cnuo.cncommon.util;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import rrx.cnuo.service.vo.PermissionException;
+import rrx.cnuo.cncommon.accessory.PermissionException;
 
 /**
  * JWT工具类
@@ -21,7 +21,7 @@ public class JwtUtil {
 	    public static final String HEADER_AUTH = "Authorization";
 
 	    /**
-	     * JWT生成方法，根据用户名生成（验证的时候同样传入JWT进行验证）
+	     * JWT生成方法，根据用户名或用户id生成（验证的时候同样传入JWT进行验证）
 	     * @param user
 	     * @return
 	     */
@@ -53,7 +53,7 @@ public class JwtUtil {
 	            String user = (String) (body.get("user"));
 	            map.put("id", id);
 	            map.put("user", user);
-	            if(StringUtils.isEmpty(user)) {
+	            if(StringUtils.isBlank(user)) {
 					throw new PermissionException("user is error, please check");
 	            }
 	            return map;

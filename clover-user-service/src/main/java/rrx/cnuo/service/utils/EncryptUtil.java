@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.util;
+package rrx.cnuo.service.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Constructor;
@@ -36,9 +36,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-/**
- * Created by Harry on 17/3/17.
- */
 public class EncryptUtil {
     public static boolean initialized = false;
 

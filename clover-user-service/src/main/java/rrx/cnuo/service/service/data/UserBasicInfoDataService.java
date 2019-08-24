@@ -2,7 +2,7 @@ package rrx.cnuo.service.service.data;
 
 import rrx.cnuo.service.po.UserBasicInfo;
 
-public interface UserBasicInfoService {
+public interface UserBasicInfoDataService {
 
 	void insertSelective(UserBasicInfo record) throws Exception;
 

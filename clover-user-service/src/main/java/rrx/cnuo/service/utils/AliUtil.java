@@ -3,6 +3,7 @@ package rrx.cnuo.service.utils;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.Date;
 
 import org.apache.commons.io.IOUtils;
@@ -12,7 +13,6 @@ import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSSClient;
 
 import lombok.extern.slf4j.Slf4j;
-import rrx.cnuo.cncommon.util.ImageCompressUtils;
 import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
@@ -22,7 +22,36 @@ import rrx.cnuo.service.accessory.config.AliOssConfigBean;
 public class AliUtil {
 
 	/**
-     * 将图片上传到阿里oss，并返回图片对应的key
+     * 将网络资源下载后上传到阿里oss，并返回图片对应的key
+     * @author xuhongyu
+     * @param url
+     * @param compress 是否压缩
+     * @param redis
+     * @return
+     * @throws Exception
+     */
+    public static String uploadPicFromNetUrl(String urlStr, Boolean compress,RedisTool redis,AliOssConfigBean aliOssConfigBean) throws Exception{
+    	InputStream is = null;
+    	try {
+			// 构造URL
+			URL url = new URL(urlStr);
+			// 打开连接
+			URLConnection con = url.openConnection();
+			// 设置请求超时为5s
+			con.setConnectTimeout(5 * 1000);
+			// 输入流
+			is = con.getInputStream();
+			byte[] readBytes = IOUtils.toByteArray(is);
+			return uploadPicFromBytes(readBytes, compress, redis, aliOssConfigBean);
+		}finally {
+			if(is != null) {
+				is.close();
+			}
+		}
+    }
+    
+	/**
+     * 将用户从前端上传的文件上传到阿里oss，并返回图片对应的key
      * @author xuhongyu
      * @param file
      * @param compress 是否压缩
@@ -30,10 +59,29 @@ public class AliUtil {
      * @return
      * @throws Exception
      */
-    public static String uploadPicFromBytes(MultipartFile file, Boolean compress,RedisTool redis,AliOssConfigBean aliOssConfigBean) throws Exception{
-		InputStream inputStream = file.getInputStream();
-        byte[] readBytes = IOUtils.toByteArray(inputStream);
-        
+    public static String uploadPicFromMultipartFile(MultipartFile file, Boolean compress,RedisTool redis,AliOssConfigBean aliOssConfigBean) throws Exception{
+    	InputStream inputStream = null;
+    	try {
+			inputStream = file.getInputStream();
+			byte[] readBytes = IOUtils.toByteArray(inputStream);
+			return uploadPicFromBytes(readBytes, compress, redis, aliOssConfigBean);
+		} finally {
+			if(inputStream != null) {
+				inputStream.close();
+			}
+		}
+    }
+    
+    /**
+     * 将文件对应的字节数据上传到阿里oss，并返回图片对应的key
+     * @author xuhongyu
+     * @param readBytes
+     * @param compress 是否压缩
+     * @param redis
+     * @return
+     * @throws Exception
+     */
+    private static String uploadPicFromBytes(byte[] readBytes, Boolean compress,RedisTool redis,AliOssConfigBean aliOssConfigBean) throws Exception{
 		//取得当前上传文件的文件名称
 //        String fileKey = UUID.randomUUID().toString().replaceAll("-","") + RandomGenerator.generateRandomString(8);
         String fileKey = StarterToolUtil.generatorStringId(redis);

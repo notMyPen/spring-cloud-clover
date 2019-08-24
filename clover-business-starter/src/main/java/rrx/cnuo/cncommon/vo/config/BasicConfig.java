@@ -11,7 +11,7 @@ public class BasicConfig {
 	private boolean payByService;// 是否调用支付中心
 	private boolean realReconciliations;// 是否真实对账
 	private boolean prodEnvironment;// 是否是生产环境
-	private String aesEncryptKey; // aes加密算法秘钥
+//	private String aesEncryptKey; // aes加密算法秘钥
 	private Integer snowflakeNode; // 雪花算法节点名
 	
 	public boolean isSendSMS() {
@@ -38,12 +38,12 @@ public class BasicConfig {
 	public void setProdEnvironment(boolean prodEnvironment) {
 		this.prodEnvironment = prodEnvironment;
 	}
-	public String getAesEncryptKey() {
-		return aesEncryptKey;
-	}
-	public void setAesEncryptKey(String aesEncryptKey) {
-		this.aesEncryptKey = aesEncryptKey;
-	}
+//	public String getAesEncryptKey() {
+//		return aesEncryptKey;
+//	}
+//	public void setAesEncryptKey(String aesEncryptKey) {
+//		this.aesEncryptKey = aesEncryptKey;
+//	}
 	public Integer getSnowflakeNode() {
 		return snowflakeNode;
 	}

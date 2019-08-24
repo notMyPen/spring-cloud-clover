@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.util;
+package rrx.cnuo.service.utils;
 
 import org.apache.commons.lang3.StringUtils;
 

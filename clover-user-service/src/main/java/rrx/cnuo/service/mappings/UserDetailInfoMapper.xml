@@ -49,30 +49,7 @@
     delete from user_detail_info
     where uid = #{uid,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.UserDetailInfo">
-    insert into user_detail_info (uid, company_name, company_type, 
-      industry_type, rank_type, dishonest_credit_result, 
-      duotou_lend_result, parental_situation, relation_with_parents_list, 
-      only_child, have_brother, have_younger_brother, 
-      have_sister, have_younger_sister, interest_list, 
-      like_eat_list, marry_plan, child_plan, 
-      ideal_partner_type_list, consume_attitude, 
-      active_pursuit, mind_emotion_experiences, 
-      single_reason_list, faith, smok_drink, 
-      housework, create_time, update_time
-      )
-    values (#{uid,jdbcType=BIGINT}, #{companyName,jdbcType=VARCHAR}, #{companyType,jdbcType=TINYINT}, 
-      #{industryType,jdbcType=TINYINT}, #{rankType,jdbcType=TINYINT}, #{dishonestCreditResult,jdbcType=TINYINT}, 
-      #{duotouLendResult,jdbcType=TINYINT}, #{parentalSituation,jdbcType=TINYINT}, #{relationWithParentsList,jdbcType=VARCHAR}, 
-      #{onlyChild,jdbcType=TINYINT}, #{haveBrother,jdbcType=BIT}, #{haveYoungerBrother,jdbcType=BIT}, 
-      #{haveSister,jdbcType=BIT}, #{haveYoungerSister,jdbcType=BIT}, #{interestList,jdbcType=VARCHAR}, 
-      #{likeEatList,jdbcType=VARCHAR}, #{marryPlan,jdbcType=TINYINT}, #{childPlan,jdbcType=TINYINT}, 
-      #{idealPartnerTypeList,jdbcType=VARCHAR}, #{consumeAttitude,jdbcType=TINYINT}, 
-      #{activePursuit,jdbcType=TINYINT}, #{mindEmotionExperiences,jdbcType=TINYINT}, 
-      #{singleReasonList,jdbcType=VARCHAR}, #{faith,jdbcType=TINYINT}, #{smokDrink,jdbcType=TINYINT}, 
-      #{housework,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserDetailInfo">
     insert into user_detail_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -248,6 +225,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserDetailInfo">
     update user_detail_info
     <set>
@@ -335,35 +313,5 @@
     </set>
     where uid = #{uid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.UserDetailInfo">
-    update user_detail_info
-    set company_name = #{companyName,jdbcType=VARCHAR},
-      company_type = #{companyType,jdbcType=TINYINT},
-      industry_type = #{industryType,jdbcType=TINYINT},
-      rank_type = #{rankType,jdbcType=TINYINT},
-      dishonest_credit_result = #{dishonestCreditResult,jdbcType=TINYINT},
-      duotou_lend_result = #{duotouLendResult,jdbcType=TINYINT},
-      parental_situation = #{parentalSituation,jdbcType=TINYINT},
-      relation_with_parents_list = #{relationWithParentsList,jdbcType=VARCHAR},
-      only_child = #{onlyChild,jdbcType=TINYINT},
-      have_brother = #{haveBrother,jdbcType=BIT},
-      have_younger_brother = #{haveYoungerBrother,jdbcType=BIT},
-      have_sister = #{haveSister,jdbcType=BIT},
-      have_younger_sister = #{haveYoungerSister,jdbcType=BIT},
-      interest_list = #{interestList,jdbcType=VARCHAR},
-      like_eat_list = #{likeEatList,jdbcType=VARCHAR},
-      marry_plan = #{marryPlan,jdbcType=TINYINT},
-      child_plan = #{childPlan,jdbcType=TINYINT},
-      ideal_partner_type_list = #{idealPartnerTypeList,jdbcType=VARCHAR},
-      consume_attitude = #{consumeAttitude,jdbcType=TINYINT},
-      active_pursuit = #{activePursuit,jdbcType=TINYINT},
-      mind_emotion_experiences = #{mindEmotionExperiences,jdbcType=TINYINT},
-      single_reason_list = #{singleReasonList,jdbcType=VARCHAR},
-      faith = #{faith,jdbcType=TINYINT},
-      smok_drink = #{smokDrink,jdbcType=TINYINT},
-      housework = #{housework,jdbcType=TINYINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where uid = #{uid,jdbcType=BIGINT}
-  </update>
+  
 </mapper>

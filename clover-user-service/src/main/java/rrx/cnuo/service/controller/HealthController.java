@@ -19,7 +19,6 @@ import io.swagger.annotations.ApiResponse;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatAppConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 import rrx.cnuo.cncommon.vo.order.TradeVo;
@@ -32,7 +31,6 @@ import rrx.cnuo.service.service.TestDistributedTxService;
 public class HealthController {
 
 	@Autowired private UserConfigBean userConfigBean;
-	@Autowired private BasicConfig basicConfig;
 	@Autowired private WeChatAppConfig weChatAppConfig;
 	@Autowired private WeChatMiniConfig weChatMiniConfig;
 	@Autowired private RedisTool redis;
@@ -53,7 +51,6 @@ public class HealthController {
     public String test() {
     	String a = weChatMiniConfig.getMiniAppId();
     	String b = weChatAppConfig.getWechatAppid();
-    	String c = basicConfig.getAesEncryptKey();
     	
     	//测试redis
     	redis.set("testKey", "12313223g", 120);
@@ -71,7 +68,7 @@ public class HealthController {
 		msgObj.put("test", "测试字符串");//短信类型：语音短信
 		mqSendTool.normalMqSender(UUID.randomUUID().toString(),msgObj);
     	
-    	return a+"；"+b+"；"+c;
+    	return a+"；"+b;
     }
 
     @ApiOperation(value = "获取用户基本信息",httpMethod = "GET")

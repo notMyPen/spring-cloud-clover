@@ -19,8 +19,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
-import rrx.cnuo.service.utils.JwtUtil;
-import rrx.cnuo.service.vo.PermissionException;
+import rrx.cnuo.cncommon.accessory.PermissionException;
+import rrx.cnuo.cncommon.util.JwtUtil;
 
 /**
  * 所有的请求都会进过此filter，然后对JWT Token进行解析校验，并转换成系统内部的Token，并把路由的服务名也加入header，送往下一个路由服务里，方便进行鉴权

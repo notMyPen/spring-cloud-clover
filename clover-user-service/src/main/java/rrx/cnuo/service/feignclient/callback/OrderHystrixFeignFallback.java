@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.extern.slf4j.Slf4j;
-import rrx.cnuo.cncommon.accessory.CnException;
+import rrx.cnuo.cncommon.accessory.CLoverException;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.order.TradeVo;
 import rrx.cnuo.service.feignclient.OrderFeignService;
@@ -29,7 +29,7 @@ public class OrderHystrixFeignFallback implements OrderFeignService{
 	public void insertTrade(TradeVo tradeVo) {
 		log.info("增删改操作的服务降级必须抛异常，不然分布式事务不会滚！");
 //		DTXUserControls.rollbackGroup(UserContextHolder.currentUser().getUserId()+"");
-		throw new CnException("insertTrade失败");
+		throw new CLoverException("insertTrade失败");
 	}
 
 }

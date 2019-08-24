@@ -1,4 +1,4 @@
-package rrx.cnuo.cncommon.util;
+package rrx.cnuo.service.utils;
 
 import java.security.MessageDigest;
 

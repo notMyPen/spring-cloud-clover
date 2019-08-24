@@ -7,10 +7,8 @@ import org.springframework.stereotype.Service;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
 import rrx.cnuo.cncommon.util.ClientToolUtil;
-import rrx.cnuo.cncommon.util.Validation;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.utils.StarterToolUtil;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
@@ -27,6 +25,7 @@ import rrx.cnuo.service.service.MsgService;
 import rrx.cnuo.service.service.data.UserPassportDataService;
 import rrx.cnuo.service.utils.SMSUtils;
 import rrx.cnuo.service.utils.SendMsgUtil;
+import rrx.cnuo.service.utils.Validation;
 import rrx.cnuo.service.vo.msgcenter.ReturnSmsMassegeVo;
 import rrx.cnuo.service.vo.msgcenter.SmsMassegeVo;
 
@@ -85,7 +84,7 @@ public class MsgServiceImpl implements MsgService {
         MsgWechat.setUid(uid);
         MsgWechat.setMsgType(msgType);
         MsgWechat.setMsgValue(msgValue);
-        MsgWechat.setId(StarterToolUtil.generatorLongId(instance));
+        MsgWechat.setId(ClientToolUtil.getDistributedId(basicConfig.getSnowflakeNode()));
         msgWechatMapper.insertSelective(MsgWechat);
     }
 

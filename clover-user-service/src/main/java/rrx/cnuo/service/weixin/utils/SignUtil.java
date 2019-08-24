@@ -2,7 +2,7 @@ package rrx.cnuo.service.weixin.utils;
 
 import java.util.Arrays;
 
-import rrx.cnuo.cncommon.util.SHA1;
+import rrx.cnuo.service.utils.SHA1;
 
 /**
  * 微信验证签名类

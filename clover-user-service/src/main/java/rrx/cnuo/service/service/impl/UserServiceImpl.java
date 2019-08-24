@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
             return result;
 		}
 		//上传图片
-        String key = AliUtil.uploadPicFromBytes(file, true,redis,aliOssConfigBean);
+        String key = AliUtil.uploadPicFromMultipartFile(file, true,redis,aliOssConfigBean);
         log.info("/uploadFile, key:" + key);
         
         JSONObject data = new JSONObject();

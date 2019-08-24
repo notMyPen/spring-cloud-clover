@@ -11,10 +11,10 @@ import rrx.cnuo.cncommon.util.SimplifyObjJsonUtil;
 import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.service.dao.UserBasicInfoMapper;
 import rrx.cnuo.service.po.UserBasicInfo;
-import rrx.cnuo.service.service.data.UserBasicInfoService;
+import rrx.cnuo.service.service.data.UserBasicInfoDataService;
 
 @Service
-public class UserBasicInfoServiceImpl implements UserBasicInfoService {
+public class UserBasicInfoDataServiceImpl implements UserBasicInfoDataService {
 
 	@Autowired private UserBasicInfoMapper userBasicInfoMapper;
 	@Autowired private RedisTool redis;
@@ -32,7 +32,7 @@ public class UserBasicInfoServiceImpl implements UserBasicInfoService {
         if (StringUtils.isBlank(str)) {
             userBasicInfo = userBasicInfoMapper.selectByPrimaryKey(userId);
             if (userBasicInfo != null) {
-            	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(userBasicInfo, SimplifyObjJsonUtil.userAccountSimplifyTemplate);
+            	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(userBasicInfo, SimplifyObjJsonUtil.userBasicInfoSimplifyTemplate);
                 redis.set(redisKey, userJson.toJSONString(), Const.REDIS_PREFIX.USER_INFO_SECONDS);
             }else{
             	//如果从mysql中查询的UserAccount为空，在redis中赋值“null”，防止缓存穿透
@@ -40,7 +40,7 @@ public class UserBasicInfoServiceImpl implements UserBasicInfoService {
             }
         } else {
         	if(!"null".equals(str)){
-        		userBasicInfo = SimplifyObjJsonUtil.getOriginObjFromSimplifyJsonStr(str, UserBasicInfo.class, SimplifyObjJsonUtil.userAccountRestoreTemplate);
+        		userBasicInfo = SimplifyObjJsonUtil.getOriginObjFromSimplifyJsonStr(str, UserBasicInfo.class, SimplifyObjJsonUtil.userBasicInfoRestoreTemplate);
         	}
         }
         return userBasicInfo;
