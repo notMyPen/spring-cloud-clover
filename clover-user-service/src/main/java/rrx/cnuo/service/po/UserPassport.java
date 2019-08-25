@@ -15,6 +15,8 @@ public class UserPassport {
 
     private Integer cardNum;
 
+    private Boolean creditFee;
+    
     private Boolean creditPass;
 
     private Byte boardStatus;
@@ -112,4 +114,13 @@ public class UserPassport {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+	public Boolean getCreditFee() {
+		return creditFee;
+	}
+
+	public void setCreditFee(Boolean creditFee) {
+		this.creditFee = creditFee;
+	}
+    
 }

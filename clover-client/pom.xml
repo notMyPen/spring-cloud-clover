@@ -123,10 +123,18 @@
 		    <version>2.9.9</version>
 		</dependency>
 		
+		<!-- 授权登录 -->
 		<dependency>
 		   <groupId>io.jsonwebtoken</groupId>
 		   <artifactId>jjwt</artifactId>
 		   <version>0.9.1</version>
 		</dependency>
+		
+		<!-- 注意：swagger内置依赖了google的guava，如果其它第三个包中也依赖了guava，要保证版本统一否则冲突 -->
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
     </dependencies>
 </project>

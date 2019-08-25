@@ -60,6 +60,26 @@ public class SimplifyObjJsonUtil {
 	 */
 	public static final Map<Integer,String> userDetailInfoRestoreTemplate = new HashMap<>();
 	
+	/**
+	 * 用户类(user_spouse_selection)简化模板Map<原字段名,简化字段名>
+	 */
+	public static final Map<String,Integer> userSpouseSelectionSimplifyTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_spouse_selection)还原模板Map<简化字段名,原字段名>
+	 */
+	public static final Map<Integer,String> userSpouseSelectionRestoreTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_credit_status)简化模板Map<原字段名,简化字段名>
+	 */
+	public static final Map<String,Integer> userCreditStatusSimplifyTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(user_credit_status)还原模板Map<简化字段名,原字段名>
+	 */
+	public static final Map<Integer,String> userCreditStatusRestoreTemplate = new HashMap<>();
+	
 	static{
 		userAccountSimplifyTemplate.put("uid",0);
 		userAccountSimplifyTemplate.put("paySalt",1);
@@ -199,6 +219,89 @@ public class SimplifyObjJsonUtil {
 		userDetailInfoRestoreTemplate.put(23,"faith");
 		userDetailInfoRestoreTemplate.put(24,"smokDrink");
 		userDetailInfoRestoreTemplate.put(25,"housework");
+		
+		userSpouseSelectionSimplifyTemplate.put("uid",0);
+		userSpouseSelectionSimplifyTemplate.put("ageBgn",1);
+		userSpouseSelectionSimplifyTemplate.put("ageEnd",2);
+		userSpouseSelectionSimplifyTemplate.put("heightBgn",3);
+		userSpouseSelectionSimplifyTemplate.put("heightEnd",4);
+		userSpouseSelectionSimplifyTemplate.put("figureList",5);
+		userSpouseSelectionSimplifyTemplate.put("homeProvinceIdList",6);
+		userSpouseSelectionSimplifyTemplate.put("workProvinceIdList",7);
+		userSpouseSelectionSimplifyTemplate.put("maritalStatus",8);
+		userSpouseSelectionSimplifyTemplate.put("haveChildrenList",9);
+		userSpouseSelectionSimplifyTemplate.put("academicList",10);
+		userSpouseSelectionSimplifyTemplate.put("schoolTypeList",11);
+		userSpouseSelectionSimplifyTemplate.put("companyTypeList",12);
+		userSpouseSelectionSimplifyTemplate.put("industryTypeList",13);
+		userSpouseSelectionSimplifyTemplate.put("rankTypeList",14);
+		userSpouseSelectionSimplifyTemplate.put("yearIncomeList",15);
+		userSpouseSelectionSimplifyTemplate.put("houseStatusList",16);
+		userSpouseSelectionSimplifyTemplate.put("carStatus",17);
+		userSpouseSelectionSimplifyTemplate.put("assetLevelList",18);
+		userSpouseSelectionSimplifyTemplate.put("relationWithParentsList",19);
+		userSpouseSelectionSimplifyTemplate.put("onlyChildList",20);
+		userSpouseSelectionSimplifyTemplate.put("marryPlanList",21);
+		userSpouseSelectionSimplifyTemplate.put("childPlanList",22);
+		userSpouseSelectionSimplifyTemplate.put("consumeAttitudeList",23);
+		userSpouseSelectionSimplifyTemplate.put("faith",24);
+		userSpouseSelectionSimplifyTemplate.put("smokDrink",25);
+		userSpouseSelectionSimplifyTemplate.put("housework",26);
+		
+		userSpouseSelectionRestoreTemplate.put(0,"uid");
+		userSpouseSelectionRestoreTemplate.put(1,"ageBgn");
+		userSpouseSelectionRestoreTemplate.put(2,"ageEnd");
+		userSpouseSelectionRestoreTemplate.put(3,"heightBgn");
+		userSpouseSelectionRestoreTemplate.put(4,"heightEnd");
+		userSpouseSelectionRestoreTemplate.put(5,"figureList");
+		userSpouseSelectionRestoreTemplate.put(6,"homeProvinceIdList");
+		userSpouseSelectionRestoreTemplate.put(7,"workProvinceIdList");
+		userSpouseSelectionRestoreTemplate.put(8,"maritalStatus");
+		userSpouseSelectionRestoreTemplate.put(9,"haveChildrenList");
+		userSpouseSelectionRestoreTemplate.put(10,"academicList");
+		userSpouseSelectionRestoreTemplate.put(11,"schoolTypeList");
+		userSpouseSelectionRestoreTemplate.put(12,"companyTypeList");
+		userSpouseSelectionRestoreTemplate.put(13,"industryTypeList");
+		userSpouseSelectionRestoreTemplate.put(14,"rankTypeList");
+		userSpouseSelectionRestoreTemplate.put(15,"yearIncomeList");
+		userSpouseSelectionRestoreTemplate.put(16,"houseStatusList");
+		userSpouseSelectionRestoreTemplate.put(17,"carStatus");
+		userSpouseSelectionRestoreTemplate.put(18,"assetLevelList");
+		userSpouseSelectionRestoreTemplate.put(19,"relationWithParentsList");
+		userSpouseSelectionRestoreTemplate.put(20,"onlyChildList");
+		userSpouseSelectionRestoreTemplate.put(21,"marryPlanList");
+		userSpouseSelectionRestoreTemplate.put(22,"childPlanList");
+		userSpouseSelectionRestoreTemplate.put(23,"consumeAttitudeList");
+		userSpouseSelectionRestoreTemplate.put(24,"faith");
+		userSpouseSelectionRestoreTemplate.put(25,"smokDrink");
+		userSpouseSelectionRestoreTemplate.put(26,"housework");
+		
+		userCreditStatusSimplifyTemplate.put("uid",0);
+		userCreditStatusSimplifyTemplate.put("idcardVerifyStatus",1);
+		userCreditStatusSimplifyTemplate.put("faceVerifyStatus",2);
+		userCreditStatusSimplifyTemplate.put("xuexinCreditStatus",3);
+		userCreditStatusSimplifyTemplate.put("shebaoCreditStatus",4);
+		userCreditStatusSimplifyTemplate.put("gjjCreditStatus",5);
+		userCreditStatusSimplifyTemplate.put("duotouLendStatus",6);
+		userCreditStatusSimplifyTemplate.put("dishonestCreditStatus",7);
+		userCreditStatusSimplifyTemplate.put("marryStatus",8);
+		userCreditStatusSimplifyTemplate.put("houseCreditStatus",9);
+		userCreditStatusSimplifyTemplate.put("carCreditStatus",10);
+		userCreditStatusSimplifyTemplate.put("incomeCreditStatus",11);
+		
+		userCreditStatusRestoreTemplate.put(0,"uid");
+		userCreditStatusRestoreTemplate.put(1,"idcardVerifyStatus");
+		userCreditStatusRestoreTemplate.put(2,"faceVerifyStatus");
+		userCreditStatusRestoreTemplate.put(3,"xuexinCreditStatus");
+		userCreditStatusRestoreTemplate.put(4,"shebaoCreditStatus");
+		userCreditStatusRestoreTemplate.put(5,"gjjCreditStatus");
+		userCreditStatusRestoreTemplate.put(6,"duotouLendStatus");
+		userCreditStatusRestoreTemplate.put(7,"dishonestCreditStatus");
+		userCreditStatusRestoreTemplate.put(8,"marryStatus");
+		userCreditStatusRestoreTemplate.put(9,"houseCreditStatus");
+		userCreditStatusRestoreTemplate.put(10,"carCreditStatus");
+		userCreditStatusRestoreTemplate.put(11,"incomeCreditStatus");
+
 	}
 
 	/**

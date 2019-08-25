@@ -1,5 +1,7 @@
 package rrx.cnuo.service.service.impl.data;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,7 @@ import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.service.dao.UserBasicInfoMapper;
 import rrx.cnuo.service.po.UserBasicInfo;
 import rrx.cnuo.service.service.data.UserBasicInfoDataService;
+import rrx.cnuo.service.vo.request.BoardQueryParam;
 
 @Service
 public class UserBasicInfoDataServiceImpl implements UserBasicInfoDataService {
@@ -55,5 +58,10 @@ public class UserBasicInfoDataServiceImpl implements UserBasicInfoDataService {
 	@Override
 	public void delUserBasicInfoFromRedis(long uid) throws Exception {
 		redis.delete(Const.REDIS_PREFIX.REDIS_USER_BASIC_INFO + uid);
+	}
+
+	@Override
+	public List<UserBasicInfo> selectByParam(BoardQueryParam paramVo) {
+		return userBasicInfoMapper.selectByParam(paramVo);
 	}
 }

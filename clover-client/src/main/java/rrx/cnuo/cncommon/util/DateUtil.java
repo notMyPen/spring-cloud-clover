@@ -127,7 +127,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 得到几个月前或几月后的时间
+	 * 得到几年前或几年后的时间
 	 */
 	public static Date getYear(Date d, int year) throws Exception {
 		Calendar now = Calendar.getInstance();

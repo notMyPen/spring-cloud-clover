@@ -1,36 +1,16 @@
 package rrx.cnuo.cncommon.vo;
 
-/**
- * 分页参数
- * @author xuhongyu
- * @date 2019年4月11日
- */
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@ApiModel(description = "分页参数")
+@Data
 public class PageVo {
 
-	/**
-	 * 当前页数，从1开始
-	 */
+	@ApiModelProperty(value = "当前页数，从1开始",required = true)
     private Integer pageNum = 1;
 
-    /**
-     * 每页数据条数
-     */
+	@ApiModelProperty(value = "每页数据条数",required = true)
     private Integer pageSize = 10;
-
-    public Integer getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
-    }
-
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
 }

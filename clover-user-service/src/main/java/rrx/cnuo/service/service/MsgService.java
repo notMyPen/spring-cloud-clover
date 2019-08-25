@@ -3,13 +3,13 @@ package rrx.cnuo.service.service;
 
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
 import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.service.vo.msgcenter.ReturnSmsMassegeVo;
 
 /**
  * 发送微信消息或短信消息
  * @author xuhongyu
  * @date 2019年4月3日
  */
+@SuppressWarnings("rawtypes")
 public interface MsgService {
 	
 	
@@ -23,7 +23,7 @@ public interface MsgService {
 	 * @return
 	 * @throws Exception
 	 */
-	JsonResult<ReturnSmsMassegeVo> updateSendSmsMessage(String requestIp, String telephone, int nType,String... args) throws Exception;
+	JsonResult updateSendSmsMessage(String requestIp, String telephone, int nType,String... args) throws Exception;
 
 	/**
 	 * 发送微信小程序消息
@@ -34,4 +34,19 @@ public interface MsgService {
 	 */
 	boolean updateSendMiniWxMsg(Long uid, WeChatMsgEnum noticeLenderReview, String msgVariableVal) throws Exception;
 	
+	/**
+	 * 删除过期的formid
+	 * @author xuhongyu
+	 * @throws Exception
+	 */
+	public void removeExpiredFormid() throws Exception;
+	
+	/**
+	 * 添加formid
+	 * @author xuhongyu
+	 * @param formId
+	 * @return
+	 * @throws Exception
+	 */
+	public JsonResult saveFormId(String formId) throws Exception;
 }

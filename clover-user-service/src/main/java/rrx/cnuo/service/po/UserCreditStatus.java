@@ -2,7 +2,7 @@ package rrx.cnuo.service.po;
 
 import java.util.Date;
 
-public class CreditStatus {
+public class UserCreditStatus {
     private Long uid;
 
     private Byte idcardVerifyStatus;
@@ -21,17 +21,17 @@ public class CreditStatus {
 
     private Byte marryStatus;
 
-    private Byte taobaoCreditStatus;
-
-    private Byte alipayCreditStatus;
-
-    private Byte jingdongCreditStatus;
-
-    private Byte zhengxinCreditStatus;
-
-    private Byte zhimaStatus;
-
-    private Integer zhimaMonth;
+//    private Byte taobaoCreditStatus;
+//
+//    private Byte alipayCreditStatus;
+//
+//    private Byte jingdongCreditStatus;
+//
+//    private Byte zhengxinCreditStatus;
+//
+//    private Byte zhimaStatus;
+//
+//    private Integer zhimaMonth;
 
     private Byte houseCreditStatus;
 
@@ -113,54 +113,6 @@ public class CreditStatus {
 
     public void setMarryStatus(Byte marryStatus) {
         this.marryStatus = marryStatus;
-    }
-
-    public Byte getTaobaoCreditStatus() {
-        return taobaoCreditStatus;
-    }
-
-    public void setTaobaoCreditStatus(Byte taobaoCreditStatus) {
-        this.taobaoCreditStatus = taobaoCreditStatus;
-    }
-
-    public Byte getAlipayCreditStatus() {
-        return alipayCreditStatus;
-    }
-
-    public void setAlipayCreditStatus(Byte alipayCreditStatus) {
-        this.alipayCreditStatus = alipayCreditStatus;
-    }
-
-    public Byte getJingdongCreditStatus() {
-        return jingdongCreditStatus;
-    }
-
-    public void setJingdongCreditStatus(Byte jingdongCreditStatus) {
-        this.jingdongCreditStatus = jingdongCreditStatus;
-    }
-
-    public Byte getZhengxinCreditStatus() {
-        return zhengxinCreditStatus;
-    }
-
-    public void setZhengxinCreditStatus(Byte zhengxinCreditStatus) {
-        this.zhengxinCreditStatus = zhengxinCreditStatus;
-    }
-
-    public Byte getZhimaStatus() {
-        return zhimaStatus;
-    }
-
-    public void setZhimaStatus(Byte zhimaStatus) {
-        this.zhimaStatus = zhimaStatus;
-    }
-
-    public Integer getZhimaMonth() {
-        return zhimaMonth;
-    }
-
-    public void setZhimaMonth(Integer zhimaMonth) {
-        this.zhimaMonth = zhimaMonth;
     }
 
     public Byte getHouseCreditStatus() {

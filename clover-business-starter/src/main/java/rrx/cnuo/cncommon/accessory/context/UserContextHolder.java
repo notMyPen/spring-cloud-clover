@@ -8,7 +8,7 @@ import rrx.cnuo.cncommon.vo.User;
  */
 public class UserContextHolder {
 	
-	public static ThreadLocal<User> userContext = new ThreadLocal<User>();
+	private static ThreadLocal<User> userContext = new ThreadLocal<User>();
 	
 	public static User currentUser() {
 		return userContext.get();

@@ -1,8 +1,9 @@
 package rrx.cnuo.service.service;
 
 import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.service.vo.passport.request.OauthParam;
-import rrx.cnuo.service.vo.passport.response.UserInitOauthVo;
+import rrx.cnuo.service.vo.request.OauthParam;
+import rrx.cnuo.service.vo.response.UserPassportVo;
+import rrx.cnuo.service.vo.response.UserInitOauthVo;
 
 public interface PassportService {
 
@@ -20,4 +21,12 @@ public interface PassportService {
 	 * @param rawData
 	 */
 	void updateAvatarUrlToAliOss(String rawData,Long uid) throws Exception;
+
+	/**
+	 * 获取用户通行证信息
+	 * @author xuhongyu
+	 * @return
+	 * @throws Exception
+	 */
+	JsonResult<UserPassportVo> getPassportInfo(Long uid) throws Exception;
 }

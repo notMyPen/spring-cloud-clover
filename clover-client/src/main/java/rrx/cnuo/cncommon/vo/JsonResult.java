@@ -1,14 +1,14 @@
 package rrx.cnuo.cncommon.vo;
 
-
 import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/**
- * @author jayson
- */
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel("接口返回信息")
 public class JsonResult<T> {
     public static final int SUCCESS = 200;// 成功
     public static final int FAIL = 201;// 失败
@@ -28,15 +28,18 @@ public class JsonResult<T> {
     public static final int AUTHORIZE_ERROR = 9000; //授权错误
     public static final int TOKEN_EXPIRED = 9001; //TOKEN失效
     public static final int LOGIN_BAN = 9002; //用户被封
-    public static final int LEASE = 9999; //信用借还
     
     public static final int ERROR_CANT_SOLVE = 29032;    // 因程序自身bug或报错等造成mq消费失败且当时无法自动处理的情况，先落地mysql后续再做处理
     
+    @ApiModelProperty(value = "接口返回状态：200-成功；201-失败；304-未授权,请授权后访问；9000-授权错误；9001-TOKEN(ticket)失效",required = true)
     private int status;
+    
     private String code;
 
-    private String msg = "";
+    @ApiModelProperty(value = "status != 200时的错误信息",required = false)
+    private String msg;
 
+    @ApiModelProperty(value = "status == 200时返回的接口返回结果(如果有)",required = false)
     private T data;
 
     public JsonResult() {
@@ -149,6 +152,7 @@ public class JsonResult<T> {
             }
         }
     }
+    
     @JsonIgnore
 	public String getCode() {
 		return code;

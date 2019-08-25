@@ -4,16 +4,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.vo.JsonResult;
-import rrx.cnuo.service.po.MsgFormId;
-import rrx.cnuo.service.service.MsgFormIdService;
 import rrx.cnuo.service.service.WxMiniProgService;
 
 /**
@@ -27,9 +22,6 @@ public class WxMiniProgController {
 	@Autowired
 	private WxMiniProgService wxMiniProgService;
 	
-	@Autowired
-	private MsgFormIdService msgFormIdService;
-	
 	/**
      * 获取小程序二维码图片
      * @param scene 获取小程序码参数
@@ -41,23 +33,6 @@ public class WxMiniProgController {
     @RequestMapping(value = "/getMiniProgramCode", method = RequestMethod.GET)
     public void getMiniProgramCode(@RequestParam String scene, String pageUrl, HttpServletResponse response) throws Exception {
     	wxMiniProgService.getMiniProgramCode(scene, pageUrl, response);
-    }
-    
-    /**
-     * 保存用户formid
-     * @param{
-     *      "formId"  // formid|String|必填
-     * 	}
-     * @return {
-     * 		"status":,  // 状态码|Integer, 200:成功; 201:异常
-     * 		"msg":,     // 描述|String
-     * 	}
-     */
-    @SuppressWarnings("rawtypes")
-	@RequestMapping(value = "/saveFormId", method = RequestMethod.POST)
-    public JsonResult saveFormId(@RequestBody MsgFormId reqVo) throws Exception {
-    	reqVo.setUid(UserContextHolder.currentUser().getUserId());
-        return msgFormIdService.saveFormId(reqVo);
     }
     
     /**

@@ -128,18 +128,6 @@
 		    <artifactId>jedis</artifactId>
 		</dependency>
 	    
-        <!-- 注意：swagger内置依赖了google的guava，如果其它第三个包中也依赖了guava，要保证版本统一否则冲突 -->
-		<dependency>
-		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-swagger2</artifactId>
-		    <version>2.9.2</version>
-		</dependency>
-		<!-- <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency> -->
-        
         <!-- 分布式事务txlcn -->
         <dependency>
             <groupId>com.codingapi.txlcn</groupId>
@@ -153,7 +141,16 @@
             <version>${codingapi.txlcn.version}</version>
         </dependency>
         
-		
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+		<dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
 	</dependencies>
 
 	<!-- <distributionManagement>

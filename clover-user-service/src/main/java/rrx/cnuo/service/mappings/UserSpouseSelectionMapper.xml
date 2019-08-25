@@ -50,30 +50,7 @@
     delete from user_spouse_selection
     where uid = #{uid,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.UserSpouseSelection">
-    insert into user_spouse_selection (uid, age_bgn, age_end, 
-      height_bgn, height_end, figure_list, 
-      home_province_id_list, work_province_id_list, 
-      marital_status, have_children_list, academic_list, 
-      school_type_list, company_type_list, industry_type_list, 
-      rank_type_list, year_income_list, house_status_list, 
-      car_status, asset_level_list, relation_with_parents_list, 
-      only_child_list, marry_plan_list, child_plan_list, 
-      consume_attitude_list, faith, smok_drink, 
-      housework, create_time, update_time
-      )
-    values (#{uid,jdbcType=BIGINT}, #{ageBgn,jdbcType=TINYINT}, #{ageEnd,jdbcType=TINYINT}, 
-      #{heightBgn,jdbcType=SMALLINT}, #{heightEnd,jdbcType=SMALLINT}, #{figureList,jdbcType=VARCHAR}, 
-      #{homeProvinceIdList,jdbcType=VARCHAR}, #{workProvinceIdList,jdbcType=VARCHAR}, 
-      #{maritalStatus,jdbcType=TINYINT}, #{haveChildrenList,jdbcType=VARCHAR}, #{academicList,jdbcType=VARCHAR}, 
-      #{schoolTypeList,jdbcType=VARCHAR}, #{companyTypeList,jdbcType=VARCHAR}, #{industryTypeList,jdbcType=VARCHAR}, 
-      #{rankTypeList,jdbcType=VARCHAR}, #{yearIncomeList,jdbcType=VARCHAR}, #{houseStatusList,jdbcType=VARCHAR}, 
-      #{carStatus,jdbcType=TINYINT}, #{assetLevelList,jdbcType=VARCHAR}, #{relationWithParentsList,jdbcType=VARCHAR}, 
-      #{onlyChildList,jdbcType=VARCHAR}, #{marryPlanList,jdbcType=VARCHAR}, #{childPlanList,jdbcType=VARCHAR}, 
-      #{consumeAttitudeList,jdbcType=VARCHAR}, #{faith,jdbcType=TINYINT}, #{smokDrink,jdbcType=TINYINT}, 
-      #{housework,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserSpouseSelection">
     insert into user_spouse_selection
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -255,6 +232,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserSpouseSelection">
     update user_spouse_selection
     <set>
@@ -345,36 +323,5 @@
     </set>
     where uid = #{uid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.UserSpouseSelection">
-    update user_spouse_selection
-    set age_bgn = #{ageBgn,jdbcType=TINYINT},
-      age_end = #{ageEnd,jdbcType=TINYINT},
-      height_bgn = #{heightBgn,jdbcType=SMALLINT},
-      height_end = #{heightEnd,jdbcType=SMALLINT},
-      figure_list = #{figureList,jdbcType=VARCHAR},
-      home_province_id_list = #{homeProvinceIdList,jdbcType=VARCHAR},
-      work_province_id_list = #{workProvinceIdList,jdbcType=VARCHAR},
-      marital_status = #{maritalStatus,jdbcType=TINYINT},
-      have_children_list = #{haveChildrenList,jdbcType=VARCHAR},
-      academic_list = #{academicList,jdbcType=VARCHAR},
-      school_type_list = #{schoolTypeList,jdbcType=VARCHAR},
-      company_type_list = #{companyTypeList,jdbcType=VARCHAR},
-      industry_type_list = #{industryTypeList,jdbcType=VARCHAR},
-      rank_type_list = #{rankTypeList,jdbcType=VARCHAR},
-      year_income_list = #{yearIncomeList,jdbcType=VARCHAR},
-      house_status_list = #{houseStatusList,jdbcType=VARCHAR},
-      car_status = #{carStatus,jdbcType=TINYINT},
-      asset_level_list = #{assetLevelList,jdbcType=VARCHAR},
-      relation_with_parents_list = #{relationWithParentsList,jdbcType=VARCHAR},
-      only_child_list = #{onlyChildList,jdbcType=VARCHAR},
-      marry_plan_list = #{marryPlanList,jdbcType=VARCHAR},
-      child_plan_list = #{childPlanList,jdbcType=VARCHAR},
-      consume_attitude_list = #{consumeAttitudeList,jdbcType=VARCHAR},
-      faith = #{faith,jdbcType=TINYINT},
-      smok_drink = #{smokDrink,jdbcType=TINYINT},
-      housework = #{housework,jdbcType=TINYINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where uid = #{uid,jdbcType=BIGINT}
-  </update>
+  
 </mapper>

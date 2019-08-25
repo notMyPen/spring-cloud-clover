@@ -12,7 +12,7 @@ public class SMSUtils {
 	/**
 	 * 根据业务类型组装发送短信的内容
 	 * @param mobileCode 短信验证码
-	 * @param nType 0.注册验证码 1.申请贷款 2.修改交易密码 3.余额支付4.提现 5.找回密码 6.非注册获取验证码 7.原样发送8.充值9.重置密码10.好友找回
+	 * @param nType 0.注册验证码 1.绑定手机号 2.修改交易密码 3.余额支付4.提现 5.找回密码 6.非注册获取验证码 7.原样发送8.充值9.重置密码10.好友找回
 	 * @param args 短信内容参数
 	 */
 	public static String getSendSMSContent(int mobileCode, int nType, String... args) throws Exception {
@@ -23,8 +23,8 @@ public class SMSUtils {
 						+ "，此验证码用于登录"+sysSign+"或注册，5分钟内有效，如非本人操作，请忽略";// 短信内容
 				break;
 			case 1:
-				msg = "您正在"+sysSign+"上进行贷款申请，验证码为"+mobileCode
-						+ "，请在5分钟内完成申请。验证码请勿泄漏，如非本人操作，请忽略";
+				msg = "您正在"+sysSign+"上进行手机号绑定，验证码为"+mobileCode
+						+ "，请在5分钟内完成绑定。验证码请勿泄漏，如非本人操作，请忽略";
 				break;
 			case 2:
 				msg = "您的"+sysSign+"正在申请修改交易密码,验证码:"+mobileCode

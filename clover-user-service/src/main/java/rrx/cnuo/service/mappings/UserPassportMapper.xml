@@ -8,6 +8,7 @@
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
     <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
     <result column="card_num" jdbcType="INTEGER" property="cardNum" />
+    <result column="credit_fee" jdbcType="BIT" property="creditFee" />
     <result column="credit_pass" jdbcType="BIT" property="creditPass" />
     <result column="board_status" jdbcType="TINYINT" property="boardStatus" />
     <result column="high_quality" jdbcType="BIT" property="highQuality" />
@@ -16,7 +17,7 @@
   </resultMap>
   
   <sql id="Base_Column_List">
-    uid, regist_tel, mini_open_id, nick_name, avatar_url, card_num, credit_pass, 
+    uid, regist_tel, mini_open_id, nick_name, avatar_url, card_num,credit_fee, credit_pass, 
     board_status, high_quality, create_time, update_time
   </sql>
   
@@ -66,6 +67,9 @@
       <if test="cardNum != null">
         card_num,
       </if>
+      <if test="creditFee != null">
+        credit_fee,
+      </if>
       <if test="creditPass != null">
         credit_pass,
       </if>
@@ -100,6 +104,9 @@
       </if>
       <if test="cardNum != null">
         #{cardNum,jdbcType=INTEGER},
+      </if>
+      <if test="creditFee != null">
+        #{creditFee,jdbcType=BIT},
       </if>
       <if test="creditPass != null">
         #{creditPass,jdbcType=BIT},
@@ -136,6 +143,9 @@
       </if>
       <if test="cardNum != null">
         card_num = #{cardNum,jdbcType=INTEGER},
+      </if>
+      <if test="creditFee != null">
+        credit_fee = #{creditFee,jdbcType=BIT},
       </if>
       <if test="creditPass != null">
         credit_pass = #{creditPass,jdbcType=BIT},

@@ -4,10 +4,16 @@ import java.util.List;
 
 import com.github.pagehelper.PageInfo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description = "分页查询返回实体")
 public class DataGridResult<T> {
 
+	@ApiModelProperty(value = "总数量",required = true)
     private long total;
 
+	@ApiModelProperty(value = "当前页数据",required = true)
     private List<T> rowsList;
 
     public DataGridResult() {
@@ -33,5 +39,6 @@ public class DataGridResult<T> {
     public void setRowsList(List<T> rowsList) {
         this.rowsList = rowsList;
     }
+
 
 }

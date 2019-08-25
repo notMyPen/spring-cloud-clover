@@ -1,4 +1,4 @@
-package rrx.cnuo.service.vo.passport.request;
+package rrx.cnuo.service.vo.request;
 
 import java.io.Serializable;
 

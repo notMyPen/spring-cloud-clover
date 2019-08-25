@@ -17,17 +17,9 @@ public class Const {
 //    public static final int IVPARAMETER_LENGTH = 16;//加密算法秘钥长度
     public static final int TICKET_EXPIRE = 60*60*10; //10个小时
 
-    public static class PAY_INFO { // 支付费信息    	
-    	public static final int MAX_RECHARGE_AMT = 2000000;//充值最高金额(2万)
-    	public static final int MIN_BOUNTY_AMT = 100;//充值/赏金最低金额
-    	public static final int MAX_BOUNTY_AMT = 1000000;//赏金最高金额(1万)
-    	public static final int MAX_LOAN_AMT = 1000000000;//最大借款金额(1000万)
-    	public static final int SHOW_TELEPHONE_FEE = 100;//查看手机号费用
-        public static final int N_WITHDRAW_FEE = 100; // 用户提现手续费,单位分
-        public static final int N_RECHARGE_MIN = 50000;// 用户充值最小额度(不支付手续费)单位分
-        public static final int N_RECHARGE_FEE = 250; // 用户充值手续费,单位分
-        public static final double RECHARGE_FEE_RATE = 0.006; // 用户充值手续费率
-    }
+    public static final double RECHARGE_FEE_RATE = 0.006; // 用户充值手续费率
+    public static final int AGE_MIN = 18; //用户的最小年龄
+    public static final int AGE_MAX = 50; //用户的最大年龄
     
     public class REDIS_PREFIX {
         public static final int USER_BASEINFO_EXPIRE = 864000;
@@ -39,6 +31,8 @@ public class Const {
         public static final String REDIS_USER_ACCOUNT = "data:user_account:"; //用户user_account表信息
         public static final String REDIS_USER_BASIC_INFO = "data:user_basic_info:"; //用户user_basic_info表信息
         public static final String REDIS_USER_DETAIL_INFO = "data:user_detail_info:"; //用户user_detail_info表信息
+        public static final String REDIS_USER_SPOUSE_SELECTION = "data:user_spouse_selection:"; //用户user_spouse_selection表信息
+        public static final String REDIS_USER_CREDIT_STATUS = "data:user_credit_status:"; //用户user_credit_status表信息
         public static final String REDIS_USER_STATIS = "data:user_statis:"; //用户user_statis表信息
         public static final String REDIS_SYSTEM_STATIS_ITEM = "data:system_statis_item:"; //system_statis_item表信息
         public static final String TICKET_FILE = "ticket:";

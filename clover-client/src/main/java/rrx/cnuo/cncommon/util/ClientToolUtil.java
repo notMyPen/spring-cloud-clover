@@ -10,7 +10,6 @@ import com.relops.snowflake.Snowflake;
 public class ClientToolUtil {
 
 	private static final String HASHIDS_SALT = "clover-api";
-	
 
     /**
      * 隐藏手机号中间4位
@@ -41,6 +40,19 @@ public class ClientToolUtil {
         }
         return strbf.toString();
     }
+    
+    /**
+     * 首字母转大写
+     * @author xuhongyu
+     * @param s
+     * @return
+     */
+    public static String toUpperCaseFirstOne(String s){
+	  if(Character.isUpperCase(s.charAt(0)))
+		 return s;
+	  else
+	     return new StringBuilder().append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
+	}
     
     /**
      * 获取分布式主键id(非最终方案)

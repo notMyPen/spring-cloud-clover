@@ -28,11 +28,11 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
 	public UserAccount selectByPrimaryKey(long userId) throws Exception {
 		String redisKey  = Const.REDIS_PREFIX.REDIS_USER_ACCOUNT + userId;
 		String str = redis.getString(redisKey);
-        UserAccount UserAccountInfo = null;
+        UserAccount userAccountInfo = null;
         if (StringUtils.isBlank(str)) {
-            UserAccountInfo = userAccountMapper.selectByPrimaryKey(userId);
-            if (UserAccountInfo != null) {
-            	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(UserAccountInfo, SimplifyObjJsonUtil.userAccountSimplifyTemplate);
+            userAccountInfo = userAccountMapper.selectByPrimaryKey(userId);
+            if (userAccountInfo != null) {
+            	JSONObject userJson = SimplifyObjJsonUtil.getSimplifyJsonObjFromOriginObj(userAccountInfo, SimplifyObjJsonUtil.userAccountSimplifyTemplate);
                 redis.set(redisKey, userJson.toJSONString(), Const.REDIS_PREFIX.USER_INFO_SECONDS);
             }else{
             	//如果从mysql中查询的UserAccount为空，在redis中赋值“null”，防止缓存穿透
@@ -40,10 +40,10 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
             }
         } else {
         	if(!"null".equals(str)){
-        		UserAccountInfo = SimplifyObjJsonUtil.getOriginObjFromSimplifyJsonStr(str, UserAccount.class, SimplifyObjJsonUtil.userAccountRestoreTemplate);
+        		userAccountInfo = SimplifyObjJsonUtil.getOriginObjFromSimplifyJsonStr(str, UserAccount.class, SimplifyObjJsonUtil.userAccountRestoreTemplate);
         	}
         }
-        return UserAccountInfo;
+        return userAccountInfo;
 	}
 
 	@Override

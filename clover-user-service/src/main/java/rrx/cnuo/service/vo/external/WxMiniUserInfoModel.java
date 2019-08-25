@@ -1,4 +1,4 @@
-package rrx.cnuo.service.vo.passport.external;
+package rrx.cnuo.service.vo.external;
 
 import java.util.List;
 

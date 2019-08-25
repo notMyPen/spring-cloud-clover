@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
+import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.util.ClientToolUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.utils.RedisTool;
@@ -30,6 +31,7 @@ import rrx.cnuo.service.vo.msgcenter.ReturnSmsMassegeVo;
 import rrx.cnuo.service.vo.msgcenter.SmsMassegeVo;
 
 @Service
+@SuppressWarnings("rawtypes")
 public class MsgServiceImpl implements MsgService {
 
 //	private static final String templateUrl = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=";
@@ -42,6 +44,7 @@ public class MsgServiceImpl implements MsgService {
     @Autowired private MsgSendCodeMapper msgSendCodeMapper;
     @Autowired private MsgFormIdMapper msgFormIdMapper;
     @Autowired private MsgCenterConfigBean msgCenterConfigBean;
+    @Autowired private MsgFormIdMapper msgformIdMapper;
 
     @Override
     public boolean updateSendMiniWxMsg(Long uid, WeChatMsgEnum noticeLenderReview, String msgVariableVal) throws Exception{
@@ -89,8 +92,8 @@ public class MsgServiceImpl implements MsgService {
     }
 
     @Override
-    public JsonResult<ReturnSmsMassegeVo> updateSendSmsMessage(String requestIp, String telephone, int nType,String... args) throws Exception {
-        JsonResult<ReturnSmsMassegeVo> result = new JsonResult<ReturnSmsMassegeVo>();
+    public JsonResult updateSendSmsMessage(String requestIp, String telephone, int nType,String... args) throws Exception {
+        JsonResult result = new JsonResult();
         result.setStatus(JsonResult.SUCCESS);
         
         if (!Validation.isMobileNO(telephone)) {
@@ -194,7 +197,33 @@ public class MsgServiceImpl implements MsgService {
         msgSendCodeMapper.insertSelective(ssgSendCode);
     }
 
-    
+    @Override
+    public void removeExpiredFormid() throws Exception {
+        long expireTime = System.currentTimeMillis() + Const.REDIS_PREFIX.CONFIRM_EXPIRE;
+        msgformIdMapper.removeExpiredFormid(expireTime);
+    }
+	
+	@Override
+    public JsonResult saveFormId(String formId) throws Exception {
+        JsonResult result = new JsonResult();
+        result.setStatus(JsonResult.SUCCESS);
+        
+        if (StringUtils.isBlank(formId) || formId.contains("mock")) {
+        	return result;
+        }
+        
+        Long uid = UserContextHolder.currentUser().getUserId();
+        int count = msgformIdMapper.countByUid(uid);
+        if (count >= Const.USER_MAX_FORMID_CNT) {
+            return result;
+        }
+        MsgFormId formid = new MsgFormId();
+        formid.setUid(uid);
+        formid.setFormId(formId);
+        formid.setExpireTime(System.currentTimeMillis() + Const.REDIS_PREFIX.FORMID_EXPIRE);
+        msgformIdMapper.insertSelective(formid);
+        return result;
+    }
     
     /**
      * 根据消息类型发送微信(公众号)消息
