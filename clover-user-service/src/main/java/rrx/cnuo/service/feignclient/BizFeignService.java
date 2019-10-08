@@ -1,8 +1,13 @@
 package rrx.cnuo.service.feignclient;
 
+import java.util.List;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import rrx.cnuo.cncommon.vo.JsonResult;
+import rrx.cnuo.cncommon.vo.biz.BoardStatisVo;
 import rrx.cnuo.service.feignclient.callback.BizHystrixFeignFallback;
 
 /**
@@ -15,4 +20,16 @@ public interface BizFeignService {
 
 	@GetMapping("/test/insertStatisUser")
 	void insertStatisUser();
+	
+	@GetMapping("/boardStatis")
+	JsonResult<BoardStatisVo> getBoardStatis(@RequestParam("uid") Long uid);
+	
+	@GetMapping("/provinceNameList")
+	JsonResult<List<String>> getProvinceListByIdList(@RequestParam String idListJsonStr);
+	
+	@GetMapping("/awardCardCnt")
+	public Integer getAwardCardCnt(@RequestParam Long uid);
+	
+	@GetMapping("/cardUserCnt")
+	public Integer getCardUserCnt(@RequestParam Long uid);
 }

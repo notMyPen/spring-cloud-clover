@@ -2,7 +2,7 @@ package rrx.cnuo.service.service;
 
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.vo.request.OauthParam;
-import rrx.cnuo.service.vo.response.UserPassportVo;
+import rrx.cnuo.service.vo.response.MyPassportVo;
 import rrx.cnuo.service.vo.response.UserInitOauthVo;
 
 public interface PassportService {
@@ -28,5 +28,11 @@ public interface PassportService {
 	 * @return
 	 * @throws Exception
 	 */
-	JsonResult<UserPassportVo> getPassportInfo(Long uid) throws Exception;
+	JsonResult<MyPassportVo> getPassportInfo(Long uid) throws Exception;
+
+	/**
+	 * 更新用户剩余礼券个数
+	 * @author xuhongyu
+	 */
+	void updateUserCardNum(Long uid) throws Exception;
 }

@@ -1,5 +1,7 @@
 package rrx.cnuo.service.vo.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.annotations.ApiModel;
@@ -11,7 +13,8 @@ import lombok.Data;
 public class UserInitOauthVo{
 
 	@JsonIgnore
-	private Long uid;//TODO 如果对外，提供转换为String
+	@JsonFormat(shape = Shape.STRING)
+	private Long uid;
 	
 	@ApiModelProperty(value = "用户openId",required = true)
 	private String miniOpenId;

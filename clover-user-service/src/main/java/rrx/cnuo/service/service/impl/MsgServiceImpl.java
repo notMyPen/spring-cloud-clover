@@ -4,17 +4,19 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.fastjson.JSONObject;
+
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.util.ClientToolUtil;
-import rrx.cnuo.cncommon.util.http.HttpClient;
+import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
-import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
-import rrx.cnuo.service.accessory.config.MsgCenterConfigBean;
+import rrx.cnuo.service.accessory.config.WeChatMiniConfigBean;
 import rrx.cnuo.service.accessory.consts.MsgConst;
+import rrx.cnuo.service.accessory.consts.UserConst;
 import rrx.cnuo.service.dao.MsgFormIdMapper;
 import rrx.cnuo.service.dao.MsgSendCodeMapper;
 import rrx.cnuo.service.dao.MsgWechatMapper;
@@ -27,7 +29,6 @@ import rrx.cnuo.service.service.data.UserPassportDataService;
 import rrx.cnuo.service.utils.SMSUtils;
 import rrx.cnuo.service.utils.SendMsgUtil;
 import rrx.cnuo.service.utils.Validation;
-import rrx.cnuo.service.vo.msgcenter.ReturnSmsMassegeVo;
 import rrx.cnuo.service.vo.msgcenter.SmsMassegeVo;
 
 @Service
@@ -38,13 +39,13 @@ public class MsgServiceImpl implements MsgService {
 	
     @Autowired private MsgWechatMapper msgWechatMapper;
     @Autowired private RedisTool instance;
-    @Autowired private WeChatMiniConfig weChatMiniConfig;
+    @Autowired private WeChatMiniConfigBean weChatMiniConfigBean;
     @Autowired private BasicConfig basicConfig;
     @Autowired private UserPassportDataService userPassportDataService;
     @Autowired private MsgSendCodeMapper msgSendCodeMapper;
     @Autowired private MsgFormIdMapper msgFormIdMapper;
-    @Autowired private MsgCenterConfigBean msgCenterConfigBean;
     @Autowired private MsgFormIdMapper msgformIdMapper;
+    @Autowired private MqSendTool mqSendTool;
 
     @Override
     public boolean updateSendMiniWxMsg(Long uid, WeChatMsgEnum noticeLenderReview, String msgVariableVal) throws Exception{
@@ -63,14 +64,14 @@ public class MsgServiceImpl implements MsgService {
 				msgContent = String.format(msgContent, arr);
 			}
 			switch (noticeLenderReview) {
-			case CREDIT_NOTIFY:
-				SendMsgUtil.sendAuditNotify(instance,userPassport.getMiniOpenId(),msgContent,noticeLenderReview.getPage(),formId.getFormId(),weChatMiniConfig);
+			case CREDIT_FEE_PAIED:
+				SendMsgUtil.sendAuditNotify(instance,userPassport.getMiniOpenId(),msgContent,noticeLenderReview.getPage(),formId.getFormId(),weChatMiniConfigBean);
 				break;
-			case RECEIVE_MONEY_NOTIFY:
-				SendMsgUtil.sendIncomeToAccountNotify(instance,userPassport.getMiniOpenId(), msgVariableVal, noticeLenderReview.getPage(),msgContent,formId.getFormId(),weChatMiniConfig);
+			case CREDIT_COMPLETE:
+				SendMsgUtil.sendIncomeToAccountNotify(instance,userPassport.getMiniOpenId(), msgVariableVal, noticeLenderReview.getPage(),msgContent,formId.getFormId(),weChatMiniConfigBean);
 				break;
-			case BUSSINESS_PROGRESS:
-				SendMsgUtil.taskHandleNotify(instance,userPassport.getMiniOpenId(), noticeLenderReview.getTitle(),"成功", msgContent, noticeLenderReview.getPage(), formId.getFormId(),weChatMiniConfig);
+			case BUYCARD_PAIED:
+				SendMsgUtil.taskHandleNotify(instance,userPassport.getMiniOpenId(), noticeLenderReview.getTitle(),"成功", msgContent, noticeLenderReview.getPage(), formId.getFormId(),weChatMiniConfigBean);
 				break;
 			default:
 				break;
@@ -127,10 +128,7 @@ public class MsgServiceImpl implements MsgService {
         // 发送验证码
         int code = SMSUtils.getRadomCode(basicConfig.isSendSMS());
         // 发送短信且数据库中插入发送记录
-        result = sendSmsCodeResult(telephone, code, nType, args);
-        if (result.getStatus() != JsonResult.SUCCESS) {
-            return result;
-        }
+        sendSmsCodeResult(telephone, code, nType, args);
 
         // 将验证码发送次数和验证码信息放入redis
         String mobileCodeToken = ClientToolUtil.generateToken(Const.REDIS_PREFIX.REDIS_TEL, telephone);
@@ -160,32 +158,19 @@ public class MsgServiceImpl implements MsgService {
      * @return
      * @throws Exception
      */
-    private JsonResult<ReturnSmsMassegeVo> sendSmsCodeResult(String telephone, Integer code, int nType, String... args) throws Exception {
-        JsonResult<ReturnSmsMassegeVo> result = new JsonResult<ReturnSmsMassegeVo>();
-        result.setStatus(JsonResult.FAIL);
-        
-        if (!basicConfig.isSendSMS()) {
-            result.setStatus(JsonResult.SUCCESS);
-            addSendCode(telephone, code, false, true);
-            return result;
+    private void sendSmsCodeResult(String telephone, Integer code, int nType, String... args) throws Exception {
+        if (basicConfig.isSendSMS()) {
+        	String msgContent = SMSUtils.getSendSMSContent(code, nType, args);
+        	SmsMassegeVo smsMassegeVo = new SmsMassegeVo();
+        	smsMassegeVo.setMsgContent(msgContent);
+        	smsMassegeVo.setMsgCode(code + "");
+        	smsMassegeVo.setMsgMobiles(telephone);
+        	smsMassegeVo.setMsgRouter(MsgConst.MsgRouter.MSG_NORMAL);
+        	smsMassegeVo.setMsgSmsType(MsgConst.MsgSmsType.TYPE_CODE);
+        	JSONObject msg = JSONObject.parseObject(smsMassegeVo.toJSONString());
+        	mqSendTool.smsWxMqSender(msg);
         }
-
-        String msgContent = SMSUtils.getSendSMSContent(code, nType, args);
-        if (StringUtils.isNotBlank(msgContent)) {
-            SmsMassegeVo smsMassegeVo = new SmsMassegeVo();
-            smsMassegeVo.setMsgContent(msgContent);
-            smsMassegeVo.setMsgCode(code + "");
-            smsMassegeVo.setMsgMobiles(telephone);
-            smsMassegeVo.setMsgRouter(MsgConst.MsgRouter.MSG_NORMAL);
-            smsMassegeVo.setMsgSmsType(MsgConst.MsgSmsType.TYPE_CODE);
-            result = HttpClient.doPostWrapResult(msgCenterConfigBean.getBaseURL() + msgCenterConfigBean.getSmsSendUrl(), smsMassegeVo.toJSONString(), ReturnSmsMassegeVo.class);
-            if (result.getStatus() == JsonResult.SUCCESS && result.getData().getRespCode() != JsonResult.SUCCESS) {
-            	result.setStatus(result.getData().getRespCode());
-            	result.setMsg(result.getData().getRespMsg());
-            }
-            addSendCode(telephone, code, false, result.getStatus() == JsonResult.SUCCESS ? true : false);
-        }
-        return result;
+        addSendCode(telephone, code, false, true);
     }
 
     private void addSendCode(String telephone, Integer code, boolean voice, boolean success) {
@@ -214,7 +199,7 @@ public class MsgServiceImpl implements MsgService {
         
         Long uid = UserContextHolder.currentUser().getUserId();
         int count = msgformIdMapper.countByUid(uid);
-        if (count >= Const.USER_MAX_FORMID_CNT) {
+        if (count >= UserConst.USER_MAX_FORMID_CNT) {
             return result;
         }
         MsgFormId formid = new MsgFormId();

@@ -14,6 +14,7 @@ public class UserAccount {
     private Integer withdrawBalance;
 
     private Boolean openAccount;
+    private Boolean registCredit;
 
     private Date createTime;
 
@@ -66,8 +67,16 @@ public class UserAccount {
     public void setOpenAccount(Boolean openAccount) {
         this.openAccount = openAccount;
     }
+    
+    public Boolean getRegistCredit() {
+		return registCredit;
+	}
 
-    public Date getCreateTime() {
+	public void setRegistCredit(Boolean registCredit) {
+		this.registCredit = registCredit;
+	}
+
+	public Date getCreateTime() {
         return createTime;
     }
 

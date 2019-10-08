@@ -11,14 +11,14 @@
     <result column="credit_fee" jdbcType="BIT" property="creditFee" />
     <result column="credit_pass" jdbcType="BIT" property="creditPass" />
     <result column="board_status" jdbcType="TINYINT" property="boardStatus" />
-    <result column="high_quality" jdbcType="BIT" property="highQuality" />
+    <result column="price" jdbcType="TINYINT" property="price" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   
   <sql id="Base_Column_List">
     uid, regist_tel, mini_open_id, nick_name, avatar_url, card_num,credit_fee, credit_pass, 
-    board_status, high_quality, create_time, update_time
+    board_status,price, create_time, update_time
   </sql>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -37,6 +37,9 @@
     	</if>
     	<if test="registTel != null">
     		and regist_tel = #{registTel}
+    	</if>
+    	<if test="miniOpenId == null and registTel == null">
+    		and 1 != 1
     	</if>
     </where>
   </select>
@@ -76,9 +79,6 @@
       <if test="boardStatus != null">
         board_status,
       </if>
-      <if test="highQuality != null">
-        high_quality,
-      </if>
       <if test="createTime != null">
         create_time,
       </if>
@@ -113,9 +113,6 @@
       </if>
       <if test="boardStatus != null">
         #{boardStatus,jdbcType=TINYINT},
-      </if>
-      <if test="highQuality != null">
-        #{highQuality,jdbcType=BIT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -153,8 +150,8 @@
       <if test="boardStatus != null">
         board_status = #{boardStatus,jdbcType=TINYINT},
       </if>
-      <if test="highQuality != null">
-        high_quality = #{highQuality,jdbcType=BIT},
+      <if test="price != null">
+        price = #{price,jdbcType=TINYINT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},

@@ -10,7 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.util.http.HttpsClient;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
+import rrx.cnuo.service.accessory.config.WeChatMiniConfigBean;
 
 @Component
 public class SendMsgUtil {
@@ -30,7 +30,7 @@ public class SendMsgUtil {
      * @param form_id      //表单Id
      * @param page         消息跳转路由
      */
-    public static void sendAuditNotify(RedisTool redisTool, String openId, String msg, String page, String form_id,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    public static void sendAuditNotify(RedisTool redisTool, String openId, String msg, String page, String form_id,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
         String token = AccessToken.getToken(redisTool, weChatMiniConfig.getMiniAppId(), weChatMiniConfig.getMiniAppSecret());
         JSONObject keyword1 = new JSONObject();
         keyword1.put("value", msg);
@@ -61,7 +61,7 @@ public class SendMsgUtil {
      * @param page        消息跳转路由
      */
     public static void sendIncomeToAccountNotify(RedisTool redisService, String openId,String amount, String page, String msg, 
-    		String form_id,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    		String form_id,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
         String token = AccessToken.getToken(redisService, weChatMiniConfig.getMiniAppId(), weChatMiniConfig.getMiniAppSecret());
         JSONObject keyword1 = new JSONObject();
         keyword1.put("value", "今找到");
@@ -97,7 +97,7 @@ public class SendMsgUtil {
      * @param form_id     //表单Id
      * @param page        消息跳转路由
      */
-    public static void taskHandleNotify(RedisTool redisTool, String openId,String busType, String taskStatus, String taskContent, String page, String form_id,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    public static void taskHandleNotify(RedisTool redisTool, String openId,String busType, String taskStatus, String taskContent, String page, String form_id,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
         String token = AccessToken.getToken(redisTool, weChatMiniConfig.getMiniAppId(), weChatMiniConfig.getMiniAppSecret());
         JSONObject keyword1 = new JSONObject();
         keyword1.put("value", "今找到系统运维状态通知");

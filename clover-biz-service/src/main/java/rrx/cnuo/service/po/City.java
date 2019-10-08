@@ -5,7 +5,7 @@ public class City {
 
     private String country;
 
-    private Long provinceId;
+    private Integer provinceId;
 
     private String province;
 
@@ -29,11 +29,11 @@ public class City {
         this.country = country == null ? null : country.trim();
     }
 
-    public Long getProvinceId() {
+    public Integer getProvinceId() {
         return provinceId;
     }
 
-    public void setProvinceId(Long provinceId) {
+    public void setProvinceId(Integer provinceId) {
         this.provinceId = provinceId;
     }
 

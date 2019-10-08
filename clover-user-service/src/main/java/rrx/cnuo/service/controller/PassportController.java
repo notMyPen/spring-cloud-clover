@@ -13,7 +13,7 @@ import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.service.PassportService;
 import rrx.cnuo.service.vo.request.OauthParam;
-import rrx.cnuo.service.vo.response.UserPassportVo;
+import rrx.cnuo.service.vo.response.MyPassportVo;
 import rrx.cnuo.service.vo.response.UserInitOauthVo;
 
 @Api("用户通行证相关接口")
@@ -35,7 +35,7 @@ public class PassportController {
 	
 	@ApiOperation("获取我的通行证信息")
 	@GetMapping("/info")
-	public JsonResult<UserPassportVo> getMyPassportInfo() throws Exception{
+	public JsonResult<MyPassportVo> getMyPassportInfo() throws Exception{
 		Long uid = UserContextHolder.currentUser().getUserId();
 		return passportService.getPassportInfo(uid);
 	}

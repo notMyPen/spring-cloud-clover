@@ -17,26 +17,39 @@
     id, uid, pic_url, pic_url_thumb, pic_url_origin, pic_order, valid_status, audit_status, 
     create_time, update_time
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from user_pic
     where id = #{id,jdbcType=BIGINT}
   </select>
+  
+  <select id="selectByParam" parameterType="rrx.cnuo.service.po.UserPic" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_pic
+    <where>
+    	<if test="uid != null">
+    		and uid = #{uid}
+    	</if>
+    	<if test="validStatus != null">
+    		and valid_status = #{validStatus}
+    	</if>
+    	<if test="auditStatus != null">
+    		and audit_status = #{auditStatus}
+    	</if>
+    	<if test="uid == null and validStatus == null and auditStatus == null">
+    		and 1 != 1
+    	</if>
+    </where>
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from user_pic
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.UserPic">
-    insert into user_pic (id, uid, pic_url, 
-      pic_url_thumb, pic_url_origin, pic_order, 
-      valid_status, audit_status, create_time, 
-      update_time)
-    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{picUrl,jdbcType=VARCHAR}, 
-      #{picUrlThumb,jdbcType=VARCHAR}, #{picUrlOrigin,jdbcType=VARCHAR}, #{picOrder,jdbcType=TINYINT}, 
-      #{validStatus,jdbcType=BIT}, #{auditStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.UserPic">
     insert into user_pic
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -104,6 +117,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.UserPic">
     update user_pic
     <set>
@@ -137,17 +151,5 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.UserPic">
-    update user_pic
-    set uid = #{uid,jdbcType=BIGINT},
-      pic_url = #{picUrl,jdbcType=VARCHAR},
-      pic_url_thumb = #{picUrlThumb,jdbcType=VARCHAR},
-      pic_url_origin = #{picUrlOrigin,jdbcType=VARCHAR},
-      pic_order = #{picOrder,jdbcType=TINYINT},
-      valid_status = #{validStatus,jdbcType=BIT},
-      audit_status = #{auditStatus,jdbcType=TINYINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+  
 </mapper>

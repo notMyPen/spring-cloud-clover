@@ -12,6 +12,12 @@ public class DataGridResult<T> {
 
 	@ApiModelProperty(value = "总数量",required = true)
     private long total;
+	
+	@ApiModelProperty(value = "请求标记：初始值0。之后后端在结果中返回什么，前端传什么回去",required = true)
+	private int requestTag;
+	
+	@ApiModelProperty(value = "当前返回列表最后一条数据的时间戳",required = true)
+	private long cursor;
 
 	@ApiModelProperty(value = "当前页数据",required = true)
     private List<T> rowsList;
@@ -40,5 +46,20 @@ public class DataGridResult<T> {
         this.rowsList = rowsList;
     }
 
+	public int getRequestTag() {
+		return requestTag;
+	}
 
+	public void setRequestTag(int requestTag) {
+		this.requestTag = requestTag;
+	}
+
+	public long getCursor() {
+		return cursor;
+	}
+
+	public void setCursor(long cursor) {
+		this.cursor = cursor;
+	}
+	
 }

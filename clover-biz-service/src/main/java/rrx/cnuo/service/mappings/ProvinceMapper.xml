@@ -6,25 +6,38 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
   </resultMap>
+  
   <sql id="Base_Column_List">
     id, name, is_deleted
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from province
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectAll" resultType="rrx.cnuo.service.vo.response.ProvinceVo">
+    select id,name
+    from province
+    where is_deleted = 0
+  </select>
+  
+  <select id="getNameListByIdList" parameterType="java.util.List" resultType="String">
+    select distinct(name)
+    from province
+    where id in
+    <foreach collection="idList" index="index" item="item" open="(" separator="," close=")">
+    	#{item}
+    </foreach>
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from province
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.Province">
-    insert into province (id, name, is_deleted
-      )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{isDeleted,jdbcType=BIT}
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.Province">
     insert into province
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -50,6 +63,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.Province">
     update province
     <set>
@@ -62,10 +76,5 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.Province">
-    update province
-    set name = #{name,jdbcType=VARCHAR},
-      is_deleted = #{isDeleted,jdbcType=BIT}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  
 </mapper>

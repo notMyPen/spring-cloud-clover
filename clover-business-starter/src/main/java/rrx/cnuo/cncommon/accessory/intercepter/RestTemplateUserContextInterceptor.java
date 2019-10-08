@@ -8,7 +8,7 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.vo.User;
+import rrx.cnuo.cncommon.vo.LoginUser;
 
 /**
  * 内部http请求拦截器：服务A调用服务B之前，将上下文信息和服务名放进header中
@@ -20,9 +20,9 @@ public class RestTemplateUserContextInterceptor implements ClientHttpRequestInte
 	@Override
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
 			throws IOException {
-		User user = UserContextHolder.currentUser();
+		LoginUser user = UserContextHolder.currentUser();
 		request.getHeaders().add("x-user-id",user.getUserId() + "");
-		request.getHeaders().add("x-user-name",user.getUserName());
+		request.getHeaders().add("x-user-name",user.getMiniOpenId());
 		request.getHeaders().add("x-user-serviceName",request.getURI().getHost());
 		return execution.execute(request, body);
 	}

@@ -1,11 +1,11 @@
 package rrx.cnuo.service.dao;
 
+import java.util.List;
+
 import rrx.cnuo.service.po.TradeCreditFee;
 
 public interface TradeCreditFeeMapper {
     int deleteByPrimaryKey(Long tradeId);
-
-    int insert(TradeCreditFee record);
 
     int insertSelective(TradeCreditFee record);
 
@@ -13,5 +13,6 @@ public interface TradeCreditFeeMapper {
 
     int updateByPrimaryKeySelective(TradeCreditFee record);
 
-    int updateByPrimaryKey(TradeCreditFee record);
+	List<TradeCreditFee> selectByParam(TradeCreditFee record);
+
 }

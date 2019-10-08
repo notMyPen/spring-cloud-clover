@@ -6,6 +6,8 @@ import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.vo.request.UserBasicInfoVo;
 import rrx.cnuo.service.vo.request.UserDetailInfoVo;
 import rrx.cnuo.service.vo.request.UserSpouseSelectionVo;
+import rrx.cnuo.service.vo.response.BoardTaskVo;
+import rrx.cnuo.service.vo.response.UserCreditStatusVo;
 
 @SuppressWarnings("rawtypes")
 public interface MineService {
@@ -42,6 +44,28 @@ public interface MineService {
 	 * @return
 	 */
 	JsonResult saveUserSpouseSelectionVo(UserSpouseSelectionVo userSpouseSelectionVo) throws Exception;
+
+	/**
+	 * 获取当前用户完成桃花牌任务的情况
+	 * @author xuhongyu
+	 * @return
+	 */
+	JsonResult<BoardTaskVo> getBoardTask() throws Exception;
+
+	/**
+	 * 获取当前登录用户各项认证状态
+	 * @author xuhongyu
+	 * @return
+	 */
+	JsonResult<UserCreditStatusVo> getCreditStatus() throws Exception;
+	
+	/**
+	 * 人脸识别前的验证
+	 * @author xuhongyu
+	 * @param idCardNo
+	 * @return
+	 */
+	JsonResult getFaceVerifyCheck(String idCardNo) throws Exception;
 
 	/**
 	 * 获取当前登录用户分享token

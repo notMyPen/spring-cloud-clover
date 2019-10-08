@@ -4,32 +4,35 @@
   <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.City">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="country" jdbcType="VARCHAR" property="country" />
-    <result column="province_id" jdbcType="BIGINT" property="provinceId" />
+    <result column="province_id" jdbcType="INTEGER" property="provinceId" />
     <result column="province" jdbcType="VARCHAR" property="province" />
     <result column="city" jdbcType="VARCHAR" property="city" />
     <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
   </resultMap>
+  
   <sql id="Base_Column_List">
     id, country, province_id, province, city, is_deleted
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from city
     where id = #{id,jdbcType=INTEGER}
   </select>
+  
+  <select id="getCityListByProvinceId" parameterType="Integer" resultType="rrx.cnuo.service.vo.response.CityVo">
+    select id, country, province_id, province, city
+    from city
+    where province_id = #{provinceId,jdbcType=INTEGER}
+    and is_deleted = 0
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from city
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.City">
-    insert into city (id, country, province_id, 
-      province, city, is_deleted
-      )
-    values (#{id,jdbcType=INTEGER}, #{country,jdbcType=VARCHAR}, #{provinceId,jdbcType=BIGINT}, 
-      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{isDeleted,jdbcType=BIT}
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.City">
     insert into city
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -60,7 +63,7 @@
         #{country,jdbcType=VARCHAR},
       </if>
       <if test="provinceId != null">
-        #{provinceId,jdbcType=BIGINT},
+        #{provinceId,jdbcType=INTEGER},
       </if>
       <if test="province != null">
         #{province,jdbcType=VARCHAR},
@@ -73,6 +76,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.City">
     update city
     <set>
@@ -80,7 +84,7 @@
         country = #{country,jdbcType=VARCHAR},
       </if>
       <if test="provinceId != null">
-        province_id = #{provinceId,jdbcType=BIGINT},
+        province_id = #{provinceId,jdbcType=INTEGER},
       </if>
       <if test="province != null">
         province = #{province,jdbcType=VARCHAR},
@@ -94,13 +98,5 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.City">
-    update city
-    set country = #{country,jdbcType=VARCHAR},
-      province_id = #{provinceId,jdbcType=BIGINT},
-      province = #{province,jdbcType=VARCHAR},
-      city = #{city,jdbcType=VARCHAR},
-      is_deleted = #{isDeleted,jdbcType=BIT}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+  
 </mapper>

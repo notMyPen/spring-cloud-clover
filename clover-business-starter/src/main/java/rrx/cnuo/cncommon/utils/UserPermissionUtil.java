@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.util.StringUtils;
 
-import rrx.cnuo.cncommon.vo.User;
+import rrx.cnuo.cncommon.vo.LoginUser;
 
 /**
  * 鉴权工具：权限获取(可以从数据库或redis中获取)和权限验证
@@ -20,7 +20,7 @@ public class UserPermissionUtil {
 	 * 可以根据自己项目需要定制不同的策略,如查询数据库获取具体的菜单url或者角色等等.
 	 * @param user
 	 */
-	public static boolean verify(User user,HttpServletRequest request){
+	public static boolean verify(LoginUser user,HttpServletRequest request){
 		if(StringUtils.isEmpty(user)) {
 			return false;
 		}else {
@@ -42,14 +42,14 @@ public class UserPermissionUtil {
 	 * 模拟权限赋值(为每个用户赋权限路径), 可以根据自己项目需要定制不同的策略,如查询数据库获取具体的菜单url或者角色等等.<br>
 	 * @param user
 	 */
-	public static void permission(User user){
-		if(user.getUserName().equals("admin")) {
+	public static void permission(LoginUser user){
+		if(user.getMiniOpenId().equals("admin")) {
 			List<String> allowPermissionService = new ArrayList<String>();
 			allowPermissionService.add("user-service");
 			allowPermissionService.add("order-service");
 			allowPermissionService.add("biz-service");
 			user.setAllowPermissionService(allowPermissionService);
-		}else if(user.getUserName().equals("spring")) {
+		}else if(user.getMiniOpenId().equals("spring")) {
 			List<String> allowPermissionService = new ArrayList<String>();
 			allowPermissionService.add("user-service");
 			user.setAllowPermissionService(allowPermissionService);

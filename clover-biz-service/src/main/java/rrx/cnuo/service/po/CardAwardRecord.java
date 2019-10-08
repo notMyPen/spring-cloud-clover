@@ -9,7 +9,7 @@ public class CardAwardRecord {
 
     private Integer awardNum;
 
-    private Integer awardType;
+    private Byte awardType;
 
     private Long relationId;
 
@@ -39,11 +39,11 @@ public class CardAwardRecord {
         this.awardNum = awardNum;
     }
 
-    public Integer getAwardType() {
+    public Byte getAwardType() {
         return awardType;
     }
 
-    public void setAwardType(Integer awardType) {
+    public void setAwardType(Byte awardType) {
         this.awardType = awardType;
     }
 

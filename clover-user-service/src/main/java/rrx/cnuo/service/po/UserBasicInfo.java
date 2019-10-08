@@ -54,7 +54,9 @@ public class UserBasicInfo {
     private Byte carStatus;
 
     private Byte assetLevel;
-
+    
+    private Boolean highQuality;
+    
     private Date createTime;
 
     private Date updateTime;
@@ -282,4 +284,13 @@ public class UserBasicInfo {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+	public Boolean getHighQuality() {
+		return highQuality;
+	}
+
+	public void setHighQuality(Boolean highQuality) {
+		this.highQuality = highQuality;
+	}
+    
 }

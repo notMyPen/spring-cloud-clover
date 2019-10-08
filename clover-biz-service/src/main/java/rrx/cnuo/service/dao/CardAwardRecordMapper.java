@@ -1,11 +1,11 @@
 package rrx.cnuo.service.dao;
 
+import java.util.List;
+
 import rrx.cnuo.service.po.CardAwardRecord;
 
 public interface CardAwardRecordMapper {
     int deleteByPrimaryKey(Long id);
-
-    int insert(CardAwardRecord record);
 
     int insertSelective(CardAwardRecord record);
 
@@ -13,5 +13,8 @@ public interface CardAwardRecordMapper {
 
     int updateByPrimaryKeySelective(CardAwardRecord record);
 
-    int updateByPrimaryKey(CardAwardRecord record);
+	List<CardAwardRecord> selectByParam(CardAwardRecord record);
+
+	int getAwardCardCnt(Long uid);
+
 }

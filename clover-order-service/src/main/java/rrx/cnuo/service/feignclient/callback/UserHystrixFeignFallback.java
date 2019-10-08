@@ -25,12 +25,6 @@ public class UserHystrixFeignFallback implements UserFeignService{
 	}
 
 	@Override
-	public JSONObject getUserPassportByUid(Long uid) {
-		// TODO 这里是进入断路后的降级方法，返回一个降级数据
-		return new JSONObject();
-	}
-
-	@Override
 	public void updateUserAccountByUidSelective(String userAccountJsonStr) {
 		log.info("增删改操作的服务降级必须抛异常，不然分布式事务不会滚！");
 		throw new CLoverException("updateUserAccountByUidSelective失败");

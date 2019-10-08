@@ -20,6 +20,8 @@ import rrx.cnuo.service.service.MsgService;
 import rrx.cnuo.service.vo.request.UserBasicInfoVo;
 import rrx.cnuo.service.vo.request.UserDetailInfoVo;
 import rrx.cnuo.service.vo.request.UserSpouseSelectionVo;
+import rrx.cnuo.service.vo.response.BoardTaskVo;
+import rrx.cnuo.service.vo.response.UserCreditStatusVo;
 
 /**
  * 当前登录用户操作
@@ -77,5 +79,17 @@ public class UserMineController {
 	@PostMapping(value = "/spouseSelection")
 	public JsonResult saveUserSpouseSelectionVo(@RequestParam @ApiParam(value = "用户择偶条件参数(每次只保存一项信息)",required = true) UserSpouseSelectionVo userSpouseSelectionVo) throws Exception {
 		return mineService.saveUserSpouseSelectionVo(userSpouseSelectionVo);
+	}
+	
+	@ApiOperation("获取当前用户完成桃花牌任务的情况")
+	@GetMapping(value = "/boardTask")
+	public JsonResult<BoardTaskVo> getTask() throws Exception{
+		return mineService.getBoardTask();
+	}
+	
+	@ApiOperation("获取当前登录用户各项认证状态")
+	@GetMapping(value = "/creditStatus")
+	public JsonResult<UserCreditStatusVo> getCreditStatus() throws Exception{
+		return mineService.getCreditStatus();
 	}
 }

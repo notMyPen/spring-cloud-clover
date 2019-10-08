@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.BoardLikeMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.BoardLike">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="fuid" jdbcType="BIGINT" property="fuid" />
+    <result column="valid" jdbcType="BIT" property="valid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, uid, fuid, valid, create_time, update_time
+  </sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from board_like
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <select id="countByParam" parameterType="rrx.cnuo.service.po.BoardLike" resultType="Integer">
+    select count(1)
+    from board_like
+    <where>
+    	<if test="uid != null">
+    		and uid = #{uid}
+    	</if>
+    	<if test="fuid != null">
+    		and fuid = #{fuid}
+    	</if>
+    	<if test="valid != null">
+    		and valid = #{valid}
+    	</if>
+    </where>
+  </select>
+  
+  <select id="selectByParam" parameterType="rrx.cnuo.service.po.BoardLike" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from board_like
+    <where>
+    	<if test="uid != null">
+    		and uid = #{uid}
+    	</if>
+    	<if test="fuid != null">
+    		and fuid = #{fuid}
+    	</if>
+    	<if test="valid != null">
+    		and valid = #{valid}
+    	</if>
+    </where>
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from board_like
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.BoardLike">
+    insert into board_like
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="fuid != null">
+        fuid,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="fuid != null">
+        #{fuid,jdbcType=BIGINT},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.BoardLike">
+    update board_like
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="fuid != null">
+        fuid = #{fuid,jdbcType=BIGINT},
+      </if>
+      <if test="valid != null">
+        valid = #{valid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+</mapper>

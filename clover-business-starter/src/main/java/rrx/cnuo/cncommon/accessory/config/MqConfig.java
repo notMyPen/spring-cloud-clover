@@ -51,19 +51,19 @@ public class MqConfig {
     private String virtualHost;
 
     //正常的交换机,处理今借到一般业务
-    public static final String EXCHANGE_NORMAL = "exchange.cn-normal";
+    public static final String EXCHANGE_NORMAL = "exchange.clover-normal";
     
     //用于诚诺用户服务业务解耦相关操作的队列
-    public static final String ROUTE_KEY_USER_DECOUPLING = "route.cn-user.decoupling";
-    public static final String QUEUE_NAME_USER_DECOUPLING = "queue.cn-user.decoupling";
+    public static final String ROUTE_KEY_USER_DECOUPLING = "route.clover-user.decoupling";
+    public static final String QUEUE_NAME_USER_DECOUPLING = "queue.clover-user.decoupling";
     
     //用于诚诺订单服务业务解耦相关操作的队列
-    public static final String ROUTE_KEY_ORDER_DECOUPLING = "route.cn-order.decoupling";
-    public static final String QUEUE_NAME_ORDER_DECOUPLING = "queue.cn-order.decoupling";
+    public static final String ROUTE_KEY_ORDER_DECOUPLING = "route.clover-order.decoupling";
+    public static final String QUEUE_NAME_ORDER_DECOUPLING = "queue.clover-order.decoupling";
     
     //用于诚诺biz服务业务解耦相关操作的队列
-    public static final String ROUTE_KEY_BIZ_DECOUPLING = "route.cn-biz.decoupling";
-    public static final String QUEUE_NAME_BIZ_DECOUPLING = "queue.cn-biz.decoupling";
+    public static final String ROUTE_KEY_BIZ_DECOUPLING = "route.clover-biz.decoupling";
+    public static final String QUEUE_NAME_BIZ_DECOUPLING = "queue.clover-biz.decoupling";
     
     //连消息中心的交换机
     public static final String EXCHANGE_MSG = "exchange.msg";
@@ -73,13 +73,13 @@ public class MqConfig {
     public static final String QUEUE_NAME_WECHAT = "queue.weChat";
     
     /*============上面定义正常队列，以下定义延迟队列(不同时间间隔用不同的队列防止积压)================*/
-    public static final String EXCHANGE_DELAY_ORIGIN = "exchange.delay.cn-origin";//延迟交换机对应的源交换机
-    public static final String ROUTE_KEY_DELAY_ORIGIN = "route.delay.cn-origin";
-    public static final String QUEUE_NAME_DELAY_ORIGIN = "queue.delay.cn-origin";
+    public static final String EXCHANGE_DELAY_ORIGIN = "exchange.delay.clover-origin";//延迟交换机对应的源交换机
+    public static final String ROUTE_KEY_DELAY_ORIGIN = "route.delay.clover-origin";
+    public static final String QUEUE_NAME_DELAY_ORIGIN = "queue.delay.clover-origin";
     
-    public static final String EXCHANGE_DELAY = "exchange.cn-delay";//DLX，dead letter发送到的 exchange,延时消息就是发送到该交换机的
-    public static final String ROUTE_KEY_DELAY = "route.cn-delay";
-    public static final String QUEUE_NAME_DELAY = "queue.cn-delay";//延迟队列 TTL 名称
+    public static final String EXCHANGE_DELAY = "exchange.clover-delay";//DLX，dead letter发送到的 exchange,延时消息就是发送到该交换机的
+    public static final String ROUTE_KEY_DELAY = "route.clover-delay";
+    public static final String QUEUE_NAME_DELAY = "queue.clover-delay";//延迟队列 TTL 名称
 
     @Bean
     public TopicExchange msgSendExchange() {

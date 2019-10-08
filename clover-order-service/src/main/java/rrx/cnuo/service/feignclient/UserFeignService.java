@@ -25,9 +25,6 @@ public interface UserFeignService {
 	@GetMapping("/userAccount/{uid}")
 	JSONObject getUserAccountByUid(@PathVariable("uid") Long uid) throws Exception;
 	
-	@GetMapping("/userPassport/{uid}")
-	JSONObject getUserPassportByUid(@PathVariable("uid") Long uid) throws Exception;
-
 	@PutMapping("/userAccount")
 	void updateUserAccountByUidSelective(@RequestParam("userAccountJsonStr") String userAccountJsonStr) throws Exception;
 	

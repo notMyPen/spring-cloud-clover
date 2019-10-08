@@ -3,8 +3,6 @@ package rrx.cnuo.service.vo.request;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import rrx.cnuo.cncommon.vo.PageVo;
@@ -28,10 +26,13 @@ public class BoardQueryParam extends PageVo{
 	private Integer ageEnd;
 	
 	//以下是数据库查询字段，不对用户展示
+	private String notEqTelephone;
+	private String idCardNo;
 	private Integer birthdayBgn;
 	private Integer birthdayEnd;
+	private Boolean highQuality;//是否是高质量用户：0-否 1-是
+	private Integer nowCityId;//当前工作生活地级市id
 	
-	@JsonIgnore
 	public Integer getBirthdayBgn() {
 		return birthdayBgn;
 	}
@@ -40,7 +41,6 @@ public class BoardQueryParam extends PageVo{
 		this.birthdayBgn = birthdayBgn;
 	}
 	
-	@JsonIgnore
 	public Integer getBirthdayEnd() {
 		return birthdayEnd;
 	}
@@ -78,6 +78,38 @@ public class BoardQueryParam extends PageVo{
 	}
 	public void setAgeEnd(Integer ageEnd) {
 		this.ageEnd = ageEnd;
+	}
+
+	public Boolean getHighQuality() {
+		return highQuality;
+	}
+
+	public void setHighQuality(Boolean highQuality) {
+		this.highQuality = highQuality;
+	}
+
+	public Integer getNowCityId() {
+		return nowCityId;
+	}
+
+	public void setNowCityId(Integer nowCityId) {
+		this.nowCityId = nowCityId;
+	}
+
+	public String getIdCardNo() {
+		return idCardNo;
+	}
+
+	public void setIdCardNo(String idCardNo) {
+		this.idCardNo = idCardNo;
+	}
+
+	public String getNotEqTelephone() {
+		return notEqTelephone;
+	}
+
+	public void setNotEqTelephone(String notEqTelephone) {
+		this.notEqTelephone = notEqTelephone;
 	}
 	
 }
