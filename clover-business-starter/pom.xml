@@ -112,6 +112,10 @@
 		  <artifactId>spring-integration-redis</artifactId>
 		</dependency> -->
 		
+		<!-- <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-cache</artifactId>
+		</dependency> -->
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -122,7 +126,7 @@
 		    <artifactId>commons-pool2</artifactId>
 		</dependency>
 		
-		<!-- 自定义实现redis分布式锁需要原生jedis -->
+		<!-- 自定义实现redis分布式锁需要原生jedis，不用redis锁不用注入jedis -->
 		<dependency>
 		    <groupId>redis.clients</groupId>
 		    <artifactId>jedis</artifactId>

@@ -34,9 +34,6 @@ public class RedisTool {
     private static final Integer EXPIRE_TIME = 6000;//锁的过期时间(毫秒)
     private static final Integer SPIN_SLEEP_TIME = 60;//自旋每次等待时间(毫秒)
 
-
-
-
 	/**
 	 * 设置key-value失效时间，字符串类型key
 	 * @param key
