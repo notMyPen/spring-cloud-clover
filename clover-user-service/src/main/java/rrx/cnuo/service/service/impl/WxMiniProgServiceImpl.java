@@ -33,7 +33,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
+import rrx.cnuo.service.accessory.config.WeChatMiniConfigBean;
 import rrx.cnuo.service.po.UserPassport;
 import rrx.cnuo.service.service.WxMiniProgService;
 import rrx.cnuo.service.service.data.UserPassportDataService;
@@ -58,7 +58,7 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
     Resource communityRes;
     
 	@Autowired private RedisTool redis;
-	@Autowired private WeChatMiniConfig weChatMiniConfig;
+	@Autowired private WeChatMiniConfigBean weChatMiniConfigBean;
 	@Autowired private UserPassportDataService userPassportDataService;
 	
 	@Override
@@ -66,7 +66,7 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
         log.info("/user/getMiniProgramCode, request, scene:" + scene + "  page:" + pageUrl);
         ServletOutputStream outputStream = null;
         try {
-            byte [] bytes = AccessToken.createMiniProgramCode(redis, scene, pageUrl,weChatMiniConfig);
+            byte [] bytes = AccessToken.createMiniProgramCode(redis, scene, pageUrl,weChatMiniConfigBean);
             outputStream = response.getOutputStream();
             outputStream.write(bytes);
         } catch (Exception e) {
@@ -104,7 +104,7 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
         
         //绘制小程序二维码
         String scene = prodId + "_0_0";
-        BufferedImage miniProgramCodeImg = createMiniProgramCodeImage(scene, weChatMiniConfig.getPageUrl());
+        BufferedImage miniProgramCodeImg = createMiniProgramCodeImage(scene, weChatMiniConfigBean.getPageUrl());
         g.drawImage(convertCircular(miniProgramCodeImg), 222, 674, 306, 306, null);
         
         // 绘制赏金信息
@@ -314,7 +314,7 @@ public class WxMiniProgServiceImpl implements WxMiniProgService {
     }
     
     private BufferedImage createMiniProgramCodeImage(String scene,String pageUrl) throws Exception{
-    	byte [] bytes = AccessToken.createMiniProgramCode(redis, scene, pageUrl,weChatMiniConfig);
+    	byte [] bytes = AccessToken.createMiniProgramCode(redis, scene, pageUrl,weChatMiniConfigBean);
     	//读图像
     	return ImageIO.read(new ByteArrayInputStream(bytes));
     }

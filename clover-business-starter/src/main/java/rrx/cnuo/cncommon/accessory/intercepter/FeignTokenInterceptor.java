@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.vo.User;
+import rrx.cnuo.cncommon.vo.LoginUser;
 
 /**
  * Feign统一Token拦截器<br>
@@ -30,9 +30,9 @@ public class FeignTokenInterceptor implements RequestInterceptor {
 //            }
 //        }
     	
-        User user = UserContextHolder.currentUser();
+        LoginUser user = UserContextHolder.currentUser();
         requestTemplate.header("x-user-id", user.getUserId() + "");
-        requestTemplate.header("x-user-name", user.getUserName());
+        requestTemplate.header("x-user-name", user.getMiniOpenId());
         requestTemplate.header("x-user-serviceName", user.getCurrentServiceId());
     }
 

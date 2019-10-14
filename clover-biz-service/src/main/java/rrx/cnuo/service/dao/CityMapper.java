@@ -1,11 +1,12 @@
 package rrx.cnuo.service.dao;
 
+import java.util.List;
+
 import rrx.cnuo.service.po.City;
+import rrx.cnuo.service.vo.response.CityVo;
 
 public interface CityMapper {
     int deleteByPrimaryKey(Integer id);
-
-    int insert(City record);
 
     int insertSelective(City record);
 
@@ -13,5 +14,6 @@ public interface CityMapper {
 
     int updateByPrimaryKeySelective(City record);
 
-    int updateByPrimaryKey(City record);
+	List<CityVo> getCityListByProvinceId(Integer provinceId);
+
 }

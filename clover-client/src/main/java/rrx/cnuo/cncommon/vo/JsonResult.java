@@ -21,7 +21,7 @@ public class JsonResult<T> {
     public static final int GET_FAIL_301 = 301;    //internal_error:服务异常
     public static final int GET_FAIL_302 = 302;//not_found:资源不存在
     public static final int GET_FAIL_303 = 303;//bad_request:参数类型不正确
-    public static final int GET_FAIL_304 = 304;//unauthorized:请授权后访问
+    public static final int GET_FAIL_304 = 304;//未登录:请授权后访问
     public static final int GET_FAIL_305 = 305;//unavailable:通道不可用
 
     public static final int EXPIRED = 401;    // 失效
@@ -31,7 +31,7 @@ public class JsonResult<T> {
     
     public static final int ERROR_CANT_SOLVE = 29032;    // 因程序自身bug或报错等造成mq消费失败且当时无法自动处理的情况，先落地mysql后续再做处理
     
-    @ApiModelProperty(value = "接口返回状态：200-成功；201-失败；304-未授权,请授权后访问；9000-授权错误；9001-TOKEN(ticket)失效",required = true)
+    @ApiModelProperty(value = "接口返回状态：200-成功；201-失败；304-未登陆,请授权后访问；9000-授权错误；9001-TOKEN(ticket)失效",required = true)
     private int status;
     
     private String code;
@@ -87,6 +87,11 @@ public class JsonResult<T> {
     @JsonIgnore
     public boolean isOk() {
         return SUCCESS == status;
+    }
+    
+    @JsonIgnore
+    public boolean isLogout() {
+    	return GET_FAIL_304 == status;
     }
 
     @JsonGetter

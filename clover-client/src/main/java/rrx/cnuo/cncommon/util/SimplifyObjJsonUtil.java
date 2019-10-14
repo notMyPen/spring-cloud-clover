@@ -80,6 +80,16 @@ public class SimplifyObjJsonUtil {
 	 */
 	public static final Map<Integer,String> userCreditStatusRestoreTemplate = new HashMap<>();
 	
+	/**
+	 * 用户类(BoardStatis)简化模板Map<原字段名,简化字段名>
+	 */
+	public static final Map<String,Integer> boardStatisSimplifyTemplate = new HashMap<>();
+	
+	/**
+	 * 用户类(BoardStatis)还原模板Map<简化字段名,原字段名>
+	 */
+	public static final Map<Integer,String> boardStatisRestoreTemplate = new HashMap<>();
+	
 	static{
 		userAccountSimplifyTemplate.put("uid",0);
 		userAccountSimplifyTemplate.put("paySalt",1);
@@ -102,6 +112,8 @@ public class SimplifyObjJsonUtil {
 		userPassportSimplifyTemplate.put("nickName", 4);
 		userPassportSimplifyTemplate.put("avatarUrl", 5);
 		userPassportSimplifyTemplate.put("subscribe", 6);
+		userPassportSimplifyTemplate.put("personalDataIntegrity", 7);
+		userPassportSimplifyTemplate.put("spouseConditionIntegrity", 8);
 		
 		userPassportRestoreTemplate.put(0,"uid");
 		userPassportRestoreTemplate.put(1,"registTel");
@@ -110,6 +122,8 @@ public class SimplifyObjJsonUtil {
 		userPassportRestoreTemplate.put(4,"nickName");
 		userPassportRestoreTemplate.put(5,"avatarUrl");
 		userPassportRestoreTemplate.put(6,"subscribe");
+		userPassportRestoreTemplate.put(7,"personalDataIntegrity");
+		userPassportRestoreTemplate.put(8,"spouseConditionIntegrity");
 		
 		
 		userBasicInfoSimplifyTemplate.put("uid",0);
@@ -302,6 +316,21 @@ public class SimplifyObjJsonUtil {
 		userCreditStatusRestoreTemplate.put(10,"carCreditStatus");
 		userCreditStatusRestoreTemplate.put(11,"incomeCreditStatus");
 
+		boardStatisSimplifyTemplate.put("uid",0);
+		boardStatisSimplifyTemplate.put("likeCnt",1);
+		boardStatisSimplifyTemplate.put("likedCnt",2);
+		boardStatisSimplifyTemplate.put("turnCnt",3);
+		boardStatisSimplifyTemplate.put("turnedCnt",4);
+		boardStatisSimplifyTemplate.put("viewCnt",5);
+		boardStatisSimplifyTemplate.put("viewedCnt",6);
+		
+		boardStatisRestoreTemplate.put(0,"uid");
+		boardStatisRestoreTemplate.put(1,"likeCnt");
+		boardStatisRestoreTemplate.put(2,"likedCnt");
+		boardStatisRestoreTemplate.put(3,"turnCnt");
+		boardStatisRestoreTemplate.put(4,"turnedCnt");
+		boardStatisRestoreTemplate.put(5,"viewCnt");
+		boardStatisRestoreTemplate.put(6,"viewedCnt");
 	}
 
 	/**

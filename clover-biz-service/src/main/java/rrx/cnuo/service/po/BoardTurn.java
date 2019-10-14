@@ -8,6 +8,8 @@ public class BoardTurn {
     private Long uid;
 
     private Long fuid;
+    
+    private Byte useCardNum;
 
     private String message;
 
@@ -36,8 +38,16 @@ public class BoardTurn {
     public void setFuid(Long fuid) {
         this.fuid = fuid;
     }
+    
+    public Byte getUseCardNum() {
+		return useCardNum;
+	}
 
-    public String getMessage() {
+	public void setUseCardNum(Byte useCardNum) {
+		this.useCardNum = useCardNum;
+	}
+
+	public String getMessage() {
         return message;
     }
 

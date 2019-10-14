@@ -9,9 +9,7 @@ public class TradeBuycard {
 
     private Integer amount;
 
-    private Byte buyNum;
-
-    private Byte awardBoardNum;
+    private Integer buyNum;
 
     private Boolean validStatus;
 
@@ -45,20 +43,12 @@ public class TradeBuycard {
         this.amount = amount;
     }
 
-    public Byte getBuyNum() {
+    public Integer getBuyNum() {
         return buyNum;
     }
 
-    public void setBuyNum(Byte buyNum) {
+    public void setBuyNum(Integer buyNum) {
         this.buyNum = buyNum;
-    }
-
-    public Byte getAwardBoardNum() {
-        return awardBoardNum;
-    }
-
-    public void setAwardBoardNum(Byte awardBoardNum) {
-        this.awardBoardNum = awardBoardNum;
     }
 
     public Boolean getValidStatus() {

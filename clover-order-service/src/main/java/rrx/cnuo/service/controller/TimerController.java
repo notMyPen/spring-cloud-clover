@@ -27,7 +27,7 @@ import rrx.cnuo.cncommon.vo.config.BasicConfig;
 import rrx.cnuo.service.accessory.config.PayCenterConfigBean;
 import rrx.cnuo.service.po.Trade;
 import rrx.cnuo.service.po.TradeReconciliation;
-import rrx.cnuo.service.service.PayService;
+import rrx.cnuo.service.service.PayProcessService;
 import rrx.cnuo.service.service.ReconciliationService;
 import rrx.cnuo.service.service.TimerService;
 import rrx.cnuo.service.vo.paycenter.PayServiceVo;
@@ -42,7 +42,7 @@ import rrx.cnuo.service.vo.paycenter.ReturnReconciliationDateVo;
 public class TimerController {
 
 	@Autowired private TimerService timerService;
-	@Autowired private PayService payService;
+	@Autowired private PayProcessService payProcessService;
 	@Autowired private ReconciliationService reconciliationService;
 	@Autowired private RedisTool redisService;
 	@Autowired private BasicConfig basicConfig;
@@ -245,12 +245,12 @@ public class TimerController {
 		int id = timerService.addTaskLog("processPay");
 		try {
 			// 获取一分钟以前的待处理订单 t_trade（未回盘的）
-			List<Trade> list = payService.getOrderToDealwith();
+			List<Trade> list = payProcessService.getOrderToDealwith();
 			if (!basicConfig.isPayByService()) {
 				for (Trade order : list) {
 					try {
 						// 不真的走支付通道的话，则直接回盘成功（订单状态|0:处理中, 1:成功, 2:失败, 3:过期, 4:关闭, 5:待商户确认 9:其他）
-						payService.updateReceiveTrade(order.getId(), 1, "");
+						payProcessService.updateReceiveBank(order.getId(), 1, "");
 					} catch (Exception e) {
 						log.error("TimerController processPay 模拟回盘：" + order.getId(), e);
 					}
@@ -289,7 +289,7 @@ public class TimerController {
                 int orderStatus = result.getData().getOrderStatus();
                 log.info("===============订单："+order.getId()+"，查询回盘状态：" + orderStatus + "，msg" + result.getData().getRespMsg()+ "==================");
                 if (orderStatus != 0 && orderStatus != 5 && orderStatus != 9) {
-                	payService.updateReceiveTrade(order.getId(), orderStatus, result.getData().getRespMsg());
+                	payProcessService.updateReceiveBank(order.getId(), orderStatus, result.getData().getRespMsg());
                 }
             }
         }

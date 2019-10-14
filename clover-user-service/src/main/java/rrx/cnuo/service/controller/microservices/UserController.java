@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,9 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+import io.swagger.annotations.Api;
+import rrx.cnuo.cncommon.util.CopyProperityUtils;
+import rrx.cnuo.cncommon.vo.JsonResult;
+import rrx.cnuo.cncommon.vo.feign.UserPassportVo;
 import rrx.cnuo.service.po.UserAccount;
+import rrx.cnuo.service.po.UserBasicInfo;
 import rrx.cnuo.service.po.UserPassport;
+import rrx.cnuo.service.service.MineService;
+import rrx.cnuo.service.service.PassportService;
+import rrx.cnuo.service.service.UserAccountService;
 import rrx.cnuo.service.service.data.UserAccountDataService;
+import rrx.cnuo.service.service.data.UserBasicInfoDataService;
 import rrx.cnuo.service.service.data.UserPassportDataService;
 
 /**
@@ -22,14 +32,16 @@ import rrx.cnuo.service.service.data.UserPassportDataService;
  * @author xuhongyu
  * @date 2019年7月2日
  */
+@Api
 @RestController
 public class UserController{
 	
-	@Autowired
-	private UserAccountDataService userAccountDataService;
-	
-	@Autowired
-	private UserPassportDataService userPassportDataService;
+	@Autowired private UserAccountDataService userAccountDataService;
+	@Autowired private UserPassportDataService userPassportDataService;
+	@Autowired private UserBasicInfoDataService userBasicInfoDataService;
+	@Autowired private PassportService passportService;
+	@Autowired private UserAccountService userAccountService;
+	@Autowired private MineService mineService;
 
 	@GetMapping("/userAccount/{uid}")
 	public JSONObject getUserAccountByUid(@PathVariable("uid") Long uid) throws Exception{
@@ -37,10 +49,28 @@ public class UserController{
 		return (JSONObject)JSON.toJSON(userAccount);
 	}
 	
+	/**
+	 * 更新用户是否注册信用中心状态为已注册
+	 * @author xuhongyu
+	 * @param uid
+	 */
+	@PostMapping("/userAccount/registCredit")
+	public void updateUserRegistCredit(@RequestParam Long uid) throws Exception{
+		userAccountService.updateUserRegistCredit(uid);
+	}
+	
 	@GetMapping("/userPassport/{uid}")
-	public JSONObject getUserPassportByUid(@PathVariable("uid") Long uid) throws Exception{
+	public UserPassportVo getUserPassportByUid(@PathVariable("uid") Long uid) throws Exception{
 		UserPassport userPassport = userPassportDataService.selectByPrimaryKey(uid);
-		return (JSONObject)JSON.toJSON(userPassport);
+		UserPassportVo userPassportVo = new UserPassportVo();
+		CopyProperityUtils.copyProperiesIgnoreNull(userPassport, userPassportVo);
+		return userPassportVo;
+	}
+	
+	@GetMapping("/info/wxAccount/{uid}")
+	public String getUserWxAccount(@PathVariable("uid") Long uid) throws Exception{
+		UserBasicInfo userBasicInfo = userBasicInfoDataService.selectByPrimaryKey(uid);
+		return userBasicInfo.getWxAccount();
 	}
 	
 	@PutMapping("/userAccount")
@@ -57,9 +87,33 @@ public class UserController{
 	 * @param rollBack 是否是金额变动回滚
 	 */
 	@PutMapping("/updateUserAccountAccumulateAboutOrder")
-	void updateUserAccountAccumulateAboutOrder(@RequestParam String userAccountListStatis,
+	public void updateUserAccountAccumulateAboutOrder(@RequestParam String userAccountListStatis,
 			@RequestParam Byte updateType,@RequestParam Boolean rollBack) throws Exception{
 		List<JSONObject> list = JSON.parseArray(userAccountListStatis, JSONObject.class);
 		userAccountDataService.updateUserAccountAccumulateAboutOrder(list,updateType,rollBack);
+	}
+	
+	/**
+	 * 更新用户剩余礼券个数
+	 * @author xuhongyu
+	 * @param uid
+	 * @param leftCnt
+	 */
+	@PostMapping("/possport/userCardNum")
+	public void updateUserCardNum(@RequestParam Long uid) throws Exception{
+		passportService.updateUserCardNum(uid);
+	}
+	
+	/**
+	 * 人脸识别前的验证
+	 * @author xuhongyu
+	 * @param uid
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("rawtypes")
+	@GetMapping("/info/faceVerifyCheck")
+	public JsonResult getFaceVerifyCheck(@RequestParam("idCardNo") String idCardNo) throws Exception{
+		return mineService.getFaceVerifyCheck(idCardNo);
 	}
 }

@@ -5,28 +5,45 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="uid" jdbcType="BIGINT" property="uid" />
     <result column="fuid" jdbcType="BIGINT" property="fuid" />
+    <result column="use_card_num" jdbcType="TINYINT" property="useCardNum" />
     <result column="message" jdbcType="VARCHAR" property="message" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, uid, fuid, message, create_time
+    id, uid, fuid,use_card_num, message, create_time
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from board_turn
     where id = #{id,jdbcType=BIGINT}
   </select>
+  
+  <select id="getCardUserCnt" parameterType="java.lang.Long" resultType="Integer">
+    select ifnull(sum(use_card_num),0)
+    from board_turn
+    where uid = #{uid}
+  </select>
+  
+  <select id="countByParam" parameterType="rrx.cnuo.service.po.BoardTurn" resultType="Integer">
+    select count(1)
+    from board_turn
+    <where>
+    	<if test="uid != null">
+    		and uid = #{uid}
+    	</if>
+    	<if test="fuid != null">
+    		and fuid = #{fuid}
+    	</if>
+    </where>
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from board_turn
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.BoardTurn">
-    insert into board_turn (id, uid, fuid, message, 
-      create_time)
-    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{fuid,jdbcType=BIGINT}, #{message,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.BoardTurn">
     insert into board_turn
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -38,6 +55,9 @@
       </if>
       <if test="fuid != null">
         fuid,
+      </if>
+      <if test="useCardNum != null">
+        use_card_num,
       </if>
       <if test="message != null">
         message,
@@ -56,6 +76,9 @@
       <if test="fuid != null">
         #{fuid,jdbcType=BIGINT},
       </if>
+      <if test="useCardNum != null">
+        #{useCardNum,jdbcType=TINYINT},
+      </if>
       <if test="message != null">
         #{message,jdbcType=VARCHAR},
       </if>
@@ -64,6 +87,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.BoardTurn">
     update board_turn
     <set>
@@ -72,6 +96,9 @@
       </if>
       <if test="fuid != null">
         fuid = #{fuid,jdbcType=BIGINT},
+      </if>
+      <if test="useCardNum != null">
+        use_card_num = #{useCardNum,jdbcType=TINYINT},
       </if>
       <if test="message != null">
         message = #{message,jdbcType=VARCHAR},
@@ -82,12 +109,5 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.BoardTurn">
-    update board_turn
-    set uid = #{uid,jdbcType=BIGINT},
-      fuid = #{fuid,jdbcType=BIGINT},
-      message = #{message,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+  
 </mapper>

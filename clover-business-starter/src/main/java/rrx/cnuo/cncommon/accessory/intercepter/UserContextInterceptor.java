@@ -10,7 +10,7 @@ import com.alibaba.fastjson.JSON;
 
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
 import rrx.cnuo.cncommon.utils.UserPermissionUtil;
-import rrx.cnuo.cncommon.vo.User;
+import rrx.cnuo.cncommon.vo.LoginUser;
 
 /**
  *    该拦截器用于微服务内部调用时进行鉴权：请求进入服务之前先查出该用户的权限（从数据库或redis中）并放进User对象中，然后调用verify()校验<br>
@@ -25,7 +25,7 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse respone, Object arg2) throws Exception {
-		User user = getUser(request);
+		LoginUser user = getUser(request);
 		UserPermissionUtil.permission(user);
 		if(!UserPermissionUtil.verify(user,request)) {
 			respone.setHeader("Content-Type", "application/json");
@@ -50,13 +50,13 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 		UserContextHolder.shutdown();
 	}
 	
-	private User getUser(HttpServletRequest request){
+	private LoginUser getUser(HttpServletRequest request){
 		String userid = request.getHeader("x-user-id");
 		String username = request.getHeader("x-user-name");
 		String currentServiceId = request.getHeader("x-user-serviceName");
-		User user = new User();
+		LoginUser user = new LoginUser();
 		user.setUserId(Long.parseLong(userid));
-		user.setUserName(username);
+		user.setMiniOpenId(username);
 		user.setCurrentServiceId(currentServiceId);
 		return user;
 	}

@@ -20,12 +20,16 @@ public class UserPassport {
     private Boolean creditPass;
 
     private Byte boardStatus;
-
-    private Boolean highQuality;
+    
+    private Byte price;
 
     private Date createTime;
 
     private Date updateTime;
+    
+    //这里冗余两个字段(以后可能会存到mysql中，现只存redis中)
+    private Integer personalDataIntegrity;
+    private Integer spouseConditionIntegrity;
 
     public Long getUid() {
         return uid;
@@ -90,16 +94,16 @@ public class UserPassport {
     public void setBoardStatus(Byte boardStatus) {
         this.boardStatus = boardStatus;
     }
+    
+    public Byte getPrice() {
+		return price;
+	}
 
-    public Boolean getHighQuality() {
-        return highQuality;
-    }
+	public void setPrice(Byte price) {
+		this.price = price;
+	}
 
-    public void setHighQuality(Boolean highQuality) {
-        this.highQuality = highQuality;
-    }
-
-    public Date getCreateTime() {
+	public Date getCreateTime() {
         return createTime;
     }
 
@@ -121,6 +125,22 @@ public class UserPassport {
 
 	public void setCreditFee(Boolean creditFee) {
 		this.creditFee = creditFee;
+	}
+
+	public Integer getPersonalDataIntegrity() {
+		return personalDataIntegrity;
+	}
+
+	public void setPersonalDataIntegrity(Integer personalDataIntegrity) {
+		this.personalDataIntegrity = personalDataIntegrity;
+	}
+
+	public Integer getSpouseConditionIntegrity() {
+		return spouseConditionIntegrity;
+	}
+
+	public void setSpouseConditionIntegrity(Integer spouseConditionIntegrity) {
+		this.spouseConditionIntegrity = spouseConditionIntegrity;
 	}
     
 }

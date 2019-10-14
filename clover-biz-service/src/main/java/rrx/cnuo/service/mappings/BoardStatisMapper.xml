@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rrx.cnuo.service.dao.BoardStatisMapper">
+  <resultMap id="BaseResultMap" type="rrx.cnuo.service.po.BoardStatis">
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="like_cnt" jdbcType="INTEGER" property="likeCnt" />
+    <result column="liked_cnt" jdbcType="INTEGER" property="likedCnt" />
+    <result column="turn_cnt" jdbcType="INTEGER" property="turnCnt" />
+    <result column="turned_cnt" jdbcType="INTEGER" property="turnedCnt" />
+    <result column="view_cnt" jdbcType="INTEGER" property="viewCnt" />
+    <result column="viewed_cnt" jdbcType="INTEGER" property="viewedCnt" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    uid, like_cnt, liked_cnt, turn_cnt, turned_cnt, view_cnt, viewed_cnt, update_time
+  </sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from board_statis
+    where uid = #{uid,jdbcType=BIGINT}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from board_statis
+    where uid = #{uid,jdbcType=BIGINT}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="rrx.cnuo.service.po.BoardStatis">
+    insert into board_statis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="likeCnt != null">
+        like_cnt,
+      </if>
+      <if test="likedCnt != null">
+        liked_cnt,
+      </if>
+      <if test="turnCnt != null">
+        turn_cnt,
+      </if>
+      <if test="turnedCnt != null">
+        turned_cnt,
+      </if>
+      <if test="viewCnt != null">
+        view_cnt,
+      </if>
+      <if test="viewedCnt != null">
+        viewed_cnt,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="likeCnt != null">
+        #{likeCnt,jdbcType=INTEGER},
+      </if>
+      <if test="likedCnt != null">
+        #{likedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="turnCnt != null">
+        #{turnCnt,jdbcType=INTEGER},
+      </if>
+      <if test="turnedCnt != null">
+        #{turnedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="viewCnt != null">
+        #{viewCnt,jdbcType=INTEGER},
+      </if>
+      <if test="viewedCnt != null">
+        #{viewedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.BoardStatis">
+    update board_statis
+    <set>
+      <if test="likeCnt != null">
+        like_cnt = #{likeCnt,jdbcType=INTEGER},
+      </if>
+      <if test="likedCnt != null">
+        liked_cnt = #{likedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="turnCnt != null">
+        turn_cnt = #{turnCnt,jdbcType=INTEGER},
+      </if>
+      <if test="turnedCnt != null">
+        turned_cnt = #{turnedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="viewCnt != null">
+        view_cnt = #{viewCnt,jdbcType=INTEGER},
+      </if>
+      <if test="viewedCnt != null">
+        viewed_cnt = #{viewedCnt,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=BIGINT}
+  </update>
+  
+</mapper>

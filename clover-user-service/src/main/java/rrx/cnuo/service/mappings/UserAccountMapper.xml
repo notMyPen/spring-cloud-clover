@@ -8,19 +8,21 @@
     <result column="balance" jdbcType="INTEGER" property="balance" />
     <result column="withdraw_balance" jdbcType="INTEGER" property="withdrawBalance" />
     <result column="open_account" jdbcType="BIT" property="openAccount" />
+    <result column="regist_credit" jdbcType="BIT" property="registCredit" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    uid, pay_salt, pay_password, balance, withdraw_balance, open_account, create_time, 
-    update_time
+    uid, pay_salt, pay_password, balance, withdraw_balance, open_account,regist_credit, create_time, update_time
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from user_account
     where uid = #{uid,jdbcType=BIGINT}
   </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from user_account
     where uid = #{uid,jdbcType=BIGINT}
@@ -46,6 +48,9 @@
       </if>
       <if test="openAccount != null">
         open_account,
+      </if>
+      <if test="registCredit != null">
+        regist_credit,
       </if>
       <if test="createTime != null">
         create_time,
@@ -73,6 +78,9 @@
       <if test="openAccount != null">
         #{openAccount,jdbcType=BIT},
       </if>
+      <if test="registCredit != null">
+        #{registCredit,jdbcType=BIT},
+      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -98,6 +106,9 @@
       </if>
       <if test="openAccount != null">
         open_account = #{openAccount,jdbcType=BIT},
+      </if>
+      <if test="registCredit != null">
+        regist_credit = #{registCredit,jdbcType=BIT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},

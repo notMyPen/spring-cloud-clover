@@ -32,4 +32,9 @@ public class OrderHystrixFeignFallback implements OrderFeignService{
 		throw new CLoverException("insertTrade失败");
 	}
 
+	@Override
+	public int getBuycardCnt(Long uid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

@@ -10,22 +10,46 @@
   <sql id="Base_Column_List">
     id, uid, fuid, create_time
   </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from board_view
     where id = #{id,jdbcType=BIGINT}
   </select>
+  
+  <select id="countByParam" parameterType="rrx.cnuo.service.po.BoardView" resultType="Integer">
+    select count(1)
+    from board_view
+    <where>
+    	<if test="uid != null">
+    		and uid = #{uid}
+    	</if>
+    	<if test="fuid != null">
+    		and fuid = #{fuid}
+    	</if>
+    </where>
+  </select>
+  
+  <!-- 浏览过多少人 -->
+  <select id="getViewUserCnt" parameterType="java.lang.Long" resultType="Integer">
+  	select count(distinct(fuid))
+    from board_view
+    where uid = #{uid}
+  </select>
+  
+  <!-- 被多少人浏览过 -->
+  <select id="getViewedUserCnt" parameterType="java.lang.Long" resultType="Integer">
+  	select count(distinct(uid))
+    from board_view
+    where fuid = #{fuid}
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from board_view
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="rrx.cnuo.service.po.BoardView">
-    insert into board_view (id, uid, fuid, create_time
-      )
-    values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{fuid,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="rrx.cnuo.service.po.BoardView">
     insert into board_view
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -57,6 +81,7 @@
       </if>
     </trim>
   </insert>
+  
   <update id="updateByPrimaryKeySelective" parameterType="rrx.cnuo.service.po.BoardView">
     update board_view
     <set>
@@ -72,11 +97,5 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="rrx.cnuo.service.po.BoardView">
-    update board_view
-    set uid = #{uid,jdbcType=BIGINT},
-      fuid = #{fuid,jdbcType=BIGINT},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+  
 </mapper>

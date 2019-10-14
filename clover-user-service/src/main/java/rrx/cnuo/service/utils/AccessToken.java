@@ -15,8 +15,8 @@ import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.util.http.HttpsClient;
 import rrx.cnuo.cncommon.utils.RedisTool;
-import rrx.cnuo.cncommon.vo.config.WeChatAppConfig;
-import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
+import rrx.cnuo.service.accessory.config.WeChatAppConfigBean;
+import rrx.cnuo.service.accessory.config.WeChatMiniConfigBean;
 import rrx.cnuo.service.weixin.model.AccessTokenBean;
 import rrx.cnuo.service.weixin.model.CodeResponse;
 import rrx.cnuo.service.weixin.model.WeiXinUserinfo;
@@ -98,7 +98,7 @@ public class AccessToken {
      * @return
      * @throws Exception
      */
-    public static JSONObject getWxSessionJsonByCode(String code,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    public static JSONObject getWxSessionJsonByCode(String code,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
         //通过code获取用户在应用appid下唯一标识openid
         String url = miniOpenIdUrl + weChatMiniConfig.getMiniAppId() + "&secret=" + weChatMiniConfig.getMiniAppSecret()
                 + "&js_code=" + code + "&grant_type=authorization_code";
@@ -128,7 +128,7 @@ public class AccessToken {
      * @return
      * @throws Exception
      */
-    public static WeiXinUserinfo getWechatUserInfo(RedisTool instance, String code,WeChatAppConfig weChatAppConfig) throws Exception {
+    public static WeiXinUserinfo getWechatUserInfo(RedisTool instance, String code,WeChatAppConfigBean weChatAppConfig) throws Exception {
         //通过code换取网页授权access_token
         String getOpenIdUrl = wechatOpenIdUrl + weChatAppConfig.getWechatAppid() + "&secret=" + weChatAppConfig.getWechatAppsecret()
                 + "&code=" + code + "&grant_type=authorization_code";
@@ -200,7 +200,7 @@ public class AccessToken {
     /**
      * 获取小程序码
      */
-    public static byte[] createMiniProgramCode(RedisTool redis, String scene, String page,WeChatMiniConfig weChatMiniConfig) throws Exception {
+    public static byte[] createMiniProgramCode(RedisTool redis, String scene, String page,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
         String token = getToken(redis,weChatMiniConfig.getMiniAppId(),weChatMiniConfig.getMiniAppSecret());
         Map<String, Object> params = new HashMap<>();
         params.put("scene", scene);
@@ -209,5 +209,16 @@ public class AccessToken {
             params.put("page", page);
         }
         return HttpClient.doImgPost(wechatAppletCodeUrl + token, params);
+    }
+    
+    /**
+     * 获取页面跳转url
+     * @param targetUrl
+     * @return
+     * @throws Exception
+     */
+    public static String getRedirectUrl2(String targetUrl,WeChatMiniConfigBean weChatMiniConfig) throws Exception {
+        return "https://open.weixin.qq.com/connect/oauth2/authorize?" + "appid=" + weChatMiniConfig.getMiniAppId()
+                + "&redirect_uri=" + weChatMiniConfig.getPageUrl() + "&response_type=code&scope=snsapi_userinfo&state=" + targetUrl + "#wechat_redirect";
     }
 }

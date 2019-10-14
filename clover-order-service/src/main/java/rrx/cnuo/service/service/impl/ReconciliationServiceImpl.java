@@ -19,13 +19,14 @@ import com.alibaba.fastjson.JSONObject;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
-import rrx.cnuo.cncommon.accessory.consts.Const.TradeStatus;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.cncommon.utils.RedisTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.accessory.config.PayCenterConfigBean;
+import rrx.cnuo.service.accessory.consts.TradeConst;
+import rrx.cnuo.service.accessory.consts.TradeConst.TradeStatus;
 import rrx.cnuo.service.dao.TradeAbnormalMapper;
 import rrx.cnuo.service.dao.TradeMapper;
 import rrx.cnuo.service.dao.TradeReconciliationMapper;
@@ -34,9 +35,8 @@ import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.Trade;
 import rrx.cnuo.service.po.TradeReconciliation;
 import rrx.cnuo.service.po.UserAccountList;
-import rrx.cnuo.service.service.PayService;
+import rrx.cnuo.service.service.PayProcessService;
 import rrx.cnuo.service.service.ReconciliationService;
-import rrx.cnuo.service.service.WithdrawService;
 import rrx.cnuo.service.vo.AbnormalTradeGroupVo;
 import rrx.cnuo.service.vo.paycenter.PayServiceVo;
 import rrx.cnuo.service.vo.paycenter.Record;
@@ -46,24 +46,11 @@ import rrx.cnuo.service.vo.paycenter.ReturnReconciliationVo;
 @Service
 public class ReconciliationServiceImpl implements ReconciliationService {
 
-	@Autowired
-	private TradeReconciliationMapper tradeReconciliationMapper;
-	
-	@Autowired
-	private UserAccountListMapper userAccountListMapper;
-	
-	@Autowired
-	private TradeAbnormalMapper tradeAbnormalMapper;
-	
-	@Autowired
-	private TradeMapper tradeMapper;
-	
-	@Autowired
-	private PayService payService;
-	
-	@Autowired
-	private WithdrawService withDrawService;
-	
+	@Autowired private TradeReconciliationMapper tradeReconciliationMapper;
+	@Autowired private UserAccountListMapper userAccountListMapper;
+	@Autowired private TradeAbnormalMapper tradeAbnormalMapper;
+	@Autowired private TradeMapper tradeMapper;
+	@Autowired private PayProcessService payProcessService;
 	@Autowired private UserFeignService userFeignService;
 	@Autowired private RedisTool redis;
 	@Autowired private MqSendTool mqSender;
@@ -73,7 +60,7 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 		if(isRecvBank){
 			//支付中心的订单状态（1:成功, 2:失败）
 			int orderStatus = result ? 1 : 2;
-			payService.updateReceiveTrade(tradeId, orderStatus, "");
+			payProcessService.updateReceiveBank(tradeId, orderStatus, "");
 		}
 		if(result){
 			//如果支付成功
@@ -81,7 +68,7 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 			List<JSONObject> list = null;
 			if(!trade.getWithdrawType()){//代收
 				//对账时，如果是充值相关业务，更新可提现余额
-				if(trade.getTradeType() != Const.TradeType.BALANCE_PAY.getCode()){
+				if(trade.getTradeType() != TradeConst.TradeType.BALANCE_PAY.getCode()){
 					//非余额支付时，所有用户更新可提现余额
 					list = userAccountListMapper.getAccountListAmtNotSysAndBankByTradeId(tradeId);
 				}else{
@@ -92,12 +79,12 @@ public class ReconciliationServiceImpl implements ReconciliationService {
                     list = userAccountListMapper.getAccountListAmtNotSysBankAndUidByTradeId(userAccountList);
 				}
 			}else{//代付
-				if(trade.getBusinessType() != Const.PayBusinessType.WITHDRAW.getCode()){
+				if(trade.getBusinessType() != TradeConst.PayBusinessType.WITHDRAW.getCode()){
 					//对账时，代付的如果是非提现（即退款业务）需要更新可提现余额
 					list = userAccountListMapper.getAccountListAmtNotSysAndBankByTradeId(tradeId);
 				}else{
 					//对账时，代付的如果是提现业务，不需要更新可提现余额(因为提现业务的可提现余额是在报回盘时计算的)
-					withDrawService.checkEnd(tradeId);
+					payProcessService.checkEnd(tradeId,trade.getBusinessType());
 				}
 			}
 			if(list != null && list.size() > 0){
@@ -129,7 +116,7 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 		for(AbnormalTradeGroupVo vo : list){
 			if(map.get(vo.getTradeType()) == null){
 				StringBuffer sb = new StringBuffer();
-				sb.append(Const.TradeType.getTradeType(vo.getTradeType()).getMessage()+"，四天前("+fourDayAgoStr+")账单情况：\n");
+				sb.append(TradeConst.TradeType.getTradeType(vo.getTradeType()).getMessage()+"，四天前("+fourDayAgoStr+")账单情况：\n");
 				sb.append(getAbnormalTypeName(vo.getAbnormalType()) + vo.getAbTypeCount()+"个\n");
 				map.put(vo.getTradeType(), sb);
 			}else{
@@ -180,7 +167,7 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 		
 		// 对上一个工作日凌晨开始到当天凌晨之间的所有支付成功订对账
 		Trade tradeParam = new Trade();
-		tradeParam.setTradeStatus(Const.TradeStatus.SUCCESS.getCode());
+		tradeParam.setTradeStatus(TradeConst.TradeStatus.SUCCESS.getCode());
 		tradeParam.setReconciliationStatus(false);
 		tradeParam.setSendBeginTime(DateUtil.getSecond(preWorkDate));
 		tradeParam.setSendEndTime(DateUtil.getSecond(reconciliationDate));
@@ -190,9 +177,9 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 	public void updateDownloadAndSaveBill(String reconDateStr) throws Exception{
 		//去支付中心申请对账日期内的账单信息
 		List<Byte> channels = new ArrayList<Byte>();
-		channels.add(Const.TradeType.MINI_WX_PAY.getCode());
-		channels.add(Const.TradeType.WX_WITHDRAW.getCode());
-		channels.add(Const.TradeType.BALANCE_PAY.getCode());
+		channels.add(TradeConst.TradeType.MINI_WX_PAY.getCode());
+		channels.add(TradeConst.TradeType.WX_WITHDRAW.getCode());
+		channels.add(TradeConst.TradeType.BALANCE_PAY.getCode());
 		PayServiceVo payServiceVo = new PayServiceVo(payCenterConfigBean.getApiKey(),payCenterConfigBean.getApiSecret(),payCenterConfigBean.getMerchantSign());
 		payServiceVo.setReconciliationDate(reconDateStr);
 		payServiceVo.setChannels(channels);
@@ -250,7 +237,7 @@ public class ReconciliationServiceImpl implements ReconciliationService {
 					}else if(trade.getAmount().equals(reconciliation.getAmount()) && 
 							trade.getTradeStatus().intValue() != (reconciliation.getResult() ? 3 : 4)){
 						//金额相等,状态不相等
-						if(trade.getTradeStatus().intValue() == Const.TradeStatus.COMFIRM.getCode()){
+						if(trade.getTradeStatus().intValue() == TradeConst.TradeStatus.COMFIRM.getCode()){
 							//如果订单未回盘，则置为回盘
 							unRecvBankTradeList.add(reconciliation);
 						}else{

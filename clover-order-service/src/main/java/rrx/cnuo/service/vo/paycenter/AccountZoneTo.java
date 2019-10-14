@@ -1,6 +1,6 @@
 package rrx.cnuo.service.vo.paycenter;
 
-import rrx.cnuo.cncommon.accessory.consts.Const;
+import rrx.cnuo.service.accessory.consts.TradeConst;
 
 public class AccountZoneTo {
 
@@ -32,13 +32,13 @@ public class AccountZoneTo {
 
 	public void setUid(Long uid) {
 		if(uid != null){
-			if(uid == Const.SYSTEM_BANK){
-				if(this.payMethod == Const.PayMethod.WECHAT.getCode()){
-					this.uid = new Long(Const.WEIXIN);
-				}else if(this.payMethod == Const.PayMethod.ALIPAY.getCode()){
-					this.uid = new Long(Const.ALIPAY);
+			if(uid == TradeConst.SYSTEM_BANK){
+				if(this.payMethod == TradeConst.PayMethod.WECHAT.getCode() || this.payMethod == TradeConst.PayMethod.APP_WECHAT.getCode()){
+					this.uid = new Long(TradeConst.WEIXIN);
+				}else if(this.payMethod == TradeConst.PayMethod.APP_ZFB.getCode()){
+					this.uid = new Long(TradeConst.ALIPAY);
 				}else{
-					this.uid = new Long(Const.YINHANGKA);
+					this.uid = new Long(TradeConst.YINHANGKA);
 				}
 			}else{
 				this.uid = uid;

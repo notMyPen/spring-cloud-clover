@@ -1,13 +1,15 @@
 package rrx.cnuo.cncommon.accessory.config;
 
-import org.springframework.beans.factory.annotation.Value;
+import java.util.concurrent.ThreadPoolExecutor;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
+import rrx.cnuo.cncommon.vo.config.AliOssConfigBean;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
-import rrx.cnuo.cncommon.vo.config.WeChatAppConfig;
-import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 
 /**
  * 全局配置
@@ -18,81 +20,34 @@ import rrx.cnuo.cncommon.vo.config.WeChatMiniConfig;
 @RefreshScope	
 public class GlobalBeanConfig {
 	
-	@Value("${app.basic.sendSMS}")
-    private boolean sendSMS;
-	@Value("${app.basic.payByService}")
-	private boolean payByService;
-	@Value("${app.basic.realReconciliations}")
-	private boolean realReconciliations;
-	@Value("${app.basic.prodEnvironment}")
-	private boolean prodEnvironment;
-//	@Value("${app.basic.aesEncryptKey}")
-//	private String aesEncryptKey;
-	@Value("${app.basic.snowflakeNode}")
-	private Integer snowflakeNode;
-	
 	@Bean
 	public BasicConfig basicConfig(){
-		BasicConfig basicConfig = new BasicConfig();
-//		basicConfig.setAesEncryptKey(aesEncryptKey);
-		basicConfig.setPayByService(payByService);
-		basicConfig.setProdEnvironment(prodEnvironment);
-		basicConfig.setRealReconciliations(realReconciliations);
-		basicConfig.setSnowflakeNode(snowflakeNode);
-		basicConfig.setSendSMS(sendSMS);
-		return basicConfig;
+		return new BasicConfig();
 	}
-	
-	@Value("${app.wxapp.wechatAppid}")
-	private String wechatAppid;
-	@Value("${app.wxapp.wechatAppsecret}")
-	private String wechatAppsecret;
-	@Value("${app.wxapp.wechatToken}")
-	private String wechatToken;
-	@Value("${app.wxapp.wechatMsgToken}")
-	private String wechatMsgToken;
 	
 	@Bean
-	public WeChatAppConfig weChatAppConfig(){
-		WeChatAppConfig weChatAppConfig = new WeChatAppConfig();
-		weChatAppConfig.setWechatAppid(wechatAppid);
-		weChatAppConfig.setWechatAppsecret(wechatAppsecret);
-		weChatAppConfig.setWechatMsgToken(wechatMsgToken);
-		weChatAppConfig.setWechatToken(wechatToken);
-		return weChatAppConfig;
+	public AliOssConfigBean aliOssConfigBean(){
+		return new AliOssConfigBean();
 	}
 	
-	@Value("${app.wxmini.miniAppId}")
-	private String miniAppId;
-	@Value("${app.wxmini.miniAppSecret}")
-	private String miniAppSecret;
-	@Value("${app.wxmini.miniTemplateAuditNotifyId}")
-	private String miniTemplateAuditNotifyId;
-	@Value("${app.wxmini.miniTemplateTaskHandleNotifyId}")
-	private String miniTemplateTaskHandleNotifyId;
-	@Value("${app.wxmini.pageUrl}")
-	private String pageUrl;
-	
+	/**
+	 * 线程池提交任务时先会创建核心线程，如果核心线程不够了，则会将任务塞到队列中；如果队列也满了，则开始创建非核心线程处理任务； 如果非核心线程也不够用了，则新来的任务会进入CallerRunsPolicy处理
+	 * @author xuhongyu
+	 * @param corePoolSize 核心线程数
+	 * @param maxPoolSize 线程池最大线程数(核心线程数+非核心线程数)
+	 * @param keepAliveTime 非核心线程的闲置后的生命周期
+	 * @param queueCapacity 队列容量
+	 * @return
+	 */
 	@Bean
-	public WeChatMiniConfig weChatMiniConfig(){
-		WeChatMiniConfig weChatMiniConfig = new WeChatMiniConfig();
-		weChatMiniConfig.setMiniAppId(miniAppId);
-		weChatMiniConfig.setMiniAppSecret(miniAppSecret);
-		weChatMiniConfig.setMiniTemplateAuditNotifyId(miniTemplateAuditNotifyId);
-		weChatMiniConfig.setMiniTemplateTaskHandleNotifyId(miniTemplateTaskHandleNotifyId);
-		weChatMiniConfig.setPageUrl(pageUrl);
-		return weChatMiniConfig;
-	}
-	
-	/*@Bean
 	@ConfigurationProperties(prefix = "app.threadPool")
     public ThreadPoolTaskExecutor globalTaskExecutor(Integer corePoolSize,Integer maxPoolSize,Integer keepAliveTime,Integer queueCapacity) {
-		new ThreadPoolExecutor(corePoolSize, 
-				maxPoolSize, 
-				keepAliveTime, //非核心线程的闲置后的生命周期
-				TimeUnit.SECONDS, 
-				new LinkedBlockingQueue<>(queueCapacity), 
-				new ThreadPoolExecutor.CallerRunsPolicy());
+//		new ThreadPoolExecutor(corePoolSize, 
+//				maxPoolSize, 
+//				keepAliveTime, //非核心线程的闲置后的生命周期
+//				TimeUnit.SECONDS, 
+//				new LinkedBlockingQueue<>(queueCapacity), 
+//				new ThreadPoolExecutor.CallerRunsPolicy());
 		
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(corePoolSize);
@@ -103,5 +58,5 @@ public class GlobalBeanConfig {
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.initialize();
         return executor;
-    }*/
+    }
 }

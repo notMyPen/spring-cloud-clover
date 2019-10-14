@@ -38,7 +38,7 @@ public interface UserAccountDataService {
 	 * @author xuhongyu
 	 * @param userAccountParam
 	 */
-	void updateByPrimaryKeySelective(UserAccount oaram) throws Exception;
+	void updateByPrimaryKeySelective(UserAccount param) throws Exception;
 
 	/**
 	 * 以累加的方式，更新在某订单中某些相关用户的余额和可提现余额

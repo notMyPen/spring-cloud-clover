@@ -68,7 +68,14 @@
         </javaClientGenerator>
         
         <!-- 目标表，如果有多个表就将此段拷贝分别配置 -->
-        <table tableName="user_basic_info" domainObjectName="UserBasicInfo"
+        <table tableName="share_to_friend" domainObjectName="ShareToFriend"
+               	enableCountByExample="false" 
+               	enableDeleteByExample="false" 
+               	enableUpdateByExample="false"
+               	enableSelectByExample="false"
+               	selectByExampleQueryId="false">
+        </table>
+        <!-- <table tableName="user_basic_info" domainObjectName="UserBasicInfo"
                	enableCountByExample="false" 
                	enableDeleteByExample="false" 
                	enableUpdateByExample="false"
@@ -89,13 +96,13 @@
                	enableSelectByExample="false"
                	selectByExampleQueryId="false">
         </table>
-        <!-- <table tableName="user_passport" domainObjectName="UserPassport"
+        <table tableName="user_passport" domainObjectName="UserPassport"
                	enableCountByExample="false" 
                	enableDeleteByExample="false" 
                	enableUpdateByExample="false"
                	enableSelectByExample="false"
                	selectByExampleQueryId="false">
-        </table> -->
+        </table>
         <table tableName="user_pic" domainObjectName="UserPic"
                	enableCountByExample="false" 
                	enableDeleteByExample="false" 
@@ -109,6 +116,6 @@
                	enableUpdateByExample="false"
                	enableSelectByExample="false"
                	selectByExampleQueryId="false">
-        </table>
+        </table> -->
     </context>
 </generatorConfiguration>

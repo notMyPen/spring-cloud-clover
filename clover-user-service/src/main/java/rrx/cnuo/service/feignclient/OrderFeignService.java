@@ -2,6 +2,7 @@ package rrx.cnuo.service.feignclient;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,4 +35,13 @@ public interface OrderFeignService {
 	
 	@GetMapping("/test/insertTrade")
 	void insertTrade(TradeVo tradeVo);
+	
+	/**
+	 * 获取用户总共购买的礼券数
+	 * @author xuhongyu
+	 * @param uid
+	 * @return
+	 */
+	@GetMapping("/buycardCnt/{uid}")
+	int getBuycardCnt(@PathVariable Long uid);
 }

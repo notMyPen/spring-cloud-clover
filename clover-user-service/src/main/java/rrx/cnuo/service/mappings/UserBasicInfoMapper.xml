@@ -28,6 +28,7 @@
     <result column="house_status" jdbcType="TINYINT" property="houseStatus" />
     <result column="car_status" jdbcType="TINYINT" property="carStatus" />
     <result column="asset_level" jdbcType="TINYINT" property="assetLevel" />
+    <result column="high_quality" jdbcType="BIT" property="highQuality" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
@@ -35,8 +36,8 @@
     uid, id_card_no, gender, wx_account, birthday, zodiac, constellation, height, figure_list, 
     home_province_id, home_city_id, home_province_city, now_province_id, now_city_id, 
     now_province_city, marital_status, have_children, character_list, academic, college_id, 
-    college, school_type, year_income, house_status, car_status, asset_level, create_time, 
-    update_time
+    college, school_type, year_income, house_status, car_status, asset_level, high_quality, 
+    create_time, update_time
   </sql>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -51,12 +52,46 @@
     where uid = #{uid,jdbcType=BIGINT}
   </delete>
   
+  <select id="getUserTelByIdCardNotEqTelephone" parameterType="rrx.cnuo.service.vo.request.BoardQueryParam" resultType="String">
+    select up.regist_tel
+	from user_basic_info ub
+	left join user_passport up on ub.uid = up.uid
+	where ub.id_card_no = #{idCardNo}
+	and up.regist_tel != #{notEqTelephone}
+  </select>
+  
   <select id="selectByParam" parameterType="rrx.cnuo.service.vo.request.BoardQueryParam" resultMap="BaseResultMap">
   	select 
     <include refid="Base_Column_List" />
     from user_basic_info
     <where>
-    	
+    	<if test="gender != null">
+    		and gender = #{gender}
+    	</if>
+    	<if test="academicList != null and academicList.size > 0">
+    		and academic in
+    		<foreach collection="academicList" item="item" index="index" open="(" separator="," close=")">
+	    		#{item}
+	    	</foreach>
+    	</if>
+    	<if test="nowProvinceId != null">
+    		and now_province_id = #{nowProvinceId}
+    	</if>
+    	<if test="birthdayBgn != null">
+    		and birthday >= #{birthdayBgn}
+    	</if>
+    	<if test="birthdayEnd != null">
+    		and birthday &lt; #{birthdayEnd}
+    	</if>
+    	<if test="highQuality != null">
+	        and high_quality = #{highQuality}
+	     </if>
+    	<if test="idCardNo != null">
+	        and id_card_no = #{idCardNo}
+	     </if>
+    	<if test="gender == null and academicList == null and nowProvinceId == null and birthdayBgn == null and birthdayEnd == null and highQuality == null and idCardNo == null">
+    		and 1 != 1
+    	</if>
     </where>
   </select>
   
@@ -140,6 +175,9 @@
       </if>
       <if test="assetLevel != null">
         asset_level,
+      </if>
+      <if test="highQuality != null">
+        high_quality,
       </if>
       <if test="createTime != null">
         create_time,
@@ -227,6 +265,9 @@
       <if test="assetLevel != null">
         #{assetLevel,jdbcType=TINYINT},
       </if>
+      <if test="highQuality != null">
+        #{highQuality,jdbcType=BIT},
+      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -313,6 +354,9 @@
       </if>
       <if test="assetLevel != null">
         asset_level = #{assetLevel,jdbcType=TINYINT},
+      </if>
+      <if test="highQuality != null">
+        high_quality = #{highQuality,jdbcType=BIT},
       </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},

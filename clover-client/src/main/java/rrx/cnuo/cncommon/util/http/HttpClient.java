@@ -215,8 +215,17 @@ public class HttpClient {
     }
 
     /**
-     * 发送httppost请求并对返回的json字符串进行封装
-     *
+     * 发送httppost请求并对返回的json字符串进行封装<br>
+     * JsonResult的data无值
+     * @author xuhongyu
+     */
+    public static <T> JsonResult<T> doPostWrapResult(String url, String data) throws Exception {
+    	return doPostWrapResult(url, data, null);
+    }
+    
+    /**
+     * 发送httppost请求并对返回的json字符串进行封装<br>
+     * JsonResult的data有值
      * @author xuhongyu
      */
     @SuppressWarnings("unchecked")

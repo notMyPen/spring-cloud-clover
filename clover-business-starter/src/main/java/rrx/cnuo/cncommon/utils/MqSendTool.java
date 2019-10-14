@@ -15,10 +15,8 @@ import rrx.cnuo.cncommon.accessory.consts.Const;
  * @author xuhongyu
  * @date 2019年7月2日
  */
-//@Component
 public class MqSendTool {
 
-//	@Autowired
 	private RedisTool redis;
 	
 	private RabbitTemplate rabbitTemplate;
@@ -26,7 +24,6 @@ public class MqSendTool {
     /**
      * 构造方法注入RabbitTemplate,定义异步回调方法
      */
-//    @Autowired
     public MqSendTool(RabbitTemplate rabbitTemplate,RedisTool redis){
     	this.redis = redis;
     	
@@ -90,13 +87,12 @@ public class MqSendTool {
     		CorrelationData correlationData = new CorrelationData(correlationId);
     		Byte mqHandleType = msgObj.getByte(Const.MQ.MQ_HANDLER_TYPE_KEY);
     		if(mqHandleType == Const.MqHandleType.SEND_WX_MSG.getCode() || 
-    			mqHandleType == Const.MqHandleType.SEND_SMS_MSG.getCode() || 
-    			mqHandleType == Const.MqHandleType.RECORD_LOGIN_TIME.getCode()){
+    			mqHandleType == Const.MqHandleType.RECORD_LOGIN_INFO.getCode()){
     			routeKey = MqConfig.ROUTE_KEY_USER_DECOUPLING;
     		}else if(mqHandleType == Const.MqHandleType.SAVE_WECHAT_PAYMENT_INFO.getCode() || 
     				mqHandleType == Const.MqHandleType.TEST.getCode()){
     			routeKey = MqConfig.ROUTE_KEY_ORDER_DECOUPLING;
-    		}else{
+    		}else if(mqHandleType == Const.MqHandleType.REGIST_CREDIT_CENTER.getCode()){
     			routeKey = MqConfig.ROUTE_KEY_BIZ_DECOUPLING;
     		}
     		rabbitTemplate.convertAndSend(MqConfig.EXCHANGE_NORMAL, routeKey, msgObj, correlationData);

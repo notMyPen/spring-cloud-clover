@@ -64,4 +64,12 @@ public class UserBasicInfoDataServiceImpl implements UserBasicInfoDataService {
 	public List<UserBasicInfo> selectByParam(BoardQueryParam paramVo) {
 		return userBasicInfoMapper.selectByParam(paramVo);
 	}
+
+	@Override
+	public String getUserTelByIdCardNotEqTelephone(String idCardNo,String notEqTelephone) {
+		BoardQueryParam paramVo = new BoardQueryParam();
+		paramVo.setIdCardNo(idCardNo);
+		paramVo.setNotEqTelephone(notEqTelephone);
+		return userBasicInfoMapper.getUserTelByIdCardNotEqTelephone(paramVo);
+	}
 }

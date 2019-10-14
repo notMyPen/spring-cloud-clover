@@ -16,4 +16,6 @@ public interface UserBasicInfoMapper {
 
 	List<UserBasicInfo> selectByParam(BoardQueryParam paramVo);
 
+	String getUserTelByIdCardNotEqTelephone(BoardQueryParam paramVo);
+
 }

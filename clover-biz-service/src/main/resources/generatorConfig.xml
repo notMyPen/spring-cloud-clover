@@ -68,6 +68,20 @@
         </javaClientGenerator>
         
         <!-- 目标表，如果有多个表就将此段拷贝分别配置 -->
+        <table tableName="board_statis" domainObjectName="BoardStatis"
+               	enableCountByExample="false" 
+               	enableDeleteByExample="false" 
+               	enableUpdateByExample="false"
+               	enableSelectByExample="false"
+               	selectByExampleQueryId="false">
+        </table>
+        <!-- <table tableName="board_like" domainObjectName="BoardLike"
+               	enableCountByExample="false" 
+               	enableDeleteByExample="false" 
+               	enableUpdateByExample="false"
+               	enableSelectByExample="false"
+               	selectByExampleQueryId="false">
+        </table>
         <table tableName="board_turn" domainObjectName="BoardTurn"
                	enableCountByExample="false" 
                	enableDeleteByExample="false" 
@@ -151,6 +165,6 @@
                	enableUpdateByExample="false"
                	enableSelectByExample="false"
                	selectByExampleQueryId="false">
-        </table>
+        </table> -->
     </context>
 </generatorConfiguration>

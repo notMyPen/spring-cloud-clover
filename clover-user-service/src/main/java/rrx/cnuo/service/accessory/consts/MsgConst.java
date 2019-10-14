@@ -1,5 +1,10 @@
 package rrx.cnuo.service.accessory.consts;
 
+/**
+ * 消息相关枚举
+ * @author xuhongyu
+ * @date 2019年8月28日
+ */
 public class MsgConst {
 
 	/**
