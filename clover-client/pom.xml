@@ -129,5 +129,11 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- https://blog.csdn.net/qinchao_mei/article/details/93463725 -->
+        <dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>28.1-jre</version>
+		</dependency>
     </dependencies>
 </project>

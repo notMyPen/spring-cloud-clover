@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -17,7 +18,8 @@ import rrx.cnuo.service.vo.response.MyPassportVo;
 import rrx.cnuo.service.vo.response.UserInitOauthVo;
 
 @Api("用户通行证相关接口")
-@RestController("/passport")
+@RestController
+@RequestMapping("/passport")
 public class PassportController {
 
 	@Autowired

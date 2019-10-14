@@ -35,13 +35,13 @@ spring:
         enabled: true
   #连接到spring cloud bus消息总线
   rabbitmq:
-      host: localhost
       port: 5672
-      username: guest
-      password: guest
-      #host: 192.168.30.218
-      #username: admin
-      #password: adg123456
+      #host: localhost
+      #username: guest
+      #password: guest
+      host: 192.168.30.218
+      username: admin
+      password: adg123456
 management:
    endpoints:
       web:

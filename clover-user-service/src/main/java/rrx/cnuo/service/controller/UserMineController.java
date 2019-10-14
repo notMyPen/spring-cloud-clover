@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,7 +30,8 @@ import rrx.cnuo.service.vo.response.UserCreditStatusVo;
  * @date 2019年8月24日
  */
 @Api("当前登录用户操作相关接口")
-@RestController("/mine")
+@RestController
+@RequestMapping("/mine")
 @SuppressWarnings("rawtypes")
 public class UserMineController {
 

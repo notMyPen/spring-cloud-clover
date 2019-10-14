@@ -3,6 +3,7 @@ package rrx.cnuo.service.controller;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,8 @@ import rrx.cnuo.service.vo.response.BoardBasicInfoPart1Vo;
 import rrx.cnuo.service.vo.response.BoardDetailVo;
 
 @Api("用户信息相关接口")
-@RestController("/info")
+@RestController
+@RequestMapping("/info")
 public class UserInfoController {
 
 	@Autowired

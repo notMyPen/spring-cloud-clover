@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
 import rrx.cnuo.cncommon.vo.config.AliOssConfigBean;
 import rrx.cnuo.cncommon.vo.config.BasicConfig;
 
@@ -16,9 +17,16 @@ import rrx.cnuo.cncommon.vo.config.BasicConfig;
  * @author xuhongyu
  * @date 2019年8月9日
  */
+@Data
 @Component
-@RefreshScope	
+@RefreshScope
+@ConfigurationProperties(prefix = "app.thread-pool")
 public class GlobalBeanConfig {
+	
+	private Integer corePoolSize;
+	private Integer maxPoolSize;
+//	private Integer keepAliveTime;
+	private Integer queueCapacity;
 	
 	@Bean
 	public BasicConfig basicConfig(){
@@ -40,8 +48,7 @@ public class GlobalBeanConfig {
 	 * @return
 	 */
 	@Bean
-	@ConfigurationProperties(prefix = "app.threadPool")
-    public ThreadPoolTaskExecutor globalTaskExecutor(Integer corePoolSize,Integer maxPoolSize,Integer keepAliveTime,Integer queueCapacity) {
+    public ThreadPoolTaskExecutor globalTaskExecutor() {
 //		new ThreadPoolExecutor(corePoolSize, 
 //				maxPoolSize, 
 //				keepAliveTime, //非核心线程的闲置后的生命周期

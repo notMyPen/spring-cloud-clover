@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -15,7 +16,8 @@ import rrx.cnuo.service.service.ConstantResourcesService;
 import rrx.cnuo.service.vo.response.CityVo;
 import rrx.cnuo.service.vo.response.ProvinceVo;
 
-@RestController("resource")
+@RestController
+@RequestMapping("resource")
 @Api("静态资源（学校、省、市等）操作接口")
 public class ConstantResourcesController {
 

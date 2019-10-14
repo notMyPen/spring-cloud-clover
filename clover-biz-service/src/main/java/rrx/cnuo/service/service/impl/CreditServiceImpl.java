@@ -16,7 +16,7 @@ public class CreditServiceImpl implements CreditService {
 
 	@Override
 	public JsonResult updateResultNotify(CreditVo vo) {
-		log.info("------------- 信用中心认证通知今借到 updateCreditNotify ------------" + JSON.toJSONString(vo));
+		/*log.info("------------- 信用中心认证通知今借到 updateCreditNotify ------------" + JSON.toJSONString(vo));
 		int type = vo.getType();
 		if (type == GlobalConstants.CREDIT_TYPE.N_XUEXIN_INFO) {// 学信
 			CreditVo vo = JSONObject.parseObject(jsonStr, CreditVo.class);
@@ -199,6 +199,7 @@ public class CreditServiceImpl implements CreditService {
             	userDataAccess.updateByPrimaryKeySelective(userDo);
             }
         }
-        return result;
+        return result;*/
+		return JsonResult.ok();
 	}
 }

@@ -26,7 +26,8 @@ import rrx.cnuo.service.vo.response.OrderStatusVo;
 import rrx.cnuo.service.vo.response.ReturnPayBusinessVo;
 
 @Slf4j
-@RestController("/pay")
+@RestController
+@RequestMapping("/pay")
 @Api("支付控制器")
 public class PayController {
 	

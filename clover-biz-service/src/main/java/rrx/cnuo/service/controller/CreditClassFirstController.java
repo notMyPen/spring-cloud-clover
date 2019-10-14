@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -15,7 +16,8 @@ import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.service.CreditClassFirstService;
 
 @Api("一级认证相关操作")
-@RestController("/credit")
+@RestController
+@RequestMapping("/credit")
 public class CreditClassFirstController {
 
 	@Autowired private CreditClassFirstService creditClassFirstService;

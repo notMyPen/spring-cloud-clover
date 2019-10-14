@@ -16,7 +16,8 @@ import rrx.cnuo.service.service.WxMiniProgService;
  * @author xuhongyu
  * @date 2019年6月26日
  */
-@RestController("/wxMiniProg")
+@RestController
+@RequestMapping("/wxMiniProg")
 public class WxMiniProgController {
 
 	@Autowired
