@@ -4,3 +4,6 @@
 /clover-biz-service/.txlcn/*.db
 *.db
 *.prefs
+/clover-biz-service/*.log
+/clover-order-service/*.log
+/clover-user-service/*.log
