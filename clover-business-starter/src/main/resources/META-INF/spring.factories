@@ -8,4 +8,5 @@ rrx.cnuo.cncommon.accessory.config.Swagger2Config,\
 rrx.cnuo.cncommon.accessory.config.PermissionConfiguration,\
 rrx.cnuo.cncommon.accessory.config.FeignOkHttpConfig,\
 rrx.cnuo.cncommon.accessory.config.MFeignConfig,\
+rrx.cnuo.cncommon.accessory.listener.MyContextClosedHandler,\
 rrx.cnuo.cncommon.accessory.aop.AopTypeDTXConfiguration

@@ -16,7 +16,7 @@ public class UserContextHolder {
 	public static void set(LoginUser user) {
 		userContext.set(user);
 	}
-	public static void shutdown() {
+	public static void remove() {
 		userContext.remove();
 	}
 }

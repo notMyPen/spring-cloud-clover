@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.CLoverException;
+import rrx.cnuo.cncommon.vo.feign.UserPassportVo;
 import rrx.cnuo.service.feignclient.UserFeignService;
 
 /**
@@ -36,4 +37,23 @@ public class UserHystrixFeignFallback implements UserFeignService{
 		throw new CLoverException("updateUserAccountAccumulateAboutOrder失败");
 	}
 
+	
+	
+	@Override
+	public UserPassportVo getUserPassportByUid(Long uid) {
+		// TODO 这里是进入断路后的降级方法，返回一个降级数据
+		return null;
+	}
+
+	@Override
+	public void updateUserCardNum(Long uid) {
+//		DTXUserControls.rollbackGroup(UserContextHolder.currentUser().getUserId()+"");
+		throw new RuntimeException("updateUserCardNum失败");
+	}
+	
+	@Override
+	public String getUserWxAccount(Long uid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

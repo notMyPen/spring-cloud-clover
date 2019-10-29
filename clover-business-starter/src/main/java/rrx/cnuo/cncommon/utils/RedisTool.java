@@ -28,7 +28,7 @@ public class RedisTool {
 	}
 	
 	private static final String LOCK_SUCCESS = "OK";
-    private static final String SET_IF_NOT_EXIST = "NX";//NX -- Only set the key if it does not already exist. XX -- Only set the keyif it already exist
+    private static final String SET_IF_NOT_EXIST = "NX";//NX -- Only set the key if it does not already exist. XX -- Only set the key if it already exist
     private static final String SET_WITH_EXPIRE_TIME = "PX";//EX = seconds; PX = milliseconds
     private static final Long RELEASE_SUCCESS = 1L;
     private static final Integer EXPIRE_TIME = 6000;//锁的过期时间(毫秒)

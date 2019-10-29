@@ -12,7 +12,6 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 import lombok.extern.slf4j.Slf4j;
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.util.CopyProperityUtils;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.utils.RedisTool;
@@ -23,6 +22,7 @@ import rrx.cnuo.service.dao.BoardLikeMapper;
 import rrx.cnuo.service.dao.BoardTurnMapper;
 import rrx.cnuo.service.dao.BoardViewMapper;
 import rrx.cnuo.service.dao.CardAwardRecordMapper;
+import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.BoardLike;
 import rrx.cnuo.service.po.BoardTurn;
 import rrx.cnuo.service.po.BoardView;
@@ -45,7 +45,7 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired private BoardViewMapper boardViewMapper;
 	@Autowired private BoardTurnMapper boardTurnMapper;
 	@Autowired private CardAwardRecordMapper cardAwardRecordMapper;
-	@Autowired private UserCommonFeignService userCommonFeignService;
+	@Autowired private UserFeignService userFeignService;
 	
 	@Override
 	public JsonResult<TipInfoVo> getTipInfo() {
@@ -179,10 +179,10 @@ public class BoardServiceImpl implements BoardService {
 		CanTurnVo canTurnVo = new CanTurnVo();
 		if(cnt > 0) {
 			//如果翻过牌子，直接返回微信号
-			String wxAccount = userCommonFeignService.getUserWxAccount(fuid);
+			String wxAccount = userFeignService.getUserWxAccount(fuid);
 			canTurnVo.setWxAccount(wxAccount);
 		}else {
-			UserPassportVo userPassportVo = userCommonFeignService.getUserPassportByUid(uid);
+			UserPassportVo userPassportVo = userFeignService.getUserPassportByUid(uid);
 			CopyProperityUtils.copyProperiesIgnoreNull(userPassportVo, canTurnVo);
 		}
 		return JsonResult.ok(canTurnVo);
@@ -191,7 +191,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public JsonResult<String> updateTurn(Long fuid, String message,Byte price) throws Exception{
 		Long uid = UserContextHolder.currentUser().getUserId();
-		UserPassportVo curUserPassportVo = userCommonFeignService.getUserPassportByUid(uid);
+		UserPassportVo curUserPassportVo = userFeignService.getUserPassportByUid(uid);
 		if(curUserPassportVo.getCardNum() < price) {
 			//如果当前登录用户的所剩礼券次数 不够 翻fuid牌子
 			return JsonResult.fail(JsonResult.FAIL, "对不起，您的礼券不足，请前往充值页购买礼券");

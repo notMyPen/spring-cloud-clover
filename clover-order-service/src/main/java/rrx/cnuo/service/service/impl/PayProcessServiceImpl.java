@@ -12,7 +12,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.util.ClientToolUtil;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
@@ -27,9 +26,9 @@ import rrx.cnuo.service.dao.UserAccountListMapper;
 import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.Trade;
 import rrx.cnuo.service.po.UserAccountList;
+import rrx.cnuo.service.service.OrderInfoService;
 import rrx.cnuo.service.service.PayProcessService;
 import rrx.cnuo.service.service.PayService;
-import rrx.cnuo.service.service.OrderInfoService;
 import rrx.cnuo.service.vo.paycenter.AccountZone;
 import rrx.cnuo.service.vo.paycenter.AccountZoneTo;
 import rrx.cnuo.service.vo.paycenter.PayServiceVo;
@@ -48,7 +47,6 @@ public class PayProcessServiceImpl implements PayProcessService{
 	@Autowired private PayCenterConfigBean payCenterConfigBean;
 	@Autowired private OrderInfoService userOrderService;
 	@Autowired private UserFeignService userFeignService;
-	@Autowired private UserCommonFeignService userCommonFeignService;
 	@Autowired private SpringUtil springUtil;
 	
 	@Override
@@ -419,7 +417,7 @@ public class PayProcessServiceImpl implements PayProcessService{
 		OrderStatusVo orderStatusVo = new OrderStatusVo();
 		orderStatusVo.setTradeStatus(trade.getTradeStatus());
 		if(trade.getBusinessType() == TradeConst.PayBusinessType.BUY_CARD.getCode() && fuid != null) {
-			String wxAccount = userCommonFeignService.getUserWxAccount(fuid);
+			String wxAccount = userFeignService.getUserWxAccount(fuid);
 			orderStatusVo.setWxAccount(wxAccount);
 		}
 		return JsonResult.ok(orderStatusVo);

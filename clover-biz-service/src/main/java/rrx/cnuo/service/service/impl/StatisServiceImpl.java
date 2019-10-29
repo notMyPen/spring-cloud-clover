@@ -3,13 +3,13 @@ package rrx.cnuo.service.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.util.CopyProperityUtils;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.biz.BoardStatisVo;
 import rrx.cnuo.service.dao.BoardLikeMapper;
 import rrx.cnuo.service.dao.BoardTurnMapper;
 import rrx.cnuo.service.dao.BoardViewMapper;
+import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.BoardLike;
 import rrx.cnuo.service.po.BoardStatis;
 import rrx.cnuo.service.po.BoardTurn;
@@ -24,7 +24,7 @@ public class StatisServiceImpl implements StatisService {
 	@Autowired private BoardLikeMapper boardLikeMapper;
 	@Autowired private BoardViewMapper boardViewMapper;
 	@Autowired private BoardTurnMapper boardTurnMapper;
-	@Autowired private UserCommonFeignService userCommonFeignService;
+	@Autowired private UserFeignService userFeignService;
 	
 	@Override
 	public JsonResult<BoardStatisVo> getBoardStatisVo(Long uid) throws Exception {
@@ -100,7 +100,7 @@ public class StatisServiceImpl implements StatisService {
 		boardStatis.setTurnedCnt(turnedCnt);
 		boardStatisDataService.updateByPrimaryKeySelective(boardStatis);
 		
-		userCommonFeignService.updateUserCardNum(uid);
+		userFeignService.updateUserCardNum(uid);
 	}
 	
 }

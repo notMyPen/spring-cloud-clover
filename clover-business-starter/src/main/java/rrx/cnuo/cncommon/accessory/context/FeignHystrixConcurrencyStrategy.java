@@ -30,8 +30,7 @@ import com.netflix.hystrix.strategy.properties.HystrixProperty;
  *      可以修改默认隔离策略为信号量模式：hystrix.command.default.execution.isolation.strategy=SEMAPHORE, 
  *      这样的话转发线程和请求线程实际上是一个线程, 这并不是最好的解决方法, 信号量模式也不是官方最为推荐的隔离策略;
  *   另一个解决方法就是自定义Hystrix的隔离策略:
- *      思路是将现有的并发策略作为新并发策略的成员变量,在新并发策略中, 
- *      返回现有并发策略的线程池、Queue;将策略加到Spring容器即可;<br>
+ *      思路是将现有的并发策略作为新并发策略的成员变量,在新并发策略中,返回现有并发策略的线程池、Queue;将策略加到Spring容器即可;<br>
  * 但是一旦使用tx-lcn分布式事务有个致命问题，自定义Feign的Hystrix隔离策略后lcn失效，所以改为使用信号量策略的Hystrix
  * @author xuhongyu
  * @date 2019年8月15日

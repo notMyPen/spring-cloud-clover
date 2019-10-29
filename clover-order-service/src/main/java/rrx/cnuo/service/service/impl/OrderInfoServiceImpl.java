@@ -12,7 +12,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 
 import rrx.cnuo.cncommon.accessory.context.UserContextHolder;
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.util.DateUtil;
 import rrx.cnuo.cncommon.util.http.HttpClient;
 import rrx.cnuo.cncommon.vo.DataGridResult;
@@ -37,7 +36,6 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
 	@Autowired private TradeMapper tradeMapper;
 	@Autowired private UserAccountListMapper userAccountListMapper;
-	@Autowired private UserCommonFeignService userCommonFeignService;
 	@Autowired private UserFeignService userFeignService;
 	@Autowired private PayCenterConfigBean payCenterConfigBean;
 	@Autowired private TradeBuycardMapper tradeBuycardMapper;
@@ -66,7 +64,7 @@ public class OrderInfoServiceImpl implements OrderInfoService {
         	if(userPassportMap.containsKey(userAccountList.getFuid())) {
         		fUser = userPassportMap.get(userAccountList.getFuid());
         	}else {
-        		fUser = userCommonFeignService.getUserPassportByUid(userAccountList.getFuid());
+        		fUser = userFeignService.getUserPassportByUid(userAccountList.getFuid());
         		userPassportMap.put(userAccountList.getFuid(), fUser);
         	}
         	if(fUser != null){

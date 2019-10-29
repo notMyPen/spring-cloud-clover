@@ -47,7 +47,7 @@ public class UserContextInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse respone, Object arg2, Exception arg3) throws Exception {
-		UserContextHolder.shutdown();
+		UserContextHolder.remove();
 	}
 	
 	private LoginUser getUser(HttpServletRequest request){
