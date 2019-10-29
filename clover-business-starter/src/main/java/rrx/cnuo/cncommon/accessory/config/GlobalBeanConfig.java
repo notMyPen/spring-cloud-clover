@@ -60,7 +60,9 @@ public class GlobalBeanConfig {
         executor.setCorePoolSize(corePoolSize);
         executor.setMaxPoolSize(maxPoolSize);
         executor.setQueueCapacity(queueCapacity);
-        executor.setWaitForTasksToCompleteOnShutdown(true);
+        //Spring线程池注册优雅停机,但是这样会出现停机时某些bean销毁而带来的问题（改用MyContextClosedHandler中的方式）
+//        executor.setWaitForTasksToCompleteOnShutdown(true);
+//        executor.setAwaitTerminationSeconds(60);//等待50秒后强制停止（默认为0，此时立即停止）
         executor.setThreadGroupName("globalTaskExecutor");
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.initialize();

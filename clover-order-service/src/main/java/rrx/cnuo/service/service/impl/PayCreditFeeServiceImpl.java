@@ -12,12 +12,12 @@ import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.cncommon.vo.feign.UserPassportVo;
 import rrx.cnuo.service.accessory.consts.TradeConst;
 import rrx.cnuo.service.dao.TradeCreditFeeMapper;
+import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.Trade;
 import rrx.cnuo.service.po.TradeCreditFee;
 import rrx.cnuo.service.service.PayService;
@@ -30,7 +30,7 @@ public class PayCreditFeeServiceImpl extends PayBase implements PayService {
 
 	@Autowired private TradeCreditFeeMapper tradeCreditFeeMapper;
 	@Autowired private MqSendTool mqSendTool;
-	@Autowired private UserCommonFeignService userCommonFeignService;
+	@Autowired private UserFeignService userFeignService;
 	
 	@Override
 	public void setCashFlowType(PayBusinessVo payVo) {
@@ -54,7 +54,7 @@ public class PayCreditFeeServiceImpl extends PayBase implements PayService {
 
 	@Override
 	public JsonResult checkBusinessBeforePay(PayBusinessVo payVo) throws Exception {
-		UserPassportVo userPassportVo = userCommonFeignService.getUserPassportByUid(payVo.getUserId());
+		UserPassportVo userPassportVo = userFeignService.getUserPassportByUid(payVo.getUserId());
 		if(StringUtils.isBlank(userPassportVo.getRegistTel())) {
 			return JsonResult.fail(JsonResult.FAIL, "您尚未注册手机号，请先认证手机号");
 		}
@@ -121,7 +121,7 @@ public class PayCreditFeeServiceImpl extends PayBase implements PayService {
 			mqSendTool.normalMqSender(UUID.randomUUID().toString(), json);
 			
 			//注册信用中心（在order模块调用信用中心，以后如果信用中心连到rabbitmq可以改成直连信用中心交换机）
-			UserPassportVo userPassportVo = userCommonFeignService.getUserPassportByUid(trade.getUid());
+			UserPassportVo userPassportVo = userFeignService.getUserPassportByUid(trade.getUid());
 			json = new JSONObject();
 			json.put(Const.MQ.MQ_HANDLER_TYPE_KEY, Const.MqHandleType.REGIST_CREDIT_CENTER.getCode());
 			json.put("uid", trade.getUid());

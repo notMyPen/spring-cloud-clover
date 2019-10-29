@@ -10,12 +10,12 @@ import com.alibaba.fastjson.JSONObject;
 
 import rrx.cnuo.cncommon.accessory.consts.Const;
 import rrx.cnuo.cncommon.accessory.consts.Const.WeChatMsgEnum;
-import rrx.cnuo.cncommon.feignclient.UserCommonFeignService;
 import rrx.cnuo.cncommon.utils.MqSendTool;
 import rrx.cnuo.cncommon.vo.JsonResult;
 import rrx.cnuo.service.accessory.consts.TradeConst;
 import rrx.cnuo.service.dao.TradeBuycardMapper;
 import rrx.cnuo.service.feignclient.BizFeignService;
+import rrx.cnuo.service.feignclient.UserFeignService;
 import rrx.cnuo.service.po.Trade;
 import rrx.cnuo.service.po.TradeBuycard;
 import rrx.cnuo.service.service.PayService;
@@ -28,7 +28,7 @@ public class PayBuyCardServiceImpl extends PayBase implements PayService {
 
 	@Autowired private TradeBuycardMapper tradeBuycardMapper;
 	@Autowired private BizFeignService bizFeignService;
-	@Autowired private UserCommonFeignService userCommonFeignService;
+	@Autowired private UserFeignService userFeignService;
 	@Autowired private MqSendTool mqSendTool;
 	
 	@Override
@@ -111,7 +111,7 @@ public class PayBuyCardServiceImpl extends PayBase implements PayService {
 			bizFeignService.addCardAward(Const.AwardType.BUY.getCode());
 			
 			//统计用户剩余礼券数
-			userCommonFeignService.updateUserCardNum(trade.getUid());
+			userFeignService.updateUserCardNum(trade.getUid());
 			
 			//发消息
 			JSONObject json = new JSONObject();

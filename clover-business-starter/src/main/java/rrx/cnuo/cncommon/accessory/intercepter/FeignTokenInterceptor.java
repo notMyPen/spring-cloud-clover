@@ -9,7 +9,7 @@ import rrx.cnuo.cncommon.vo.LoginUser;
 
 /**
  * Feign统一Token拦截器<br>
- * 在进行认证鉴权时，不管是jwt还是security，当使用Feign就会发现外部请求到A服务时A服务可以拿到Token，<br>
+ * 在进行认证鉴权时，不管是jwt还是security，当使用Feign就会发现外部请求到A服务时 A服务可以拿到Token，<br>
  * 然而当服务A使用Feign调用服务B时Token就会丢失，从而认证失败。解决方法就是在Feign调用之前向请求头里添加需要传递的Token
  * @author xuhongyu
  * @date 2019年8月10日

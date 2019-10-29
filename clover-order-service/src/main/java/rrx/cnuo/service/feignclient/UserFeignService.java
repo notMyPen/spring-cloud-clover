@@ -3,11 +3,13 @@ package rrx.cnuo.service.feignclient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.fastjson.JSONObject;
 
+import rrx.cnuo.cncommon.vo.feign.UserPassportVo;
 import rrx.cnuo.service.feignclient.callback.UserHystrixFeignFallback;
 
 /**
@@ -39,4 +41,25 @@ public interface UserFeignService {
 	void updateUserAccountAccumulateAboutOrder(@RequestParam("userAccountListStatis") String userAccountListStatis,
 			@RequestParam("updateType") Byte updateType,@RequestParam("rollBack") Boolean rollBack) throws Exception;
 	
+	
+	@GetMapping("/userPassport/{uid}")
+	UserPassportVo getUserPassportByUid(@PathVariable("uid") Long uid) throws Exception;
+	
+	/**
+	 * 更新用户剩余礼券个数
+	 * @author xuhongyu
+	 * @param uid
+	 * @param leftCnt
+	 */
+	@PostMapping("/possport/userCardNum")
+	void updateUserCardNum(@RequestParam Long uid);
+	
+	/**
+	 * 获取用户的微信号
+	 * @author xuhongyu
+	 * @param uid
+	 * @return
+	 */
+	@GetMapping("/info/wxAccount/{uid}")
+	String getUserWxAccount(@PathVariable Long uid);
 }
